@@ -147,4 +147,4 @@ Author asked to validate parsing for all organizations. Each snapshot was scanne
 
 ## ALLFED staff corrections (2026-11-25, human-coded)
 
-Author reviewed the 1 Dec 2025 team page. Still listed but no longer working there (data/manual/team_removals.csv): Laura Cook, Florian Ulrich Jehn, Aron Mill, Martina Kunz and Juan Esteban Lamilla left after the June 2025 cuts (removed from 2026, since the 2025 count uses the 1 July snapshot); Kevin Rassool, Daniel Morgan Rivers and Kyle Alvarado stopped in 2024 (removed from 2025). Ray Taylor is a co-founder who has not worked at ALLFED for years (start year to confirm).
+Author reviewed the 1 Dec 2025 team page. Still listed but no longer working there (data/manual/team_removals.csv): Laura Cook, Florian Ulrich Jehn, Aron Mill, Martina Kunz and Juan Esteban Lamilla left after the June 2025 cuts (removed from 2026, since the 2025 count uses the 1 July snapshot); Kevin Rassool, Daniel Morgan Rivers and Kyle Alvarado stopped in 2024 (removed from 2025). Ray Taylor is a co-founder who has not worked at ALLFED for years; author: stop counting him from 2024.
