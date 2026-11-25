@@ -1,81 +1,135 @@
-// Staff page: people listed on archived team pages, one small chart per organization.
+// Staff page: people on archived team pages, added up by function and focus,
+// or shown per organization. No names are shown; they are in the repository.
 
-const DEFAULT_ORGS = ["cser", "gcri", "allfed", "fhi", "beri", "global_shield"];
-const ROLES = ["staff", "scholar", "student", "volunteer", "affiliate", "board", "alumni"];
+const FUNCTIONS = ["Research", "Teaching", "Policy", "Operations"];
+const ORG_TYPES = ["Research orgs", "Teaching orgs", "Policy orgs"];
+const FOCI = ["Classic or multi-hazard", "AI or bio"];
+const YEARS = { from: 2015, to: PARTIAL_YEAR };
+// Totals stop at 2025: several 2026 team pages (CSER, GCRI, BERI) aren't readable yet.
+const TOTALS_TO = 2025;
 const NOTES = {
-  allfed: "From 2021 the team page lists no job titles, so paid staff, part-timers and volunteers can't be told apart.",
-  gcri: "Associates were listed until 2018 only; their removal in 2019 is a website change, not a cut.",
-  fhi: "Closed 16 April 2024. Scholars are two-year paid research positions.",
-  cltr: "No usable team page; line shows average employees from Companies House accounts.",
-  beri: "BERI also employs staff embedded in university groups, mostly AI. 2025-26 page not yet parsed.",
-  ero: "Team page does not separate paid, part-time and volunteer staff.",
+  allfed: "The page shows names only (titles are on the profiles) and doesn't list volunteers. I took out people it still listed after they had left.",
+  gcri: "Associates were listed until 2018. Dropping them in 2019 was a website change, not a cut.",
+  fhi: "Closed on 16 April 2024, the 2024 count is from that day. Extra points are staff numbers from FHI's own reports.",
+  cltr: "No usable team page, so these are average employees from the Companies House accounts.",
+  beri: "The line is the core team. Extra points are staff BERI employs inside university groups, mostly on AI, as stated on its team page.",
+  ero: "The page doesn't separate paid, part-time and volunteer staff.",
+  cser: "Assistant professors for the MPhil and the postgraduate coordinator count as teaching.",
+  xlab: "Director and deputy director count as teaching. Student associates aren't counted.",
+  ceri_era: "Only one usable snapshot (2024). The research managers run the fellowship, so they count as teaching.",
+  fernuni_erh: "Three funded positions in the new programme, from its website.",
 };
 
-const state = { orgs: [...DEFAULT_ORGS], roles: ["staff"], year: null };
-let data;
+const state = { view: "totals", types: [...ORG_TYPES], functions: [...FUNCTIONS], colour: "focus" };
+let data, orgs;
 
-function orgName(id) {
-  const org = data.organizations.find((o) => o.org_id === id);
-  return org ? org.name.replace(/\s*\(.*\)$/, "") : id;
+const title = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+const typeLabel = (t) => `${title(t)} orgs`;
+const shortName = (o) => o.name.replace(/\s*\(.*\)$/, "");
+
+function selectedRows() {
+  const allowed = new Set(orgs.filter((o) => state.types.includes(typeLabel(o.type))).map((o) => o.org_id));
+  return data.functions.filter((r) => allowed.has(r.org_id) && state.functions.includes(r.function)
+    && r.year >= YEARS.from && r.year <= YEARS.to);
 }
 
-function counts(orgId) {
-  const rows = data.people.filter((p) => p.org_id === orgId && state.roles.includes(p.role));
-  const years = [...new Set(data.people.filter((p) => p.org_id === orgId).map((p) => p.year))];
-  return years.map((year) => ({ year, value: rows.filter((r) => r.year === year).length }));
+function coverageText(rows) {
+  const parts = FOCI.map((focus) => {
+    const inFocus = orgs.filter((o) => o.focus === focus && rows.some((r) => r.org_id === o.org_id));
+    const list = inFocus.map((o) => {
+      const years = rows.filter((r) => r.org_id === o.org_id).map((r) => r.year);
+      const from = d3.min(years), to = d3.max(years);
+      return `${shortName(o)} (${from === to ? from : `${from}–${to}`})`;
+    });
+    return `${focus}: ${list.join(", ") || "none"}.`;
+  });
+  const end = state.view === "totals"
+    ? " The totals stop at 2025 because several 2026 pages (CSER, GCRI, BERI) aren't readable yet. Use \"Show all organizations\" to see 2026."
+    : "";
+  return `Organizations counted and the years with a readable page. ${parts.join(" ")}${end}`;
 }
 
-function documented(orgId) {
-  return data.headcounts.filter((h) => h.org_id === orgId && +h.year >= 2015)
+function drawTotals(allRows) {
+  const rows = allRows.filter((r) => r.year <= TOTALS_TO);
+  const container = document.getElementById("multiples");
+  container.innerHTML = "";
+  container.className = "multiples two";
+  const ymax = d3.max(d3.rollups(rows, (v) => d3.sum(v, (r) => r.people), (r) => r.focus, (r) => r.year)
+    .flatMap(([, ys]) => ys.map(([, n]) => n))) || 1;
+  FOCI.forEach((focus) => {
+    const box = document.createElement("div");
+    box.innerHTML = `<p class="chart-title">${focus}</p><div class="chart"></div>`;
+    container.appendChild(box);
+    const chartRows = rows.filter((r) => r.focus === focus)
+      .map((r) => ({ year: r.year, key: r.function, value: r.people }));
+    stackedBars(box.querySelector(".chart"), chartRows, state.functions,
+      (k) => ENTITY_COLORS.function[k], {
+        yearFrom: YEARS.from, yearTo: TOTALS_TO, format: fmtInt, width: 560, height: 320, right: 90,
+        ymax, label: `People at ${focus.toLowerCase()} organizations by function`,
+      });
+  });
+  legend(document.getElementById("legend"), state.functions, (k) => ENTITY_COLORS.function[k]);
+}
+
+function orgColour(o) {
+  if (state.colour === "highlight") return o.focus === FOCI[0] ? COLORS.aubergine : COLORS.context;
+  return ENTITY_COLORS.focus[o.focus];
+}
+
+function reportPoints(orgId) {
+  return data.headcounts.filter((h) => h.org_id === orgId && ["fhi", "beri"].includes(orgId)
+    && +h.year >= YEARS.from && +h.staff > 0)
     .map((h) => ({ year: +h.year, value: +h.staff, note: h.measure }));
 }
 
-function draw() {
+function drawOrgs(rows) {
   const container = document.getElementById("multiples");
   container.innerHTML = "";
-  const all = state.orgs.map((id) => ({ id, team: counts(id), doc: documented(id) }));
-  const ymax = d3.max(all, (o) => d3.max([...o.team, ...o.doc], (p) => p.value)) || 1;
-  all.forEach((o) => {
+  container.className = "multiples";
+  const perOrg = orgs.map((o) => {
+    const points = d3.rollups(rows.filter((r) => r.org_id === o.org_id), (v) => d3.sum(v, (r) => r.people), (r) => r.year)
+      .map(([year, value]) => ({ year, value }));
+    return { org: o, points, reports: reportPoints(o.org_id) };
+  }).filter((x) => x.points.length);
+  perOrg.sort((a, b) => FOCI.indexOf(a.org.focus) - FOCI.indexOf(b.org.focus)
+    || d3.max(b.points, (p) => p.value) - d3.max(a.points, (p) => p.value));
+  const ymax = d3.max(perOrg, (x) => d3.max([...x.points, ...x.reports], (p) => p.value)) || 1;
+  perOrg.forEach(({ org, points, reports }) => {
     const box = document.createElement("div");
-    box.innerHTML = `<p class="chart-title">${orgName(o.id)}</p>` +
-      `<p class="chart-sub">${NOTES[o.id] || "&nbsp;"}</p><div class="chart"></div>`;
+    box.innerHTML = `<p class="chart-title">${shortName(org)}</p>` +
+      `<p class="chart-sub">${org.focus} · ${org.type}. ${NOTES[org.org_id] || ""}</p><div class="chart"></div>`;
     container.appendChild(box);
-    const series = [];
-    if (o.team.length) series.push({ points: o.team, color: COLORS.aubergine, name: "team page" });
-    if (o.doc.length) series.push({ points: o.doc, color: COLORS.slate, name: "filings / reports", line: o.id === "cltr" });
+    const fromFilings = rows.some((r) => r.org_id === org.org_id && r.source === "filings");
+    const series = [{ points, color: orgColour(org), name: fromFilings ? "filings" : "team page", line: points.length > 1 }];
+    if (reports.length) series.push({ points: reports, color: COLORS.berry, name: "own reports", line: false });
     smallLine(box.querySelector(".chart"), [], {
-      yearFrom: 2015, yearTo: 2026, ymax, unit: "people", series,
-      label: `People listed at ${orgName(o.id)}`,
+      yearFrom: YEARS.from, yearTo: YEARS.to, ymax, unit: "people", series,
+      label: `People counted at ${shortName(org)}`,
     });
   });
-  const years = [...new Set(data.people.map((p) => p.year))].sort();
-  const select = document.getElementById("f-year");
-  if (!state.year) state.year = Math.max(...years.filter((y) => y <= 2025));
-  select.innerHTML = years.map((y) => `<option ${y === state.year ? "selected" : ""}>${y}</option>`).join("");
-  const rows = data.people.filter((p) => state.orgs.includes(p.org_id) && state.roles.includes(p.role) && p.year === state.year)
-    .map((p) => ({ ...p, org: orgName(p.org_id) }));
-  renderTable(document.getElementById("table"), rows, [
-    { key: "org", label: "Organization" },
-    { key: "name", label: "Name", link: "snapshot" },
-    { key: "section", label: "Listed under" },
-    { key: "title", label: "Title" },
-    { key: "role", label: "Role" },
-  ], { sortKey: "org", desc: false, limit: 500 });
+  const keys = state.colour === "highlight" ? ["Classic or multi-hazard", "Other organizations"] : FOCI;
+  const colourOf = (k) => (k === "Other organizations" ? COLORS.context : ENTITY_COLORS.focus[k]);
+  legend(document.getElementById("legend"), [...keys, "Staff numbers from own reports"],
+    (k) => (k.startsWith("Staff numbers") ? COLORS.berry : colourOf(k)));
+}
+
+function draw() {
+  const rows = selectedRows();
+  document.getElementById("c-colour-box").hidden = state.view !== "orgs";
+  if (state.view === "totals") drawTotals(rows); else drawOrgs(rows);
+  document.getElementById("coverage").textContent = coverageText(rows);
 }
 
 async function init() {
   data = await loadJSON("staff.json");
-  const withData = [...new Set([...data.people.map((p) => p.org_id), ...data.headcounts.map((h) => h.org_id)])];
-  const ids = data.organizations.map((o) => o.org_id).filter((id) => withData.includes(id));
-  const box = document.getElementById("f-orgs");
-  box.innerHTML = ids.map((id) =>
-    `<label><input type="checkbox" value="${id}" ${state.orgs.includes(id) ? "checked" : ""}>${orgName(id)}</label>`).join("");
-  box.querySelectorAll("input").forEach((i) => i.addEventListener("change", () => {
-    state.orgs = [...box.querySelectorAll("input:checked")].map((x) => x.value);
-    draw();
-  }));
-  checkboxes(document.getElementById("f-roles"), ROLES, state.roles, (v) => { state.roles = v; draw(); });
-  document.getElementById("f-year").addEventListener("change", (e) => { state.year = +e.target.value; draw(); });
+  data.functions = data.functions.map((r) => ({ ...r, function: title(r.function), focus: title(r.focus) }));
+  orgs = data.organizations.filter((o) => o.type).map((o) => ({ ...o, focus: title(o.focus) }));
+  segmented(document.getElementById("c-view"), [["totals", "Totals by function"], ["orgs", "Show all organizations"]],
+    state.view, (v) => { state.view = v; draw(); });
+  segmented(document.getElementById("c-colour"), [["focus", "By focus"], ["highlight", "Highlight classic"]],
+    state.colour, (v) => { state.colour = v; draw(); });
+  checkboxes(document.getElementById("f-types"), ORG_TYPES, state.types, (v) => { state.types = v; draw(); });
+  checkboxes(document.getElementById("f-functions"), FUNCTIONS, state.functions, (v) => { state.functions = v; draw(); });
   draw();
 }
 

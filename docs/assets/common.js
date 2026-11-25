@@ -4,15 +4,20 @@
 const COLORS = {
   aubergine: "#5D2A42", slate: "#46708A", rose: "#CC8FA0", sage: "#627F64",
   ochre: "#C9A55A", context: "#A29A97", mauve: "#C9B1BD", ink: "#2E2A2B",
-  paper: "#F7F4EF", hairline: "#D9D2CF", muted: "#6E6668",
+  paper: "#F7F4EF", hairline: "#D9D2CF", muted: "#6E6668", berry: "#8E5A74",
+  deep: "#3E1C2C",
 };
+
+// The last year in the data is still running; it gets an asterisk on axes.
+const PARTIAL_YEAR = 2026;
+const yearLabel = (y) => (+y === PARTIAL_YEAR ? `${y}*` : `${y}`);
 
 // Fixed colour per entity (never by rank). Classic GCR is the focus colour.
 const ENTITY_COLORS = {
   topic: {
     "Classic GCR": COLORS.aubergine, "AI": COLORS.slate, "Bio": COLORS.rose,
     "General x-risk": COLORS.sage, "Climate & geoengineering": COLORS.ochre,
-    "Other": COLORS.context,
+    "Forecasting": COLORS.berry, "EA & community": COLORS.deep, "Other": COLORS.context,
   },
   funder: {
     "Coefficient Giving": COLORS.aubergine, "SFF": COLORS.slate,
@@ -21,7 +26,14 @@ const ENTITY_COLORS = {
   activity: {
     "Research": COLORS.aubergine, "Policy & advocacy": COLORS.slate,
     "Field-building & education": COLORS.rose, "Other": COLORS.sage,
-    "Unknown": COLORS.context,
+    "Unknown/not assessed": COLORS.context,
+  },
+  function: {
+    "Research": COLORS.aubergine, "Teaching": COLORS.ochre,
+    "Policy": COLORS.slate, "Operations": COLORS.context,
+  },
+  focus: {
+    "Classic or multi-hazard": COLORS.aubergine, "AI or bio": COLORS.slate,
   },
 };
 
@@ -72,7 +84,7 @@ function legend(container, keys, colorOf) {
 // Stacked bars per year. rows: [{year, key, value}]; keys in stacking order.
 function stackedBars(container, rows, keys, colorOf, opts = {}) {
   const width = opts.width || 900, height = opts.height || 360;
-  const m = { top: 12, right: 110, bottom: 28, left: 64 };
+  const m = { top: 12, right: opts.right ?? 110, bottom: 28, left: 64 };
   const years = d3.range(opts.yearFrom, opts.yearTo + 1);
   const table = years.map((year) => {
     const entry = { year };
@@ -88,7 +100,7 @@ function stackedBars(container, rows, keys, colorOf, opts = {}) {
   }
   const series = d3.stack().keys(keys)(table);
   const x = d3.scaleBand().domain(years).range([m.left, width - m.right]).padding(0.25);
-  const ymax = d3.max(series, (s) => d3.max(s, (d) => d[1])) || 1;
+  const ymax = Math.max(opts.ymax || 0, d3.max(series, (s) => d3.max(s, (d) => d[1])) || 1);
   const y = d3.scaleLinear().domain([0, opts.percent ? 1 : ymax]).nice().range([height - m.bottom, m.top]);
   const fmt = opts.percent ? fmtPct : (opts.format || fmtMoney);
 
@@ -101,7 +113,7 @@ function stackedBars(container, rows, keys, colorOf, opts = {}) {
     .call(d3.axisLeft(y).ticks(5).tickSize(0).tickFormat(fmt));
   const every = years.length > 14 ? 2 : 1;
   svg.append("g").attr("class", "axis").attr("transform", `translate(0,${height - m.bottom + 6})`)
-    .call(d3.axisBottom(x).tickSize(0).tickValues(years.filter((_, i) => i % every === 0)).tickFormat(d3.format("d")));
+    .call(d3.axisBottom(x).tickSize(0).tickValues(years.filter((_, i) => i % every === 0)).tickFormat(yearLabel));
   svg.append("line").attr("class", "baseline").attr("x1", m.left).attr("x2", width - m.right)
     .attr("y1", y(0)).attr("y2", y(0));
 
@@ -110,11 +122,10 @@ function stackedBars(container, rows, keys, colorOf, opts = {}) {
     .selectAll("rect").data((s) => s.map((d) => ({ ...d, key: s.key }))).join("rect")
     .attr("x", (d) => x(d.data.year)).attr("width", x.bandwidth())
     .attr("y", (d) => y(d[1]))
-    .attr("height", (d) => Math.max(0, y(d[0]) - y(d[1]) - (d[1] > d[0] ? 1 : 0)))
-    .attr("stroke", COLORS.paper).attr("stroke-width", 1)
+    .attr("height", (d) => Math.max(0, y(d[0]) - y(d[1])))
     .on("mousemove", (event, d) => {
       const total = d3.sum(keys, (k) => d.data[k]);
-      tip.show(event, `<div class="t-head">${d.data.year} · ${d.key}</div>` +
+      tip.show(event, `<div class="t-head">${yearLabel(d.data.year)} · ${d.key}</div>` +
         `${fmt(d[1] - d[0])}<br><span class="note">Year total ${fmt(total)}</span>`);
     })
     .on("mouseleave", () => tip.hide());
@@ -146,7 +157,7 @@ function smallLine(container, points, opts) {
   svg.append("g").attr("class", "axis").attr("transform", `translate(${m.left - 4},0)`)
     .call(d3.axisLeft(y).ticks(4).tickSize(0).tickFormat(d3.format("d")));
   svg.append("g").attr("class", "axis").attr("transform", `translate(0,${height - m.bottom + 4})`)
-    .call(d3.axisBottom(x).ticks(5).tickSize(0).tickFormat(d3.format("d")));
+    .call(d3.axisBottom(x).ticks(5).tickSize(0).tickFormat(yearLabel));
   svg.append("line").attr("class", "baseline").attr("x1", m.left).attr("x2", width - m.right)
     .attr("y1", y(0)).attr("y2", y(0));
   const tip = tooltip();

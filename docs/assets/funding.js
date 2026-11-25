@@ -3,26 +3,28 @@
 const TOPIC_OF = {
   "Classic GCR": "Classic GCR", "AI": "AI", "Bio": "Bio", "General x-risk": "General x-risk",
   "Geoengineering": "Climate & geoengineering", "Climate": "Climate & geoengineering",
-  "Forecasting": "Other", "Unknown": "Other", "EA & community": "Other", "Not GCR": "Other",
+  "Forecasting": "Forecasting", "EA & community": "EA & community",
+  "Unknown": "Other", "Not GCR": "Other",
 };
 const GCR_CATEGORIES = ["Classic GCR", "AI", "Bio", "General x-risk", "Geoengineering", "Climate", "Forecasting", "Unknown"];
-const TOPICS = ["Classic GCR", "AI", "Bio", "General x-risk", "Climate & geoengineering", "Other"];
+const TOPICS = ["Classic GCR", "AI", "Bio", "General x-risk", "Climate & geoengineering", "Forecasting", "EA & community", "Other"];
+const GCR_TOPICS = TOPICS.filter((t) => t !== "EA & community");
 const FUNDERS = ["Coefficient Giving", "SFF", "LTFF", "FLI"];
-const KINDS = ["Research", "Policy & advocacy", "Field-building & education", "Other", "Unknown"];
+const KINDS = ["Research", "Policy & advocacy", "Field-building & education", "Other", "Unknown/not assessed"];
 const PRESETS = {
   classic: { label: "Classic GCR", topics: ["Classic GCR"], wider: false },
   classicGeneral: { label: "Classic + general x-risk", topics: ["Classic GCR", "General x-risk"], wider: false },
-  gcr: { label: "All GCR topics", topics: TOPICS, wider: false },
+  gcr: { label: "All GCR topics", topics: GCR_TOPICS, wider: false },
   all: { label: "Everything incl. EA & not GCR", topics: TOPICS, wider: true },
 };
 
 const state = {
   split: "funder", display: "amount", funders: [...FUNDERS], topics: ["Classic GCR"],
-  kinds: [...KINDS], yearFrom: 2015, yearTo: 2025, wider: false,
+  kinds: [...KINDS], yearFrom: 2015, yearTo: PARTIAL_YEAR, wider: false,
 };
 let grants = [];
 
-function kindOf(g) { return g.activity === "n/a" ? "Unknown" : g.activity; }
+function kindOf(g) { return g.activity === "n/a" || g.activity === "Unknown" ? "Unknown/not assessed" : g.activity; }
 function splitKey(g) {
   if (state.split === "funder") return g.funder;
   if (state.split === "topic") return g.topic;
@@ -51,10 +53,12 @@ function summary(rows) {
   const inYears = grants.filter((g) => g.year >= state.yearFrom && g.year <= state.yearTo && GCR_CATEGORIES.includes(g.category));
   const gcrTotal = d3.sum(inYears, (g) => g.amount);
   const classic = d3.sum(inYears.filter((g) => g.topic === "Classic GCR"), (g) => g.amount);
+  const years = `${yearLabel(state.yearFrom)}–${yearLabel(state.yearTo)}`;
   document.getElementById("summary").innerHTML =
-    `Selection: <strong style="font-weight:400;color:var(--aubergine)">${fmtMoney(total)}</strong> in ` +
-    `${state.yearFrom}–${state.yearTo}. For context, classic GCR got ${fmtMoney(classic)} of ` +
-    `${fmtMoney(gcrTotal)} GCR funding in these years (${fmtPct(classic / gcrTotal)}).`;
+    `What you selected adds up to <span class="figure">${fmtMoney(total)}</span> in ${years}. ` +
+    `For comparison, classic GCR got ${fmtMoney(classic)} of the ${fmtMoney(gcrTotal)} that went ` +
+    `to GCR topics in these years (${fmtPct(classic / gcrTotal)}).` +
+    (state.yearTo >= PARTIAL_YEAR ? " *2026 is not over yet, so its bar is incomplete." : "");
 }
 
 function draw() {

@@ -21,26 +21,28 @@
   <main>
     <p class="label kicker">Staff</p>
     <h1>How many people work on this?</h1>
-    <p class="lead prose">People listed on each organization's team page, one archived snapshot per year (the one closest to 1 July, from the Wayback Machine). The default shows organizations that work on classic or several catastrophic risks, counting staff only.</p>
+    <p class="lead prose">I counted the people listed on each organization's team page, using one archived snapshot per year from the Wayback Machine (the one closest to 1 July). The default view adds them up by what people do (research, teaching, policy or operations). It splits organizations that work on classic or several catastrophic risks from those that mainly work on AI or bio. Everything here is based on public data.</p>
 
     <div class="controls">
-      <div class="control"><span class="control-label">Organizations</span><div class="options" id="f-orgs"></div></div>
-      <div class="control"><span class="control-label">Roles counted</span><div class="options" id="f-roles"></div></div>
+      <div class="control"><span class="control-label">View</span><div class="segmented" id="c-view"></div></div>
+      <div class="control"><span class="control-label">Organizations</span><div class="options" id="f-types"></div></div>
+      <div class="control"><span class="control-label">What people do</span><div class="options" id="f-functions"></div></div>
+      <div class="control" id="c-colour-box"><span class="control-label">Colour</span><div class="segmented" id="c-colour"></div></div>
     </div>
 
-    <div class="legend">
-      <span><i style="background:#5D2A42"></i>Listed on team page</span>
-      <span><i style="background:#46708A"></i>Headcount from filings or reports</span>
-    </div>
+    <div class="legend" id="legend"></div>
     <div class="multiples" id="multiples"></div>
-    <p class="note prose">A team page is not a payroll. Pages list part-timers, sometimes volunteers, and change layout over time, so a jump can be a redesign rather than a hire. Roles come from the page's own section names and job titles (rules in <a href="https://github.com/florianjehn/GCR-field-overview/blob/main/data/manual/team_role_rules.csv">team_role_rules.csv</a>). Organizations use the same y-axis so sizes are comparable.</p>
+    <p class="note prose" id="coverage"></p>
 
-    <h2>Who is listed</h2>
-    <div class="controls"><div class="control"><span class="control-label">Year</span><select id="f-year"></select></div></div>
-    <p class="note">Names link to the archived team page they were taken from.</p>
-    <div id="table"></div>
+    <h2>How I counted</h2>
+    <div class="prose">
+      <p>A team page is not a payroll. Pages list part-timers and sometimes volunteers, and they change layout over time, so a jump can be a redesign rather than a hire. I count staff and paid research fellows, and leave out boards, advisors, affiliates, students and alumni. Who counts as what comes from the page's own section names and job titles.</p>
+      <p>What people do is coded per person. Most people get the type of their organization (research, policy or teaching). Admin and operations titles count as operations. Teaching posts at research organizations count as teaching, like the assistant professors for CSER's MPhil in Global Risk and Resilience. For CLTR and the FernUni programme there's no usable team page, so I use headcounts from their filings or website instead.</p>
+      <p>The totals only include organizations whose pages I could read in that year, so early years undercount. The list under the chart shows which organizations count in which years. If I knew that someone listed had already left, I took them out by hand.</p>
+      <p>I don't show names here. If you want to check who is counted, the full list per year is in <a href="https://github.com/florianjehn/GCR-field-overview/blob/main/data/processed/team_people.csv">team_people.csv</a> and the rules are in <a href="https://github.com/florianjehn/GCR-field-overview/tree/main/data/manual">data/manual</a> in the repository.</p>
+    </div>
   </main>
-  <footer class="site">Built from the repository data · <span id="built"></span></footer>
+  <footer class="site">Based only on public data · <a href="https://github.com/florianjehn/GCR-field-overview">data and code</a> · <span id="built"></span></footer>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script src="assets/common.js"></script>
   <script src="assets/staff.js"></script>

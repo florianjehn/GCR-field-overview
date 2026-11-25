@@ -21,7 +21,7 @@
   <main>
     <p class="label kicker">Global catastrophic risk research</p>
     <h1>How is the field doing?</h1>
-    <p class="lead prose">Research on global catastrophes grew a lot over the last decade. But most of the money now goes to AI, and the classic topics (nuclear war, volcanoes, space weather, food in a catastrophe) are running on fumes. This site collects the numbers behind that: who funds the work, how many people do it and how much gets published. Everything links back to its source, so you can check it.</p>
+    <p class="lead prose">I wanted to know how the field working on global catastrophic risk changed over the last ten years. Who pays for it, how many people work on it and how much gets written about it. My impression was that most of the money moved to AI and that the classic topics (nuclear war, volcanoes, space weather, keeping people fed in a catastrophe) are left with very little. This site collects the numbers to check that. Everything is based on public data and links back to its source, so you can check it yourself.</p>
 
     <div class="numbers">
       <div class="number" id="n-classic"><div class="octagon">…</div><p></p></div>
@@ -34,23 +34,23 @@
     <div class="cards">
       <div class="card">
         <h3><a href="funding.html">Funding</a></h3>
-        <p>About 4,500 grants from Coefficient Giving (formerly Open Philanthropy), SFF, LTFF and FLI. Split them by funder, year, topic and kind of work.</p>
+        <p>About 4,500 grants from Coefficient Giving (formerly Open Philanthropy), SFF, LTFF and FLI. You can split them by funder, year, topic and kind of work.</p>
       </div>
       <div class="card">
         <h3><a href="staff.html">Staff</a></h3>
-        <p>People on the team pages of CSER, FHI, GCRI, ALLFED, BERI and others, year by year from archived snapshots.</p>
+        <p>People at 16 organizations, from CSER and ALLFED to XLab and ERA, year by year. Mostly from archived team pages. Split by research, teaching, policy and operations.</p>
       </div>
       <div class="card">
         <h3><a href="publications.html">Publications</a></h3>
-        <p>Works in OpenAlex that use the phrase "global catastrophic risk", and which hazards they mention.</p>
+        <p>Works in OpenAlex that use the exact phrase "global catastrophic risk", and which hazards they mention.</p>
       </div>
     </div>
 
     <h2>How this was made</h2>
-    <p class="prose">Grants were classified by topic and kind of work with a mix of the funders' own labels, rules and hand coding, and every unclear case went to a human decision. Each grant records who coded it and why. The full method, the decision log and a sensitivity analysis (how much the numbers move if you decide differently) are in the <a href="https://github.com/florianjehn/GCR-field-overview">repository</a>.</p>
-    <p class="note prose">The caveats in short: only four philanthropic funders, no government money. LTFF and FLI publish only part of their grants. SFF figures are recommendations. Team pages are not payrolls. Amounts are nominal USD.</p>
+    <p class="prose">I sorted the grants by topic and kind of work using the funders' own labels, simple rules and coding by hand (some of it with an LLM). Whenever a case was unclear, I decided it myself. Each grant records who coded it and why. The full method, the log of my decisions and a sensitivity analysis (how much the numbers move if you decide differently) are in the <a href="https://github.com/florianjehn/GCR-field-overview">repository</a>.</p>
+    <p class="note prose">The main caveats. I only cover four philanthropic funders and no government money. LTFF and FLI publish only part of their grants, and SFF figures are recommendations. Team pages are not payrolls. Publications only count the exact term "global catastrophic risk". All amounts are nominal USD.</p>
   </main>
-  <footer class="site">Built from the repository data · <span id="built"></span></footer>
+  <footer class="site">Based only on public data · <a href="https://github.com/florianjehn/GCR-field-overview">data and code</a> · <span id="built"></span></footer>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script src="assets/common.js"></script>
   <script src="assets/overview.js"></script>

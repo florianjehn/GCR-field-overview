@@ -21,7 +21,8 @@
   <main>
     <p class="label kicker">Publications</p>
     <h1>Is anyone still writing about this?</h1>
-    <p class="lead prose">Works in OpenAlex that use the phrase "global catastrophic risk", counted two ways: in the title or abstract (works that are about GCR), and anywhere including the full text (also passing mentions). The default shows works that mention a classic hazard: nuclear war, volcanoes, asteroids and space weather, or food.</p>
+    <p class="lead prose">These are works in OpenAlex that use the exact phrase "global catastrophic risk". I count them two ways: with the phrase in the title or abstract (works that are actually about it), and with it anywhere in the text (which also catches passing mentions). The default shows works that mention a classic hazard, so nuclear war, volcanoes, asteroids, space weather or food.</p>
+    <p class="prose">This only finds the term, not the topic. Papers that talk about "existential risk", "catastrophic risk" or "societal collapse" instead aren't counted, and neither are the many papers on nuclear winter or pandemics that never use the phrase. So read this as how often people use the label, not as the size of the research field. Everything here is based on public data.</p>
 
     <div class="controls">
       <div class="control"><span class="control-label">Topic</span><div class="segmented" id="c-topic"></div></div>
@@ -31,7 +32,7 @@
     <div class="multiples" id="counts"></div>
 
     <h2>What do they talk about?</h2>
-    <p class="prose">Share of works whose title or abstract mentions each topic, as a 3-year rolling window (the yearly numbers are small and jump around). A work can mention several topics, so shares add up to more than 100 %.</p>
+    <p class="prose">This is the share of works whose title or abstract mentions each topic. I use a 3-year rolling window because the yearly numbers are small and jump around a lot. A work can mention several topics, so the shares add up to more than 100 %.</p>
     <div class="legend">
       <span><i style="background:#5D2A42"></i>Classic hazards</span>
       <span><i style="background:#46708A"></i>AI</span>
@@ -39,13 +40,13 @@
       <span><i style="background:#C9A55A"></i>Climate</span>
     </div>
     <div class="multiples" id="shares"></div>
-    <p class="note prose">Topics are keyword matches (<a href="https://github.com/florianjehn/GCR-field-overview/blob/main/data/manual/publication_topics.csv">publication_topics.csv</a>), not a judgment of what a work is mainly about. Full texts are indexed only for part of the literature, which inflates recent growth in the full-text series. OpenAlex data downloaded on the date in the footer.</p>
+    <p class="note prose">The topics are simple keyword matches (listed in <a href="https://github.com/florianjehn/GCR-field-overview/blob/main/data/manual/publication_topics.csv">publication_topics.csv</a>), so they say what a work mentions, not what it is mainly about. OpenAlex only has full texts for part of the literature, and that part grows over time, which makes the full-text series grow faster than the field. I downloaded the data on the date in the footer.</p>
 
     <h2>The works</h2>
     <p class="note">Titles link to OpenAlex. Click a column to sort.</p>
     <div id="table"></div>
   </main>
-  <footer class="site">Built from the repository data · <span id="built"></span></footer>
+  <footer class="site">Based only on public data · <a href="https://github.com/florianjehn/GCR-field-overview">data and code</a> · <span id="built"></span></footer>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script src="assets/common.js"></script>
   <script src="assets/publications.js"></script>

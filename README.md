@@ -38,7 +38,7 @@ Downloads are dated (`data/raw/`) so results can be reproduced from the same sna
 Every grant gets two labels:
 
 - Hazard category: AI, Bio, Classic GCR (nuclear, volcanic, space weather, food resilience, …), General x-risk (cross-cutting), Geoengineering, Climate, Forecasting, plus categories excluded from GCR totals: EA & community, Not GCR, Regrant (money passed to another fund whose grants are counted there), Duplicate (same money already counted under another funder) and Unknown. A grant can be split, e.g. `AI=0.5;Bio=0.5`.
-- Activity (GCR-relevant grants only): Research, Policy & advocacy, Field-building & education, Other (operations, media, regranting), Unknown.
+- Activity (GCR-relevant grants only): Research, Policy & advocacy, Field-building & education, Other (operations, media, regranting), Unknown. The website calls grants outside the GCR categories or with unknown activity "Unknown/not assessed".
 
 Each label carries a coding source (`funder-label`, `LLM-coded`, `human-coded`), a confidence and a rationale, in `data/processed/grants_classified.csv`. For the hazard category, 2,709 grants follow the funder label, 1,404 are LLM-coded and 387 human-coded. For the activity, 2,045 are LLM-coded and 174 human-coded.
 
@@ -67,25 +67,28 @@ Headline metrics over 2015–2025 (nominal USD, Coefficient + SFF + LTFF + FLI, 
 
 | Scenario | Classic GCR total ($M) | Classic GCR share of GCR funding | Non-AI, non-bio GCR per year 2023–25 ($M) | AI share 2025 |
 |---|---|---|---|---|
-| Baseline | 11.0 | 0.7 % | 5.9 | 83 % |
-| Multi-hazard orgs (CSER, FHI, GCRI, …) counted as classic GCR | 36.1 | 2.3 % | 5.9 | 83 % |
-| Climate + geoengineering counted as classic GCR | 27.3 | 1.7 % | 5.9 | 83 % |
-| All Unknown money assumed classic GCR | 33.0 | 2.1 % | 9.9 | 83 % |
-| All three together (most generous) | 74.2 | 4.7 % | 9.9 | 83 % |
-| Longview general support counted as General x-risk | 11.0 | 0.7 % | 13.0 | 83 % |
-| Student x-risk programmes counted as EA & community | 11.0 | 0.7 % | 3.4 | 83 % |
-| Global priorities research counted as General x-risk | 11.0 | 0.7 % | 7.9 | 83 % |
-| Generic forecasting counted as Not GCR | 11.0 | 0.7 % | 5.9 | 86 % |
+| Baseline | 14.1 | 0.9 % | 5.9 | 83 % |
+| Multi-hazard orgs (CSER, FHI, GCRI, …) counted as classic GCR | 39.1 | 2.5 % | 5.9 | 83 % |
+| Climate + geoengineering counted as classic GCR | 30.3 | 1.9 % | 5.9 | 83 % |
+| All Unknown money assumed classic GCR | 36.0 | 2.3 % | 9.9 | 83 % |
+| All three together (most generous) | 77.3 | 4.9 % | 9.9 | 83 % |
+| Longview general support counted as General x-risk | 14.1 | 0.9 % | 13.0 | 83 % |
+| Student x-risk programmes counted as EA & community | 14.1 | 0.9 % | 3.4 | 83 % |
+| Global priorities research counted as General x-risk | 14.1 | 0.9 % | 7.9 | 83 % |
+| Generic forecasting counted as Not GCR | 14.1 | 0.9 % | 5.9 | 86 % |
 
 The remaining alternatives (FLI split, regrants, Lightcone, media, mixed field-building, 50/50 splits, FLI duplicates) change no metric by more than about half a percentage point (largest: mixed field-building split 50/50, AI share 2025 −0.5 points) and leave the yearly non-AI, non-bio amount unchanged; full table in `results/sensitivity.csv`.
 
-So the choices do matter for how big the small categories are. The classic-GCR total moves by up to ~7× ($11M to $74M), and the yearly non-AI, non-bio amount for 2023–25 ranges from $3.4M to $13.0M, depending on whether student programmes and Longview count. They don't change the overall picture, though. Even in the most generous reading classic GCR gets under 5 % of GCR philanthropy, while AI gets over 80 % in 2025.
+So the choices do matter for how big the small categories are. The classic-GCR total moves by up to ~5× ($14M to $77M), and the yearly non-AI, non-bio amount for 2023–25 ranges from $3.4M to $13.0M, depending on whether student programmes and Longview count. They don't change the overall picture, though. Even in the most generous reading classic GCR gets under 5 % of GCR philanthropy, while AI gets over 80 % in 2025.
 
 ## Organizations and staff
 
 - `data/manual/organizations.csv` and `org_events.csv`: founding and closure dates and key events for the core organizations, each with a source and whether it is primary, secondary or provided by the author.
 - `data/processed/org_finances_990.csv`: revenue and expenses from US Form 990 filings (FLI, BERI, ALLFED Institute). `data/manual/org_finances_manual.csv` and `org_staff.csv`: figures from reports and UK company filings (e.g. CLTR's average employees from Companies House, FHI's budget and staff from its final report and Open Philanthropy's 2014 conversation notes).
 - Staff per year: one archived snapshot per year of each team page (closest to 1 July). `data/manual/team_pages.csv` says how names are found on each site, `team_role_rules.csv` maps section names and job titles to roles (staff, scholar, student, volunteer, affiliate, board, alumni). Every person row links to its snapshot. Team pages are not payrolls: they list part-timers and sometimes volunteers, and layout changes can look like hires or cuts (e.g. GCRI stopped listing associates in 2019).
+- Function per person (research, teaching, policy, operations) in `data/processed/staff_by_function.csv`: org-specific and generic title rules in `data/manual/team_function_rules.csv` (e.g. CSER's MPhil teaching posts, admin titles as operations), otherwise the organization's type in `data/manual/org_types.csv`, which also sets its focus (classic or multi-hazard vs AI or bio).
+- Manual corrections: `team_additions.csv` adds people the parser can't read (FHI's director 2015–2021), `team_removals.csv` drops people the author knows had left although still listed (ALLFED). BERI's embedded university staff come from the count stated on its team page.
+- Parsing was validated by scanning every snapshot for name-like text the parser missed; what is still not captured is mainly boards, advisors, donors and contractors (details in `data/manual/decisions.md`).
 
 ## Publications
 

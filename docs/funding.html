@@ -21,7 +21,7 @@
   <main>
     <p class="label kicker">Funding</p>
     <h1>Who pays for global catastrophic risk work?</h1>
-    <p class="lead prose">Grants from Coefficient Giving (formerly Open Philanthropy), the Survival and Flourishing Fund, the Long-Term Future Fund and the Future of Life Institute. The default view shows classic GCR only (nuclear, volcanic, space weather, food resilience and similar). Use the buttons to compare it with everything else.</p>
+    <p class="lead prose">I collected every grant that four philanthropic funders publish: Coefficient Giving (formerly Open Philanthropy), the Survival and Flourishing Fund, the Long-Term Future Fund and the Future of Life Institute. By default you only see classic GCR. That's work on nuclear war, volcanic eruptions, asteroids, space weather, keeping food systems running in a catastrophe and similar hazards. General x-risk is work on catastrophic or existential risk as a whole instead of a single hazard. The biggest part is FHI's core funding (about 40 %), followed by Global Shield's all-hazards policy work and student programmes like SERI and ERA. Use the buttons to compare classic GCR with the rest.</p>
 
     <div class="controls">
       <div class="control"><span class="control-label">Focus</span><div class="segmented" id="c-preset"></div></div>
@@ -38,13 +38,24 @@
     <p id="summary" class="prose"></p>
     <div class="legend" id="legend"></div>
     <div class="chart" id="chart"></div>
-    <p class="note prose">Nominal USD. SFF figures are recommendations, not confirmed payouts. LTFF and FLI publish only part of their grants, so their totals are a lower bound. 2026 runs to November. Money passed between these funders (regrants) and FLI's share of SFF rounds are counted once. Grants split between two topics (e.g. 50 % AI / 50 % bio) are marked with *. Source: <a href="https://github.com/florianjehn/GCR-field-overview">data and method on GitHub</a>.</p>
+    <h3>What the topics mean</h3>
+    <dl class="defs prose">
+      <dt>Classic GCR</dt><dd>Nuclear war, volcanoes, asteroids and comets, space weather, resilient food and infrastructure, and other non-AI, non-bio catastrophes.</dd>
+      <dt>AI</dt><dd>AI safety, alignment and AI governance.</dd>
+      <dt>Bio</dt><dd>Biosecurity and pandemic preparedness.</dd>
+      <dt>General x-risk</dt><dd>Catastrophic or existential risk as a whole, without a single hazard. For example multi-hazard institutes (FHI, GCRI), all-hazards policy (Global Shield) and student or fellowship programmes on x-risk (SERI, ERA, CERI).</dd>
+      <dt>Climate &amp; geoengineering</dt><dd>Extreme climate change and research or governance of geoengineering.</dd>
+      <dt>Forecasting</dt><dd>Forecasting platforms and research meant to inform decisions on these risks.</dd>
+      <dt>EA &amp; community</dt><dd>Effective altruism community building and infrastructure. Only shown in the "Everything" view.</dd>
+      <dt>Other</dt><dd>Grants I couldn't place from the public description, and, in the "Everything" view, grants that are not about catastrophic risk at all.</dd>
+    </dl>
+    <p class="note prose">All amounts are nominal USD. SFF figures are recommendations, not confirmed payouts, and matching pledges are left out. LTFF and FLI publish only part of their grants, so their totals are too low. 2026* runs only to November. Money passed on between these funders (regrants) is counted once. Grants split between two topics (like 50 % AI and 50 % bio) have a * after the amount. Everything here is based on public data. The data and how I classified it are <a href="https://github.com/florianjehn/GCR-field-overview">on GitHub</a>.</p>
 
     <h2>Grants in this selection</h2>
     <p class="note">Click a column to sort. Recipient links go to the funder's own page.</p>
     <div id="table"></div>
   </main>
-  <footer class="site">Built from the repository data · <span id="built"></span></footer>
+  <footer class="site">Based only on public data · <a href="https://github.com/florianjehn/GCR-field-overview">data and code</a> · <span id="built"></span></footer>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script src="assets/common.js"></script>
   <script src="assets/funding.js"></script>
