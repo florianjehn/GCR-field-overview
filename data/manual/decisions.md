@@ -106,3 +106,14 @@ Activities: Research / Policy & advocacy / Field-building & education / Other (o
 - **A4 – Unknown-activity organisations**: AI Alignment Foundation **Policy & advocacy**; Active Site Research and Oath Technologies **Research**.
 - **A5 – Smaller SFF organisations**: proposals accepted (EIP Policy, Foresight Field-building, Collective Intelligence Project Research, Legal Safety Lab Policy, SaferAI Policy, Sentinel Research, Odyssean Research).
 - **A6 – Organisations with unknown focus**: activity left **Unknown**.
+
+## LTFF and FLI (2026-11-25)
+
+- **FLI–SFF overlap**: FLI's "2023 Grants" page lists FLI's share of grants recommended through SFF's 2023 rounds (several amounts identical, SFF lists "FLI and Jaan Tallinn" as source). Author decision: the 13 FLI 2023 grants to organisations with an SFF 2023 recommendation at least as large are marked **Duplicate** and excluded from totals. Kept: Center for Humane Technology, Foresight Institute, UC Berkeley AI Policy Hub.
+- **Coefficient → FLI 2015** ("Artificial Intelligence Risk Reduction", $1.19M) funded FLI's 2015 AI safety programme, whose individual grants are in the FLI data: marked **Regrant** (Q6 rule).
+- **F1** USC Hollywood, Health & Society (FLI 2022, $170k): **General x-risk / Other** (proposal accepted).
+- **F2** FLI call on AI's impact on SDGs (2024, 10 × $15k): **Not GCR** (proposal accepted).
+- **L1** LTFF Joel Becker, forecasting and pandemics (2021, $42k): **Forecasting** (proposal accepted).
+- **L2** LTFF SHELTER Weekend civilisational resilience (2022, $27k): **Classic GCR**; Will Aldred nuclear risk + AI strategy (2022, $40k): **50% Classic GCR / 50% AI** (proposals accepted).
+- **L3** Five LTFF grants coded AI from context (Coleman Snell research grant, PhD relocation, three cybersecurity trainings): **AI** (proposal accepted).
+- Rules applied without asking, following earlier answers: CHERI/CERI/SERI student programmes → General x-risk (Q3); CFAR, SPARC, rationality → EA & community (Q8); LPP → AI (Q1); MRI → Unknown (Q1); Foresight → 50% AI / 50% Bio (Q11.6); generic forecasting → Forecasting (Q7).
