@@ -77,8 +77,14 @@ def test_extract_people_optional_title_group():
     """
     Tests that an optional title group that does not match gives an empty title.
     """
-    page = "<h2>Core</h2><b><a href='x'>Max Tegmark</a>, Professor, MIT</b><b>Lucas Perry</b>"
-    pattern = r"<b>\s*(?:<a [^>]*>)?\s*([^<,]{3,40}?)\s*(?:</a>)?\s*(?:,\s*([^<]*))?</b>"
+    page = (
+        "<h2>Core</h2><b><a href='x'>Max Tegmark</a>, Professor, MIT</b>"
+        "<b>Lucas Perry</b>"
+    )
+    pattern = (
+        r"<b>\s*(?:<a [^>]*>)?\s*([^<,]{3,40}?)\s*(?:</a>)?\s*"
+        r"(?:,\s*([^<]*))?</b>"
+    )
     people = extract_people(page, pattern, "element", r"<h2>(.*?)</h2>")
     assert [(p["name"], p["title"]) for p in people] == [
         ("Max Tegmark", "Professor, MIT"),
