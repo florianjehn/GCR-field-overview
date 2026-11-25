@@ -8,7 +8,9 @@ Run with:
 """
 
 import datetime as dt
+import hashlib
 import json
+import re
 from pathlib import Path
 
 import pandas as pd
@@ -179,6 +181,30 @@ def write_json(name, payload):
     return path
 
 
+DOCS_DIR = Path("docs")
+ASSET_LINK = re.compile(r'(assets/[\w.-]+\.(?:js|css))(?:\?v=\w+)?"')
+
+
+def stamp_assets(page_html, asset_dir):
+    """
+    Adds a content hash to every asset link (assets/x.js?v=<hash>), so that
+    browsers load a changed file instead of an old cached copy.
+
+    Arguments:
+        page_html (str): HTML of one page
+        asset_dir (pathlib.Path): folder that holds the assets/ folder
+
+    Returns:
+        str: the HTML with versioned asset links.
+    """
+
+    def versioned(match):
+        digest = hashlib.sha1((asset_dir / match.group(1)).read_bytes()).hexdigest()
+        return f'{match.group(1)}?v={digest[:8]}"'
+
+    return ASSET_LINK.sub(versioned, page_html)
+
+
 def main():
     """
     Writes all site data files.
@@ -194,6 +220,8 @@ def main():
     ]:
         path = write_json(name, payload)
         print(f"{path}: {path.stat().st_size / 1e3:.0f} kB")
+    for page in DOCS_DIR.glob("*.html"):
+        page.write_text(stamp_assets(page.read_text(), DOCS_DIR))
 
 
 if __name__ == "__main__":

@@ -48,7 +48,8 @@ const fmtInt = (v) => d3.format(",")(Math.round(v));
 const fmtPct = (v) => `${(100 * v).toFixed(v < 0.1 ? 1 : 0)} %`;
 
 async function loadJSON(name) {
-  const response = await fetch(`data/${name}`);
+  // no-cache: revalidate with the server so updated data is never mixed with old code.
+  const response = await fetch(`data/${name}`, { cache: "no-cache" });
   return response.json();
 }
 
