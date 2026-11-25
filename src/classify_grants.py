@@ -3,7 +3,8 @@ Assign every grant to a GCR category and combine all funders in one table.
 
 Categories: AI, Bio, Classic GCR, General x-risk, Climate, Geoengineering,
 Forecasting, EA & community, Not GCR, Regrant (money passed to another fund,
-excluded from totals) and Unknown. See data/manual/decisions.md.
+excluded from totals), Duplicate (same money already counted under another
+funder, excluded from totals) and Unknown. See data/manual/decisions.md.
 
 A category can be split across several categories, written as
 "AI=0.5;Bio=0.5". The long table grants_by_category.csv has one row per
@@ -144,6 +145,50 @@ def classify_sff(grants, manual_codes, overrides):
     return coded
 
 
+def classify_by_grant_id(grants, manual_codes, description):
+    """
+    Classifies grants coded one by one (LTFF, FLI); every grant needs a code.
+
+    Arguments:
+        grants (pandas.DataFrame): processed grants with grant_id
+        manual_codes (pandas.DataFrame): rows keyed by grant_id
+        description (pandas.Series): description text for each grant
+
+    Returns:
+        pandas.DataFrame: grants with the code columns added.
+    """
+    coded = grants.assign(description=description.values).merge(
+        manual_codes[["grant_id"] + CODE_COLUMNS], on="grant_id", how="left"
+    )
+    missing = coded.loc[coded["category"].isna(), "grant_id"].tolist()
+    if missing:
+        raise ValueError(f"Grants without a code: {missing[:5]}")
+    coded["matching_pledge_usd"] = 0
+    coded["funder_focus_area"] = ""
+    return coded
+
+
+def load_ltff_and_fli():
+    """
+    Loads and classifies LTFF and FLI grants.
+
+    Returns:
+        list: the two classified DataFrames.
+    """
+    ltff = load_csv(PROCESSED_DIR / "ltff_grants.csv")
+    fli = load_csv(PROCESSED_DIR / "fli_grants.csv")
+    return [
+        classify_by_grant_id(
+            ltff, load_csv(MANUAL_DIR / "ltff_manual_codes.csv"), ltff["description"]
+        ),
+        classify_by_grant_id(
+            fli,
+            load_csv(MANUAL_DIR / "fli_manual_codes.csv"),
+            fli["program"] + ": " + fli["title"],
+        ),
+    ]
+
+
 def parse_category_shares(category):
     """
     Parses a category string into (category, share) pairs.
@@ -211,9 +256,8 @@ def main():
         load_csv(MANUAL_DIR / "sff_manual_codes.csv"),
         load_csv(MANUAL_DIR / "sff_purpose_overrides.csv"),
     )
-    combined = pd.concat(
-        [coefficient[OUTPUT_COLUMNS], sff[OUTPUT_COLUMNS]], ignore_index=True
-    )
+    frames = [coefficient, sff] + load_ltff_and_fli()
+    combined = pd.concat([frame[OUTPUT_COLUMNS] for frame in frames], ignore_index=True)
     combined = classify_activity(combined, *load_activity_inputs())
     combined.to_csv(PROCESSED_DIR / "grants_classified.csv", index=False)
     long = explode_categories(combined)

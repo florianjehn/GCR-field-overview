@@ -21,7 +21,7 @@ from pathlib import Path
 import pandas as pd
 
 MANUAL_DIR = Path("data/manual")
-OUT_OF_SCOPE = ("EA & community", "Not GCR", "Regrant")
+OUT_OF_SCOPE = ("EA & community", "Not GCR", "Regrant", "Duplicate")
 DEFER = "Recipient default"
 ACTIVITY_COLUMNS = [
     "activity",
