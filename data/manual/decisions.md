@@ -95,3 +95,14 @@ from `coding_source = LLM-coded` (confidence `low`) to `human-coded`.
 
 ### Q12 – Longview Philanthropy general support
 - **EA & community**.
+
+## Activity questions (2026-11-25)
+
+Activities: Research / Policy & advocacy / Field-building & education / Other (operations, media, regranting) / Unknown. Precedence: grant override > keyword rule on title (`activity_rules.csv`) > recipient default (`activity_recipient_codes.csv`).
+
+- **A1 – Policy think tanks** (CSET, JHU CHS, IAPS, RAND general, NTI bio, Georgetown GHSS, Carnegie, CNAS, CIGI, CASA, RP AI governance team, Brown AI Governance Lab, Oxford Martin AIGI, CSIS, IST): **Policy & advocacy for all**, including university-based centres. Grants whose title states research stay Research.
+- **A2 – Mixed-mission organisations**: Blueprint Biosecurity general support **Other**; Mirror Biology Dialogues Fund **Policy & advocacy**; Center for AI Safety general support **Research**; SL5 Task Force **Policy & advocacy**; FLI general support Policy & advocacy, iGEM Policy & advocacy, ORCG AI Risk Explorer Research, Renaissance BiTS accelerator Field-building, Good Forever Other (proposals accepted).
+- **A3 – Evals/demonstrations**: Apollo Research **Research**; Palisade Research **Policy & advocacy**; Sage general support **Other**.
+- **A4 – Unknown-activity organisations**: AI Alignment Foundation **Policy & advocacy**; Active Site Research and Oath Technologies **Research**.
+- **A5 – Smaller SFF organisations**: proposals accepted (EIP Policy, Foresight Field-building, Collective Intelligence Project Research, Legal Safety Lab Policy, SaferAI Policy, Sentinel Research, Odyssean Research).
+- **A6 – Organisations with unknown focus**: activity left **Unknown**.
