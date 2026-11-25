@@ -89,7 +89,7 @@ footer.site::before {
 .card { background: var(--tint); clip-path: var(--chamfer); padding: 1.5rem; }
 .card h3 { margin-top: 0; }
 
-.numbers { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+.numbers { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem 2rem; margin: 1.5rem 0; }
 .number { display: flex; gap: 1rem; align-items: center; }
 .number .octagon {
   flex: 0 0 auto;

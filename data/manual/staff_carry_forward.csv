@@ -1,0 +1,4 @@
+org_id,from_year,to_year,coding_source,reason
+cser,2025,2026,human-coded,No readable 2026 team page yet; author: assume the 2025 team stayed the same
+gcri,2025,2026,human-coded,No readable 2026 team page yet; author: assume the 2025 team stayed the same
+beri,2025,2026,human-coded,2026 team page (Framer) not parsed; author: assume the 2025 team stayed the same

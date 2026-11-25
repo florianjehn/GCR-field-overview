@@ -5,8 +5,7 @@ const FUNCTIONS = ["Research", "Teaching", "Policy", "Operations"];
 const ORG_TYPES = ["Research orgs", "Teaching orgs", "Policy orgs"];
 const FOCI = ["Classic or multi-hazard", "AI or bio"];
 const YEARS = { from: 2015, to: PARTIAL_YEAR };
-// Totals stop at 2025: several 2026 team pages (CSER, GCRI, BERI) aren't readable yet.
-const TOTALS_TO = 2025;
+const TOTALS_TO = PARTIAL_YEAR;
 const NOTES = {
   allfed: "The page shows names only (titles are on the profiles) and doesn't list volunteers. I took out people it still listed after they had left.",
   gcri: "Associates were listed until 2018. Dropping them in 2019 was a website change, not a cut.",
@@ -43,8 +42,10 @@ function coverageText(rows) {
     });
     return `${focus}: ${list.join(", ") || "none"}.`;
   });
-  const end = state.view === "totals"
-    ? " The totals stop at 2025 because several 2026 pages (CSER, GCRI, BERI) aren't readable yet. Use \"Show all organizations\" to see 2026."
+  const assumed = [...new Set(rows.filter((r) => r.source.startsWith("assumed")).map((r) => r.org_id))]
+    .map((id) => shortName(orgs.find((o) => o.org_id === id)));
+  const end = assumed.length
+    ? ` For ${assumed.join(", ")} I couldn't read a 2026 team page yet, so I assume their 2025 team stayed the same.`
     : "";
   return `Organizations counted and the years with a readable page. ${parts.join(" ")}${end}`;
 }
@@ -87,8 +88,9 @@ function drawOrgs(rows) {
   container.innerHTML = "";
   container.className = "multiples";
   const perOrg = orgs.map((o) => {
-    const points = d3.rollups(rows.filter((r) => r.org_id === o.org_id), (v) => d3.sum(v, (r) => r.people), (r) => r.year)
-      .map(([year, value]) => ({ year, value }));
+    const points = d3.rollups(rows.filter((r) => r.org_id === o.org_id),
+      (v) => ({ value: d3.sum(v, (r) => r.people), assumed: v.some((r) => r.source.startsWith("assumed")) }), (r) => r.year)
+      .map(([year, p]) => ({ year, value: p.value, note: p.assumed ? "No readable page, assumed same as 2025" : "" }));
     return { org: o, points, reports: reportPoints(o.org_id) };
   }).filter((x) => x.points.length);
   perOrg.sort((a, b) => FOCI.indexOf(a.org.focus) - FOCI.indexOf(b.org.focus)

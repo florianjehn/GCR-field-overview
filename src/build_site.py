@@ -98,6 +98,33 @@ def documented_functions(headcounts, org_types):
     )
 
 
+def carry_forward(functions, rules):
+    """
+    Copies an organization's counts from one year to a later year without a
+    readable team page, marked with source "assumed same as <year>".
+
+    Arguments:
+        functions (pandas.DataFrame): org_id, year, focus, function, people, source
+        rules (pandas.DataFrame): org_id, from_year, to_year
+
+    Returns:
+        pandas.DataFrame: functions plus the carried-forward rows.
+    """
+    copies = []
+    for rule in rules.itertuples(index=False):
+        if (
+            (functions["org_id"] == rule.org_id) & (functions["year"] == rule.to_year)
+        ).any():
+            continue
+        rows = functions[
+            (functions["org_id"] == rule.org_id) & (functions["year"] == rule.from_year)
+        ]
+        copies.append(
+            rows.assign(year=rule.to_year, source=f"assumed same as {rule.from_year}")
+        )
+    return pd.concat([functions, *copies], ignore_index=True)
+
+
 def staff_data():
     """
     Builds staff counts without names: per organization, year and role, and
@@ -114,6 +141,9 @@ def staff_data():
     headcounts = pd.read_csv(MANUAL_DIR / "org_staff.csv", keep_default_na=False)
     org_types = pd.read_csv(MANUAL_DIR / "org_types.csv", keep_default_na=False)
     functions = pd.concat([functions, documented_functions(headcounts, org_types)])
+    functions = carry_forward(
+        functions, pd.read_csv(MANUAL_DIR / "staff_carry_forward.csv")
+    )
     organizations = pd.read_csv(
         MANUAL_DIR / "organizations.csv", keep_default_na=False
     ).drop(columns=["type"])
