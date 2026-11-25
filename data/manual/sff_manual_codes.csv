@@ -1,0 +1,391 @@
+organization,n_grants,total_usd,rounds,category,coding_source,confidence,question_id,rationale
+1Day Sooner,1,500000,SFF-2022-H1,Bio,LLM-coded,high,,Human challenge trials / pandemic vaccine preparedness
+"80,000 Hours",6,512000,SFF-2019-Q3; SFF-2019-Q4; SFF-2020-H1; SFF-2023-H2,EA & community,LLM-coded,high,,Careers advice org for the EA community
+"80,000 hours",1,200000,Initiative Committee 2024,EA & community,LLM-coded,high,,Careers advice org for the EA community
+"AAAI/ACM Conference on Artificial Intelligence, Ethics and Society",1,20000,SFF-2020-H2,AI,LLM-coded,high,,AI ethics conference (AIES)
+"AAAI/ACM conference on AI, Ethics and Society (AIES 2020)",1,20000,SFF-2019-Q4,AI,LLM-coded,high,,AI ethics conference (AIES)
+ACM FAccT,1,75000,Initiative Committee 2024,AI,LLM-coded,high,,AI fairness/accountability conference
+AGI Inherent Non-Safety,1,135000,SFF-2024,AI,LLM-coded,high,,AGI safety research project
+AI & Democracy Foundation,2,533000,SFF-2025; SFF-2026,AI,LLM-coded,high,,AI governance / democracy and AI
+AI Alignment Foundation (AIAF),1,1570000,SFF-2026,AI,LLM-coded,high,,AI alignment funder/org
+AI Forensics,1,178000,SFF-2023-H2,AI,LLM-coded,high,,Audits of AI systems
+AI Futures Project,3,3345000,SFF-2024; SFF-2025; SFF-2026,AI,LLM-coded,high,,AI forecasting/scenario research (AI 2027)
+AI Impacts,8,1671000,SFF-2019-Q4; SFF-2020-H1; SFF-2021-H1; SFF-2022-H2; SFF-2023-H2; SFF-2026,AI,LLM-coded,high,,AI forecasting research
+AI Lab Watch,1,371000,SFF-2025,AI,LLM-coded,high,,Tracks AI lab safety practices
+AI Objectives Institute,4,1827000,SFF-2021-H2; SFF-2023-H1; SFF-2024; SFF-2026,AI,LLM-coded,high,,AI alignment / governance research
+AI Policy Institute,1,300000,Initiative Committee 2024,AI,LLM-coded,high,,AI policy polling and advocacy
+AI Policy Institute (AIPI),1,1635000,SFF-2025,AI,LLM-coded,high,,AI policy polling and advocacy
+AI Safety Camp,2,220000,SFF-2021-H2; SFF-2025,AI,LLM-coded,high,,AI safety research camp
+AI Safety Camp (AISC),1,227000,SFF-2026,AI,LLM-coded,high,,AI safety research camp
+AI Safety Info,1,60000,SFF-2024,AI,LLM-coded,high,,AI safety information resource
+AI Safety Support,1,200000,SFF-2021-H1,AI,LLM-coded,high,,AI safety field support
+AI Standards Lab & Holtman Systems Research,1,48000,SFF-2026,AI,LLM-coded,high,,AI safety standards research
+AI Standards Lab and Holtman Systems Research,2,412000,SFF-2024; SFF-2025,AI,LLM-coded,high,,AI safety standards research
+AI: Futures and Responsibility Programme,1,280000,SFF-2024,AI,LLM-coded,high,,Cambridge AI risk programme
+AIES 2022 organizers (supported by AAAI and ACM),1,38000,SFF-2022-H1,AI,LLM-coded,high,,AI ethics conference (AIES)
+AISafety Info,2,162000,SFF-2026,AI,LLM-coded,high,,AI safety information resource
+AISafety.com,1,150000,SFF-2026,AI,LLM-coded,high,,AI safety information resource
+AddisCoder Inc.,1,30000,SFF-2022-H1,Not GCR,LLM-coded,high,,CS education in Ethiopia
+Agent Foundations Field Network (AFFINE) [Algorithm Design],1,79000,SFF-2025,AI,LLM-coded,high,,Agent foundations (AI alignment) research
+Agent Foundations Field Network (AFFINE) [Technical Research],2,368000,SFF-2025; SFF-2026,AI,LLM-coded,high,,Agent foundations (AI alignment) research
+Alignment Ecosystem Development,1,91000,SFF-2025,AI,LLM-coded,high,,AI alignment ecosystem tooling
+Alignment Research Center,2,2376000,SFF-2022-H2; SFF-2024,AI,LLM-coded,high,,AI alignment research and evals
+Alignment Research Center (Evals Team),1,3247000,SFF-2023-H1,AI,LLM-coded,high,,AI alignment research and evals
+Alignment in Complex Systems Research Group (ACS Research),1,400000,SFF-2025,AI,LLM-coded,high,,AI alignment research group
+Alignment in Complex Systems research group,1,425000,SFF-2022-H1,AI,LLM-coded,high,,AI alignment research group
+Alignment of Complex Systems Research Group (ACS),3,1474000,SFF-2023-H2; SFF-2024; SFF-2026,AI,LLM-coded,high,,AI alignment research group
+Alliance to Feed the Earth in Disasters,2,1154000,SFF-2021-H1; SFF-2021-H2,Classic GCR,LLM-coded,high,,Resilient food in global catastrophes
+Alliance to Feed the Earth in Disasters (ALLFED),6,2320000,SFF-2019-Q4; SFF-2022-H2; SFF-2023-H1; SFF-2024; SFF-2025; SFF-2026,Classic GCR,LLM-coded,high,,Resilient food in global catastrophes
+Amplifying AI Safety,1,30000,SFF-2025,AI,LLM-coded,high,,AI safety amplification project
+Apart Research,1,294000,SFF-2024,AI,LLM-coded,high,,AI safety research hackathons
+Apollo Research,3,1209000,SFF-2023-H2; SFF-2024; SFF-2026,AI,LLM-coded,high,,AI deception/scheming evals
+Arkose,1,683000,SFF-2023-H1,AI,LLM-coded,high,,AI safety researcher support
+Atlas Computing,1,2776000,SFF-2026,AI,LLM-coded,high,,Formal verification for AI safety
+Authensor,1,100000,SFF-2026,AI,LLM-coded,high,,AI safety evaluation security auditing (stated purpose)
+AuthorBot,1,27000,SFF-2026,AI,LLM-coded,high,,Books depicting aligned AI (stated purpose)
+BERI-ALL Collaboration,1,150000,SFF-2022-H2,AI,LLM-coded,high,,BERI collaboration with UMass Autonomous Learning Lab (safe RL)
+BERI-CHAI Collaboration,4,1297000,SFF-2021-H2; SFF-2022-H2; SFF-2023-H1,AI,LLM-coded,high,,BERI collaboration with CHAI
+BERI-CLTC Collaboration,3,720000,SFF-2023-H1; SFF-2025; SFF-2026,AI,LLM-coded,high,,BERI collaboration with Berkeley CLTC AI Security Initiative
+BERI-SRL Collaboration,1,52000,SFF-2023-H2,AI,LLM-coded,high,,BERI collaboration with Princeton Safe Robotics Lab
+Balsa Policy Institute Inc.,1,33000,SFF-2024,Not GCR,LLM-coded,high,,Economic policy reform (Jones Act etc.)
+Blueprint Biosecurity,1,78000,SFF-2024,Bio,LLM-coded,high,,"Biosecurity (far-UVC, PPE)"
+Brown University AI Governance Lab,1,326000,SFF-2024,AI,LLM-coded,high,,AI governance lab
+Cambridge Boston Alignment Initiative (CBAI),1,496000,SFF-2026,AI,LLM-coded,high,,AI alignment student programmes
+Catalyze Impact,1,74000,SFF-2025,AI,LLM-coded,high,,AI safety org incubator
+CeSIA,1,48000,SFF-2024,AI,LLM-coded,high,,French centre for AI safety
+Center for AI Policy,1,288000,SFF-2024,AI,LLM-coded,high,,AI policy advocacy
+Center for AI Safety,4,1344000,Initiative Committee 2024; SFF-2023-H1; SFF-2024-FlexHEGs,AI,LLM-coded,high,,Center for AI Safety
+Center for AI Safety (CAIS),2,424000,SFF-2025; SFF-2026,AI,LLM-coded,high,,Center for AI Safety
+Center for AI Safety Action Fund,1,420000,SFF-2023-H2,AI,LLM-coded,high,,Center for AI Safety
+Center for AI Safety Action Fund (CAIS AF),1,772000,SFF-2025,AI,LLM-coded,high,,Center for AI Safety
+"Center for AI Safety Action Fund, Inc.",1,1621000,SFF-2024,AI,LLM-coded,high,,Center for AI Safety
+"Center for AI Safety, Action Fund",1,1000000,Initiative Committee 2024,AI,LLM-coded,high,,Center for AI Safety
+"Center for AI Safety, Inc.",2,2055000,SFF-2023-H2; SFF-2024,AI,LLM-coded,high,,Center for AI Safety
+Center for Applied Utilitarianism,1,21000,SFF-2020-H2,EA & community,LLM-coded,high,,Utilitarian/EA community project
+Center for Human-Compatible AI,1,779000,SFF-2020-H2,AI,LLM-coded,high,,Center for Human-Compatible AI
+Center for Innovative Governance Research,1,58000,SFF-2020-H2,Not GCR,LLM-coded,high,,Charter cities
+Center for Innovative Governance Research (dba Charter Cities Institute),1,137000,SFF-2021-H1,Not GCR,LLM-coded,high,,Charter cities
+Center for Law and AI Risk,1,134000,SFF-2024,AI,LLM-coded,high,,Law and AI risk
+Center for Open Science,1,408000,SFF-2026,Not GCR,LLM-coded,high,,Metascience / open science
+Center for Strategic and International Studies (AI Governance Project),1,291000,SFF-2023-H1,AI,LLM-coded,high,,AI governance project at CSIS
+Center on Long-Term Risk,2,2545000,SFF-2021-H2; SFF-2023-H1,AI,LLM-coded,high,,Center on Long-Term Risk: s-risks from advanced AI
+Center on Long-Term Risk (CLR),2,562000,SFF-2025; SFF-2026,AI,LLM-coded,high,,Center on Long-Term Risk: s-risks from advanced AI
+Centre for AI Security and Access (CASA),2,446000,SFF-2025; SFF-2026,AI,LLM-coded,high,,AI security and access
+Centre for Effective Altruism (CEA),1,117000,SFF-2025,EA & community,LLM-coded,high,,Centre for Effective Altruism
+Centre for Effective Altruism (CEA) [AI Events Team],1,12000,SFF-2026,AI,LLM-coded,high,,CEA AI events team (stated purpose)
+Centre for Enabling EA Learning & Research,2,82000,SFF-2021-H1,EA & community,LLM-coded,high,,EA hotel
+Centre for Enabling EA Learning & Research (CEEALAR),1,646000,SFF-2026,EA & community,LLM-coded,high,,EA hotel
+Centre for Enabling EA Learning & Research (CEEALAR) [formerly the EA Hotel],1,224000,SFF-2022-H2,EA & community,LLM-coded,high,,EA hotel
+Centre for the Governance of AI (GovAI),4,733000,SFF-2023-H1; SFF-2023-H2; SFF-2025; SFF-2026,AI,LLM-coded,high,,Centre for the Governance of AI
+"Centre for the Governance of AI, Future of Humanity Institute",2,270000,SFF-2021-H1,AI,LLM-coded,high,,Centre for the Governance of AI
+Centre for the Governance of AI.,1,591000,SFF-2021-H2,AI,LLM-coded,high,,Centre for the Governance of AI
+Charter Cities Institute,3,494000,SFF-2019-Q4; SFF-2023-H1; SFF-2024,Not GCR,LLM-coded,high,,Charter cities
+Civic AI Security Program (CivAI),2,850000,SFF-2025; SFF-2026,AI,LLM-coded,high,,AI security demonstrations for policymakers
+Collective Intelligence Project,2,1000000,Initiative Committee 2024,AI,LLM-coded,high,,Democratic input to AI governance
+Common Grounds AI,1,388000,SFF-2026,AI,LLM-coded,high,,AI project at Active Inference Institute
+Community Health and Special Projects team at the Centre for Effective Altruism,1,113000,SFF-2023-H2,EA & community,LLM-coded,high,,Centre for Effective Altruism
+Compassion Aligned Machine Learning (CaML),1,457000,SFF-2026,AI,LLM-coded,high,,Compassion in machine learning (AI alignment with animal welfare)
+Compassion in Machine Learning (CaML),1,20000,SFF-2025,AI,LLM-coded,high,,Compassion in machine learning (AI alignment with animal welfare)
+Computational Rational Agents Laboratory (CORAL),1,140000,SFF-2025,AI,LLM-coded,high,,Computational rational agents lab (AI alignment theory)
+Conflict Superintelligence Institute,1,186000,SFF-2026,AI,LLM-coded,high,,Conflict and superintelligence research
+Constructive Dialogue Institute (formerly called OpenMind Platform),1,196000,SFF-2022-H2,Not GCR,LLM-coded,high,,Constructive dialogue / polarisation
+Convergence: AI Clarity,1,67000,SFF-2024,AI,LLM-coded,high,,Convergence AI projects
+Convergence: Project AI Clarity,1,103000,SFF-2021-H1,AI,LLM-coded,high,,Convergence AI projects
+Cornell University [Angelina Wang’s Responsible AI Lab],1,170000,SFF-2025,AI,LLM-coded,high,,Cornell AI labs
+Cornell University [LIL Lab],1,460000,SFF-2026,AI,LLM-coded,high,,Cornell AI labs
+David Krueger’s Research Group at Cambridge,1,1000000,SFF-2021-H1,AI,LLM-coded,high,,David Krueger AI safety group
+David Lorell,1,230000,SFF-2025,AI,LLM-coded,high,,Alignment research (David Lorell)
+Decode Research,1,133000,SFF-2024,AI,LLM-coded,high,,Interpretability research (Neuronpedia)
+Dovetail,1,1019000,SFF-2026,AI,LLM-coded,high,,Agent foundations research
+"Dr. Andrew Critch at CHAI, UC Berkeley",1,898000,SFF-2021-H1,AI,LLM-coded,high,,Andrew Critch at CHAI
+Earth Law Center,3,154000,SFF-2019-Q4; SFF-2022-H1; SFF-2023-H2,Not GCR,LLM-coded,high,,Environmental law
+Earth Species Project,1,111000,SFF-2026,Not GCR,LLM-coded,high,,Animal communication research
+Economics of Transformative AI,1,400000,Initiative Committee 2024,AI,LLM-coded,high,,Economics of transformative AI
+Edge City,1,295000,SFF-2026,Not GCR,LLM-coded,high,,Pop-up city events
+Effective Altruism Sweden Rationality Research Project,1,66000,SFF-2023-H2,EA & community,LLM-coded,high,,EA Sweden rationality project
+Effective Thesis,1,15000,SFF-2020-H2,EA & community,LLM-coded,high,,Thesis topic advice for EA students
+Eisenstat Research Directions,1,103000,SFF-2024,AI,LLM-coded,high,,Alignment research (Scott Garrabrant/Eisenstat)
+Eisenstat Research Program,2,1093000,SFF-2025; SFF-2026,AI,LLM-coded,high,,Alignment research (Scott Garrabrant/Eisenstat)
+Emergent Ventures India,1,115000,SFF-2021-H2,Not GCR,LLM-coded,high,,Emergent Ventures India fellowships
+Encode AI Corporation,1,516000,SFF-2025,AI,LLM-coded,high,,Youth AI advocacy
+Encode Justice,1,50000,SFF-2024,AI,LLM-coded,high,,Youth AI advocacy
+Epoch AI,2,1246000,Initiative Committee 2024; SFF-2026,AI,LLM-coded,high,,AI trends research
+EthicsNet Creed.Space,1,80000,SFF-2025,AI,LLM-coded,high,,AI ethics/value specification
+European Biostasis Foundation,1,103000,SFF-2021-H2,Not GCR,LLM-coded,high,,Cryopreservation
+EvalEval,1,281000,SFF-2026,AI,LLM-coded,high,,AI evaluation research
+"Expii, Inc.",2,388000,SFF-2021-H1,Not GCR,LLM-coded,high,,Education platform
+FAR AI,2,978000,SFF-2025; SFF-2026,AI,LLM-coded,high,,FAR AI
+"FAR AI, Inc.",4,3938000,SFF-2023-H1; SFF-2023-H2; SFF-2024,AI,LLM-coded,high,,FAR AI
+Forethought Research,1,103000,SFF-2025,AI,LLM-coded,high,,Forethought Research (preparing for advanced AI)
+French Center for AI Safety (CeSIA),1,145000,SFF-2026,AI,LLM-coded,high,,French centre for AI safety
+Fund for Alignment Research (FAR),1,524000,SFF-2022-H2,AI,LLM-coded,high,,FAR AI
+GD Research,1,100000,SFF-2026,AI,LLM-coded,high,,Gradual disempowerment research (AI)
+Generation Pledge,3,398000,SFF-2020-H2; SFF-2021-H1; SFF-2022-H1,EA & community,LLM-coded,high,,Pledge community for wealthy heirs
+Good Science Project,1,70000,SFF-2022-H1,Not GCR,LLM-coded,high,,Science policy
+Groundless Alignment,1,16000,SFF-2026,AI,LLM-coded,high,,Alignment research project
+HitRecord,2,1200000,Initiative Committee 2024,AI,LLM-coded,high,,AI safety media project (stated name)
+Holtman Systems Research,1,269000,SFF-2023-H1,AI,LLM-coded,high,,AI safety standards research
+ILINA Program,2,490000,SFF-2025; SFF-2026,AI,LLM-coded,high,,African AI safety programme
+Iliad,1,20000,SFF-2026,AI,LLM-coded,high,,Alignment research programme
+Institute for AI Policy and Strategy,1,183000,SFF-2024,AI,LLM-coded,high,,Institute for AI Policy and Strategy
+Institute for AI Policy and Strategy (IAPS),1,475000,SFF-2026,AI,LLM-coded,high,,Institute for AI Policy and Strategy
+Institute for Advanced Consciousness Studies (IACS),1,379000,SFF-2023-H1,Not GCR,LLM-coded,high,,Consciousness studies
+International Dialogues on AI Safety (IDAIS),1,500000,Initiative Committee 2024,AI,LLM-coded,high,,International AI safety dialogues
+Jacob Lagerros,2,200000,Initiative Committee 2024,AI,LLM-coded,high,,flexHEG prototyping (stated purpose)
+James Payor,2,409000,SFF-2025; SFF-2026,AI,LLM-coded,high,,Formal verification research for AI alignment
+John Wentworth,1,258000,SFF-2025,AI,LLM-coded,high,,Alignment research (John Wentworth)
+Language Model Safety Fund,1,582000,SFF-2022-H1,AI,LLM-coded,high,,Language model safety regranting fund
+Less Death Inc.,1,753000,SFF-2026,Not GCR,LLM-coded,high,,Longevity research
+Live Theory,1,58000,SFF-2025,AI,LLM-coded,high,,Alignment research project
+Longevity Escape Velocity Foundation (LEV Foundation),1,1169000,SFF-2026,Not GCR,LLM-coded,high,,Longevity research
+Longevity Research Institute,1,160000,SFF-2019-Q4,Not GCR,LLM-coded,high,,Longevity research
+MATS London Ltd,1,97000,SFF-2023-H2,AI,LLM-coded,high,,ML Alignment & Theory Scholars
+MATS Research,1,639000,SFF-2024,AI,LLM-coded,high,,ML Alignment & Theory Scholars
+MILA,1,4000000,Initiative Committee 2024,AI,LLM-coded,high,,Mila AI safety work
+"MISE Foundation, Ghana",1,10000,SFF-2022-H1,Not GCR,LLM-coded,high,,Education Ghana
+ML Alignment & Theory Scholars Research (MATS Research),1,289000,SFF-2025,AI,LLM-coded,high,,ML Alignment & Theory Scholars
+MSSM Foundation,1,30000,SFF-2022-H1,Not GCR,LLM-coded,high,,School foundation
+Machine Intelligence Research Institute,5,937000,SFF-2020-H1; SFF-2020-H2; SFF-2024,AI,LLM-coded,high,,Machine Intelligence Research Institute
+Machine Intelligence Research Institute (MIRI),1,0,SFF-2025,AI,LLM-coded,high,,Machine Intelligence Research Institute
+"Machine Intelligence and Normative Theory lab, ANU",1,480000,SFF-2024,AI,LLM-coded,high,,Machine intelligence and normative theory lab
+Massachusetts Institute of Technology (Tegmark group),1,223000,SFF-2023-H2,AI,LLM-coded,high,,Tegmark AI safety group
+Meaning Alignment Institute,3,451000,SFF-2024; SFF-2025; SFF-2026,AI,LLM-coded,high,,AI alignment with human values
+Mila,1,29000,SFF-2024-FlexHEGs,AI,LLM-coded,high,,Mila AI safety work
+Milan Griffes to pursue an MHS in Mental Health,1,30000,SFF-2020-H1,Not GCR,LLM-coded,high,,Individual degree in mental health
+Model Evaluation & Threat Research (METR),2,895000,SFF-2025; SFF-2026,AI,LLM-coded,high,,Model evaluation and threat research
+Model Evaluation and Threat Research,1,204000,SFF-2024,AI,LLM-coded,high,,Model evaluation and threat research
+Modeling Cooperation,6,438000,SFF-2019-Q4; SFF-2020-H2; SFF-2021-H2; SFF-2022-H2; SFF-2025; SFF-2026,AI,LLM-coded,high,,Modeling AI competition and cooperation
+Neo Research,1,553000,SFF-2026,AI,LLM-coded,high,,AI safety research (Singapore)
+"New Science Research, Inc.",3,698000,SFF-2021-H1; SFF-2021-H2,Not GCR,LLM-coded,high,,Science research org
+Non-Trivial Ventures,1,275000,SFF-2026,EA & community,LLM-coded,high,,Teen EA outreach
+OAISIS,1,251000,SFF-2025,AI,LLM-coded,high,,AI whistleblower support
+OAK (Optimizing Awakening and Kindness),1,100000,SFF-2019-Q4,Not GCR,LLM-coded,high,,Mindfulness
+Online Team at the Centre for Effective Altruism,1,126000,SFF-2023-H2,EA & community,LLM-coded,high,,Centre for Effective Altruism
+Orthogonal,1,55000,SFF-2023-H2,AI,LLM-coded,high,,Alignment research org
+Ought Inc.,3,1000000,SFF-2019-Q4; SFF-2021-H2; SFF-2023-H1,AI,LLM-coded,high,,AI-assisted reasoning (Ought)
+Our World in Data,1,300000,Initiative Committee 2024,Not GCR,LLM-coded,high,,Data publishing
+Oxford China Policy Lab,4,962000,SFF-2022-H2; SFF-2023-H2; SFF-2024; SFF-2025,AI,LLM-coded,high,,US-China AI policy lab
+Oxford China Policy Lab (OCPL),1,1395000,SFF-2026,AI,LLM-coded,high,,US-China AI policy lab
+Oxford Martin AI Governance Initiative,1,311000,SFF-2025,AI,LLM-coded,high,,AI governance initiative
+Palisade Research,4,2808000,SFF-2023-H2; SFF-2024; SFF-2025; SFF-2026,AI,LLM-coded,high,,AI capability demos
+Palladium Magazine,1,100000,SFF-2024,Not GCR,LLM-coded,high,,Magazine
+Panoplia Laboratories,1,60000,SFF-2025,Bio,LLM-coded,high,,Broad-spectrum antivirals
+PauseAI Deutschland,1,38000,SFF-2026,AI,LLM-coded,high,,AI pause advocacy
+PauseAI Global,1,1497000,SFF-2026,AI,LLM-coded,high,,AI pause advocacy
+Principles of Intelligence (PIBBSS),1,82000,SFF-2026,AI,LLM-coded,high,,PIBBSS
+Principles of Intelligent Behavior in Biological and Social Systems (PIBBSS),2,206000,SFF-2023-H2; SFF-2025,AI,LLM-coded,high,,PIBBSS
+Pronatalist.org,1,482000,SFF-2022-H2,Not GCR,LLM-coded,high,,Pronatalism
+Pronomos Capital Management,1,250000,SFF-2026,Not GCR,LLM-coded,high,,Charter cities investment
+RAND Corporation [Technology and Security Policy Center],1,1000000,SFF-2025,AI,LLM-coded,high,,RAND technology and security policy (AI)
+RadicalxChange Foundation Ltd.,2,39000,SFF-2020-H2,Not GCR,LLM-coded,high,,Mechanism design / democracy
+Rapid Deployment Vaccine Collaborative (RADVAC),1,13000,SFF-2022-H1,Bio,LLM-coded,high,,Open-source vaccines
+Redwood Research Group Inc.,2,2372000,SFF-2022-H1; SFF-2023-H1,AI,LLM-coded,high,,Redwood Research
+Research on AI & International Relations,1,34000,SFF-2021-H2,AI,LLM-coded,high,,Convergence AI projects
+Rethink Priorities (RP) [AI Strategy Team],1,28000,SFF-2025,AI,LLM-coded,high,,RP AI governance/strategy team
+SERI ML Alignment Theory Scholars Program,1,345000,SFF-2023-H2,AI,LLM-coded,high,,ML Alignment & Theory Scholars
+SLT Summit organizers,1,20000,SFF-2023-H2,AI,LLM-coded,high,,Singular learning theory summit
+Safe AI Forum,1,580000,SFF-2024,AI,LLM-coded,high,,Safe AI Forum
+SaferAI,3,509000,SFF-2022-H2; SFF-2024; SFF-2025,AI,LLM-coded,high,,AI risk management ratings
+Saturn Data,1,500000,Initiative Committee 2024,AI,LLM-coded,high,,flexHEG prototyping (stated purpose)
+Secure AI Project,1,383000,SFF-2025,AI,LLM-coded,high,,AI policy project
+SecureBio,4,2483000,SFF-2023-H2; SFF-2024; SFF-2025; SFF-2026,Bio,LLM-coded,high,,SecureBio / SecureDNA
+SecureDNA,3,2463000,SFF-2023-H2; SFF-2024; SFF-2025,Bio,LLM-coded,high,,SecureBio / SecureDNA
+SecureDNA Foundation,1,692000,SFF-2026,Bio,LLM-coded,high,,SecureBio / SecureDNA
+Security Level 5,1,439000,SFF-2026,AI,LLM-coded,high,,AI lab security
+Signal Foundation,1,1000000,Initiative Committee 2024,Not GCR,LLM-coded,high,,Encrypted messaging
+Simplex,2,721000,SFF-2024; SFF-2026,AI,LLM-coded,high,,Interpretability research
+Singapore AI Safety Hub,1,300000,SFF-2025,AI,LLM-coded,high,,Singapore AI Safety Hub
+Singapore AI Safety Hub (SASH),1,474000,SFF-2026,AI,LLM-coded,high,,Singapore AI Safety Hub
+Softmax,1,90000,SFF-2026,AI,LLM-coded,high,,Alignment research company
+Stanford University [Lean Verification for Safe AI],1,35000,SFF-2026,AI,LLM-coded,high,,Lean verification for safe AI
+Talos Network gUG,1,123000,SFF-2024,AI,LLM-coded,high,,AI governance fellowships Europe
+TamperSec,2,1059000,SFF-2024-FlexHEGs; SFF-2026,AI,LLM-coded,high,,Hardware security for AI verification
+Tarbell Center for AI Journalism,2,1390000,SFF-2025; SFF-2026,AI,LLM-coded,high,,AI journalism fellowship
+Tarbell Fellowship,1,520000,SFF-2024,AI,LLM-coded,high,,AI journalism fellowship
+Technical Alignment Impossibility Proofs,1,170000,SFF-2022-H2,AI,LLM-coded,high,,Alignment impossibility proofs
+Technologies for Pandemic Defense,1,86000,SFF-2023-H2,Bio,LLM-coded,high,,Pandemic defence technologies
+Technology Strategy Roleplay,2,572256,SFF-2024; SFF-2026,AI,LLM-coded,high,,AI scenario roleplay (Intelligence Rising)
+The AI Governance & Strategy team within Rethink Priorities,1,402000,SFF-2023-H2,AI,LLM-coded,high,,RP AI governance/strategy team
+The AI Policy Institute,1,142000,SFF-2024,AI,LLM-coded,high,,AI policy polling and advocacy
+The Alignment Journal,1,170000,SFF-2026,AI,LLM-coded,high,,Alignment journal
+The Australian Responsible Autonomous Agents Group,1,83000,SFF-2023-H2,AI,LLM-coded,high,,Responsible autonomous agents
+The Center for Election Science,3,577000,SFF-2020-H2; SFF-2022-H2; SFF-2023-H2,Not GCR,LLM-coded,high,,Voting reform
+The Charter Cities Institute,1,261000,SFF-2022-H1,Not GCR,LLM-coded,high,,Charter cities
+The Collective Intelligence Project,1,300000,SFF-2023-H1,AI,LLM-coded,high,,Democratic input to AI governance
+The Events team at the Centre for Effective Altruism,1,166000,SFF-2023-H2,EA & community,LLM-coded,high,,Centre for Effective Altruism
+The Future Society,4,563000,SFF-2020-H1; SFF-2022-H2; SFF-2026,AI,LLM-coded,high,,The Future Society (AI governance)
+The Future Society (TFS),1,336000,SFF-2025,AI,LLM-coded,high,,The Future Society (AI governance)
+"The Future Society, Inc.",3,510000,SFF-2020-H2; SFF-2023-H2; SFF-2024,AI,LLM-coded,high,,The Future Society (AI governance)
+The Institute for AI Policy and Strategy (IAPS),1,272000,SFF-2025,AI,LLM-coded,high,,Institute for AI Policy and Strategy
+The Institute for Family Studies (IFS),1,295000,SFF-2026,Not GCR,LLM-coded,high,,Family policy
+The Intrinsic Perspective,1,24000,SFF-2023-H2,Not GCR,LLM-coded,high,,Newsletter
+The Midas Project,1,31000,SFF-2024,AI,LLM-coded,high,,AI lab watchdog
+The Roots of Progress,2,35000,SFF-2020-H2,Not GCR,LLM-coded,high,,Progress studies
+The Unjournal,1,565000,SFF-2023-H1,Not GCR,LLM-coded,high,,Open peer review
+The Vitalism Charity Project,1,220000,SFF-2025,Not GCR,LLM-coded,high,,Longevity research
+Timaeus,3,1311000,SFF-2023-H2; SFF-2024; SFF-2026,AI,LLM-coded,high,,Timaeus (alignment research)
+Timaeus Research,1,70000,SFF-2025,AI,LLM-coded,high,,Timaeus (alignment research)
+UC Berkeley [AI & Public Feedback Workshop],1,15000,SFF-2026,AI,LLM-coded,high,,AI public feedback workshop
+Ulyssean,1,338000,SFF-2026,AI,LLM-coded,high,,AI verification and security tools (stated purpose)
+Ulyssean PBC,1,186000,SFF-2025,AI,LLM-coded,high,,AI verification and security tools (stated purpose)
+Unite America Institute,1,68000,SFF-2022-H2,Not GCR,LLM-coded,high,,Electoral reform
+University of Louisville (Dr. Roman Yampolskiy’s Research Group (Cybersecurity Lab)),1,274000,SFF-2023-H1,AI,LLM-coded,high,,Yampolskiy AI safety group
+University of Toronto & University of Michigan [Toronto and Michigan NLP Group for AI Safety],1,50000,SFF-2025,AI,LLM-coded,high,,NLP group for AI safety
+Vanderbilt University [Formal Epistemology and AI Safety (FAST)],1,5000,SFF-2026,AI,LLM-coded,high,,Formal epistemology and AI safety
+Viva City Galactic,1,4000,SFF-2026,Not GCR,LLM-coded,high,,Longevity research
+Windfall Trust,1,16000,SFF-2026,AI,LLM-coded,high,,Windfall from AGI
+Wytham Abbey,1,76000,SFF-2023-H2,EA & community,LLM-coded,high,,EA event venue
+All-Party Parliamentary Group for Future Generations,1,171000,SFF-2021-H1,General x-risk,LLM-coded,low,Q1,UK parliamentary group on future generations / extreme risks
+Alpenglow Group Limited,3,2806000,SFF-2021-H1; SFF-2021-H2; SFF-2022-H1,General x-risk,LLM-coded,low,Q1,"CLTR: UK policy on extreme risks (AI, bio, risk management)"
+Association for Long Term Existence and Resilience (ALTER),3,483000,SFF-2022-H1; SFF-2023-H2; SFF-2025,General x-risk,LLM-coded,low,Q1,"ALTER: Israeli x-risk org (AI, bio/BWC, resilience)"
+BERI-CSER Collaboration,1,37000,SFF-2021-H1,General x-risk,LLM-coded,low,Q1,BERI collaboration with CSER
+BERI-FHI Collaboration,2,495000,SFF-2021-H1,General x-risk,LLM-coded,low,Q1,BERI collaboration with FHI
+BERI/CSER Collaboration,1,20000,SFF-2020-H1,General x-risk,LLM-coded,low,Q1,BERI collaboration with CSER
+Berkeley Existential Risk Initiative,3,433000,SFF-2020-H2; SFF-2023-H2; SFF-2024,General x-risk,LLM-coded,low,Q1,BERI general support (supports multiple x-risk groups)
+Berkeley Existential Risk Initiative (BERI),1,549000,SFF-2026,General x-risk,LLM-coded,low,Q1,BERI general support (supports multiple x-risk groups)
+Centre for Long-Term Resilience (CLTR),2,959000,SFF-2025; SFF-2026,General x-risk,LLM-coded,low,Q1,"CLTR: UK policy on extreme risks (AI, bio, risk management)"
+Centre for the Study of Existential Risk,1,40000,SFF-2019-Q3,General x-risk,LLM-coded,low,Q1,CSER general support
+"Centre for the Study of Existential Risk, University of Cambridge",2,195000,SFF-2019-Q4; SFF-2021-H1,General x-risk,LLM-coded,low,Q1,CSER general support
+Existential Risk Observatory,1,44000,SFF-2022-H1,AI,LLM-coded,low,Q1,Existential Risk Observatory (awareness; mostly AI)
+"Future of Humanity Institute, Research Scholars Programme",1,218000,SFF-2020-H2,General x-risk,LLM-coded,low,Q1,FHI Research Scholars Programme
+Future of Humanity Institute: Research Scholars Programme,1,30000,SFF-2020-H2,General x-risk,LLM-coded,low,Q1,FHI Research Scholars Programme
+Global Shield,1,424000,SFF-2024,General x-risk,LLM-coded,low,Q1,Global Shield: all-hazard GCR policy advocacy
+Good Ancestors Policy,2,703000,SFF-2024; SFF-2026,General x-risk,LLM-coded,low,Q1,"Good Ancestors Policy: Australian GCR policy (AI, bio)"
+Haydn Belfield,1,16000,Initiative Committee 2024,General x-risk,LLM-coded,low,Q1,Scholarship on governance of catastrophic technologies incl. AI
+Langsikt - Centre for Long-Term Policy,1,199000,SFF-2024,General x-risk,LLM-coded,low,Q1,"Langsikt: Norwegian long-term policy (pandemics, AI)"
+Legal Priorities Project,3,483000,SFF-2021-H1; SFF-2022-H2; SFF-2023-H2,General x-risk,LLM-coded,low,Q1,Legal Priorities Project
+Macrostrategy Research Initiative,1,170000,SFF-2024,General x-risk,LLM-coded,low,Q1,Macrostrategy Research Initiative (Bostrom)
+Macrostrategy Research Initiative (MRI),1,60000,SFF-2025,General x-risk,LLM-coded,low,Q1,Macrostrategy Research Initiative (Bostrom)
+Odyssean Institute,1,79000,SFF-2025,General x-risk,LLM-coded,low,Q1,Odyssean Institute
+Pour Demain,1,70000,SFF-2024,General x-risk,LLM-coded,low,Q1,Pour Demain: Swiss AI/bio policy
+Senter for langsiktig politikk/Centre for Long-Term Policy,1,325000,SFF-2023-H1,General x-risk,LLM-coded,low,Q1,"Langsikt: Norwegian long-term policy (pandemics, AI)"
+Sentinel,1,131000,SFF-2024,General x-risk,LLM-coded,low,Q1,Sentinel: early warning of catastrophes
+Simon Institute for Longterm Governance,4,1288000,SFF-2022-H1; SFF-2024; SFF-2025; SFF-2026,General x-risk,LLM-coded,low,Q1,Simon Institute for Longterm Governance
+The Centre for Long-Term Resilience (Alpenglow Group Limited),1,829000,SFF-2023-H2,General x-risk,LLM-coded,low,Q1,"CLTR: UK policy on extreme risks (AI, bio, risk management)"
+The Centre for Long-Term Resilience (CLTR),1,1083000,SFF-2024,General x-risk,LLM-coded,low,Q1,"CLTR: UK policy on extreme risks (AI, bio, risk management)"
+The Millennium Project,1,15950,SFF-2025,General x-risk,LLM-coded,low,Q1,Millennium Project: global futures
+Impact Academy Limited,1,72000,SFF-2024,EA & community,LLM-coded,low,Q10,"Impact Academy (EA training, later AI safety careers)"
+Nonlinear,1,599000,SFF-2022-H1,EA & community,LLM-coded,low,Q10,Nonlinear (EA/AI safety meta)
+9th International Conference for Applied Category Theory,1,30000,SFF-2026,Unknown,LLM-coded,low,Q11,Applied category theory conference; GCR relevance unclear
+Allelon,1,49000,SFF-2026,Unknown,LLM-coded,low,Q11,Ashgro-sponsored project; topic unknown
+Amodo Design,1,1229000,SFF-2024-FlexHEGs,AI,LLM-coded,high,,Funded in SFF-2024-FlexHEGs round (hardware-enabled AI chip governance)
+Amodo Design Ltd.,1,6000,SFF-2023-H2,AI,LLM-coded,high,,Same firm as SFF-2024-FlexHEGs grantee Amodo Design (AI chip governance hardware)
+Augur,1,160000,SFF-2025,Unknown,LLM-coded,low,Q11,Unknown
+BERI-DMIP Collaboration,1,66000,SFF-2024,Unknown,LLM-coded,low,Q11,BERI collaboration with 'DMIP'; group unknown
+Basis Research Institute,2,422000,SFF-2023-H1; SFF-2024,Unknown,LLM-coded,low,Q11,Basis: AI for science / cognitive modelling
+Cave Exploration Society Inc.,1,20000,SFF-2022-H1,Unknown,LLM-coded,low,Q11,Unknown
+Cavendish Labs Co.,1,88000,SFF-2023-H2,Unknown,LLM-coded,low,Q11,Cavendish Labs: AI safety and pandemic prevention research
+Center for Humane Technology (CHT),1,468000,SFF-2025,Unknown,LLM-coded,low,Q11,Center for Humane Technology: social media and AI harms
+Church Lab Meiosis Team,1,700000,SFF-2023-H1,Not GCR,LLM-coded,low,Q11,In vitro gametogenesis research (Church lab)
+Consequence Foundries,1,168000,SFF-2022-H1,Unknown,LLM-coded,low,Q11,Convergence-sponsored project; topic unknown
+Convergence,1,13000,SFF-2021-H1,Unknown,LLM-coded,low,Q11,"Convergence Analysis general support (x-risk strategy, later AI scenarios)"
+Convergence Analysis,2,45000,SFF-2020-H1; SFF-2026,Unknown,LLM-coded,low,Q11,"Convergence Analysis general support (x-risk strategy, later AI scenarios)"
+Convergent Research,1,389000,SFF-2022-H1,Not GCR,LLM-coded,low,Q11,Convergent Research: focused research organisations (science)
+Earendil [Security Layers Project],1,778000,SFF-2024-FlexHEGs,AI,LLM-coded,high,,Funded in SFF-2024-FlexHEGs round (hardware-enabled AI chip governance)
+Earendil [Standards Infrastructure Project],1,564000,SFF-2024-FlexHEGs,AI,LLM-coded,high,,Funded in SFF-2024-FlexHEGs round (hardware-enabled AI chip governance)
+Effective Institutions Project,1,210000,SFF-2024,Unknown,LLM-coded,low,Q11,Effective Institutions Project: institutional decision-making (increasingly AI)
+Effective Institutions Project (EIP),2,1876000,SFF-2025; SFF-2026,Unknown,LLM-coded,low,Q11,Effective Institutions Project: institutional decision-making (increasingly AI)
+Epistea,1,189000,SFF-2023-H2,Unknown,LLM-coded,low,Q11,Epistea general support (Czech EA/rationality/AI hub)
+Epistemic Garden,1,100000,SFF-2025,Unknown,LLM-coded,low,Q11,Unknown
+European Center for Not-For-Profit Law (ECNL),1,142000,SFF-2026,Unknown,LLM-coded,low,Q11,NGO law centre; likely AI regulation work
+First Proof,1,36000,SFF-2026,Unknown,LLM-coded,low,Q11,Unknown
+Flourishing Future Foundation (FFF),1,30000,SFF-2025,Unknown,LLM-coded,low,Q11,Unknown
+Foresight Institute,3,1075000,SFF-2022-H1; SFF-2025; SFF-2026,Unknown,LLM-coded,low,Q11,"Foresight Institute: nanotech, AI, longevity, neurotech"
+Foundation for American Innovation,2,707000,SFF-2023-H2; SFF-2024,Unknown,LLM-coded,low,Q11,"Foundation for American Innovation: tech policy, incl. AI"
+Foundation for American Innovation (FAI),2,1816000,SFF-2025; SFF-2026,Unknown,LLM-coded,low,Q11,"Foundation for American Innovation: tech policy, incl. AI"
+Foxglove,1,5000,SFF-2024,Unknown,LLM-coded,low,Q11,Foxglove: tech-justice litigation
+Future of Humanity Foundation,1,10000,SFF-2020-H1,Unknown,LLM-coded,low,Q11,Future of Humanity Foundation: unclear
+Fønix,1,378000,SFF-2023-H2,Unknown,LLM-coded,low,Q11,Fønix (via EA Sweden); unknown
+Gimbal,1,53000,SFF-2026,Unknown,LLM-coded,low,Q11,Unknown
+Goodheart Labs,1,238000,SFF-2026,Unknown,LLM-coded,low,Q11,AI-written community notes (epistemics)
+GreenEarth,1,378000,SFF-2026,Unknown,LLM-coded,low,Q11,GreenEarth (BERI-sponsored); unknown
+History Lab,1,27000,SFF-2024,Not GCR,LLM-coded,low,Q11,Declassified-document history project
+Humans in Control,1,23000,SFF-2026,Unknown,LLM-coded,low,Q11,Unknown
+Institute for Security and Technology,1,400000,Initiative Committee 2024,Unknown,LLM-coded,low,Q11,"Institute for Security and Technology: AI, cyber, nuclear"
+JUSTICE,1,258000,SFF-2024,Unknown,LLM-coded,low,Q11,JUSTICE (UK legal charity); topic unknown
+Laboratory for Social Minds @ Carnegie Mellon University,1,244000,SFF-2022-H1,Unknown,LLM-coded,low,Q11,CMU Laboratory for Social Minds
+Laboratory for Social Minds at Carnegie Mellon University,1,11000,SFF-2021-H1,Unknown,LLM-coded,low,Q11,CMU Laboratory for Social Minds
+Legal Advocates for Safe Science and Technology (LASST),2,940000,SFF-2025; SFF-2026,Unknown,LLM-coded,low,Q11,LASST: legal advocacy on AI/bio safety
+"Legal Advocates for Safe Science and Technology, Inc.",1,278000,SFF-2024,Unknown,LLM-coded,low,Q11,LASST: legal advocacy on AI/bio safety
+Legal Safety Lab,2,710000,SFF-2024; SFF-2026,Unknown,LLM-coded,low,Q11,Legal Safety Lab; likely AI
+Lens Academy,1,252000,SFF-2026,Unknown,LLM-coded,low,Q11,Lens Academy (Beacon Institute for GCR)
+Leverage Research,1,80000,SFF-2020-H1,Not GCR,LLM-coded,low,Q11,Leverage Research
+MSEP Project,1,166000,SFF-2024,Unknown,LLM-coded,low,Q11,MSEP project; unknown
+Machine Learning for Socio-technical Systems Lab,1,163000,SFF-2024,Unknown,LLM-coded,low,Q11,ML for socio-technical systems lab (URI)
+Mathematical Metaphysics Institute,3,471000,SFF-2024; SFF-2025; SFF-2026,Unknown,LLM-coded,low,Q11,Mathematical Metaphysics Institute
+Median Group,3,398000,SFF-2019-Q4; SFF-2020-H2; SFF-2022-H1,Unknown,LLM-coded,low,Q11,Median Group research
+Medronho,1,564000,SFF-2025,Unknown,LLM-coded,low,Q11,Unknown
+Metamorphic Group LLC,2,20000,SFF-2020-H1,Not GCR,LLM-coded,low,Q11,Unknown
+Mindstream Project,1,100000,SFF-2025,Unknown,LLM-coded,low,Q11,Unknown
+Missing Measures,2,614000,SFF-2025; SFF-2026,Unknown,LLM-coded,low,Q11,Missing Measures (Lightcone); unknown
+Moonlight Institute,1,127000,SFF-2021-H1,Unknown,LLM-coded,low,Q11,Unknown
+Oath Technologies,1,2975000,SFF-2026,Unknown,LLM-coded,low,Q11,Oath Technologies (Convergent); unknown
+Oregon State University,1,271000,SFF-2024-FlexHEGs,AI,LLM-coded,high,,Funded in SFF-2024-FlexHEGs round (hardware-enabled AI chip governance)
+Ovelle Bio,1,667000,SFF-2025,Not GCR,LLM-coded,low,Q11,Biotech (in vitro gametogenesis)
+"PARPA, Inc.",1,200000,SFF-2022-H2,Unknown,LLM-coded,low,Q11,PARPA; unknown
+Petr Salaba,1,26000,SFF-2026,Unknown,LLM-coded,low,Q11,Research by Petr Salaba
+Plurality Institute,1,100000,SFF-2025,Unknown,LLM-coded,low,Q11,Plurality Institute
+Poseidon Research,1,675000,SFF-2026,Unknown,LLM-coded,low,Q11,Poseidon Research; likely AI
+Project Solve,1,196000,SFF-2023-H1,Unknown,LLM-coded,low,Q11,Project Solve; unknown
+Psst.org,1,243000,SFF-2026,Unknown,LLM-coded,low,Q11,Psst.org: tech whistleblowers
+Psychosecurity Ethics @ EURAIO,1,38000,SFF-2024,Unknown,LLM-coded,low,Q11,Psychosecurity ethics project
+Reciprocal Research,1,668000,SFF-2026,Unknown,LLM-coded,low,Q11,Reciprocal Research; unknown
+Regents of the University of California at Berkeley,1,365000,SFF-2024,Unknown,LLM-coded,low,Q11,Prof. Emma Pierson (AI and health)
+Rethink Priorities,3,306000,SFF-2020-H2; SFF-2022-H1; SFF-2024,Unknown,LLM-coded,low,Q11,Rethink Priorities general support (multi-cause)
+Scholarship Workshop,1,100000,SFF-2022-H2,Unknown,LLM-coded,low,Q11,Scholarship Workshop; unknown
+Seismic Foundation,1,7000,SFF-2026,Unknown,LLM-coded,low,Q11,Seismic Foundation
+Seldon Labs,1,53000,SFF-2025,Unknown,LLM-coded,low,Q11,Seldon Labs; likely AI security
+Sentience Institute,1,50000,SFF-2022-H1,Not GCR,LLM-coded,low,Q11,Sentience Institute (moral circle expansion)
+Stichting Legal Safety Lab,1,101000,SFF-2025,Unknown,LLM-coded,low,Q11,Legal Safety Lab; likely AI
+Tara Research,1,319000,SFF-2026,Unknown,LLM-coded,low,Q11,Tara Research; unknown
+Technical University of Munich [Civic Machines Lab],1,170000,SFF-2026,Unknown,LLM-coded,low,Q11,TUM Civic Machines Lab
+The Divinity School (Div School),1,99000,SFF-2026,Unknown,LLM-coded,low,Q11,The Divinity School; unknown
+The Foresight Institute,1,51000,SFF-2024,Unknown,LLM-coded,low,Q11,"Foresight Institute: nanotech, AI, longevity, neurotech"
+The Goodly Institute,1,75000,SFF-2022-H1,Unknown,LLM-coded,low,Q11,The Goodly Institute; unknown
+The Inside Story of Leverage Research 1.0,1,46000,SFF-2026,Not GCR,LLM-coded,low,Q11,Leverage Research
+The Society Library,1,50000,SFF-2022-H2,Not GCR,LLM-coded,low,Q11,Debate mapping
+Topos,2,400000,Initiative Committee 2024,Unknown,LLM-coded,low,Q11,Topos Institute (applied category theory)
+Topos Institute,10,2506000,SFF-2020-H2; SFF-2021-H2; SFF-2022-H1; SFF-2022-H2; SFF-2023-H1; SFF-2023-H2; SFF-2024; SFF-2025; SFF-2026,Unknown,LLM-coded,low,Q11,Topos Institute (applied category theory)
+Trustless TEE,1,1174000,SFF-2026,Unknown,LLM-coded,low,Q11,Trustless TEE; likely AI hardware verification
+UC Berkeley [HealthcareAI],1,297000,SFF-2026,Unknown,LLM-coded,low,Q11,HealthcareAI (UC Berkeley)
+University of Southern California,1,512000,SFF-2024-FlexHEGs,AI,LLM-coded,high,,Funded in SFF-2024-FlexHEGs round (hardware-enabled AI chip governance)
+University of Wisconsin - Madison,1,309000,SFF-2022-H2,Unknown,LLM-coded,low,Q11,University of Wisconsin-Madison; group unknown
+Vanderbilt University,1,38000,SFF-2024,Unknown,LLM-coded,low,Q11,Vanderbilt University; group unknown
+Viento,1,102000,SFF-2021-H1,Unknown,LLM-coded,low,Q11,Viento; unknown
+"Whylome, Inc.",1,345000,SFF-2022-H2,Unknown,LLM-coded,low,Q11,Whylome; unknown
+Worcester Polytechnic Institute & University of Massachusetts Amherst,1,233000,SFF-2024-FlexHEGs,AI,LLM-coded,high,,Funded in SFF-2024-FlexHEGs round (hardware-enabled AI chip governance)
+Zig Zag Technology,1,30000,SFF-2025,Unknown,LLM-coded,low,Q11,Zig Zag Technology; unknown
+fp21,1,172000,SFF-2023-H1,Unknown,LLM-coded,low,Q11,fp21 (foreign policy think tank)
+Longview Philanthropy,3,1372000,Initiative Committee 2024; SFF-2022-H2; SFF-2024,Unknown,LLM-coded,low,Q12,Longview Philanthropy general support
+Global Catastrophic Risk Institute,7,495000,SFF-2019-Q4; SFF-2020-H1; SFF-2020-H2; SFF-2021-H1; SFF-2022-H1; SFF-2024,General x-risk,LLM-coded,low,Q1b,GCRI general support
+Global Catastrophic Risks Institute,1,60000,SFF-2019-Q3,General x-risk,LLM-coded,low,Q1b,GCRI general support
+Future of Life Institute,6,640000,SFF-2019-Q3; SFF-2020-H1; SFF-2020-H2,Unknown,LLM-coded,low,Q2,Future of Life Institute general support
+BERI-SERI Collaboration,2,347000,SFF-2021-H1,General x-risk,LLM-coded,low,Q3,BERI collaboration with Stanford Existential Risks Initiative
+Stanford Existential Risks Initiative,2,125000,SFF-2020-H2,General x-risk,LLM-coded,low,Q3,Stanford Existential Risks Initiative
+The Rethink Priorities Existential Security Team (XST),1,49000,SFF-2023-H2,General x-risk,LLM-coded,low,Q3,RP Existential Security Team (x-risk field-building)
+University of Chicago Existential Risk Laboratory,1,380000,SFF-2023-H1,General x-risk,LLM-coded,low,Q3,UChicago Existential Risk Laboratory
+University of Chicago [Existential Risk Laboratory (XLab)],1,329000,SFF-2026,General x-risk,LLM-coded,low,Q3,UChicago Existential Risk Laboratory
+Rethink Priorities (RP) [Worldview Investigation Team],1,166000,SFF-2025,Unknown,LLM-coded,low,Q5,RP worldview investigations (cause prioritisation)
+AI Risk Mitigation Fund,1,530000,SFF-2024,AI,LLM-coded,low,Q6,Regranting fund for AI risk (possible double counting)
+EA Infrastructure Fund,1,699000,SFF-2021-H2,EA & community,LLM-coded,low,Q6,EA Infrastructure Fund (regranting)
+Long-Term Future Fund,3,2784000,SFF-2021-H1; SFF-2021-H2; SFF-2023-H2,AI,LLM-coded,low,Q6,Long-Term Future Fund (regranting; double counting)
+Manifund,1,90000,SFF-2024,Unknown,LLM-coded,low,Q6,Manifund regranting platform
+Manifold Markets,2,1584000,SFF-2022-H1; SFF-2023-H1,Not GCR,LLM-coded,low,Q7,Prediction market platform
+Metaculus,1,750000,SFF-2025,Not GCR,LLM-coded,low,Q7,Forecasting platform
+Quantified Uncertainty Research Institute,4,661000,SFF-2020-H1; SFF-2022-H1,Not GCR,LLM-coded,low,Q7,QURI: estimation tools
+Rootclaim,1,400000,Initiative Committee 2024,Not GCR,LLM-coded,low,Q7,Rootclaim: probabilistic analysis
+Sage Future,2,468000,SFF-2025; SFF-2026,Unknown,LLM-coded,low,Q7,"Sage (AI Digest, forecasting tools)"
+Social Science Prediction Platform,1,346000,SFF-2022-H1,Not GCR,LLM-coded,low,Q7,Social science prediction platform
+The Quantified Uncertainty Research Institute,1,62000,SFF-2024,Not GCR,LLM-coded,low,Q7,QURI: estimation tools
+Center For Applied Rationality,3,1467000,SFF-2019-Q3; SFF-2019-Q4; SFF-2021-H1,EA & community,LLM-coded,low,Q8,CFAR: rationality workshops
+Center for Applied Rationality,3,254000,SFF-2020-H2,EA & community,LLM-coded,low,Q8,CFAR: rationality workshops
+Center for Applied Rationality (CFAR),2,455000,SFF-2022-H2; SFF-2026,EA & community,LLM-coded,low,Q8,CFAR: rationality workshops
+Coordination Project,1,29000,SFF-2023-H2,EA & community,LLM-coded,low,Q8,CFAR-sponsored coordination project
+Elizabeth Van Nostrand c/o Lightcone,1,25000,SFF-2022-H2,EA & community,LLM-coded,low,Q8,Rationalist researcher (Lightcone)
+FABRIC,1,10000,SFF-2025,EA & community,LLM-coded,low,Q8,FABRIC: rationality camps
+LessWrong,4,1485000,SFF-2020-H1; SFF-2021-H1,EA & community,LLM-coded,low,Q8,LessWrong
+LessWrong 2.0,1,260000,SFF-2019-Q3,EA & community,LLM-coded,low,Q8,LessWrong
+Lightcone Infrastructure,9,9793000,Initiative Committee 2024; SFF-2021-H2; SFF-2022-H2; SFF-2023-H1; SFF-2023-H2; SFF-2025; SFF-2026,EA & community,LLM-coded,low,Q8,"Lightcone Infrastructure (LessWrong, Lighthaven, AI Alignment Forum)"
+Lightcone Infrastructure Inc.,1,513500,SFF-2024,EA & community,LLM-coded,low,Q8,"Lightcone Infrastructure (LessWrong, Lighthaven, AI Alignment Forum)"
+Rationality Meetups,1,140000,SFF-2022-H2,EA & community,LLM-coded,low,Q8,Rationality meetups
+Zvi Mowshowitz,1,200000,Initiative Committee 2024,EA & community,LLM-coded,low,Q8,"Zvi Mowshowitz (rationalist blogger, mostly AI)"
