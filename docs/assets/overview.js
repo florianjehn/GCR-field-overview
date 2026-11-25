@@ -24,7 +24,7 @@ async function init() {
   const SHORT = { allfed: "ALLFED", cser: "CSER", xlab: "XLab", beri: "BERI", gcri: "GCRI", fhi: "FHI" };
   const nResearchers = d3.sum(byOrg, ([, n]) => n);
   setNumber("n-people", `~${Math.round(nResearchers / 5) * 5}`, `people do research at classic or multi-hazard GCR organizations in ${PARTIAL_YEAR} ` +
-    `(${byOrg.map(([id, n]) => `${SHORT[id] || id} ${n}`).join(", ")}). A generous count, see below`);
+    `(${byOrg.map(([id, n]) => `${SHORT[id] || id} ${n}`).join(", ")}). A rough count, see the caveats below`);
   const works = pubs.by_year.find((r) => r.scope === "title_abstract" && r.year === 2025);
   setNumber("n-pubs", works ? fmtInt(works.works) : "–", `works in 2025 with "global catastrophic risk" in title or abstract (and ~${fmtInt((pubs.by_year.find((r) => r.scope === "fulltext" && r.year === 2025) || {}).works || 0)} mentioning it anywhere)`);
 }

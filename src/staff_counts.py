@@ -118,6 +118,26 @@ def assign_functions(people, rules, org_types):
     )
 
 
+def apply_person_focus(people, overrides):
+    """
+    Replaces the organization's focus for people who mainly work on another
+    focus (e.g. CSER researchers working on AI or bio), in every year.
+
+    Arguments:
+        people (pandas.DataFrame): people with org_id, name and focus
+        overrides (pandas.DataFrame): org_id, name, focus
+
+    Returns:
+        pandas.DataFrame: people with the corrected focus.
+    """
+    keys = ["org_id", "name"]
+    merged = people[keys].merge(overrides[[*keys, "focus"]], on=keys, how="left")
+    new = merged["focus"].to_numpy()
+    return people.assign(
+        focus=[n if isinstance(n, str) else o for n, o in zip(new, people["focus"])]
+    )
+
+
 def count_by_function(people):
     """
     Counts staff and scholars per organization, year and function.
@@ -171,6 +191,10 @@ def main():
         coded,
         pd.read_csv(MANUAL_DIR / "team_function_rules.csv", keep_default_na=False),
         pd.read_csv(MANUAL_DIR / "org_types.csv", keep_default_na=False),
+    )
+    coded = apply_person_focus(
+        coded,
+        pd.read_csv(MANUAL_DIR / "team_person_focus.csv", keep_default_na=False),
     )
     count_by_function(coded).to_csv(
         PROCESSED_DIR / "staff_by_function.csv", index=False

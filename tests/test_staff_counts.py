@@ -85,3 +85,23 @@ def test_apply_removals_drops_years_from_cutoff():
         ("allfed", "B", 2025),
         ("cser", "A", 2025),
     ]
+
+
+def test_apply_person_focus_overrides_named_people_only():
+    """
+    Tests that only the listed person gets the new focus.
+    """
+    from src.staff_counts import apply_person_focus
+
+    people = pd.DataFrame(
+        {
+            "org_id": ["cser", "cser"],
+            "name": ["A", "B"],
+            "focus": ["classic", "classic"],
+        }
+    )
+    overrides = pd.DataFrame([{"org_id": "cser", "name": "A", "focus": "AI or bio"}])
+    assert list(apply_person_focus(people, overrides)["focus"]) == [
+        "AI or bio",
+        "classic",
+    ]
