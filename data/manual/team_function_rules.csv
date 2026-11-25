@@ -1,0 +1,6 @@
+org_id,field,pattern,function,notes
+cser,title,Assistant Professor in Global Risk and Resilience|Postgraduate Co-ordinator,teaching,MPhil in Global Risk and Resilience (author decision)
+xlab,title,^Director$|Deputy Director,teaching,Author decision: XLab director and deputy run teaching
+xlab,title,Lead,research,
+ceri_era,title,FOUNDER|DIRECTOR|RESEARCH MANAGER,teaching,Run the fellowship (author decision)
+*,title,Administrat|Co-?ordinator|Coordinator|Operations|Finance|\bPA\b|Assistant to|Events|Office|Manager \(ITH\)|Institute Manager|Project Manager|Programme Manager|Project Coordinator|Communications? (Manager|Officer|Administrator),operations,Generic operations titles

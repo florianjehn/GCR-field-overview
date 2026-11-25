@@ -41,3 +41,7 @@ fli,section,Top Donors,affiliate,,Donors are not staff
 fli,section,^Volunteers$,volunteer,,
 fli,section,Founders|board|Advis|advisors|Scientific Ad,board,,2016-2020 'Founders' section also lists the Scientific Advisory Board (no separate heading)
 fli,section,Core Team|Meet our team|^Policy$|^Futures$|^Communications$|Operations & Grants,staff,,
+xlab,title,Student,student,,Student associates/researchers
+xlab,section,FACULTY ADVISORY,affiliate,,
+xlab,section,.*,staff,,
+ceri_era,section,.*,staff,,ERA team

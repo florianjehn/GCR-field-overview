@@ -53,6 +53,68 @@ def assign_roles(people, rules):
     return people.assign(role=[r for r, _ in roles], topic=[t for _, t in roles])
 
 
+def match_function(person, rules, default):
+    """
+    Finds a person's function (research, teaching, policy, operations).
+
+    Organization-specific rules come first, then generic rules (org_id "*"),
+    then the organization's default type.
+
+    Arguments:
+        person (pandas.Series): row with org_id and title
+        rules (pandas.DataFrame): function rules (org_id, field, pattern, function)
+        default (str): the organization's default type
+
+    Returns:
+        str: the function.
+    """
+    for org in (person["org_id"], "*"):
+        for rule in rules[rules["org_id"] == org].itertuples(index=False):
+            if re.search(rule.pattern, str(person[rule.field] or ""), flags=re.I):
+                return rule.function
+    return default
+
+
+def assign_functions(people, rules, org_types):
+    """
+    Adds function and focus columns; only staff and scholars get a function.
+
+    Arguments:
+        people (pandas.DataFrame): people with role
+        rules (pandas.DataFrame): function rules
+        org_types (pandas.DataFrame): org_id, type, focus
+
+    Returns:
+        pandas.DataFrame: people with function and focus.
+    """
+    types = org_types.set_index("org_id")
+    counted = people["role"].isin(["staff", "scholar"])
+    functions = [
+        match_function(person, rules, types["type"].get(person["org_id"], ""))
+        if is_counted
+        else ""
+        for (_, person), is_counted in zip(people.iterrows(), counted)
+    ]
+    return people.assign(
+        function=functions, focus=people["org_id"].map(types["focus"]).fillna("")
+    )
+
+
+def count_by_function(people):
+    """
+    Counts staff and scholars per organization, year and function.
+
+    Arguments:
+        people (pandas.DataFrame): people with function and focus
+
+    Returns:
+        pandas.DataFrame: org_id, year, focus, function, people.
+    """
+    counted = people[people["function"] != ""]
+    keys = ["org_id", "year", "focus", "function"]
+    return counted.groupby(keys).size().rename("people").reset_index()
+
+
 def count_by_year(people):
     """
     Counts people per organization, year and role.
@@ -81,6 +143,14 @@ def main():
     people = pd.read_csv(PROCESSED_DIR / "team_people_raw.csv", keep_default_na=False)
     rules = pd.read_csv(MANUAL_DIR / "team_role_rules.csv", keep_default_na=False)
     coded = assign_roles(people, rules)
+    coded = assign_functions(
+        coded,
+        pd.read_csv(MANUAL_DIR / "team_function_rules.csv", keep_default_na=False),
+        pd.read_csv(MANUAL_DIR / "org_types.csv", keep_default_na=False),
+    )
+    count_by_function(coded).to_csv(
+        PROCESSED_DIR / "staff_by_function.csv", index=False
+    )
     coded.to_csv(PROCESSED_DIR / "team_people.csv", index=False)
     counts = count_by_year(coded)
     counts.to_csv(PROCESSED_DIR / "staff_by_year.csv", index=False)

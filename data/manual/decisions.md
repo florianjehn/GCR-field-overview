@@ -132,3 +132,11 @@ Activities: Research / Policy & advocacy / Field-building & education / Other (o
 - Scope (author): two series with equal weight: phrase in title or abstract (224 works), and OpenAlex default search incl. full text (2,104 works, also catches passing mentions; full texts are indexed only for part of the literature).
 - Topic tags are keyword mentions in title and abstract (data/manual/publication_topics.csv), not a judgment of what a paper is mainly about. Overview papers get several tags.
 - OpenAlex without an API key allows only the first page with cursor paging, so page-number paging is used (fine up to 10,000 results). No API key was requested, to avoid sending the author's email.
+
+## Staff functions and organization types (2026-11-25)
+
+- Author: CSER, XLab, SERI and ERA do a lot of teaching; code teaching per person, not per organization.
+- Function per person (research / teaching / policy / operations), accepted proposal: CSER "Assistant Professor in Global Risk and Resilience" and "Postgraduate Co-ordinator" → teaching; XLab director and deputy director → teaching, programme/research leads → research; ERA founder, associate director and research managers (who run the fellowship) → teaching; FernUni Hagen programme → teaching; admin, coordination and operations titles → operations; everyone else → the organization's default type (data/manual/org_types.csv). SERI lists no staff.
+- Organization type and focus (data/manual/org_types.csv) follow the proposal shown to the author (research: FHI, CSER, GCRI, ALLFED, BERI, LawAI, ALTER; policy: Global Shield, FLI, CLTR, Simon Institute, Good Ancestors, ERO; teaching: XLab, ERA, FernUni). Focus "classic or multi-hazard" vs "AI or bio" follows the Q1 answers.
+- ALLFED team page: since 2021 it shows names only (titles are on individual profiles) and does not list volunteers (author pointed this out).
+- Two Coefficient grants in non-GCR funds recoded to Classic GCR: Penn State "Research on Emergency Food Resilience" (2020, $3.06M) and ALLFED Australia "Food System Resilience Initiatives" (2026, $343k). Classic GCR 2015-2025 is now $14.1M (0.9 %).
