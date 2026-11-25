@@ -1,6 +1,16 @@
 import pandas as pd
 
-from src.staff_counts import assign_functions, match_function
+from src.staff_counts import (
+    apply_person_focus,
+    apply_removals,
+    assign_functions,
+    assign_roles,
+    carry_forward,
+    count_by_function,
+    count_by_year,
+    match_function,
+    match_role,
+)
 
 RULES = pd.DataFrame(
     [
@@ -69,8 +79,6 @@ def test_apply_removals_drops_years_from_cutoff():
     """
     Tests that a removal drops the person from from_year on and nobody else.
     """
-    from src.staff_counts import apply_removals
-
     people = pd.DataFrame(
         {
             "org_id": ["allfed"] * 3 + ["cser"],
@@ -91,8 +99,6 @@ def test_apply_person_focus_overrides_named_people_only():
     """
     Tests that only the listed person gets the new focus.
     """
-    from src.staff_counts import apply_person_focus
-
     people = pd.DataFrame(
         {
             "org_id": ["cser", "cser"],
@@ -111,8 +117,6 @@ def test_carry_forward_copies_people_only_into_missing_years():
     """
     Tests that people are copied to a missing year and existing years are kept.
     """
-    from src.staff_counts import carry_forward
-
     people = pd.DataFrame(
         {
             "org_id": ["cser", "cser", "gcri", "gcri"],
@@ -131,3 +135,95 @@ def test_carry_forward_copies_people_only_into_missing_years():
         ("cser", 2026, "B"),
     ]
     assert len(out) == 6
+
+
+ROLE_RULES = pd.DataFrame(
+    [
+        {
+            "org_id": "gpi",
+            "field": "section",
+            "pattern": "Board",
+            "role": "board",
+            "topic": "",
+        },
+        {
+            "org_id": "gpi",
+            "field": "title",
+            "pattern": "AI",
+            "role": "staff",
+            "topic": "AI",
+        },
+        {
+            "org_id": "gpi",
+            "field": "section",
+            "pattern": ".*",
+            "role": "staff",
+            "topic": "",
+        },
+    ]
+)
+
+
+def test_match_role_first_rule_wins_and_unknown_fallback():
+    """
+    Tests rule order, topic passing and the fallback for unmatched people.
+    """
+    board = pd.Series({"org_id": "gpi", "section": "Board", "title": "AI lead"})
+    ai = pd.Series({"org_id": "gpi", "section": "Team", "title": "AI lead"})
+    other = pd.Series({"org_id": "cser", "section": "Team", "title": "X"})
+    assert match_role(board, ROLE_RULES) == ("board", "")
+    assert match_role(ai, ROLE_RULES) == ("staff", "AI")
+    assert match_role(other, ROLE_RULES) == ("unknown", "")
+
+
+def test_assign_roles_adds_role_and_topic():
+    """
+    Tests that assign_roles adds both columns row by row.
+    """
+    people = pd.DataFrame(
+        {"org_id": ["gpi", "gpi"], "section": ["Board", "Team"], "title": ["", ""]}
+    )
+    out = assign_roles(people, ROLE_RULES)
+    assert list(out["role"]) == ["board", "staff"]
+    assert list(out["topic"]) == ["", ""]
+
+
+def test_count_by_function_skips_people_without_function():
+    """
+    Tests grouping by organization, year, focus, function and source.
+    """
+    people = pd.DataFrame(
+        {
+            "org_id": ["cser"] * 3,
+            "year": [2025] * 3,
+            "focus": ["classic"] * 3,
+            "function": ["research", "research", ""],
+            "source": ["team page"] * 3,
+        }
+    )
+    out = count_by_function(people)
+    assert out.to_dict("records") == [
+        {
+            "org_id": "cser",
+            "year": 2025,
+            "focus": "classic",
+            "function": "research",
+            "source": "team page",
+            "people": 2,
+        }
+    ]
+
+
+def test_count_by_year_one_column_per_role():
+    """
+    Tests the wide table of people per organization, year and role.
+    """
+    people = pd.DataFrame(
+        {
+            "org_id": ["cser"] * 3,
+            "year": [2025] * 3,
+            "role": ["staff", "staff", "board"],
+        }
+    )
+    out = count_by_year(people)
+    assert out.loc[0, "staff"] == 2 and out.loc[0, "board"] == 1

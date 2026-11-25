@@ -32,9 +32,6 @@ const ENTITY_COLORS = {
     "Research": COLORS.aubergine, "Teaching": COLORS.ochre,
     "Policy": COLORS.slate, "Operations": COLORS.context,
   },
-  focus: {
-    "Classic or multi-hazard": COLORS.aubergine, "AI or bio": COLORS.slate,
-  },
 };
 
 const fmtMoney = (v) => {

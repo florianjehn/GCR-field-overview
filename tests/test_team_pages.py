@@ -1,4 +1,11 @@
-from src.team_pages import clean_name, extract_people, slug_to_name, slugify
+from src.team_pages import (
+    clean_name,
+    clean_text,
+    extract_people,
+    looks_like_name,
+    slug_to_name,
+    slugify,
+)
 
 LINK_PAGE = """
 <h2>Research Staff</h2>
@@ -25,6 +32,8 @@ def test_clean_name_removes_degrees_and_notes():
     assert clean_name("Seth Baum, Ph.D.") == "Seth Baum"
     assert clean_name("Andrew Critch (~1 hour/week)") == "Andrew Critch"
     assert clean_name("Dr. Jane Doe") == "Jane Doe"
+    assert clean_name("Assoc Prof William MacAskill") == "William MacAskill"
+    assert clean_name("Mr Luke Muehlhauser") == "Luke Muehlhauser"
 
 
 def test_slug_helpers():
@@ -90,3 +99,19 @@ def test_extract_people_optional_title_group():
         ("Max Tegmark", "Professor, MIT"),
         ("Lucas Perry", ""),
     ]
+
+
+def test_clean_text_strips_tags_and_entities():
+    """
+    Tests tag and entity removal and whitespace collapsing.
+    """
+    assert clean_text("<b>Jane</b>&nbsp;&amp;\n  Doe") == "Jane & Doe"
+
+
+def test_looks_like_name():
+    """
+    Tests the loose name check used by the name filter.
+    """
+    assert looks_like_name("Jane Doe")
+    assert not looks_like_name("Jane")
+    assert not looks_like_name("Room 101 Main")

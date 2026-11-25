@@ -33,7 +33,7 @@ HREF = r"""href=(?:"([^"]*)"|'([^']*)'|([^\s>]+))"""
 LINK_PATTERN = re.compile(r"<a\b[^>]*" + HREF + r"[^>]*>(.*?)</a>", re.S | re.I)
 HEADING_PATTERN = r"<h[1-4]\b[^>]*>(.*?)</h[1-4]>"
 NAME_NOISE = re.compile(
-    r"\(.*?\)|,?\s*\b(Ph\.?\s?D|MD|MPH|MSc|M\.?Phil|DPhil|J\.?D)\b\.?|^(Dr|Prof|Professor)\.?\s+",
+    r"\(.*?\)|,?\s*\b(Ph\.?\s?D|MD|MPH|MSc|M\.?Phil|DPhil|J\.?D)\b\.?|^((Assoc(iate)?|Assistant)\s+)?(Dr|Prof|Professor|Mr|Ms|Mrs)\.?\s+",
     re.I,
 )
 

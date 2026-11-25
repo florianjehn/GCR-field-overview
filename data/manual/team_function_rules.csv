@@ -7,5 +7,4 @@ allfed,name,^(Noah Wescombe)$,policy,Author: policy work
 allfed,name,^(Amanda Cassidy|Carina Denkenwolf|Bianca Cruz|Andreea Petre|Maciej Pilachowski|Jane Redfern|Olufunke Femi-Ojo|Adam Steinberg|Pinkeshkumar Attarwala|Mohammadreza Ebrahimnataj Tiji)$,operations,Author: not research (ALLFED page shows no titles; author named the researchers)
 gpi,section,Operations,operations,
 rcg,title,operaciones|Coordinador de proyectos,operations,
-rcg,title,Investigad,research,
 *,title,Chief of Staff|Administrat|Co-?ordinator|Coordinator|Operations|Finance|\bPA\b|Assistant to|Events|Office|Manager \(ITH\)|Institute Manager|Project Manager|Programme Manager|Project Coordinator|Communications? (Manager|Officer|Administrator),operations,Generic operations titles

@@ -24,7 +24,6 @@ ALGOLIA_INDEX = "coefficientgiving"
 QUERY_URL = f"https://{ALGOLIA_APP_ID}-dsn.algolia.net/1/indexes/{ALGOLIA_INDEX}/query"
 MAX_HITS_PER_PAGE = 1000
 LIST_SEPARATOR = " | "
-FIRST_YEAR = 2010
 RAW_DIR = Path("data/raw")
 PROCESSED_DIR = Path("data/processed")
 

@@ -1,12 +1,10 @@
 [project]
-name = "project-name"
+name = "gcr-field-overview"
 version = "0.1.0"
-description = "A scientific Python project"
+description = "Funding, staff and publications of the global catastrophic risk field, with an interactive site"
 requires-python = ">=3.13"
 dependencies = [
     "pandas>=2.0",
-    "numpy>=1.26",
-    "matplotlib>=3.8",
 ]
 
 [dependency-groups]

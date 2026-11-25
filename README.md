@@ -40,7 +40,7 @@ Every grant gets two labels:
 - Hazard category: AI, Bio, Classic GCR (nuclear, volcanic, space weather, food resilience, …), General x-risk (cross-cutting), Geoengineering, Climate, Forecasting, plus categories excluded from GCR totals: EA & community, Not GCR, Regrant (money passed to another fund whose grants are counted there), Duplicate (same money already counted under another funder) and Unknown. A grant can be split, e.g. `AI=0.5;Bio=0.5`.
 - Activity (GCR-relevant grants only): Research, Policy & advocacy, Field-building & education, Other (operations, media, regranting), Unknown. The website calls grants outside the GCR categories or with unknown activity "Unknown/not assessed".
 
-Each label carries a coding source (`funder-label`, `LLM-coded`, `human-coded`), a confidence and a rationale, in `data/processed/grants_classified.csv`. For the hazard category, 2,709 grants follow the funder label, 1,404 are LLM-coded and 387 human-coded. For the activity, 2,045 are LLM-coded and 174 human-coded.
+Each label carries a coding source (`funder-label`, `LLM-coded`, `human-coded`), a confidence and a rationale, in `data/processed/grants_classified.csv`. For the hazard category, 2,707 grants follow the funder label, 1,406 are LLM-coded and 387 human-coded. For the activity, 2,047 are LLM-coded and 174 human-coded.
 
 ### Steps
 
@@ -60,6 +60,7 @@ Each label carries a coding source (`funder-label`, `LLM-coded`, `human-coded`),
 - A grant: its `source_url` in `data/processed/grants_classified.csv` (Coefficient links to the individual grant page; SFF, LTFF and FLI link to the list page; search for the recipient).
 - Why it has its category: `coding_source`, `rationale` and `question_id` in the same file; the question and the author's answer in `data/manual/decisions.md`.
 - Funding totals by category: `data/processed/grants_by_category.csv` (split grants appear once per category with `amount_usd_share`).
+- That nothing got lost on the way: `tests/test_data_integrity.py` checks that the processed Coefficient and LTFF tables add up to the raw downloads, that every hand code is applied, and that the site data has every grant with an amount (one Coefficient investment, Impossible Foods 2016, has no stated amount).
 
 ## Robustness of the headline numbers
 
@@ -88,12 +89,12 @@ So the choices do matter for how big the small categories are. The classic-GCR t
 - Staff per year: one archived snapshot per year of each team page (closest to 1 July). `data/manual/team_pages.csv` says how names are found on each site, `team_role_rules.csv` maps section names and job titles to roles (staff, scholar, student, volunteer, affiliate, board, alumni). Every person row links to its snapshot. Team pages are not payrolls: they list part-timers and sometimes volunteers, and layout changes can look like hires or cuts (e.g. GCRI stopped listing associates in 2019).
 - Scope of the staff page: the author's hand-picked list of main GCR organizations working on classic or several risks (FHI, CSER, GCRI, ALLFED, BERI, Global Priorities Institute, Odyssean Institute, Adapt Research, Global Shield, Riesgos Catastróficos Globales, XLab, SERI, FernUni Hagen programme). AI- or bio-focused organizations are still in the data (`staff_by_function.csv`) but not shown.
 - Function per person (research, teaching, policy, operations) in `data/processed/staff_by_function.csv`: org-specific and generic title rules in `data/manual/team_function_rules.csv` (e.g. CSER's MPhil teaching posts, admin titles as operations), otherwise the organization's type in `data/manual/org_types.csv`, which also sets its focus (classic or multi-hazard vs AI or bio).
-- Manual corrections: `team_additions.csv` adds people the parser can't read (FHI's director 2015–2021), `team_removals.csv` drops people the author knows had left although still listed (ALLFED, CSER). `staff_carry_forward.csv` copies the 2025 people of CSER, GCRI and BERI to 2026, where no team page was readable (marked "assumed same as 2025"). `team_person_focus.csv` moves CSER researchers who mainly work on AI or bio to the AI or bio focus. ALLFED's page has no job titles, so the author named who does research (`team_function_rules.csv`). BERI's embedded university staff come from the count stated on its team page.
-- Parsing was validated by scanning every snapshot for name-like text the parser missed; what is still not captured is mainly boards, advisors, donors and contractors (details in `data/manual/decisions.md`).
+- Manual corrections: `team_additions.csv` adds people the parser can't read (FHI's director 2015–2021, Adapt Research, SERI's 2026 staff page), `team_removals.csv` drops people the author knows had left although still listed (ALLFED, CSER). `staff_carry_forward.csv` copies a team to years without a readable page (CSER, GCRI and BERI 2025 → 2026 on the author's instruction; Riesgos Catastróficos Globales 2023 → 2024 and 2025), marked "assumed same as …". `team_person_focus.csv` moves people who mainly work on AI or bio (four at CSER, Odyssean's AI safety lead) to the AI or bio focus. ALLFED's page has no job titles, so the author named who does research (`team_function_rules.csv`). BERI's embedded university staff come from the count stated on its team page.
+- Parsing was validated by scanning every snapshot for name-like text the parser missed; what is still not captured is mainly boards, advisors, donors and contractors (details in `data/manual/decisions.md`). `tests/test_data_integrity.py` checks on every run that each manual correction names a real person, that no role or function rule is dead, and that removals were applied.
 
 ## Publications
 
-`src/publications.py` downloads all OpenAlex works with the phrase "global catastrophic risk" (plurals match), in two scopes with equal weight: in title or abstract (224 works), and anywhere including full text (2,104 works). Topic mentions (AI, bio, nuclear, volcanic, space, food, climate) are keyword matches in title and abstract.
+`src/publications.py` downloads all OpenAlex works with the phrase "global catastrophic risk" (plurals match), in two scopes with equal weight: in title or abstract (224 works), and anywhere including full text (2,104 works). Ten works have no publication year in OpenAlex, so the yearly series add up to 223 and 2,095. Topic mentions (AI, bio, nuclear, volcanic, space, food, climate) are keyword matches in title and abstract.
 
 ## Interactive site
 
@@ -105,6 +106,7 @@ So the choices do matter for how big the small categories are. The classic-GCR t
 - LTFF and FLI publish only part of their grants; SFF publishes recommendations, not payouts.
 - 2026 is partial (to November) and recent years are affected by publication lags.
 - Amounts are nominal USD (no inflation adjustment yet).
+- Staff counts come from team pages of a hand-picked set of organizations; pages list part-timers, lag behind hires and departures, and some years have no archived page.
 
 ## Repository layout
 

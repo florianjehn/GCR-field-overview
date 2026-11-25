@@ -56,6 +56,7 @@ def funding_data():
     grants["year"] = grants["award_year"].astype(int)
     grants["amount"] = grants["amount_usd_share"].round(0)
     grants["activity"] = grants["activity"].fillna("n/a")
+    grants["recipient"] = grants["recipient"].fillna("(not named by funder)")
     grants["split"] = grants["share"] < 1
     columns = [
         "funder",
