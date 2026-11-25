@@ -100,9 +100,7 @@ function stackedBars(container, rows, keys, colorOf, opts = {}) {
   }
   const series = d3.stack().keys(keys)(table);
   const x = d3.scaleBand().domain(years).range([m.left, width - m.right]).padding(0.25);
-  const reference = opts.percent ? [] : (opts.reference || []);
-  const ymax = Math.max(opts.ymax || 0, d3.max(series, (s) => d3.max(s, (d) => d[1])) || 1,
-    d3.max(reference, (r) => r.value) || 0);
+  const ymax = Math.max(opts.ymax || 0, d3.max(series, (s) => d3.max(s, (d) => d[1])) || 1);
   const y = d3.scaleLinear().domain([0, opts.percent ? 1 : ymax]).nice().range([height - m.bottom, m.top]);
   const fmt = opts.percent ? fmtPct : (opts.format || fmtMoney);
 
@@ -120,13 +118,6 @@ function stackedBars(container, rows, keys, colorOf, opts = {}) {
     .attr("y1", y(0)).attr("y2", y(0));
 
   const tip = tooltip();
-  // Optional pale reference bars behind the stack (e.g. all GCR funding).
-  svg.append("g").selectAll("rect").data(reference.filter((r) => years.includes(r.year))).join("rect")
-    .attr("class", "reference").attr("x", (r) => x(r.year)).attr("width", x.bandwidth())
-    .attr("y", (r) => y(r.value)).attr("height", (r) => Math.max(0, y(0) - y(r.value)))
-    .on("mousemove", (event, r) => tip.show(event,
-      `<div class="t-head">${yearLabel(r.year)} · ${opts.referenceLabel || "Reference"}</div>${fmt(r.value)}`))
-    .on("mouseleave", () => tip.hide());
   svg.append("g").selectAll("g").data(series).join("g").attr("fill", (s) => colorOf(s.key))
     .selectAll("rect").data((s) => s.map((d) => ({ ...d, key: s.key }))).join("rect")
     .attr("x", (d) => x(d.data.year)).attr("width", x.bandwidth())

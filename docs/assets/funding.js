@@ -20,7 +20,7 @@ const PRESETS = {
 
 const state = {
   split: "funder", display: "amount", funders: [...FUNDERS], topics: ["Classic GCR"],
-  kinds: [...KINDS], yearFrom: 2015, yearTo: PARTIAL_YEAR, wider: false, reference: true,
+  kinds: [...KINDS], yearFrom: 2015, yearTo: PARTIAL_YEAR, wider: false,
 };
 let grants = [];
 
@@ -39,17 +39,6 @@ function colorOf(k) {
   const map = state.split === "funder" ? ENTITY_COLORS.funder
     : state.split === "topic" ? ENTITY_COLORS.topic : ENTITY_COLORS.activity;
   return map[k] || COLORS.context;
-}
-
-const REFERENCE_LABEL = "All GCR funding (incl. AI + bio), for comparison";
-
-// Pale bars with all GCR funding per year from the selected funders, shown
-// when only part of the GCR topics is selected.
-function referenceRows() {
-  const partial = GCR_TOPICS.some((t) => !state.topics.includes(t));
-  if (!state.reference || !partial) return [];
-  const gcr = grants.filter((g) => GCR_CATEGORIES.includes(g.category) && state.funders.includes(g.funder));
-  return d3.rollups(gcr, (v) => d3.sum(v, (g) => g.amount), (g) => g.year).map(([year, value]) => ({ year, value }));
 }
 
 function filtered() {
@@ -76,16 +65,11 @@ function draw() {
   const rows = filtered();
   const keys = splitKeys();
   const chartRows = rows.map((g) => ({ year: g.year, key: splitKey(g), value: g.amount }));
-  const reference = referenceRows();
   stackedBars(document.getElementById("chart"), chartRows, keys, colorOf, {
     yearFrom: state.yearFrom, yearTo: state.yearTo, percent: state.display === "share",
-    label: "Funding per year", reference, referenceLabel: REFERENCE_LABEL,
+    label: "Funding per year",
   });
   legend(document.getElementById("legend"), keys, colorOf);
-  if (reference.length && state.display !== "share") {
-    document.getElementById("legend").insertAdjacentHTML("beforeend",
-      `<span><i class="reference-swatch"></i>${REFERENCE_LABEL}</span>`);
-  }
   summary(rows);
   renderTable(document.getElementById("table"), rows, [
     { key: "year", label: "Year", num: true },
@@ -120,7 +104,6 @@ async function init() {
   const onSplit = (v) => { state.split = v; draw(); };
   segmented(document.getElementById("c-split"), [["funder", "Funder"], ["topic", "Topic"], ["activity", "Kind"]], state.split, onSplit);
   segmented(document.getElementById("c-display"), [["amount", "USD"], ["share", "Share"]], state.display, (v) => { state.display = v; draw(); });
-  segmented(document.getElementById("c-reference"), [["on", "Show"], ["off", "Hide"]], "on", (v) => { state.reference = v === "on"; draw(); });
   const from = document.getElementById("f-from"), to = document.getElementById("f-to");
   from.value = state.yearFrom; to.value = state.yearTo;
   from.addEventListener("change", () => { state.yearFrom = +from.value; draw(); });
