@@ -1,179 +1,98 @@
-# Scientific-Repository-Template
+# GCR Field Overview
 
-A template for scientific Python projects. Use this as a starting point by clicking **"Use this template"** in the top right.
+Tracks how the field of global catastrophic risk (GCR) research has developed over roughly the last ten years: who funds it, how much, for which hazards and which kind of work. The goal is numbers that are solid and easy to verify: every grant row links to its public source, and every classification records who made it and why.
 
----
+Status: grant funding (module 1) is complete for four funders. Organisations, staff and publications are still to come.
 
-## How to use this template
-
-1. Create a new repository from this template.
-2. Update `pyproject.toml` — change the `name`, `description`, and dependencies.
-3. Update `README.md` — describe your specific project.
-4. Set up your environment: `uv sync`
-5. Start coding in `src/`, write tests in `tests/`, and put notebooks in `notebooks/`.
-
----
-
-## Python Style Guide
-
-All code should follow the [PEP 8 Style Guide](https://peps.python.org/pep-0008/). Key rules:
-
-- **Document every function** with a docstring in this format:
-
-```python
-def count_line(f, line):
-    """
-    Counts the number of times a line occurs. Case-sensitive.
-
-    Arguments:
-        f (file): the file to scan
-        line (str): the line to count
-
-    Returns:
-        int: the number of times the line occurs.
-    """
-```
-
-- **Write decoupled code**: functions do exactly one thing and are as short as possible. See [here](https://goodresearch.dev/decoupled.html).
-- **Naming conventions**:
-  - `snake_case` for variables, functions, and modules
-  - `CamelCase` for class names
-  - `Camel Case With Spaces.ipynb` for Jupyter notebooks
-- **Delete dead code.** Do not comment out unused code — use git to find it again.
-- **Most code lives in `.py` files.** Notebooks (in `notebooks/`) are for final visualizations and explanations only.
-
-Code is automatically checked with [Ruff](https://docs.astral.sh/ruff/) (formatting, linting, and import sorting) on every push via GitHub Actions. If linting fails, merges are blocked. Pre-commit hooks run Ruff locally before each commit — install with `uv run pre-commit install`.
-
----
-
-## Environment Management
-
-Every project uses its own virtual environment managed by **[UV](https://docs.astral.sh/uv/)**.
+## Quick start
 
 ```bash
-# Install UV
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# Set up the project environment
 uv sync
-
-# Run code
-uv run python src/my_module.py
-
-# Run tests
-uv run pytest
-
-# Add a dependency
-uv add pandas
-```
-
-All dependencies are defined in `pyproject.toml`. The `.python-version` file pins the Python version.
-
-Do **not** use conda, mamba, or bare pip for this project.
-
----
-
-## Testing
-
-Use [pytest](https://docs.pytest.org/) for all tests. Every reasonable function should have a test. Tests live in `tests/` and are automatically run on every push.
-
-```bash
+uv run python3 -m src.coefficient_grants   # download Coefficient Giving grants
+uv run python3 -m src.sff_grants           # download SFF recommendations
+uv run python3 -m src.ltff_grants          # download LTFF grants
+uv run python3 -m src.fli_grants           # download FLI grants
+uv run python3 -m src.classify_grants      # classify everything -> data/processed/
+uv run python3 -m src.sensitivity          # robustness of headline numbers -> results/
 uv run pytest
 ```
 
-See `tests/test_function_to_test.py` for an example. Add a testing badge to your repository README by changing the URL:
+Downloads are dated (`data/raw/`) so results can be reproduced from the same snapshot.
 
-![Testing](https://github.com/your-org/your-repo/actions/workflows/testing.yml/badge.svg)
+## Data sources
 
----
+| Funder | Source | Grants | Years | Notes |
+|---|---|---|---|---|
+| Coefficient Giving (formerly Open Philanthropy) | Public Algolia search index behind [coefficientgiving.org/funds](https://coefficientgiving.org/funds/) (the site has no CSV export and blocks scripts; the index is what every browser loads) | 3,067 | 2012–2026 | Complete per the index's own counts. Each grant links to its page. |
+| Survival and Flourishing Fund (SFF) | [survivalandflourishing.fund/recommendations](https://survivalandflourishing.fund/recommendations) | 586 | 2019–2026 | Recommendations, not confirmed payouts. Matching pledges (‡, conditional) kept separately and excluded from totals. Sum ≈ SFF's own "~$216MM". |
+| Long-Term Future Fund (LTFF) | JSON embedded in [funds.effectivealtruism.org/grants](https://funds.effectivealtruism.org/grants) | 700 | 2017–2026 | Published grants only; totals are a lower bound (e.g. 2023: $5.2M here vs. higher reported payouts). |
+| Future of Life Institute (FLI) | [futureoflife.org/grant-program/…](https://futureoflife.org/our-work/grantmaking-work/) programme pages | 147 | 2015–2025 | Yearly pages "highlight some" grants, so a lower bound. Some award years are inferred (`data/manual/fli_programs.csv`). |
 
-## Plotting Style
+## How grants were classified
 
-All plots use the project style sheet located at `style/scientific.mplstyle`:
+Every grant gets two labels:
 
-```python
-import matplotlib.pyplot as plt
+- **Hazard category**: AI, Bio, Classic GCR (nuclear, volcanic, space weather, food resilience, …), General x-risk (cross-cutting), Geoengineering, Climate, Forecasting, plus categories excluded from GCR totals: EA & community, Not GCR, Regrant (money passed to another fund whose grants are counted there), Duplicate (same money already counted under another funder) and Unknown. A grant can be split, e.g. `AI=0.5;Bio=0.5`.
+- **Activity** (GCR-relevant grants only): Research, Policy & advocacy, Field-building & education, Other (operations, media, regranting), Unknown.
 
-plt.style.use("style/scientific.mplstyle")
+Each label carries a **coding source** (`funder-label`, `LLM-coded`, `human-coded`), a confidence and a rationale, in `data/processed/grants_classified.csv`. Current counts: hazard category 2,709 funder-label, 1,404 LLM-coded, 387 human-coded; activity 2,045 LLM-coded, 174 human-coded.
+
+### Steps
+
+1. **Funder labels first.** Coefficient's own funds are used where they are unambiguous: "Navigating Transformative AI" → AI, "Biosecurity & Pandemic Preparedness" (and its science sub-fund) → Bio, non-GCR funds (animal welfare, global health, …) → Not GCR. One grant filed by the funder under AI but clearly about farm animals was corrected.
+2. **Hand coding where labels are not enough.** Coefficient's "Global Catastrophic Risks Opportunities" fund turned out to be mostly EA/longtermist community building, so all 352 grants in it (plus Forecasting and Other Areas) were coded one by one from title and recipient. All 390 SFF organisations were coded by organisation (SFF grants are almost all "general support"), with a purpose-level override where the stated purpose differs (e.g. flexHEG prototyping → AI) and the dedicated SFF-2024-FlexHEGs round → AI. All 700 LTFF grants were coded from their descriptions (keyword defaults, then about 130 hand corrections after reading every description). All 147 FLI grants were coded by hand.
+3. **Questions to the author whenever unsure.** Every grant where the coding was not clearly right got a question id instead of a silent guess. Questions were asked one by one in the chat; answers and the reasoning are logged verbatim in [`data/manual/decisions.md`](data/manual/decisions.md), and affected rows switched to `human-coded`. Questions asked:
+   - **Q1–Q12 (hazard categories):** multi-hazard organisations (CSER, FHI, CLTR, GCRI, …), FLI general support, student x-risk programmes, climate and geoengineering, global priorities research, regranting, forecasting, the rationality community, outreach media, mixed AI/bio field-building, Longview, and about 20 individual organisations with unclear focus (the rest left Unknown at the author's request).
+   - **A1–A6 (activity):** policy think tanks, mixed-mission organisations (Blueprint, Mirror Biology Dialogues Fund, CAIS, SL5 Task Force), evals/demonstration groups (Apollo, Palisade, Sage), and organisations with unknown activity.
+   - **FLI/LTFF:** FLI–SFF double counting, F1–F2 (two FLI programmes), L1–L3 (eight LTFF grants).
+4. **Rules carried over without asking.** Once the author answered a question, the same rule was applied to equivalent grants at other funders (e.g. student x-risk programmes → General x-risk; CFAR/rationality → EA & community). These are listed at the end of `decisions.md`.
+5. **Activity coding.** Ordered keyword rules on grant titles ([`data/manual/activity_rules.csv`](data/manual/activity_rules.csv)), then recipient defaults for "general support" grants ([`activity_recipient_codes.csv`](data/manual/activity_recipient_codes.csv)), then grant-level overrides ([`activity_grant_overrides.csv`](data/manual/activity_grant_overrides.csv)). Every keyword match was reviewed by hand; misfires (e.g. "rare *event*", "*policy* network", "AI governance *work*shop") led to rule fixes or overrides, and each fix was checked by diffing all grants before and after. A title stating research is coded Research even at think tanks.
+6. **Double counting.** Money that passes through two funders is counted once: Coefficient and SFF grants to LTFF/EA Funds and other regranting funds are marked Regrant; Coefficient's 2015 grant to FLI's AI programme is marked Regrant because FLI's individual grants are included; FLI's 2023 grants that are FLI's share of SFF recommendations are marked Duplicate.
+7. **Sensitivity analysis** ([`src/sensitivity.py`](src/sensitivity.py), [`results/sensitivity.csv`](results/sensitivity.csv)): each decision is replaced by its main alternative and the headline numbers recomputed. See below.
+
+### Where to check a number
+
+- A grant: its `source_url` in `data/processed/grants_classified.csv` (Coefficient links to the individual grant page; SFF, LTFF and FLI link to the list page; search for the recipient).
+- Why it has its category: `coding_source`, `rationale` and `question_id` in the same file; the question and the author's answer in `data/manual/decisions.md`.
+- Funding totals by category: `data/processed/grants_by_category.csv` (split grants appear once per category with `amount_usd_share`).
+
+## Robustness of the headline numbers
+
+Headline metrics over 2015–2025 (nominal USD, Coefficient + SFF + LTFF + FLI, excluding EA & community, Not GCR, Regrant, Duplicate):
+
+| Scenario | Classic GCR total ($M) | Classic GCR share of GCR funding | Non-AI, non-bio GCR per year 2023–25 ($M) | AI share 2025 |
+|---|---|---|---|---|
+| Baseline | 11.0 | 0.7% | 5.9 | 83% |
+| Multi-hazard orgs (CSER, FHI, GCRI, …) counted as classic GCR | 36.1 | 2.3% | 5.9 | 83% |
+| Climate + geoengineering counted as classic GCR | 27.3 | 1.7% | 5.9 | 83% |
+| All Unknown money assumed classic GCR | 33.0 | 2.1% | 9.9 | 83% |
+| All three together (most generous) | 74.2 | 4.7% | 9.9 | 83% |
+| Longview general support counted as General x-risk | 11.0 | 0.7% | 13.0 | 83% |
+| Student x-risk programmes counted as EA & community | 11.0 | 0.7% | 3.4 | 83% |
+| Global priorities research counted as General x-risk | 11.0 | 0.7% | 7.9 | 83% |
+| Generic forecasting counted as Not GCR | 11.0 | 0.7% | 5.9 | 86% |
+
+The remaining alternatives (FLI split, regrants, Lightcone, media, mixed field-building, 50/50 splits, FLI duplicates) change no metric by more than about half a percentage point (largest: mixed field-building split 50/50, AI share 2025 −0.5 points) and leave the yearly non-AI, non-bio amount unchanged; full table in `results/sensitivity.csv`.
+
+Conclusion: the choices matter for the absolute size of the small categories. The classic-GCR total varies by up to a factor of about seven ($11M to $74M), and the yearly non-AI, non-bio amount for 2023–25 ranges from $3.4M to $13.0M depending on whether student programmes and Longview count. They do not change the overall picture: classic GCR receives at most a few percent of GCR philanthropy, while AI receives over 80% in 2025.
+
+## Known gaps
+
+- Only four philanthropic funders; government and academic funding are not included.
+- LTFF and FLI publish only part of their grants; SFF publishes recommendations, not payouts.
+- 2026 is partial (to November) and recent years are affected by publication lags.
+- Amounts are nominal USD (no inflation adjustment yet).
+
+## Repository layout
+
+```
+data/raw/          dated raw downloads
+data/processed/    tidy grant tables and classified outputs
+data/manual/       hand codes, rules and the decision log
+results/           analysis outputs (sensitivity table)
+src/               download, classification and analysis code
+tests/             pytest suite
+style/             matplotlib style sheet
 ```
 
-Key properties: primary color `#573280`, figure size 10×4, display DPI 150, save DPI 300.
-
----
-
-## Map Plots
-
-For published maps, use the **Winkel Tripel projection** and the included border file at `data/border.geojson`:
-
-```python
-import geopandas as gpd
-import matplotlib.pyplot as plt
-
-plt.style.use("style/scientific.mplstyle")
-
-def plot_winkel_tripel_map(ax):
-    border_geojson = gpd.read_file("data/border.geojson")
-    border_geojson.plot(ax=ax, edgecolor="black", linewidth=0.1, facecolor="none")
-    ax.set_axis_off()
-
-world = gpd.read_file(gpd.datasets.get_path("naturalearth_lowres"))
-world = world.to_crs("+proj=wintri")
-ax = world.plot()
-plot_winkel_tripel_map(ax)
-plt.show()
-```
-
-**Note**: Winkel Tripel is for visual display only — use an appropriate projection for spatial calculations.
-
----
-
-## Documentation
-
-- Every repository needs a `README.md` that explains:
-  - What the repository is for
-  - Installation instructions
-  - How the code is organized
-  - Links to papers (if applicable)
-  - License
-- Consider adding a tutorial notebook in `notebooks/` to demonstrate usage.
-
----
-
-## Making the Repository Citable
-
-Use [Zenodo](https://zenodo.org/) to create a DOI for your repository. Once activated, add a DOI badge to your README:
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
-
----
-
-## Project Structure
-
-```
-├── data/               # Raw input data (usually not synced to git for large files)
-│   └── border.geojson  # Winkel Tripel map border
-├── docs/               # Documentation files
-├── notebooks/          # Jupyter notebooks for visualization and explanation
-├── results/            # Output files: figures, tables, checkpoints (large files gitignored)
-├── src/                # Reusable Python modules (imported by notebooks and scripts)
-├── style/
-│   └── scientific.mplstyle  # Matplotlib style sheet
-├── tests/              # pytest test suite
-├── .python-version     # Python version for UV
-├── pyproject.toml      # Project metadata and dependencies
-└── CLAUDE.md           # Rules for AI coding assistants
-```
-
----
-
-## License
-
-[Apache 2.0](LICENSE) — free to use with liability protection.
-
----
-
-## Further Reading
-
-- [Good Research Code Handbook](https://goodresearch.dev/index.html)
-- [Best Practices for Scientific Computing](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745)
-- [UV Documentation](https://docs.astral.sh/uv/)
+Coding conventions are in [`CLAUDE.md`](CLAUDE.md). License: [Apache 2.0](LICENSE).
