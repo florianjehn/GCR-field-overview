@@ -25,6 +25,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from src.classify_activity import classify_activity, load_activity_inputs
+
 PROCESSED_DIR = Path("data/processed")
 MANUAL_DIR = Path("data/manual")
 AI_FUNDS = ("Navigating Transformative AI",)
@@ -212,12 +214,14 @@ def main():
     combined = pd.concat(
         [coefficient[OUTPUT_COLUMNS], sff[OUTPUT_COLUMNS]], ignore_index=True
     )
+    combined = classify_activity(combined, *load_activity_inputs())
     combined.to_csv(PROCESSED_DIR / "grants_classified.csv", index=False)
     long = explode_categories(combined)
     long.to_csv(PROCESSED_DIR / "grants_by_category.csv", index=False)
     print(f"Wrote {len(combined)} grants, {len(long)} category rows")
     totals = long.pivot_table("amount_usd_share", "category", "funder", "sum")
     print((totals / 1e6).round(1))
+    print(combined["activity"].value_counts())
 
 
 if __name__ == "__main__":
