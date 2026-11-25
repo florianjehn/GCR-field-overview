@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GCR field overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site">
+    <a class="name" href="index.html">GCR field overview</a>
+    <nav>
+      <a href="index.html" aria-current="page">Overview</a>
+      <a href="funding.html">Funding</a>
+      <a href="staff.html">Staff</a>
+      <a href="publications.html">Publications</a>
+    </nav>
+  </header>
+  <main>
+    <p class="label kicker">Global catastrophic risk research</p>
+    <h1>How is the field doing?</h1>
+    <p class="lead prose">Research on global catastrophes grew a lot over the last decade. But most of the money now goes to AI, and the classic topics (nuclear war, volcanoes, space weather, food in a catastrophe) are running on fumes. This site collects the numbers behind that: who funds the work, how many people do it and how much gets published. Everything links back to its source, so you can check it.</p>
+
+    <div class="numbers">
+      <div class="number" id="n-classic"><div class="octagon">…</div><p></p></div>
+      <div class="number key" id="n-share"><div class="octagon">…</div><p></p></div>
+      <div class="number" id="n-ai"><div class="octagon">…</div><p></p></div>
+      <div class="number" id="n-pubs"><div class="octagon">…</div><p></p></div>
+    </div>
+
+    <h2>Explore</h2>
+    <div class="cards">
+      <div class="card">
+        <h3><a href="funding.html">Funding</a></h3>
+        <p>About 4,500 grants from Coefficient Giving (formerly Open Philanthropy), SFF, LTFF and FLI. Split them by funder, year, topic and kind of work.</p>
+      </div>
+      <div class="card">
+        <h3><a href="staff.html">Staff</a></h3>
+        <p>People on the team pages of CSER, FHI, GCRI, ALLFED, BERI and others, year by year from archived snapshots.</p>
+      </div>
+      <div class="card">
+        <h3><a href="publications.html">Publications</a></h3>
+        <p>Works in OpenAlex that use the phrase "global catastrophic risk", and which hazards they mention.</p>
+      </div>
+    </div>
+
+    <h2>How this was made</h2>
+    <p class="prose">Grants were classified by topic and kind of work with a mix of the funders' own labels, rules and hand coding, and every unclear case went to a human decision. Each grant records who coded it and why. The full method, the decision log and a sensitivity analysis (how much the numbers move if you decide differently) are in the <a href="https://github.com/florianjehn/GCR-field-overview">repository</a>.</p>
+    <p class="note prose">The caveats in short: only four philanthropic funders, no government money. LTFF and FLI publish only part of their grants. SFF figures are recommendations. Team pages are not payrolls. Amounts are nominal USD.</p>
+  </main>
+  <footer class="site">Built from the repository data · <span id="built"></span></footer>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="assets/common.js"></script>
+  <script src="assets/overview.js"></script>
+  <script>loadJSON("meta.json").then((m) => { document.getElementById("built").textContent = `data from ${m.built}`; });</script>
+</body>
+</html>

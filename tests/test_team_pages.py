@@ -63,3 +63,11 @@ def test_extract_people_element_mode_skips_section_labels():
         ("Leadership Team", "Seth Baum"),
         ("Staff", "Andrea Owe"),
     ]
+
+
+def test_extract_people_skips_vacant_positions():
+    """
+    Tests that a vacant position listed like a person is skipped.
+    """
+    page = '<h3>Staff</h3><a href="/team/director-vacant/">Director (Vacant)</a>'
+    assert extract_people(page, r"/team/([a-z\-]+)/?$") == []

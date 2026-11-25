@@ -2,7 +2,7 @@
 
 How has the field of global catastrophic risk (GCR) research developed over the last ten years or so? This repo tracks who funds it, how much, for which hazards and for which kind of work. I want numbers that are solid and easy to check, so every grant links to its public source and every classification records who made it and why.
 
-So far this covers grant funding from four funders. Organizations, staff and publications are still to come.
+It covers grant funding from four funders, the main GCR organizations (founding, closure, budgets where public), staff listed on their team pages over time, and publications in OpenAlex. An interactive site in `docs/` lets you explore all of it.
 
 ## Quick start
 
@@ -14,6 +14,11 @@ uv run python3 -m src.ltff_grants          # download LTFF grants
 uv run python3 -m src.fli_grants           # download FLI grants
 uv run python3 -m src.classify_grants      # classify everything -> data/processed/
 uv run python3 -m src.sensitivity          # robustness of headline numbers -> results/
+uv run python3 -m src.org_finances         # Form 990 revenue/expenses (ProPublica)
+uv run python3 -m src.team_pages           # people on archived team pages (Wayback Machine)
+uv run python3 -m src.staff_counts         # roles and staff counts per year
+uv run python3 -m src.publications         # OpenAlex works mentioning "global catastrophic risk"
+uv run python3 -m src.build_site           # export JSON for the site in docs/
 uv run pytest
 ```
 
@@ -76,6 +81,20 @@ The remaining alternatives (FLI split, regrants, Lightcone, media, mixed field-b
 
 So the choices do matter for how big the small categories are. The classic-GCR total moves by up to ~7× ($11M to $74M), and the yearly non-AI, non-bio amount for 2023–25 ranges from $3.4M to $13.0M, depending on whether student programmes and Longview count. They don't change the overall picture, though. Even in the most generous reading classic GCR gets under 5 % of GCR philanthropy, while AI gets over 80 % in 2025.
 
+## Organizations and staff
+
+- `data/manual/organizations.csv` and `org_events.csv`: founding and closure dates and key events for the core organizations, each with a source and whether it is primary, secondary or provided by the author.
+- `data/processed/org_finances_990.csv`: revenue and expenses from US Form 990 filings (FLI, BERI, ALLFED Institute). `data/manual/org_finances_manual.csv` and `org_staff.csv`: figures from reports and UK company filings (e.g. CLTR's average employees from Companies House, FHI's budget and staff from its final report and Open Philanthropy's 2014 conversation notes).
+- Staff per year: one archived snapshot per year of each team page (closest to 1 July). `data/manual/team_pages.csv` says how names are found on each site, `team_role_rules.csv` maps section names and job titles to roles (staff, scholar, student, volunteer, affiliate, board, alumni). Every person row links to its snapshot. Team pages are not payrolls: they list part-timers and sometimes volunteers, and layout changes can look like hires or cuts (e.g. GCRI stopped listing associates in 2019).
+
+## Publications
+
+`src/publications.py` downloads all OpenAlex works with the phrase "global catastrophic risk" (plurals match), in two scopes with equal weight: in title or abstract (224 works), and anywhere including full text (2,104 works). Topic mentions (AI, bio, nuclear, volcanic, space, food, climate) are keyword matches in title and abstract.
+
+## Interactive site
+
+`docs/` is a static GitHub Pages site (see `docs/README.md`). Defaults focus on classic GCR. To publish it: repository Settings → Pages → Deploy from branch `main`, folder `/docs`.
+
 ## Known gaps
 
 - Only four philanthropic funders; government and academic funding are not included.
@@ -90,6 +109,7 @@ data/raw/          dated raw downloads
 data/processed/    tidy grant tables and classified outputs
 data/manual/       hand codes, rules and the decision log
 results/           analysis outputs (sensitivity table)
+docs/              interactive site (GitHub Pages)
 src/               download, classification and analysis code
 tests/             pytest suite
 style/             matplotlib style sheet

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Funding · GCR field overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site">
+    <a class="name" href="index.html">GCR field overview</a>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="funding.html" aria-current="page">Funding</a>
+      <a href="staff.html">Staff</a>
+      <a href="publications.html">Publications</a>
+    </nav>
+  </header>
+  <main>
+    <p class="label kicker">Funding</p>
+    <h1>Who pays for global catastrophic risk work?</h1>
+    <p class="lead prose">Grants from Coefficient Giving (formerly Open Philanthropy), the Survival and Flourishing Fund, the Long-Term Future Fund and the Future of Life Institute. The default view shows classic GCR only (nuclear, volcanic, space weather, food resilience and similar). Use the buttons to compare it with everything else.</p>
+
+    <div class="controls">
+      <div class="control"><span class="control-label">Focus</span><div class="segmented" id="c-preset"></div></div>
+      <div class="control"><span class="control-label">Split by</span><div class="segmented" id="c-split"></div></div>
+      <div class="control"><span class="control-label">Show</span><div class="segmented" id="c-display"></div></div>
+      <div class="control"><span class="control-label">Years</span>
+        <div class="options"><input type="number" id="f-from" min="2012" max="2026" step="1"> – <input type="number" id="f-to" min="2012" max="2026" step="1"></div>
+      </div>
+      <div class="control"><span class="control-label">Funder</span><div class="options" id="f-funders"></div></div>
+      <div class="control"><span class="control-label">Topic</span><div class="options" id="f-topics"></div></div>
+      <div class="control"><span class="control-label">Kind of work</span><div class="options" id="f-kinds"></div></div>
+    </div>
+
+    <p id="summary" class="prose"></p>
+    <div class="legend" id="legend"></div>
+    <div class="chart" id="chart"></div>
+    <p class="note prose">Nominal USD. SFF figures are recommendations, not confirmed payouts. LTFF and FLI publish only part of their grants, so their totals are a lower bound. 2026 runs to November. Money passed between these funders (regrants) and FLI's share of SFF rounds are counted once. Grants split between two topics (e.g. 50 % AI / 50 % bio) are marked with *. Source: <a href="https://github.com/florianjehn/GCR-field-overview">data and method on GitHub</a>.</p>
+
+    <h2>Grants in this selection</h2>
+    <p class="note">Click a column to sort. Recipient links go to the funder's own page.</p>
+    <div id="table"></div>
+  </main>
+  <footer class="site">Built from the repository data · <span id="built"></span></footer>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="assets/common.js"></script>
+  <script src="assets/funding.js"></script>
+  <script>loadJSON("meta.json").then((m) => { document.getElementById("built").textContent = `data from ${m.built}`; });</script>
+</body>
+</html>

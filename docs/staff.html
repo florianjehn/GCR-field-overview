@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Staff · GCR field overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site">
+    <a class="name" href="index.html">GCR field overview</a>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="funding.html">Funding</a>
+      <a href="staff.html" aria-current="page">Staff</a>
+      <a href="publications.html">Publications</a>
+    </nav>
+  </header>
+  <main>
+    <p class="label kicker">Staff</p>
+    <h1>How many people work on this?</h1>
+    <p class="lead prose">People listed on each organization's team page, one archived snapshot per year (the one closest to 1 July, from the Wayback Machine). The default shows organizations that work on classic or several catastrophic risks, counting staff only.</p>
+
+    <div class="controls">
+      <div class="control"><span class="control-label">Organizations</span><div class="options" id="f-orgs"></div></div>
+      <div class="control"><span class="control-label">Roles counted</span><div class="options" id="f-roles"></div></div>
+    </div>
+
+    <div class="legend">
+      <span><i style="background:#5D2A42"></i>Listed on team page</span>
+      <span><i style="background:#46708A"></i>Headcount from filings or reports</span>
+    </div>
+    <div class="multiples" id="multiples"></div>
+    <p class="note prose">A team page is not a payroll. Pages list part-timers, sometimes volunteers, and change layout over time, so a jump can be a redesign rather than a hire. Roles come from the page's own section names and job titles (rules in <a href="https://github.com/florianjehn/GCR-field-overview/blob/main/data/manual/team_role_rules.csv">team_role_rules.csv</a>). Organizations use the same y-axis so sizes are comparable.</p>
+
+    <h2>Who is listed</h2>
+    <div class="controls"><div class="control"><span class="control-label">Year</span><select id="f-year"></select></div></div>
+    <p class="note">Names link to the archived team page they were taken from.</p>
+    <div id="table"></div>
+  </main>
+  <footer class="site">Built from the repository data · <span id="built"></span></footer>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="assets/common.js"></script>
+  <script src="assets/staff.js"></script>
+  <script>loadJSON("meta.json").then((m) => { document.getElementById("built").textContent = `data from ${m.built}`; });</script>
+</body>
+</html>

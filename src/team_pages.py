@@ -217,7 +217,7 @@ def extract_people(
     people, seen = [], set()
     for position, slug, name, raw, title in finder(page, person_regex):
         inside_label = any(start <= position < end for start, end, _ in labels)
-        if slug in seen or not name or inside_label:
+        if slug in seen or not name or inside_label or "vacant" in raw.lower():
             continue
         if name_filter and not looks_like_name(name):
             continue
