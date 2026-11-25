@@ -117,3 +117,9 @@ Activities: Research / Policy & advocacy / Field-building & education / Other (o
 - L2 LTFF SHELTER Weekend civilisational resilience (2022, $27k): Classic GCR; Will Aldred nuclear risk + AI strategy (2022, $40k): 50 % Classic GCR / 50 % AI (proposals accepted).
 - L3 Five LTFF grants coded AI from context (Coleman Snell research grant, PhD relocation, three cybersecurity trainings): AI (proposal accepted).
 - Rules applied without asking, following earlier answers: CHERI/CERI/SERI student programmes → General x-risk (Q3); CFAR, SPARC, rationality → EA & community (Q8); LPP → AI (Q1); MRI → Unknown (Q1); Foresight → 50 % AI / 50 % Bio (Q11.6); generic forecasting → Forecasting (Q7).
+
+## Organizations module (2026-11-25)
+
+- Scope (author): core list of organizations whose mission is GCR broadly or classic GCR (CSER, FHI, GCRI, ALLFED, CLTR, FLI, BERI, Global Challenges Foundation, Global Shield, Existential Risk Observatory, ALTER, Simon Institute, Good Ancestors, Legal Priorities Project) plus teaching / early-career programmes (SERI, CERI/ERA, UChicago XLab, Pivotal, and on the author's request the FernUniversität Hagen graduate programme "Existential Risks to Humanity").
+- Budgets (author): public filings and annual reports only; gaps stay blank, no estimates.
+- ALLFED budget before 2022 (author: "use annual reports"): no annual report with budget figures found; gap stays.
