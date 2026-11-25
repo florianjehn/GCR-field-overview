@@ -38,6 +38,24 @@ def match_role(person, rules):
     return "unknown", ""
 
 
+def apply_removals(people, removals):
+    """
+    Drops people the author knows had left although the page still lists them.
+
+    Arguments:
+        people (pandas.DataFrame): people with org_id, name and year
+        removals (pandas.DataFrame): org_id, name, from_year
+
+    Returns:
+        pandas.DataFrame: people without the removed person-years.
+    """
+    merged = people.merge(
+        removals[["org_id", "name", "from_year"]], on=["org_id", "name"], how="left"
+    )
+    keep = merged["from_year"].isna() | (merged["year"] < merged["from_year"])
+    return people[keep.to_numpy()]
+
+
 def assign_roles(people, rules):
     """
     Adds role and topic columns to the people table.
@@ -142,7 +160,11 @@ def main():
     """
     people = pd.read_csv(PROCESSED_DIR / "team_people_raw.csv", keep_default_na=False)
     additions = pd.read_csv(MANUAL_DIR / "team_additions.csv", keep_default_na=False)
-    people = pd.concat([people, additions.drop(columns=["evidence"])], ignore_index=True)
+    people = pd.concat(
+        [people, additions.drop(columns=["evidence"])], ignore_index=True
+    )
+    removals = pd.read_csv(MANUAL_DIR / "team_removals.csv", keep_default_na=False)
+    people = apply_removals(people, removals)
     rules = pd.read_csv(MANUAL_DIR / "team_role_rules.csv", keep_default_na=False)
     coded = assign_roles(people, rules)
     coded = assign_functions(

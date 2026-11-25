@@ -144,3 +144,7 @@ Activities: Research / Policy & advocacy / Field-building & education / Other (o
 ## Staff parsing validation (2026-11-25)
 
 Author asked to validate parsing for all organizations. Each snapshot was scanned for name-like texts not captured by the parser. Fixes: ALTER staff in h6 headings added; FHI director added for 2015 and 2017-2021 via data/manual/team_additions.csv (listed without a readable profile link); BERI's embedded university staff taken from the count stated on its team page (5 in 2021, 6 in 2022, 15 in 2023, 19 in 2024, 15 in 2025; mostly at AI groups) in data/manual/org_staff.csv, not from names. Remaining known misses: CSER, XLab, FLI advisory boards and donors (not staff, by design); Global Shield 2024 country investigators and policy research contractors (not full-time staff); Good Ancestors board list; one ALTER person shown only as an image title.
+
+## ALLFED staff corrections (2026-11-25, human-coded)
+
+Author reviewed the 1 Dec 2025 team page. Still listed but no longer working there (data/manual/team_removals.csv): Laura Cook, Florian Ulrich Jehn, Aron Mill, Martina Kunz and Juan Esteban Lamilla left after the June 2025 cuts (removed from 2026, since the 2025 count uses the 1 July snapshot); Kevin Rassool, Daniel Morgan Rivers and Kyle Alvarado stopped in 2024 (removed from 2025). Ray Taylor is a co-founder who has not worked at ALLFED for years (start year to confirm).

@@ -63,3 +63,25 @@ def test_assign_functions_only_for_staff():
     out = assign_functions(people, RULES, TYPES)
     assert list(out["function"]) == ["research", ""]
     assert list(out["focus"]) == ["classic", "classic"]
+
+
+def test_apply_removals_drops_years_from_cutoff():
+    """
+    Tests that a removal drops the person from from_year on and nobody else.
+    """
+    from src.staff_counts import apply_removals
+
+    people = pd.DataFrame(
+        {
+            "org_id": ["allfed"] * 3 + ["cser"],
+            "name": ["A", "A", "B", "A"],
+            "year": [2024, 2025, 2025, 2025],
+        }
+    )
+    removals = pd.DataFrame([{"org_id": "allfed", "name": "A", "from_year": 2025}])
+    out = apply_removals(people, removals)
+    assert list(zip(out["org_id"], out["name"], out["year"])) == [
+        ("allfed", "A", 2024),
+        ("allfed", "B", 2025),
+        ("cser", "A", 2025),
+    ]
