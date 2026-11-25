@@ -1,8 +1,15 @@
-org_id,url,from_year,to_year,mode,person_pattern,section_pattern,notes
-fhi,fhi.ox.ac.uk/about/the-team/,2015,2017,link,/team/([a-z0-9_\-]+)/?$,,FHI team page before 2018
-fhi,fhi.ox.ac.uk/the-team/,2018,2024,link,/team/([a-z0-9_\-]+)/?$,,FHI team page 2018-2024
-cser,cser.ac.uk/team/,2017,2025,link,/team/([a-z0-9_\-]+)/?$,<h3\b[^>]*>(.*?)</h3>,Sections are h3; names h4
-gcri,gcrinstitute.org/people/,2015,2025,element,<strong>((?:(?!</strong>).)*?)</strong>,<p>\s*(?:<a name=[^>]*>\s*</a>)?\s*<strong>([^<]*)</strong>\s*</p>,Names in bold; section labels are bold paragraphs
-beri,existence.org/team,2017,2026,element,"<div class=""name"">(.*?)</div>\s*(?:<div class=""title"">(.*?)</div>)?",,Names in div.name; title in div.title
-allfed,allfed.info/our-team,2017,2020,element,"<div class=""cmsms_column three_fourth"">\s*<h2[^>]*>(.*?)</h2>\s*<h2[^>]*>(.*?)</h2>",,Name and job title as consecutive h2
-allfed,allfed.info/about/team-and-board,2021,2026,element,"<div class=""el-link uk-link"">(.*?)</div>",,Name in card link
+org_id,url,from_year,to_year,mode,person_pattern,section_pattern,notes,name_filter
+fhi,fhi.ox.ac.uk/about/the-team/,2015,2017,link,/team/([a-z0-9_\-]+)/?$,,FHI team page before 2018,
+fhi,fhi.ox.ac.uk/the-team/,2018,2024,link,/team/([a-z0-9_\-]+)/?$,,FHI team page 2018-2024,
+cser,cser.ac.uk/team/,2017,2025,link,/team/([a-z0-9_\-]+)/?$,<h3\b[^>]*>(.*?)</h3>,Sections are h3; names h4,
+gcri,gcrinstitute.org/people/,2015,2025,element,<strong>((?:(?!</strong>).)*?)</strong>,<p>\s*(?:<a name=[^>]*>\s*</a>)?\s*<strong>([^<]*)</strong>\s*</p>,Names in bold; section labels are bold paragraphs,
+beri,existence.org/team,2017,2024,element,"<div class=""name"">(.*?)</div>\s*(?:<div class=""title"">(.*?)</div>)?",,Names in div.name; title in div.title,
+allfed,allfed.info/our-team,2017,2020,element,"<div class=""cmsms_column three_fourth"">\s*<h2[^>]*>(.*?)</h2>\s*<h2[^>]*>(.*?)</h2>",,Name and job title as consecutive h2,
+allfed,allfed.info/about/team-and-board,2021,2026,element,"<div class=""el-link uk-link"">(.*?)</div>",,Name in card link,
+ero,existentialriskobservatory.org/about-us,2021,2026,element,"<h4[^>]*class=""light""[^>]*>(.*?)</h4>",<h2\b[^>]*>(.*?)</h2>,Names in h4.light,yes
+simon_institute,simoninstitute.ch/about,2021,2026,element,"<div class=""(?:team-module--name--\w+|title f--h2)"">(.*?)</div>",,Names in div.title,yes
+global_shield,globalshieldpolicy.org/our-team,2024,2026,element,"<h3 class=""elementor-heading-title[^""]*"">(.*?)</h3>",<h2\b[^>]*>(.*?)</h2>,Names in elementor h3,yes
+lpp,law-ai.org/team,2024,2026,element,"<div class=""person-card__name"">(.*?)</div>\s*(?:<div class=""person-card__role"">(.*?)</div>)?",,Institute for Law & AI person cards,yes
+good_ancestors,goodancestors.org.au/about,2025,2026,element,"<h3 class=""text-2xl font-light mb-1[^""]*"">(.*?)</h3>",<h2\b[^>]*>(.*?)</h2>,Names in h3,yes
+alter,alter.org.il/english_about,2024,2024,element,"<figcaption class=""elementor-image-carousel-caption"">(.*?)</figcaption>",,Names as image captions; one snapshot,yes
+beri,existence.org/team/,2025,2026,element,"<div class=""name"">(.*?)</div>\s*(?:<div class=""title"">(.*?)</div>)?",,BERI team page with trailing slash (2025-),

@@ -132,6 +132,20 @@ def link_people(page, person_regex):
     return people
 
 
+def looks_like_name(text):
+    """
+    Checks loosely whether a text could be a person's name.
+
+    Arguments:
+        text (str): candidate text
+
+    Returns:
+        bool: True for 2-5 words without digits.
+    """
+    words = text.split()
+    return 2 <= len(words) <= 5 and not re.search(r"\d", text)
+
+
 def element_people(page, person_regex):
     """
     Finds names inside matching elements as (position, slug, name, raw, title)
@@ -179,7 +193,9 @@ def sections(page, section_regex, person_regex, mode):
     return found
 
 
-def extract_people(page_html, person_pattern, mode="link", section_pattern=None):
+def extract_people(
+    page_html, person_pattern, mode="link", section_pattern=None, name_filter=False
+):
     """
     Lists the people on a team page with the section they appear under.
 
@@ -188,6 +204,7 @@ def extract_people(page_html, person_pattern, mode="link", section_pattern=None)
         person_pattern (str): regex, see module docstring
         mode (str): "link" or "element"
         section_pattern (str or None): regex for section labels
+        name_filter (bool): keep only texts that look like names
 
     Returns:
         list: dicts with section, slug, name, raw text and title (first per slug).
@@ -201,6 +218,8 @@ def extract_people(page_html, person_pattern, mode="link", section_pattern=None)
     for position, slug, name, raw, title in finder(page, person_regex):
         inside_label = any(start <= position < end for start, end, _ in labels)
         if slug in seen or not name or inside_label:
+            continue
+        if name_filter and not looks_like_name(name):
             continue
         seen.add(slug)
         above = [text for start, _, text in labels if start < position]
@@ -232,7 +251,11 @@ def people_for_year(org, year, capture):
     page = fetch_snapshot(org["org_id"], timestamp, url)
     snapshot = VIEW_URL.format(timestamp=timestamp, url=url)
     people = extract_people(
-        page, org["person_pattern"], org["mode"], org["section_pattern"] or None
+        page,
+        org["person_pattern"],
+        org["mode"],
+        org["section_pattern"] or None,
+        org.get("name_filter", "") == "yes",
     )
     return [
         {"org_id": org["org_id"], "year": year, "snapshot": snapshot, **person}

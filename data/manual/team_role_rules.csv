@@ -20,3 +20,17 @@ allfed,section,Board of Advisors,board,,
 allfed,title,Volunteer,volunteer,,
 allfed,title,Specialist Advisor|Professor Open Sustainability|Distinguished Chair,affiliate,,
 allfed,section,.*,staff,,"Team, co-founders and 2017-2020 job titles; from 2021 the page lists no job titles, so paid staff, part-timers and volunteers cannot be told apart"
+ero,section,^Team$,staff,AI,"Team page does not distinguish paid, part-time and volunteer staff"
+ero,section,Graduates,affiliate,AI,Former programme participants
+simon_institute,section,^(Staff|Core team|Our TEAM)$,staff,,
+simon_institute,section,Governing board|Advisers,board,,
+simon_institute,section,Collaborators,affiliate,,
+simon_institute,section,Alumni,alumni,,
+global_shield,section,Full Time Staff,staff,,
+global_shield,section,Cofounder,alumni,,Original cofounder no longer on staff
+global_shield,section,.*,affiliate,,"Other sections (country offices, associates)"
+lpp,section,Core team,staff,AI,
+lpp,section,Affiliates,affiliate,AI,
+good_ancestors,section,Our team,staff,,
+alter,section,Board,board,,
+alter,section,.*,staff,,
