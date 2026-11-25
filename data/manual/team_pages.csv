@@ -12,4 +12,7 @@ global_shield,globalshieldpolicy.org/our-team,2024,2026,element,"<h3 class=""ele
 lpp,law-ai.org/team,2024,2026,element,"<div class=""person-card__name"">(.*?)</div>\s*(?:<div class=""person-card__role"">(.*?)</div>)?",,Institute for Law & AI person cards,yes
 good_ancestors,goodancestors.org.au/about,2025,2026,element,"<h3 class=""text-2xl font-light mb-1[^""]*"">(.*?)</h3>",<h2\b[^>]*>(.*?)</h2>,Names in h3,yes
 alter,alter.org.il/english_about,2024,2024,element,"<figcaption class=""elementor-image-carousel-caption"">(.*?)</figcaption>",,Names as image captions; one snapshot,yes
-beri,existence.org/team/,2025,2026,element,"<div class=""name"">(.*?)</div>\s*(?:<div class=""title"">(.*?)</div>)?",,BERI team page with trailing slash (2025-),
+beri,existence.org/team/,2025,2025,element,"<h2\s+class=""list-item-content__title""[^>]*>(.*?)</h2>\s*(?:<div\s+class=""list-item-content__description[^""]*""[^>]*>\s*<p[^>]*>(.*?)</p>)?",<h[13]\b[^>]*>(.*?)</h[13]>,BERI 2025 Squarespace page; 2026 Framer page not parsed (names not separable from other link text),yes
+fli,futureoflife.org/team,2016,2020,element,"<(?:strong|b)>\s*(?:<a [^>]*>)?\s*([^<,]{3,40}?)\s*(?:</a>)?\s*(?:,\s*([^<]*))?</(?:strong|b)>",<h2\b[^>]*>(.*?)</h2>,"FLI team page 2016-2020: bold names (b or strong, optionally linked) with affiliation after a comma, under h2 sections",yes
+fli,futureoflife.org/team,2021,2021,element,"<div class=""awsm-personal-info"">\s*<h3>(.*?)</h3>",<h2\b[^>]*>(.*?)</h2>,FLI team page 2021: team plugin cards,yes
+fli,futureoflife.org/about-us/our-people,2022,2026,element,"<h4[^>]*class=""ct-headline[^""]*""[^>]*>\s*<span[^>]*>(.*?)</span>\s*</h4>\s*<div[^>]*>\s*<span[^>]*>(.*?)</span>",<h[23]\b[^>]*>(.*?)</h[23]>,FLI our-people page 2022-,yes

@@ -161,7 +161,7 @@ def element_people(page, person_regex):
     people = []
     for match in person_regex.finditer(page):
         raw = clean_text(match.group(1))
-        title = clean_text(match.group(2)) if person_regex.groups > 1 else ""
+        title = clean_text(match.group(2) or "") if person_regex.groups > 1 else ""
         name = clean_name(raw)
         if name:
             people.append((match.start(), slugify(name), name, raw, title))

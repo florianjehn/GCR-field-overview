@@ -14,6 +14,8 @@ gcri,section,^(Leadership Team|Staff)$,staff,,
 gcri,section,Associates|Interns,affiliate,,Listed until 2018 only; their removal in 2019 is a website change
 gcri,section,Advisors,board,,
 gcri,section,Former Affiliates,alumni,,
+beri,title,Full-Time,staff,,2025 page: role in description
+beri,section,Non-Core Staff,board,,2025 page: treasurer/secretary listed as non-core staff
 beri,section,^(Core )?Staff$,staff,,
 beri,section,Board|Advisors,board,,
 allfed,section,Board of Advisors,board,,
@@ -34,3 +36,8 @@ lpp,section,Affiliates,affiliate,AI,
 good_ancestors,section,Our team,staff,,
 alter,section,Board,board,,
 alter,section,.*,staff,,
+fli,section,^Past|Past FLI members,alumni,,
+fli,section,Top Donors,affiliate,,Donors are not staff
+fli,section,^Volunteers$,volunteer,,
+fli,section,Founders|board|Advis|advisors|Scientific Ad,board,,2016-2020 'Founders' section also lists the Scientific Advisory Board (no separate heading)
+fli,section,Core Team|Meet our team|^Policy$|^Futures$|^Communications$|Operations & Grants,staff,,
