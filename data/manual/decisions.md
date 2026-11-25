@@ -157,3 +157,9 @@ Author reviewed the 1 Dec 2025 team page. Still listed but no longer working the
 - ALLFED (author, 2026 page): research = David Denkenberger, Juan B. García Martínez, Farrah Dingal, Michael Hinge, James Mulhall, Rachel Palm, Luísa Lopes Monteiro, Ross Tieman, Alexey Turchin. The other 11 listed people are coded as operations (team_function_rules.csv), in all years they appear.
 - CSER 2026 (author): SJ Beard, Lara Mani and Constantin Arnscheidt have left; the other classic researchers are still there or unknown, so kept. Carry-forward now copies people (not totals), so removals apply to carried years.
 - ALLFED (author): Noah Wescombe does policy; the other 10 non-researchers are operations, also in earlier years.
+
+## Staff page scope (2026-11-25, author)
+
+- The staff page shows only organizations working on classic or several risks (author: AI growth is well known anyway). The organization list is the author's selection of the main GCR organizations, described on the site as a hand-picked, non-exhaustive list.
+- Added on author request: Global Priorities Institute (research, 2018 to end of July 2025, team page 2019-2025) and Riesgos Catastróficos Globales / ORCG (policy, team pages only for 2023 and 2026; 2023 team carried to 2024 and 2025, LLM-coded). RCG co-founder Jaime Sevilla, listed in 2026 only as "Cofundador", is not counted as staff. Juan B. García Martínez appears at both ALLFED and RCG in 2026 and is counted at both.
+- Author: the page notes that the shift toward teaching partly reflects the field getting more established and partly more information closer to the present.

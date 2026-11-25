@@ -189,7 +189,6 @@ dl.defs { display: grid; grid-template-columns: max-content 1fr; gap: 0.35rem 1.
 dl.defs dt { color: var(--aubergine); }
 dl.defs dd { margin: 0; }
 @media (max-width: 40rem) { dl.defs { grid-template-columns: 1fr; } dl.defs dd { margin-bottom: 0.5rem; } }
-.multiples.two { grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); }
 .multiples .chart-sub { min-height: 4.8em; }
 
 [hidden] { display: none !important; }

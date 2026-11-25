@@ -3,6 +3,9 @@ cser,title,Assistant Professor in Global Risk and Resilience|Postgraduate Co-ord
 xlab,title,^Director$|Deputy Director,teaching,Author decision: XLab director and deputy run teaching
 xlab,title,Lead,research,
 ceri_era,title,FOUNDER|DIRECTOR|RESEARCH MANAGER,teaching,Run the fellowship (author decision)
+allfed,name,^(Noah Wescombe)$,policy,Author: policy work
+allfed,name,^(Amanda Cassidy|Carina Denkenwolf|Bianca Cruz|Andreea Petre|Maciej Pilachowski|Jane Redfern|Olufunke Femi-Ojo|Adam Steinberg|Pinkeshkumar Attarwala|Mohammadreza Ebrahimnataj Tiji)$,operations,Author: not research (ALLFED page shows no titles; author named the researchers)
+gpi,section,Operations,operations,
+rcg,title,operaciones|Coordinador de proyectos,operations,
+rcg,title,Investigad,research,
 *,title,Administrat|Co-?ordinator|Coordinator|Operations|Finance|\bPA\b|Assistant to|Events|Office|Manager \(ITH\)|Institute Manager|Project Manager|Programme Manager|Project Coordinator|Communications? (Manager|Officer|Administrator),operations,Generic operations titles
-allfed,name,"^(Noah Wescombe)$",policy,Author: policy work
-allfed,name,"^(Amanda Cassidy|Carina Denkenwolf|Bianca Cruz|Andreea Petre|Maciej Pilachowski|Jane Redfern|Olufunke Femi-Ojo|Adam Steinberg|Pinkeshkumar Attarwala|Mohammadreza Ebrahimnataj Tiji)$",operations,Author: not research (ALLFED page shows no titles; author named the researchers)

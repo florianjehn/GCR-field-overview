@@ -21,7 +21,7 @@ async function init() {
   setNumber("n-ai", fmtPct(ai2025), "of GCR funding in 2025 went to AI");
   const researchers = staff.functions.filter((r) => r.year === PARTIAL_YEAR && r.focus === "classic or multi-hazard" && r.function === "research");
   const nResearchers = d3.sum(researchers, (r) => r.people);
-  setNumber("n-people", `~${Math.round(nResearchers / 5) * 5}`, `people do research at the well-known GCR organizations working on classic or several risks in ${PARTIAL_YEAR}. A rough count, see the caveats below`);
+  setNumber("n-people", `~${Math.round(nResearchers / 5) * 5}`, `people do research at the main GCR organizations working on classic or several risks (my selection) in ${PARTIAL_YEAR}. A rough count, see the caveats below`);
   const works = pubs.by_year.find((r) => r.scope === "title_abstract" && r.year === 2025);
   setNumber("n-pubs", works ? fmtInt(works.works) : "–", `works in 2025 with "global catastrophic risk" in title or abstract (and ~${fmtInt((pubs.by_year.find((r) => r.scope === "fulltext" && r.year === 2025) || {}).works || 0)} mentioning it anywhere)`);
 }

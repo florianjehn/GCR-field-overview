@@ -47,3 +47,13 @@ xlab,section,FACULTY ADVISORY,affiliate,,
 xlab,section,.*,staff,,
 ceri_era,section,.*,staff,,ERA team
 alter,section,.*,staff,,
+gpi,section,Board,board,,
+gpi,section,affiliates|Collaborators,affiliate,,
+gpi,section,scholars,student,,Parfit/Atkinson DPhil scholarships
+gpi,title,Affiliate|Professor \(|Advisor,affiliate,,Unlabelled entries with external posts
+gpi,section,.*,staff,,
+rcg,title,Afiliad|Asesor,affiliate,,Affiliates and advisers
+rcg,title,^Cofundador$,affiliate,,Co-founder listed without a role (Jaime Sevilla leads Epoch AI)
+rcg,title,^Director,staff,,
+rcg,title,Junta Directiva,board,,
+rcg,title,.*,staff,,

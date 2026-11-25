@@ -120,12 +120,34 @@ global_shield,2024,classic or multi-hazard,policy,team page,3
 global_shield,2025,classic or multi-hazard,policy,team page,5
 global_shield,2026,classic or multi-hazard,policy,team page,10
 good_ancestors,2026,AI or bio,policy,team page,4
+gpi,2019,classic or multi-hazard,operations,team page,2
+gpi,2019,classic or multi-hazard,research,team page,7
+gpi,2020,classic or multi-hazard,operations,team page,3
+gpi,2020,classic or multi-hazard,research,team page,9
+gpi,2021,classic or multi-hazard,operations,team page,3
+gpi,2021,classic or multi-hazard,research,team page,13
+gpi,2022,classic or multi-hazard,operations,team page,3
+gpi,2022,classic or multi-hazard,research,team page,15
+gpi,2023,classic or multi-hazard,operations,team page,4
+gpi,2023,classic or multi-hazard,research,team page,18
+gpi,2024,classic or multi-hazard,operations,team page,4
+gpi,2024,classic or multi-hazard,research,team page,22
+gpi,2025,classic or multi-hazard,operations,team page,1
+gpi,2025,classic or multi-hazard,research,team page,15
 lpp,2024,AI or bio,operations,team page,1
 lpp,2024,AI or bio,research,team page,8
 lpp,2025,AI or bio,operations,team page,1
 lpp,2025,AI or bio,research,team page,20
 lpp,2026,AI or bio,operations,team page,6
 lpp,2026,AI or bio,research,team page,27
+rcg,2023,classic or multi-hazard,operations,team page,2
+rcg,2023,classic or multi-hazard,policy,team page,5
+rcg,2024,classic or multi-hazard,operations,assumed same as 2023,2
+rcg,2024,classic or multi-hazard,policy,assumed same as 2023,5
+rcg,2025,classic or multi-hazard,operations,assumed same as 2023,2
+rcg,2025,classic or multi-hazard,policy,assumed same as 2023,5
+rcg,2026,classic or multi-hazard,operations,team page,2
+rcg,2026,classic or multi-hazard,policy,team page,6
 simon_institute,2021,AI or bio,policy,team page,2
 simon_institute,2022,AI or bio,policy,team page,2
 simon_institute,2023,AI or bio,policy,team page,5
