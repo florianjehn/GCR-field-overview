@@ -1,0 +1,8 @@
+org_id,url,from_year,to_year,mode,person_pattern,section_pattern,notes
+fhi,fhi.ox.ac.uk/about/the-team/,2015,2017,link,/team/([a-z0-9_\-]+)/?$,,FHI team page before 2018
+fhi,fhi.ox.ac.uk/the-team/,2018,2024,link,/team/([a-z0-9_\-]+)/?$,,FHI team page 2018-2024
+cser,cser.ac.uk/team/,2017,2025,link,/team/([a-z0-9_\-]+)/?$,<h3\b[^>]*>(.*?)</h3>,Sections are h3; names h4
+gcri,gcrinstitute.org/people/,2015,2025,element,<strong>((?:(?!</strong>).)*?)</strong>,<p>\s*(?:<a name=[^>]*>\s*</a>)?\s*<strong>([^<]*)</strong>\s*</p>,Names in bold; section labels are bold paragraphs
+beri,existence.org/team,2017,2026,element,"<div class=""name"">(.*?)</div>\s*(?:<div class=""title"">(.*?)</div>)?",,Names in div.name; title in div.title
+allfed,allfed.info/our-team,2017,2020,element,"<div class=""cmsms_column three_fourth"">\s*<h2[^>]*>(.*?)</h2>\s*<h2[^>]*>(.*?)</h2>",,Name and job title as consecutive h2
+allfed,allfed.info/about/team-and-board,2021,2026,element,"<div class=""el-link uk-link"">(.*?)</div>",,Name in card link

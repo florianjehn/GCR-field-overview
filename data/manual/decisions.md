@@ -125,3 +125,10 @@ Activities: Research / Policy & advocacy / Field-building & education / Other (o
 - ALLFED budget before 2022 (author: "use annual reports"): no annual report with budget figures found; gap stays.
 - Global Shield founding year: 2023, provided by the author (source type "author", no public source found).
 - CERI founding year and the CHERI → Pivotal rename date: unknown to the author; left blank.
+
+## Publications (2026-11-25)
+
+- Search term (author): only "global catastrophic risk" on OpenAlex (phrase; OpenAlex stems, so "risks" matches too).
+- Scope (author): two series with equal weight: phrase in title or abstract (224 works), and OpenAlex default search incl. full text (2,104 works, also catches passing mentions; full texts are indexed only for part of the literature).
+- Topic tags are keyword mentions in title and abstract (data/manual/publication_topics.csv), not a judgment of what a paper is mainly about. Overview papers get several tags.
+- OpenAlex without an API key allows only the first page with cursor paging, so page-number paging is used (fine up to 10,000 results). No API key was requested, to avoid sending the author's email.
