@@ -148,3 +148,8 @@ Author asked to validate parsing for all organizations. Each snapshot was scanne
 ## ALLFED staff corrections (2026-11-25, human-coded)
 
 Author reviewed the 1 Dec 2025 team page. Still listed but no longer working there (data/manual/team_removals.csv): Laura Cook, Florian Ulrich Jehn, Aron Mill, Martina Kunz and Juan Esteban Lamilla left after the June 2025 cuts (removed from 2026, since the 2025 count uses the 1 July snapshot); Kevin Rassool, Daniel Morgan Rivers and Kyle Alvarado stopped in 2024 (removed from 2025). Ray Taylor is a co-founder who has not worked at ALLFED for years; author: stop counting him from 2024.
+
+## 2026 staff gaps and researcher count (2026-11-25, human-coded)
+
+- CSER, GCRI and BERI have no readable 2026 team page. Author: assume their 2025 teams stayed the same (data/manual/staff_carry_forward.csv; rows marked "assumed same as 2025").
+- Author: skip the named list of classic GCR people; give a rough count on the overview page of people doing research at classic or multi-hazard GCR organizations. 2026: about 35 (ALLFED 20, CSER 11, XLab 2, BERI 2, GCRI 1). Generous: includes part-timers, CSER researchers on AI and bio, and everyone on ALLFED's page since it lists no titles.
