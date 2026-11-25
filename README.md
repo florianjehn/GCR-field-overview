@@ -1,8 +1,8 @@
 # GCR Field Overview
 
-Tracks how the field of global catastrophic risk (GCR) research has developed over roughly the last ten years: who funds it, how much, for which hazards and which kind of work. The goal is numbers that are solid and easy to verify: every grant row links to its public source, and every classification records who made it and why.
+How has the field of global catastrophic risk (GCR) research developed over the last ten years or so? This repo tracks who funds it, how much, for which hazards and for which kind of work. I want numbers that are solid and easy to check, so every grant links to its public source and every classification records who made it and why.
 
-Status: grant funding (module 1) is complete for four funders. Organisations, staff and publications are still to come.
+So far this covers grant funding from four funders. Organizations, staff and publications are still to come.
 
 ## Quick start
 
@@ -32,23 +32,23 @@ Downloads are dated (`data/raw/`) so results can be reproduced from the same sna
 
 Every grant gets two labels:
 
-- **Hazard category**: AI, Bio, Classic GCR (nuclear, volcanic, space weather, food resilience, …), General x-risk (cross-cutting), Geoengineering, Climate, Forecasting, plus categories excluded from GCR totals: EA & community, Not GCR, Regrant (money passed to another fund whose grants are counted there), Duplicate (same money already counted under another funder) and Unknown. A grant can be split, e.g. `AI=0.5;Bio=0.5`.
-- **Activity** (GCR-relevant grants only): Research, Policy & advocacy, Field-building & education, Other (operations, media, regranting), Unknown.
+- Hazard category: AI, Bio, Classic GCR (nuclear, volcanic, space weather, food resilience, …), General x-risk (cross-cutting), Geoengineering, Climate, Forecasting, plus categories excluded from GCR totals: EA & community, Not GCR, Regrant (money passed to another fund whose grants are counted there), Duplicate (same money already counted under another funder) and Unknown. A grant can be split, e.g. `AI=0.5;Bio=0.5`.
+- Activity (GCR-relevant grants only): Research, Policy & advocacy, Field-building & education, Other (operations, media, regranting), Unknown.
 
-Each label carries a **coding source** (`funder-label`, `LLM-coded`, `human-coded`), a confidence and a rationale, in `data/processed/grants_classified.csv`. Current counts: hazard category 2,709 funder-label, 1,404 LLM-coded, 387 human-coded; activity 2,045 LLM-coded, 174 human-coded.
+Each label carries a coding source (`funder-label`, `LLM-coded`, `human-coded`), a confidence and a rationale, in `data/processed/grants_classified.csv`. For the hazard category, 2,709 grants follow the funder label, 1,404 are LLM-coded and 387 human-coded. For the activity, 2,045 are LLM-coded and 174 human-coded.
 
 ### Steps
 
-1. **Funder labels first.** Coefficient's own funds are used where they are unambiguous: "Navigating Transformative AI" → AI, "Biosecurity & Pandemic Preparedness" (and its science sub-fund) → Bio, non-GCR funds (animal welfare, global health, …) → Not GCR. One grant filed by the funder under AI but clearly about farm animals was corrected.
-2. **Hand coding where labels are not enough.** Coefficient's "Global Catastrophic Risks Opportunities" fund turned out to be mostly EA/longtermist community building, so all 352 grants in it (plus Forecasting and Other Areas) were coded one by one from title and recipient. All 390 SFF organisations were coded by organisation (SFF grants are almost all "general support"), with a purpose-level override where the stated purpose differs (e.g. flexHEG prototyping → AI) and the dedicated SFF-2024-FlexHEGs round → AI. All 700 LTFF grants were coded from their descriptions (keyword defaults, then about 130 hand corrections after reading every description). All 147 FLI grants were coded by hand.
-3. **Questions to the author whenever unsure.** Every grant where the coding was not clearly right got a question id instead of a silent guess. Questions were asked one by one in the chat; answers and the reasoning are logged verbatim in [`data/manual/decisions.md`](data/manual/decisions.md), and affected rows switched to `human-coded`. Questions asked:
-   - **Q1–Q12 (hazard categories):** multi-hazard organisations (CSER, FHI, CLTR, GCRI, …), FLI general support, student x-risk programmes, climate and geoengineering, global priorities research, regranting, forecasting, the rationality community, outreach media, mixed AI/bio field-building, Longview, and about 20 individual organisations with unclear focus (the rest left Unknown at the author's request).
-   - **A1–A6 (activity):** policy think tanks, mixed-mission organisations (Blueprint, Mirror Biology Dialogues Fund, CAIS, SL5 Task Force), evals/demonstration groups (Apollo, Palisade, Sage), and organisations with unknown activity.
-   - **FLI/LTFF:** FLI–SFF double counting, F1–F2 (two FLI programmes), L1–L3 (eight LTFF grants).
-4. **Rules carried over without asking.** Once the author answered a question, the same rule was applied to equivalent grants at other funders (e.g. student x-risk programmes → General x-risk; CFAR/rationality → EA & community). These are listed at the end of `decisions.md`.
-5. **Activity coding.** Ordered keyword rules on grant titles ([`data/manual/activity_rules.csv`](data/manual/activity_rules.csv)), then recipient defaults for "general support" grants ([`activity_recipient_codes.csv`](data/manual/activity_recipient_codes.csv)), then grant-level overrides ([`activity_grant_overrides.csv`](data/manual/activity_grant_overrides.csv)). Every keyword match was reviewed by hand; misfires (e.g. "rare *event*", "*policy* network", "AI governance *work*shop") led to rule fixes or overrides, and each fix was checked by diffing all grants before and after. A title stating research is coded Research even at think tanks.
-6. **Double counting.** Money that passes through two funders is counted once: Coefficient and SFF grants to LTFF/EA Funds and other regranting funds are marked Regrant; Coefficient's 2015 grant to FLI's AI programme is marked Regrant because FLI's individual grants are included; FLI's 2023 grants that are FLI's share of SFF recommendations are marked Duplicate.
-7. **Sensitivity analysis** ([`src/sensitivity.py`](src/sensitivity.py), [`results/sensitivity.csv`](results/sensitivity.csv)): each decision is replaced by its main alternative and the headline numbers recomputed. See below.
+1. Funder labels first. Coefficient's own funds are used where they are unambiguous: "Navigating Transformative AI" → AI, "Biosecurity & Pandemic Preparedness" (and its science sub-fund) → Bio, non-GCR funds (animal welfare, global health, …) → Not GCR. One grant filed by the funder under AI but clearly about farm animals was corrected.
+2. Hand coding where labels are not enough. Coefficient's "Global Catastrophic Risks Opportunities" fund turned out to be mostly EA/longtermist community building, so all 352 grants in it (plus Forecasting and Other Areas) were coded one by one from title and recipient. All 390 SFF organizations were coded by organization (SFF grants are almost all "general support"), with a purpose-level override where the stated purpose differs (e.g. flexHEG prototyping → AI) and the dedicated SFF-2024-FlexHEGs round → AI. All 700 LTFF grants were coded from their descriptions (keyword defaults, then about 130 hand corrections after reading every description). All 147 FLI grants were coded by hand.
+3. Questions to the author whenever unsure. Every grant where the coding was not clearly right got a question id instead of a silent guess. Questions were asked one by one in the chat; answers and the reasoning are logged verbatim in [`data/manual/decisions.md`](data/manual/decisions.md), and affected rows switched to `human-coded`. Questions asked:
+   - Q1–Q12 (hazard categories): multi-hazard organizations (CSER, FHI, CLTR, GCRI, …), FLI general support, student x-risk programmes, climate and geoengineering, global priorities research, regranting, forecasting, the rationality community, outreach media, mixed AI/bio field-building, Longview, and about 20 individual organizations with unclear focus (the rest left Unknown at the author's request).
+   - A1–A6 (activity): policy think tanks, mixed-mission organizations (Blueprint, Mirror Biology Dialogues Fund, CAIS, SL5 Task Force), evals/demonstration groups (Apollo, Palisade, Sage), and organizations with unknown activity.
+   - FLI/LTFF: FLI–SFF double counting, F1–F2 (two FLI programmes), L1–L3 (eight LTFF grants).
+4. Rules carried over without asking. Once the author answered a question, the same rule was applied to equivalent grants at other funders (e.g. student x-risk programmes → General x-risk; CFAR/rationality → EA & community). These are listed at the end of `decisions.md`.
+5. Activity coding. Ordered keyword rules on grant titles ([`data/manual/activity_rules.csv`](data/manual/activity_rules.csv)), then recipient defaults for "general support" grants ([`activity_recipient_codes.csv`](data/manual/activity_recipient_codes.csv)), then grant-level overrides ([`activity_grant_overrides.csv`](data/manual/activity_grant_overrides.csv)). Every keyword match was reviewed by hand; misfires (e.g. "rare *event*", "*policy* network", "AI governance *work*shop") led to rule fixes or overrides, and each fix was checked by diffing all grants before and after. A title stating research is coded Research even at think tanks.
+6. Double counting. Money that passes through two funders is counted once: Coefficient and SFF grants to LTFF/EA Funds and other regranting funds are marked Regrant; Coefficient's 2015 grant to FLI's AI programme is marked Regrant because FLI's individual grants are included; FLI's 2023 grants that are FLI's share of SFF recommendations are marked Duplicate.
+7. Sensitivity analysis ([`src/sensitivity.py`](src/sensitivity.py), [`results/sensitivity.csv`](results/sensitivity.csv)): each decision is replaced by its main alternative and the headline numbers recomputed. See below.
 
 ### Where to check a number
 
@@ -62,19 +62,19 @@ Headline metrics over 2015–2025 (nominal USD, Coefficient + SFF + LTFF + FLI, 
 
 | Scenario | Classic GCR total ($M) | Classic GCR share of GCR funding | Non-AI, non-bio GCR per year 2023–25 ($M) | AI share 2025 |
 |---|---|---|---|---|
-| Baseline | 11.0 | 0.7% | 5.9 | 83% |
-| Multi-hazard orgs (CSER, FHI, GCRI, …) counted as classic GCR | 36.1 | 2.3% | 5.9 | 83% |
-| Climate + geoengineering counted as classic GCR | 27.3 | 1.7% | 5.9 | 83% |
-| All Unknown money assumed classic GCR | 33.0 | 2.1% | 9.9 | 83% |
-| All three together (most generous) | 74.2 | 4.7% | 9.9 | 83% |
-| Longview general support counted as General x-risk | 11.0 | 0.7% | 13.0 | 83% |
-| Student x-risk programmes counted as EA & community | 11.0 | 0.7% | 3.4 | 83% |
-| Global priorities research counted as General x-risk | 11.0 | 0.7% | 7.9 | 83% |
-| Generic forecasting counted as Not GCR | 11.0 | 0.7% | 5.9 | 86% |
+| Baseline | 11.0 | 0.7 % | 5.9 | 83 % |
+| Multi-hazard orgs (CSER, FHI, GCRI, …) counted as classic GCR | 36.1 | 2.3 % | 5.9 | 83 % |
+| Climate + geoengineering counted as classic GCR | 27.3 | 1.7 % | 5.9 | 83 % |
+| All Unknown money assumed classic GCR | 33.0 | 2.1 % | 9.9 | 83 % |
+| All three together (most generous) | 74.2 | 4.7 % | 9.9 | 83 % |
+| Longview general support counted as General x-risk | 11.0 | 0.7 % | 13.0 | 83 % |
+| Student x-risk programmes counted as EA & community | 11.0 | 0.7 % | 3.4 | 83 % |
+| Global priorities research counted as General x-risk | 11.0 | 0.7 % | 7.9 | 83 % |
+| Generic forecasting counted as Not GCR | 11.0 | 0.7 % | 5.9 | 86 % |
 
 The remaining alternatives (FLI split, regrants, Lightcone, media, mixed field-building, 50/50 splits, FLI duplicates) change no metric by more than about half a percentage point (largest: mixed field-building split 50/50, AI share 2025 −0.5 points) and leave the yearly non-AI, non-bio amount unchanged; full table in `results/sensitivity.csv`.
 
-Conclusion: the choices matter for the absolute size of the small categories. The classic-GCR total varies by up to a factor of about seven ($11M to $74M), and the yearly non-AI, non-bio amount for 2023–25 ranges from $3.4M to $13.0M depending on whether student programmes and Longview count. They do not change the overall picture: classic GCR receives at most a few percent of GCR philanthropy, while AI receives over 80% in 2025.
+So the choices do matter for how big the small categories are. The classic-GCR total moves by up to ~7× ($11M to $74M), and the yearly non-AI, non-bio amount for 2023–25 ranges from $3.4M to $13.0M, depending on whether student programmes and Longview count. They don't change the overall picture, though. Even in the most generous reading classic GCR gets under 5 % of GCR philanthropy, while AI gets over 80 % in 2025.
 
 ## Known gaps
 
