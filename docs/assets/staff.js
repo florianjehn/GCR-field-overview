@@ -4,6 +4,10 @@
 const FUNCTIONS = ["Research", "Teaching", "Policy", "Operations"];
 const ORG_TYPES = ["Research orgs", "Teaching orgs", "Policy orgs"];
 const FOCI = ["Classic or multi-hazard", "AI or bio"];
+const FOCUS_TITLE = {
+  "Classic or multi-hazard": "GCR organizations working on classic or several risks",
+  "AI or bio": "GCR organizations working mainly on AI or bio",
+};
 const YEARS = { from: 2015, to: PARTIAL_YEAR };
 const TOTALS_TO = PARTIAL_YEAR;
 const NOTES = {
@@ -59,7 +63,7 @@ function drawTotals(allRows) {
     .flatMap(([, ys]) => ys.map(([, n]) => n))) || 1;
   FOCI.forEach((focus) => {
     const box = document.createElement("div");
-    box.innerHTML = `<p class="chart-title">${focus}</p><div class="chart"></div>`;
+    box.innerHTML = `<p class="chart-title">${FOCUS_TITLE[focus]}</p><div class="chart"></div>`;
     container.appendChild(box);
     const chartRows = rows.filter((r) => r.focus === focus)
       .map((r) => ({ year: r.year, key: r.function, value: r.people }));

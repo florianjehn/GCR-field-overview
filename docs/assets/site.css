@@ -191,3 +191,6 @@ dl.defs dd { margin: 0; }
 @media (max-width: 40rem) { dl.defs { grid-template-columns: 1fr; } dl.defs dd { margin-bottom: 0.5rem; } }
 .multiples.two { grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); }
 .multiples .chart-sub { min-height: 4.8em; }
+
+[hidden] { display: none !important; }
+.callout { border-left: 3px solid var(--aubergine); background: var(--tint); padding: 0.75rem 1rem; }

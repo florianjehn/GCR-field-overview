@@ -14,7 +14,7 @@ const KINDS = ["Research", "Policy & advocacy", "Field-building & education", "O
 const PRESETS = {
   classic: { label: "Classic GCR", topics: ["Classic GCR"], wider: false },
   classicGeneral: { label: "Classic + general x-risk", topics: ["Classic GCR", "General x-risk"], wider: false },
-  gcr: { label: "All GCR topics", topics: GCR_TOPICS, wider: false },
+  gcr: { label: "All GCR topics (incl. AI + bio)", topics: GCR_TOPICS, wider: false },
   all: { label: "Everything incl. EA & not GCR", topics: TOPICS, wider: true },
 };
 
