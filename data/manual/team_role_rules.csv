@@ -14,8 +14,9 @@ gcri,section,^(Leadership Team|Staff)$,staff,,
 gcri,section,Associates|Interns,affiliate,,Listed until 2018 only; their removal in 2019 is a website change
 gcri,section,Advisors,board,,
 gcri,section,Former Affiliates,alumni,,
+beri,title,TREASURER|SECRETARY,board,,2025: board members listed under non-core staff
+beri,section,Non-?core,embedded,AI,BERI employees embedded at university groups (mostly AI); not counted in function totals
 beri,title,Full-Time,staff,,2025 page: role in description
-beri,section,Non-Core Staff,board,,2025 page: treasurer/secretary listed as non-core staff
 beri,section,^(Core )?Staff$,staff,,
 beri,section,Board|Advisors,board,,
 allfed,section,Board of Advisors,board,,
@@ -45,3 +46,4 @@ xlab,title,Student,student,,Student associates/researchers
 xlab,section,FACULTY ADVISORY,affiliate,,
 xlab,section,.*,staff,,
 ceri_era,section,.*,staff,,ERA team
+alter,section,.*,staff,,

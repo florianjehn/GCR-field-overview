@@ -70,38 +70,64 @@ def funding_data():
     return records(grants, columns)
 
 
-def staff_data():
+def documented_functions(headcounts, org_types):
     """
-    Builds the person rows from the team pages plus documented headcounts.
+    Turns headcounts from filings into function rows for organizations
+    without a usable team page (CLTR's Companies House filings and the
+    FernUni Hagen programme).
+
+    Arguments:
+        headcounts (pandas.DataFrame): data/manual/org_staff.csv
+        org_types (pandas.DataFrame): data/manual/org_types.csv
 
     Returns:
-        dict: people (one per person, organization and year), headcounts
-        from filings and reports, and organization metadata.
+        pandas.DataFrame: org_id, year, focus, function, people, source.
     """
-    people = pd.read_csv(PROCESSED_DIR / "team_people.csv", keep_default_na=False)
+    rows = headcounts[headcounts["org_id"].isin(["cltr", "fernuni_erh"])].merge(
+        org_types, on="org_id"
+    )
+    return pd.DataFrame(
+        {
+            "org_id": rows["org_id"],
+            "year": rows["year"].astype(int),
+            "focus": rows["focus"],
+            "function": rows["type"],
+            "people": rows["staff"].astype(int),
+            "source": "filings",
+        }
+    )
+
+
+def staff_data():
+    """
+    Builds staff counts without names: per organization, year and role, and
+    per organization, year, focus and function.
+
+    Returns:
+        dict: role counts, function counts, filing headcounts and organizations.
+    """
+    roles = pd.read_csv(PROCESSED_DIR / "staff_by_year.csv")
+    roles = roles.melt(["org_id", "year"], var_name="role", value_name="people")
+    functions = pd.read_csv(PROCESSED_DIR / "staff_by_function.csv").assign(
+        source="team page"
+    )
     headcounts = pd.read_csv(MANUAL_DIR / "org_staff.csv", keep_default_na=False)
-    organizations = pd.read_csv(MANUAL_DIR / "organizations.csv", keep_default_na=False)
+    org_types = pd.read_csv(MANUAL_DIR / "org_types.csv", keep_default_na=False)
+    functions = pd.concat([functions, documented_functions(headcounts, org_types)])
+    organizations = pd.read_csv(
+        MANUAL_DIR / "organizations.csv", keep_default_na=False
+    ).drop(columns=["type"])
+    organizations = organizations.merge(org_types, on="org_id", how="left")
+    org_columns = ["org_id", "name", "type", "focus", "founded", "closed"]
+    head_columns = ["org_id", "year", "staff", "measure", "source"]
+    function_columns = ["org_id", "year", "focus", "function", "people", "source"]
     return {
-        "people": records(
-            people, ["org_id", "year", "name", "section", "title", "role", "snapshot"]
+        "roles": records(
+            roles[roles["people"] > 0], ["org_id", "year", "role", "people"]
         ),
-        "headcounts": records(
-            headcounts, ["org_id", "year", "staff", "measure", "source"]
-        ),
-        "organizations": records(
-            organizations,
-            [
-                "org_id",
-                "name",
-                "group",
-                "type",
-                "country",
-                "founded",
-                "closed",
-                "status_2026",
-                "focus_now",
-            ],
-        ),
+        "functions": records(functions, function_columns),
+        "headcounts": records(headcounts, head_columns),
+        "organizations": records(organizations.fillna(""), org_columns),
     }
 
 

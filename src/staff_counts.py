@@ -141,6 +141,8 @@ def main():
         None
     """
     people = pd.read_csv(PROCESSED_DIR / "team_people_raw.csv", keep_default_na=False)
+    additions = pd.read_csv(MANUAL_DIR / "team_additions.csv", keep_default_na=False)
+    people = pd.concat([people, additions.drop(columns=["evidence"])], ignore_index=True)
     rules = pd.read_csv(MANUAL_DIR / "team_role_rules.csv", keep_default_na=False)
     coded = assign_roles(people, rules)
     coded = assign_functions(
