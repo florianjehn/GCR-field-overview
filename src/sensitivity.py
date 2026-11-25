@@ -214,7 +214,7 @@ def scenarios(grants):
 def combined_classic_case(grants):
     """
     Applies all alternatives that favour classic GCR at once: multi-hazard
-    organisations, climate/geoengineering and all Unknown money as classic GCR.
+    organizations, climate/geoengineering and all Unknown money as classic GCR.
 
     Arguments:
         grants (pandas.DataFrame): classified grants

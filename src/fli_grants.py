@@ -99,7 +99,7 @@ def parse_page(page_html):
 def recipient_name(grant):
     """
     Picks the recipient: the institution after the investigator's name for
-    research calls, otherwise the project title (organisation name).
+    research calls, otherwise the project title (organization name).
 
     Arguments:
         grant (dict): a parsed grant

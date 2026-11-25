@@ -83,7 +83,7 @@ def test_parse_amount():
 
 def test_parse_page_and_recipient():
     """
-    Tests parsing of research-call and organisation grants.
+    Tests parsing of research-call and organization grants.
     """
     page = "header" + fli_block(
         "Nuclear winter", "$500,000.00", "<span>Alan Robock</span>, Rutgers"
