@@ -40,3 +40,58 @@ from `coding_source = LLM-coded` (confidence `low`) to `human-coded`.
 | Q10 | Mixed AI/bio field-building (BlueDot, Meridian, Future Impact Group, Successif, Collider, Trajectory Labs, Impact Academy, Nonlinear) | AI | pending |
 | Q11 | Individual organisations with unclear focus (list in chat / manual code files) | Unknown | pending |
 | Q12 | Longview Philanthropy general support | ? | pending |
+
+## Answers (2026-11-25, given one by one in chat)
+
+### Q1 – Multi-hazard GCR organisations
+- CLTR / Alpenglow: **AI** ("pure AI").
+- Pour Demain: **50% AI / 50% Bio** ("only does AI and Bio").
+- Langsikt (Centre for Long-Term Policy): **50% AI / 50% Bio** ("only does AI and Bio, and some animal welfare").
+- ALTER: **50% AI / 50% Bio** (author asked for a link; ALTER site lists NIST AI Safety Institute Consortium and WHO pathogen surveillance network memberships; author chose the 50/50 rule for AI+Bio orgs).
+- Simon Institute for Longterm Governance: **AI**.
+- Legal Priorities Project: **AI** (successor is the Institute for Law & AI).
+- Macrostrategy Research Initiative: **Unknown** ("page links to something different, scrap as unclear").
+- Millennium Project: **Not GCR** ("does not seem to do GCR work at all").
+- Haydn Belfield: **AI** ("pure AI by now").
+- All others in Q1 (FHI, CSER, BERI general and CSER/FHI collaborations, Global Shield, Good Ancestors, APPG Future Generations, Odyssean, Sentinel): **General x-risk** confirmed. Existential Risk Observatory stays **AI** (not objected to).
+- Rule: organisations working only on AI and Bio are split 50/50 between AI and Bio.
+
+### New dimension: activity
+- Author: "split this generally into funding for Research and funding for Policy, as these two will likely look very very different."
+- Each grant gets an `activity`: **Research / Policy & advocacy / Field-building & education / Other** (operations, media, regranting).
+
+### Q1b – GCRI
+- **General x-risk**.
+
+### Q2 – Future of Life Institute general support
+- **50% AI / 50% General x-risk**.
+
+### Q3 – Student / early-career x-risk programmes
+- **General x-risk** (activity: Field-building & education).
+
+### Q4 – Climate and geoengineering
+- Author: "New Climate and new Geoengineering category. Those should be separate."
+- **Geoengineering**: SRMGI / Degrees Initiative, Harvard Solar Geoengineering Research Program, UCLA climate engineering governance, Forum for Climate Engineering Assessment, American University Solar Geoengineering Initiative.
+- **Climate**: Kigali Cooling Efficiency Program, Global Commission on Governing Risks from Climate Overshoot (broad remit beyond SRM), Ann Garth climate change research.
+
+### Q5 – Global priorities research
+- **EA & community** (GPI, Forethought Foundation 2023, RP Worldview Investigations).
+
+### Q6 – Regranting to other funds
+- Flag as regrant and **exclude from funding totals** (Coefficient -> EA Funds; SFF -> LTFF, EAIF, AI Risk Mitigation Fund, Manifund). Category set to the receiving fund's focus for reference only.
+
+### Q7 – Generic forecasting
+- New **Forecasting** category for generic forecasting (Metaculus, FRI incl. general support, Tetlock/Penn, ARLIS, RAND platform, Swift Centre, QURI, FutureSearch, Manifold, Rootclaim, SSPP, Mantic, OPTIC, IISS, CEPR, Good Judgment AI question tool).
+- Sage: 2024 "Software Tools for Forecasting" -> **Forecasting**; Coefficient 2025 general support and SFF grants -> **AI**.
+
+### Q8 – Rationality community
+- **EA & community** for all (CFAR, LessWrong, Lightcone general support, FABRIC, rationality meetups, Zvi Mowshowitz, Elizabeth Van Nostrand, Coordination Project). Lightcone flexHEG grant stays AI (stated purpose).
+
+### Q9 – Outreach media
+- **Unknown** (Kurzgesagt, Rational Animations, Should We Studio, Good Impressions, COVID documentary).
+
+### Q10 – Mixed AI/bio field-building
+- **AI** (BlueDot, Successif, Meridian, Future Impact Group, Trajectory Labs, Collider, Impact Academy, Nonlinear).
+
+### Q12 – Longview Philanthropy general support
+- **EA & community**.

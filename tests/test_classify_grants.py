@@ -5,7 +5,9 @@ from src.classify_grants import (
     apply_purpose_overrides,
     classify_coefficient,
     classify_sff,
+    explode_categories,
     funder_label_category,
+    parse_category_shares,
 )
 
 CODES = {
@@ -96,3 +98,42 @@ def test_classify_sff_raises_for_uncoded_organization():
     overrides = pd.DataFrame(columns=["organization", "purpose_contains"] + list(CODES))
     with pytest.raises(ValueError):
         classify_sff(grants, manual, overrides)
+
+
+def test_parse_category_shares_single():
+    """
+    Tests that a plain category gets the full share.
+    """
+    assert parse_category_shares("AI") == [("AI", 1.0)]
+
+
+def test_parse_category_shares_split():
+    """
+    Tests that a split category is parsed into shares.
+    """
+    assert parse_category_shares("AI=0.5;Bio=0.5") == [("AI", 0.5), ("Bio", 0.5)]
+
+
+def test_parse_category_shares_rejects_bad_sum():
+    """
+    Tests that shares not summing to 1 raise an error.
+    """
+    with pytest.raises(ValueError):
+        parse_category_shares("AI=0.5;Bio=0.4")
+
+
+def test_explode_categories_conserves_amount():
+    """
+    Tests that splitting keeps the total amount unchanged.
+    """
+    grants = pd.DataFrame(
+        {
+            "grant_id": [1, 2],
+            "amount_usd": [100.0, 50.0],
+            "category": ["AI", "AI=0.5;Bio=0.5"],
+        }
+    )
+    long = explode_categories(grants)
+    assert len(long) == 3
+    assert long["amount_usd_share"].sum() == 150.0
+    assert long.loc[long["category"] == "Bio", "amount_usd_share"].item() == 25.0

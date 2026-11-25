@@ -1,8 +1,13 @@
 """
 Assign every grant to a GCR category and combine all funders in one table.
 
-Categories: AI, Bio, Classic GCR, General x-risk, EA & community, Not GCR,
-and Unknown (open question, see data/manual/decisions.md).
+Categories: AI, Bio, Classic GCR, General x-risk, Climate, Geoengineering,
+Forecasting, EA & community, Not GCR, Regrant (money passed to another fund,
+excluded from totals) and Unknown. See data/manual/decisions.md.
+
+A category can be split across several categories, written as
+"AI=0.5;Bio=0.5". The long table grants_by_category.csv has one row per
+grant and category share, with `amount_usd_share` = amount x share.
 
 Each grant carries a `coding_source`:
 - "funder-label": category follows the funder's own fund (Coefficient Giving
@@ -137,6 +142,44 @@ def classify_sff(grants, manual_codes, overrides):
     return coded
 
 
+def parse_category_shares(category):
+    """
+    Parses a category string into (category, share) pairs.
+
+    Arguments:
+        category (str): e.g. "AI" or "AI=0.5;Bio=0.5"
+
+    Returns:
+        list: (category, share) tuples whose shares sum to 1.
+    """
+    if "=" not in category:
+        return [(category, 1.0)]
+    pairs = [part.split("=") for part in category.split(";")]
+    shares = [(name.strip(), float(value)) for name, value in pairs]
+    if abs(sum(share for _, share in shares) - 1) > 1e-9:
+        raise ValueError(f"Shares do not sum to 1: {category}")
+    return shares
+
+
+def explode_categories(grants):
+    """
+    Expands split categories into one row per grant and category share.
+
+    Arguments:
+        grants (pandas.DataFrame): grants with a `category` column
+
+    Returns:
+        pandas.DataFrame: rows with `category`, `share` and `amount_usd_share`.
+    """
+    long = grants.copy()
+    long["category"] = long["category"].apply(parse_category_shares)
+    long = long.explode("category", ignore_index=True)
+    long["share"] = long["category"].str[1]
+    long["category"] = long["category"].str[0]
+    long["amount_usd_share"] = long["amount_usd"] * long["share"]
+    return long
+
+
 def load_csv(path):
     """
     Reads a CSV with empty strings instead of NaN in text columns.
@@ -170,8 +213,11 @@ def main():
         [coefficient[OUTPUT_COLUMNS], sff[OUTPUT_COLUMNS]], ignore_index=True
     )
     combined.to_csv(PROCESSED_DIR / "grants_classified.csv", index=False)
-    print(f"Wrote {len(combined)} grants")
-    print(combined.pivot_table("amount_usd", "category", "funder", "sum") / 1e6)
+    long = explode_categories(combined)
+    long.to_csv(PROCESSED_DIR / "grants_by_category.csv", index=False)
+    print(f"Wrote {len(combined)} grants, {len(long)} category rows")
+    totals = long.pivot_table("amount_usd_share", "category", "funder", "sum")
+    print((totals / 1e6).round(1))
 
 
 if __name__ == "__main__":

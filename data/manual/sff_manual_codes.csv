@@ -235,157 +235,157 @@ Vanderbilt University [Formal Epistemology and AI Safety (FAST)],1,5000,SFF-2026
 Viva City Galactic,1,4000,SFF-2026,Not GCR,LLM-coded,high,,Longevity research
 Windfall Trust,1,16000,SFF-2026,AI,LLM-coded,high,,Windfall from AGI
 Wytham Abbey,1,76000,SFF-2023-H2,EA & community,LLM-coded,high,,EA event venue
-All-Party Parliamentary Group for Future Generations,1,171000,SFF-2021-H1,General x-risk,LLM-coded,low,Q1,UK parliamentary group on future generations / extreme risks
-Alpenglow Group Limited,3,2806000,SFF-2021-H1; SFF-2021-H2; SFF-2022-H1,General x-risk,LLM-coded,low,Q1,"CLTR: UK policy on extreme risks (AI, bio, risk management)"
-Association for Long Term Existence and Resilience (ALTER),3,483000,SFF-2022-H1; SFF-2023-H2; SFF-2025,General x-risk,LLM-coded,low,Q1,"ALTER: Israeli x-risk org (AI, bio/BWC, resilience)"
-BERI-CSER Collaboration,1,37000,SFF-2021-H1,General x-risk,LLM-coded,low,Q1,BERI collaboration with CSER
-BERI-FHI Collaboration,2,495000,SFF-2021-H1,General x-risk,LLM-coded,low,Q1,BERI collaboration with FHI
-BERI/CSER Collaboration,1,20000,SFF-2020-H1,General x-risk,LLM-coded,low,Q1,BERI collaboration with CSER
-Berkeley Existential Risk Initiative,3,433000,SFF-2020-H2; SFF-2023-H2; SFF-2024,General x-risk,LLM-coded,low,Q1,BERI general support (supports multiple x-risk groups)
-Berkeley Existential Risk Initiative (BERI),1,549000,SFF-2026,General x-risk,LLM-coded,low,Q1,BERI general support (supports multiple x-risk groups)
-Centre for Long-Term Resilience (CLTR),2,959000,SFF-2025; SFF-2026,General x-risk,LLM-coded,low,Q1,"CLTR: UK policy on extreme risks (AI, bio, risk management)"
-Centre for the Study of Existential Risk,1,40000,SFF-2019-Q3,General x-risk,LLM-coded,low,Q1,CSER general support
-"Centre for the Study of Existential Risk, University of Cambridge",2,195000,SFF-2019-Q4; SFF-2021-H1,General x-risk,LLM-coded,low,Q1,CSER general support
-Existential Risk Observatory,1,44000,SFF-2022-H1,AI,LLM-coded,low,Q1,Existential Risk Observatory (awareness; mostly AI)
-"Future of Humanity Institute, Research Scholars Programme",1,218000,SFF-2020-H2,General x-risk,LLM-coded,low,Q1,FHI Research Scholars Programme
-Future of Humanity Institute: Research Scholars Programme,1,30000,SFF-2020-H2,General x-risk,LLM-coded,low,Q1,FHI Research Scholars Programme
-Global Shield,1,424000,SFF-2024,General x-risk,LLM-coded,low,Q1,Global Shield: all-hazard GCR policy advocacy
-Good Ancestors Policy,2,703000,SFF-2024; SFF-2026,General x-risk,LLM-coded,low,Q1,"Good Ancestors Policy: Australian GCR policy (AI, bio)"
-Haydn Belfield,1,16000,Initiative Committee 2024,General x-risk,LLM-coded,low,Q1,Scholarship on governance of catastrophic technologies incl. AI
-Langsikt - Centre for Long-Term Policy,1,199000,SFF-2024,General x-risk,LLM-coded,low,Q1,"Langsikt: Norwegian long-term policy (pandemics, AI)"
-Legal Priorities Project,3,483000,SFF-2021-H1; SFF-2022-H2; SFF-2023-H2,General x-risk,LLM-coded,low,Q1,Legal Priorities Project
-Macrostrategy Research Initiative,1,170000,SFF-2024,General x-risk,LLM-coded,low,Q1,Macrostrategy Research Initiative (Bostrom)
-Macrostrategy Research Initiative (MRI),1,60000,SFF-2025,General x-risk,LLM-coded,low,Q1,Macrostrategy Research Initiative (Bostrom)
-Odyssean Institute,1,79000,SFF-2025,General x-risk,LLM-coded,low,Q1,Odyssean Institute
-Pour Demain,1,70000,SFF-2024,General x-risk,LLM-coded,low,Q1,Pour Demain: Swiss AI/bio policy
-Senter for langsiktig politikk/Centre for Long-Term Policy,1,325000,SFF-2023-H1,General x-risk,LLM-coded,low,Q1,"Langsikt: Norwegian long-term policy (pandemics, AI)"
-Sentinel,1,131000,SFF-2024,General x-risk,LLM-coded,low,Q1,Sentinel: early warning of catastrophes
-Simon Institute for Longterm Governance,4,1288000,SFF-2022-H1; SFF-2024; SFF-2025; SFF-2026,General x-risk,LLM-coded,low,Q1,Simon Institute for Longterm Governance
-The Centre for Long-Term Resilience (Alpenglow Group Limited),1,829000,SFF-2023-H2,General x-risk,LLM-coded,low,Q1,"CLTR: UK policy on extreme risks (AI, bio, risk management)"
-The Centre for Long-Term Resilience (CLTR),1,1083000,SFF-2024,General x-risk,LLM-coded,low,Q1,"CLTR: UK policy on extreme risks (AI, bio, risk management)"
-The Millennium Project,1,15950,SFF-2025,General x-risk,LLM-coded,low,Q1,Millennium Project: global futures
-Impact Academy Limited,1,72000,SFF-2024,EA & community,LLM-coded,low,Q10,"Impact Academy (EA training, later AI safety careers)"
-Nonlinear,1,599000,SFF-2022-H1,EA & community,LLM-coded,low,Q10,Nonlinear (EA/AI safety meta)
-9th International Conference for Applied Category Theory,1,30000,SFF-2026,Unknown,LLM-coded,low,Q11,Applied category theory conference; GCR relevance unclear
-Allelon,1,49000,SFF-2026,Unknown,LLM-coded,low,Q11,Ashgro-sponsored project; topic unknown
+All-Party Parliamentary Group for Future Generations,1,171000,SFF-2021-H1,General x-risk,human-coded,high,Q1,UK parliamentary group on future generations / extreme risks | Author decision: Q1 multi-hazard -> General x-risk
+Alpenglow Group Limited,3,2806000,SFF-2021-H1; SFF-2021-H2; SFF-2022-H1,AI,human-coded,high,Q1,"CLTR: UK policy on extreme risks (AI, bio, risk management) | Author decision: Q1 CLTR is pure AI"
+Association for Long Term Existence and Resilience (ALTER),3,483000,SFF-2022-H1; SFF-2023-H2; SFF-2025,AI=0.5;Bio=0.5,human-coded,high,Q1,"ALTER: Israeli x-risk org (AI, bio/BWC, resilience) | Author decision: Q1 AI+Bio org split 50/50"
+BERI-CSER Collaboration,1,37000,SFF-2021-H1,General x-risk,human-coded,high,Q1,BERI collaboration with CSER | Author decision: Q1 multi-hazard -> General x-risk
+BERI-FHI Collaboration,2,495000,SFF-2021-H1,General x-risk,human-coded,high,Q1,BERI collaboration with FHI | Author decision: Q1 multi-hazard -> General x-risk
+BERI/CSER Collaboration,1,20000,SFF-2020-H1,General x-risk,human-coded,high,Q1,BERI collaboration with CSER | Author decision: Q1 multi-hazard -> General x-risk
+Berkeley Existential Risk Initiative,3,433000,SFF-2020-H2; SFF-2023-H2; SFF-2024,General x-risk,human-coded,high,Q1,BERI general support (supports multiple x-risk groups) | Author decision: Q1 multi-hazard -> General x-risk
+Berkeley Existential Risk Initiative (BERI),1,549000,SFF-2026,General x-risk,human-coded,high,Q1,BERI general support (supports multiple x-risk groups) | Author decision: Q1 multi-hazard -> General x-risk
+Centre for Long-Term Resilience (CLTR),2,959000,SFF-2025; SFF-2026,AI,human-coded,high,Q1,"CLTR: UK policy on extreme risks (AI, bio, risk management) | Author decision: Q1 CLTR is pure AI"
+Centre for the Study of Existential Risk,1,40000,SFF-2019-Q3,General x-risk,human-coded,high,Q1,CSER general support | Author decision: Q1 multi-hazard -> General x-risk
+"Centre for the Study of Existential Risk, University of Cambridge",2,195000,SFF-2019-Q4; SFF-2021-H1,General x-risk,human-coded,high,Q1,CSER general support | Author decision: Q1 multi-hazard -> General x-risk
+Existential Risk Observatory,1,44000,SFF-2022-H1,AI,human-coded,high,Q1,Existential Risk Observatory (awareness; mostly AI) | Author decision: Q1 -> AI
+"Future of Humanity Institute, Research Scholars Programme",1,218000,SFF-2020-H2,General x-risk,human-coded,high,Q1,FHI Research Scholars Programme | Author decision: Q1 multi-hazard -> General x-risk
+Future of Humanity Institute: Research Scholars Programme,1,30000,SFF-2020-H2,General x-risk,human-coded,high,Q1,FHI Research Scholars Programme | Author decision: Q1 multi-hazard -> General x-risk
+Global Shield,1,424000,SFF-2024,General x-risk,human-coded,high,Q1,Global Shield: all-hazard GCR policy advocacy | Author decision: Q1 multi-hazard -> General x-risk
+Good Ancestors Policy,2,703000,SFF-2024; SFF-2026,General x-risk,human-coded,high,Q1,"Good Ancestors Policy: Australian GCR policy (AI, bio) | Author decision: Q1 multi-hazard -> General x-risk"
+Haydn Belfield,1,16000,Initiative Committee 2024,AI,human-coded,high,Q1,Scholarship on governance of catastrophic technologies incl. AI | Author decision: Q1 -> AI
+Langsikt - Centre for Long-Term Policy,1,199000,SFF-2024,AI=0.5;Bio=0.5,human-coded,high,Q1,"Langsikt: Norwegian long-term policy (pandemics, AI) | Author decision: Q1 AI+Bio org split 50/50"
+Legal Priorities Project,3,483000,SFF-2021-H1; SFF-2022-H2; SFF-2023-H2,AI,human-coded,high,Q1,Legal Priorities Project | Author decision: Q1 -> AI
+Macrostrategy Research Initiative,1,170000,SFF-2024,Unknown,human-coded,high,Q1,Macrostrategy Research Initiative (Bostrom) | Author decision: Q1 MRI unclear
+Macrostrategy Research Initiative (MRI),1,60000,SFF-2025,Unknown,human-coded,high,Q1,Macrostrategy Research Initiative (Bostrom) | Author decision: Q1 MRI unclear
+Odyssean Institute,1,79000,SFF-2025,General x-risk,human-coded,high,Q1,Odyssean Institute | Author decision: Q1 multi-hazard -> General x-risk
+Pour Demain,1,70000,SFF-2024,AI=0.5;Bio=0.5,human-coded,high,Q1,Pour Demain: Swiss AI/bio policy | Author decision: Q1 AI+Bio org split 50/50
+Senter for langsiktig politikk/Centre for Long-Term Policy,1,325000,SFF-2023-H1,AI=0.5;Bio=0.5,human-coded,high,Q1,"Langsikt: Norwegian long-term policy (pandemics, AI) | Author decision: Q1 AI+Bio org split 50/50"
+Sentinel,1,131000,SFF-2024,General x-risk,human-coded,high,Q1,Sentinel: early warning of catastrophes | Author decision: Q1 multi-hazard -> General x-risk
+Simon Institute for Longterm Governance,4,1288000,SFF-2022-H1; SFF-2024; SFF-2025; SFF-2026,AI,human-coded,high,Q1,Simon Institute for Longterm Governance | Author decision: Q1 -> AI
+The Centre for Long-Term Resilience (Alpenglow Group Limited),1,829000,SFF-2023-H2,AI,human-coded,high,Q1,"CLTR: UK policy on extreme risks (AI, bio, risk management) | Author decision: Q1 CLTR is pure AI"
+The Centre for Long-Term Resilience (CLTR),1,1083000,SFF-2024,AI,human-coded,high,Q1,"CLTR: UK policy on extreme risks (AI, bio, risk management) | Author decision: Q1 CLTR is pure AI"
+The Millennium Project,1,15950,SFF-2025,Not GCR,human-coded,high,Q1,Millennium Project: global futures | Author decision: Q1 Millennium Project not GCR work
+Impact Academy Limited,1,72000,SFF-2024,AI,human-coded,high,Q10,"Impact Academy (EA training, later AI safety careers) | Author decision: Q10 mixed field-building -> AI"
+Nonlinear,1,599000,SFF-2022-H1,AI,human-coded,high,Q10,Nonlinear (EA/AI safety meta) | Author decision: Q10 mixed field-building -> AI
+9th International Conference for Applied Category Theory,1,30000,SFF-2026,Unknown,human-coded,high,Q11,"Applied category theory conference; GCR relevance unclear | Author decision: Q11 not resolved, left Unknown"
+Allelon,1,49000,SFF-2026,Unknown,human-coded,high,Q11,"Ashgro-sponsored project; topic unknown | Author decision: Q11 not resolved, left Unknown"
 Amodo Design,1,1229000,SFF-2024-FlexHEGs,AI,LLM-coded,high,,Funded in SFF-2024-FlexHEGs round (hardware-enabled AI chip governance)
 Amodo Design Ltd.,1,6000,SFF-2023-H2,AI,LLM-coded,high,,Same firm as SFF-2024-FlexHEGs grantee Amodo Design (AI chip governance hardware)
-Augur,1,160000,SFF-2025,Unknown,LLM-coded,low,Q11,Unknown
-BERI-DMIP Collaboration,1,66000,SFF-2024,Unknown,LLM-coded,low,Q11,BERI collaboration with 'DMIP'; group unknown
-Basis Research Institute,2,422000,SFF-2023-H1; SFF-2024,Unknown,LLM-coded,low,Q11,Basis: AI for science / cognitive modelling
-Cave Exploration Society Inc.,1,20000,SFF-2022-H1,Unknown,LLM-coded,low,Q11,Unknown
-Cavendish Labs Co.,1,88000,SFF-2023-H2,Unknown,LLM-coded,low,Q11,Cavendish Labs: AI safety and pandemic prevention research
-Center for Humane Technology (CHT),1,468000,SFF-2025,Unknown,LLM-coded,low,Q11,Center for Humane Technology: social media and AI harms
-Church Lab Meiosis Team,1,700000,SFF-2023-H1,Not GCR,LLM-coded,low,Q11,In vitro gametogenesis research (Church lab)
-Consequence Foundries,1,168000,SFF-2022-H1,Unknown,LLM-coded,low,Q11,Convergence-sponsored project; topic unknown
-Convergence,1,13000,SFF-2021-H1,Unknown,LLM-coded,low,Q11,"Convergence Analysis general support (x-risk strategy, later AI scenarios)"
-Convergence Analysis,2,45000,SFF-2020-H1; SFF-2026,Unknown,LLM-coded,low,Q11,"Convergence Analysis general support (x-risk strategy, later AI scenarios)"
-Convergent Research,1,389000,SFF-2022-H1,Not GCR,LLM-coded,low,Q11,Convergent Research: focused research organisations (science)
+Augur,1,160000,SFF-2025,Unknown,human-coded,high,Q11,"Unknown | Author decision: Q11 not resolved, left Unknown"
+BERI-DMIP Collaboration,1,66000,SFF-2024,Unknown,human-coded,high,Q11,"BERI collaboration with 'DMIP'; group unknown | Author decision: Q11 not resolved, left Unknown"
+Basis Research Institute,2,422000,SFF-2023-H1; SFF-2024,AI,human-coded,high,Q11,Basis: AI for science / cognitive modelling | Author decision: Q11 answered -> AI
+Cave Exploration Society Inc.,1,20000,SFF-2022-H1,Unknown,human-coded,high,Q11,"Unknown | Author decision: Q11 not resolved, left Unknown"
+Cavendish Labs Co.,1,88000,SFF-2023-H2,Unknown,human-coded,high,Q11,"Cavendish Labs: AI safety and pandemic prevention research | Author decision: Q11 not resolved, left Unknown"
+Center for Humane Technology (CHT),1,468000,SFF-2025,AI,human-coded,high,Q11,Center for Humane Technology: social media and AI harms | Author decision: Q11 answered -> AI
+Church Lab Meiosis Team,1,700000,SFF-2023-H1,Unknown,human-coded,high,Q11,"In vitro gametogenesis research (Church lab) | Author decision: Q11 not resolved, left Unknown"
+Consequence Foundries,1,168000,SFF-2022-H1,Unknown,human-coded,high,Q11,"Convergence-sponsored project; topic unknown | Author decision: Q11 not resolved, left Unknown"
+Convergence,1,13000,SFF-2021-H1,Unknown,human-coded,high,Q11,"Convergence Analysis general support (x-risk strategy, later AI scenarios) | Author decision: Q11 not resolved, left Unknown"
+Convergence Analysis,2,45000,SFF-2020-H1; SFF-2026,Unknown,human-coded,high,Q11,"Convergence Analysis general support (x-risk strategy, later AI scenarios) | Author decision: Q11 not resolved, left Unknown"
+Convergent Research,1,389000,SFF-2022-H1,Unknown,human-coded,high,Q11,"Convergent Research: focused research organisations (science) | Author decision: Q11 not resolved, left Unknown"
 Earendil [Security Layers Project],1,778000,SFF-2024-FlexHEGs,AI,LLM-coded,high,,Funded in SFF-2024-FlexHEGs round (hardware-enabled AI chip governance)
 Earendil [Standards Infrastructure Project],1,564000,SFF-2024-FlexHEGs,AI,LLM-coded,high,,Funded in SFF-2024-FlexHEGs round (hardware-enabled AI chip governance)
-Effective Institutions Project,1,210000,SFF-2024,Unknown,LLM-coded,low,Q11,Effective Institutions Project: institutional decision-making (increasingly AI)
-Effective Institutions Project (EIP),2,1876000,SFF-2025; SFF-2026,Unknown,LLM-coded,low,Q11,Effective Institutions Project: institutional decision-making (increasingly AI)
-Epistea,1,189000,SFF-2023-H2,Unknown,LLM-coded,low,Q11,Epistea general support (Czech EA/rationality/AI hub)
-Epistemic Garden,1,100000,SFF-2025,Unknown,LLM-coded,low,Q11,Unknown
-European Center for Not-For-Profit Law (ECNL),1,142000,SFF-2026,Unknown,LLM-coded,low,Q11,NGO law centre; likely AI regulation work
-First Proof,1,36000,SFF-2026,Unknown,LLM-coded,low,Q11,Unknown
-Flourishing Future Foundation (FFF),1,30000,SFF-2025,Unknown,LLM-coded,low,Q11,Unknown
-Foresight Institute,3,1075000,SFF-2022-H1; SFF-2025; SFF-2026,Unknown,LLM-coded,low,Q11,"Foresight Institute: nanotech, AI, longevity, neurotech"
-Foundation for American Innovation,2,707000,SFF-2023-H2; SFF-2024,Unknown,LLM-coded,low,Q11,"Foundation for American Innovation: tech policy, incl. AI"
-Foundation for American Innovation (FAI),2,1816000,SFF-2025; SFF-2026,Unknown,LLM-coded,low,Q11,"Foundation for American Innovation: tech policy, incl. AI"
-Foxglove,1,5000,SFF-2024,Unknown,LLM-coded,low,Q11,Foxglove: tech-justice litigation
-Future of Humanity Foundation,1,10000,SFF-2020-H1,Unknown,LLM-coded,low,Q11,Future of Humanity Foundation: unclear
-Fønix,1,378000,SFF-2023-H2,Unknown,LLM-coded,low,Q11,Fønix (via EA Sweden); unknown
-Gimbal,1,53000,SFF-2026,Unknown,LLM-coded,low,Q11,Unknown
-Goodheart Labs,1,238000,SFF-2026,Unknown,LLM-coded,low,Q11,AI-written community notes (epistemics)
-GreenEarth,1,378000,SFF-2026,Unknown,LLM-coded,low,Q11,GreenEarth (BERI-sponsored); unknown
-History Lab,1,27000,SFF-2024,Not GCR,LLM-coded,low,Q11,Declassified-document history project
-Humans in Control,1,23000,SFF-2026,Unknown,LLM-coded,low,Q11,Unknown
-Institute for Security and Technology,1,400000,Initiative Committee 2024,Unknown,LLM-coded,low,Q11,"Institute for Security and Technology: AI, cyber, nuclear"
-JUSTICE,1,258000,SFF-2024,Unknown,LLM-coded,low,Q11,JUSTICE (UK legal charity); topic unknown
-Laboratory for Social Minds @ Carnegie Mellon University,1,244000,SFF-2022-H1,Unknown,LLM-coded,low,Q11,CMU Laboratory for Social Minds
-Laboratory for Social Minds at Carnegie Mellon University,1,11000,SFF-2021-H1,Unknown,LLM-coded,low,Q11,CMU Laboratory for Social Minds
-Legal Advocates for Safe Science and Technology (LASST),2,940000,SFF-2025; SFF-2026,Unknown,LLM-coded,low,Q11,LASST: legal advocacy on AI/bio safety
-"Legal Advocates for Safe Science and Technology, Inc.",1,278000,SFF-2024,Unknown,LLM-coded,low,Q11,LASST: legal advocacy on AI/bio safety
-Legal Safety Lab,2,710000,SFF-2024; SFF-2026,Unknown,LLM-coded,low,Q11,Legal Safety Lab; likely AI
-Lens Academy,1,252000,SFF-2026,Unknown,LLM-coded,low,Q11,Lens Academy (Beacon Institute for GCR)
-Leverage Research,1,80000,SFF-2020-H1,Not GCR,LLM-coded,low,Q11,Leverage Research
-MSEP Project,1,166000,SFF-2024,Unknown,LLM-coded,low,Q11,MSEP project; unknown
-Machine Learning for Socio-technical Systems Lab,1,163000,SFF-2024,Unknown,LLM-coded,low,Q11,ML for socio-technical systems lab (URI)
-Mathematical Metaphysics Institute,3,471000,SFF-2024; SFF-2025; SFF-2026,Unknown,LLM-coded,low,Q11,Mathematical Metaphysics Institute
-Median Group,3,398000,SFF-2019-Q4; SFF-2020-H2; SFF-2022-H1,Unknown,LLM-coded,low,Q11,Median Group research
-Medronho,1,564000,SFF-2025,Unknown,LLM-coded,low,Q11,Unknown
-Metamorphic Group LLC,2,20000,SFF-2020-H1,Not GCR,LLM-coded,low,Q11,Unknown
-Mindstream Project,1,100000,SFF-2025,Unknown,LLM-coded,low,Q11,Unknown
-Missing Measures,2,614000,SFF-2025; SFF-2026,Unknown,LLM-coded,low,Q11,Missing Measures (Lightcone); unknown
-Moonlight Institute,1,127000,SFF-2021-H1,Unknown,LLM-coded,low,Q11,Unknown
-Oath Technologies,1,2975000,SFF-2026,Unknown,LLM-coded,low,Q11,Oath Technologies (Convergent); unknown
+Effective Institutions Project,1,210000,SFF-2024,General x-risk,human-coded,high,Q11,Effective Institutions Project: institutional decision-making (increasingly AI) | Author decision: Q11 answered -> General x-risk
+Effective Institutions Project (EIP),2,1876000,SFF-2025; SFF-2026,General x-risk,human-coded,high,Q11,Effective Institutions Project: institutional decision-making (increasingly AI) | Author decision: Q11 answered -> General x-risk
+Epistea,1,189000,SFF-2023-H2,Unknown,human-coded,high,Q11,"Epistea general support (Czech EA/rationality/AI hub) | Author decision: Q11 not resolved, left Unknown"
+Epistemic Garden,1,100000,SFF-2025,Unknown,human-coded,high,Q11,"Unknown | Author decision: Q11 not resolved, left Unknown"
+European Center for Not-For-Profit Law (ECNL),1,142000,SFF-2026,Unknown,human-coded,high,Q11,"NGO law centre; likely AI regulation work | Author decision: Q11 not resolved, left Unknown"
+First Proof,1,36000,SFF-2026,Unknown,human-coded,high,Q11,"Unknown | Author decision: Q11 not resolved, left Unknown"
+Flourishing Future Foundation (FFF),1,30000,SFF-2025,Unknown,human-coded,high,Q11,"Unknown | Author decision: Q11 not resolved, left Unknown"
+Foresight Institute,3,1075000,SFF-2022-H1; SFF-2025; SFF-2026,AI=0.5;Bio=0.5,human-coded,high,Q11,"Foresight Institute: nanotech, AI, longevity, neurotech | Author decision: Q11 answered -> AI=0.5;Bio=0.5"
+Foundation for American Innovation,2,707000,SFF-2023-H2; SFF-2024,Not GCR,human-coded,high,Q11,"Foundation for American Innovation: tech policy, incl. AI | Author decision: Q11 answered -> Not GCR"
+Foundation for American Innovation (FAI),2,1816000,SFF-2025; SFF-2026,Not GCR,human-coded,high,Q11,"Foundation for American Innovation: tech policy, incl. AI | Author decision: Q11 answered -> Not GCR"
+Foxglove,1,5000,SFF-2024,Unknown,human-coded,high,Q11,"Foxglove: tech-justice litigation | Author decision: Q11 not resolved, left Unknown"
+Future of Humanity Foundation,1,10000,SFF-2020-H1,Unknown,human-coded,high,Q11,"Future of Humanity Foundation: unclear | Author decision: Q11 not resolved, left Unknown"
+Fønix,1,378000,SFF-2023-H2,Unknown,human-coded,high,Q11,Fønix (via EA Sweden); unknown | Author decision: Q11 answered -> Unknown
+Gimbal,1,53000,SFF-2026,Unknown,human-coded,high,Q11,"Unknown | Author decision: Q11 not resolved, left Unknown"
+Goodheart Labs,1,238000,SFF-2026,Unknown,human-coded,high,Q11,"AI-written community notes (epistemics) | Author decision: Q11 not resolved, left Unknown"
+GreenEarth,1,378000,SFF-2026,Unknown,human-coded,high,Q11,GreenEarth (BERI-sponsored); unknown | Author decision: Q11 answered -> Unknown
+History Lab,1,27000,SFF-2024,Unknown,human-coded,high,Q11,"Declassified-document history project | Author decision: Q11 not resolved, left Unknown"
+Humans in Control,1,23000,SFF-2026,Unknown,human-coded,high,Q11,"Unknown | Author decision: Q11 not resolved, left Unknown"
+Institute for Security and Technology,1,400000,Initiative Committee 2024,AI,human-coded,high,Q11,"Institute for Security and Technology: AI, cyber, nuclear | Author decision: Q11 answered -> AI"
+JUSTICE,1,258000,SFF-2024,Unknown,human-coded,high,Q11,"JUSTICE (UK legal charity); topic unknown | Author decision: Q11 not resolved, left Unknown"
+Laboratory for Social Minds @ Carnegie Mellon University,1,244000,SFF-2022-H1,Unknown,human-coded,high,Q11,"CMU Laboratory for Social Minds | Author decision: Q11 not resolved, left Unknown"
+Laboratory for Social Minds at Carnegie Mellon University,1,11000,SFF-2021-H1,Unknown,human-coded,high,Q11,"CMU Laboratory for Social Minds | Author decision: Q11 not resolved, left Unknown"
+Legal Advocates for Safe Science and Technology (LASST),2,940000,SFF-2025; SFF-2026,AI,human-coded,high,Q11,LASST: legal advocacy on AI/bio safety | Author decision: Q11 answered -> AI
+"Legal Advocates for Safe Science and Technology, Inc.",1,278000,SFF-2024,AI,human-coded,high,Q11,LASST: legal advocacy on AI/bio safety | Author decision: Q11 answered -> AI
+Legal Safety Lab,2,710000,SFF-2024; SFF-2026,General x-risk,human-coded,high,Q11,Legal Safety Lab; likely AI | Author decision: Q11 answered -> General x-risk
+Lens Academy,1,252000,SFF-2026,Unknown,human-coded,high,Q11,"Lens Academy (Beacon Institute for GCR) | Author decision: Q11 not resolved, left Unknown"
+Leverage Research,1,80000,SFF-2020-H1,Unknown,human-coded,high,Q11,"Leverage Research | Author decision: Q11 not resolved, left Unknown"
+MSEP Project,1,166000,SFF-2024,Unknown,human-coded,high,Q11,"MSEP project; unknown | Author decision: Q11 not resolved, left Unknown"
+Machine Learning for Socio-technical Systems Lab,1,163000,SFF-2024,Unknown,human-coded,high,Q11,"ML for socio-technical systems lab (URI) | Author decision: Q11 not resolved, left Unknown"
+Mathematical Metaphysics Institute,3,471000,SFF-2024; SFF-2025; SFF-2026,AI,human-coded,high,Q11,Mathematical Metaphysics Institute | Author decision: Q11 answered -> AI
+Median Group,3,398000,SFF-2019-Q4; SFF-2020-H2; SFF-2022-H1,AI,human-coded,high,Q11,Median Group research | Author decision: Q11 answered -> AI
+Medronho,1,564000,SFF-2025,Unknown,human-coded,high,Q11,Unknown | Author decision: Q11 answered -> Unknown
+Metamorphic Group LLC,2,20000,SFF-2020-H1,Unknown,human-coded,high,Q11,"Unknown | Author decision: Q11 not resolved, left Unknown"
+Mindstream Project,1,100000,SFF-2025,Unknown,human-coded,high,Q11,"Unknown | Author decision: Q11 not resolved, left Unknown"
+Missing Measures,2,614000,SFF-2025; SFF-2026,Unknown,human-coded,high,Q11,Missing Measures (Lightcone); unknown | Author decision: Q11 answered -> Unknown
+Moonlight Institute,1,127000,SFF-2021-H1,Unknown,human-coded,high,Q11,"Unknown | Author decision: Q11 not resolved, left Unknown"
+Oath Technologies,1,2975000,SFF-2026,AI,human-coded,high,Q11,Oath Technologies (Convergent); unknown | Author decision: Q11 answered -> AI
 Oregon State University,1,271000,SFF-2024-FlexHEGs,AI,LLM-coded,high,,Funded in SFF-2024-FlexHEGs round (hardware-enabled AI chip governance)
-Ovelle Bio,1,667000,SFF-2025,Not GCR,LLM-coded,low,Q11,Biotech (in vitro gametogenesis)
-"PARPA, Inc.",1,200000,SFF-2022-H2,Unknown,LLM-coded,low,Q11,PARPA; unknown
-Petr Salaba,1,26000,SFF-2026,Unknown,LLM-coded,low,Q11,Research by Petr Salaba
-Plurality Institute,1,100000,SFF-2025,Unknown,LLM-coded,low,Q11,Plurality Institute
-Poseidon Research,1,675000,SFF-2026,Unknown,LLM-coded,low,Q11,Poseidon Research; likely AI
-Project Solve,1,196000,SFF-2023-H1,Unknown,LLM-coded,low,Q11,Project Solve; unknown
-Psst.org,1,243000,SFF-2026,Unknown,LLM-coded,low,Q11,Psst.org: tech whistleblowers
-Psychosecurity Ethics @ EURAIO,1,38000,SFF-2024,Unknown,LLM-coded,low,Q11,Psychosecurity ethics project
-Reciprocal Research,1,668000,SFF-2026,Unknown,LLM-coded,low,Q11,Reciprocal Research; unknown
-Regents of the University of California at Berkeley,1,365000,SFF-2024,Unknown,LLM-coded,low,Q11,Prof. Emma Pierson (AI and health)
-Rethink Priorities,3,306000,SFF-2020-H2; SFF-2022-H1; SFF-2024,Unknown,LLM-coded,low,Q11,Rethink Priorities general support (multi-cause)
-Scholarship Workshop,1,100000,SFF-2022-H2,Unknown,LLM-coded,low,Q11,Scholarship Workshop; unknown
-Seismic Foundation,1,7000,SFF-2026,Unknown,LLM-coded,low,Q11,Seismic Foundation
-Seldon Labs,1,53000,SFF-2025,Unknown,LLM-coded,low,Q11,Seldon Labs; likely AI security
-Sentience Institute,1,50000,SFF-2022-H1,Not GCR,LLM-coded,low,Q11,Sentience Institute (moral circle expansion)
-Stichting Legal Safety Lab,1,101000,SFF-2025,Unknown,LLM-coded,low,Q11,Legal Safety Lab; likely AI
-Tara Research,1,319000,SFF-2026,Unknown,LLM-coded,low,Q11,Tara Research; unknown
-Technical University of Munich [Civic Machines Lab],1,170000,SFF-2026,Unknown,LLM-coded,low,Q11,TUM Civic Machines Lab
-The Divinity School (Div School),1,99000,SFF-2026,Unknown,LLM-coded,low,Q11,The Divinity School; unknown
-The Foresight Institute,1,51000,SFF-2024,Unknown,LLM-coded,low,Q11,"Foresight Institute: nanotech, AI, longevity, neurotech"
-The Goodly Institute,1,75000,SFF-2022-H1,Unknown,LLM-coded,low,Q11,The Goodly Institute; unknown
-The Inside Story of Leverage Research 1.0,1,46000,SFF-2026,Not GCR,LLM-coded,low,Q11,Leverage Research
-The Society Library,1,50000,SFF-2022-H2,Not GCR,LLM-coded,low,Q11,Debate mapping
-Topos,2,400000,Initiative Committee 2024,Unknown,LLM-coded,low,Q11,Topos Institute (applied category theory)
-Topos Institute,10,2506000,SFF-2020-H2; SFF-2021-H2; SFF-2022-H1; SFF-2022-H2; SFF-2023-H1; SFF-2023-H2; SFF-2024; SFF-2025; SFF-2026,Unknown,LLM-coded,low,Q11,Topos Institute (applied category theory)
-Trustless TEE,1,1174000,SFF-2026,Unknown,LLM-coded,low,Q11,Trustless TEE; likely AI hardware verification
-UC Berkeley [HealthcareAI],1,297000,SFF-2026,Unknown,LLM-coded,low,Q11,HealthcareAI (UC Berkeley)
+Ovelle Bio,1,667000,SFF-2025,Unknown,human-coded,high,Q11,"Biotech (in vitro gametogenesis) | Author decision: Q11 not resolved, left Unknown"
+"PARPA, Inc.",1,200000,SFF-2022-H2,Unknown,human-coded,high,Q11,"PARPA; unknown | Author decision: Q11 not resolved, left Unknown"
+Petr Salaba,1,26000,SFF-2026,Unknown,human-coded,high,Q11,"Research by Petr Salaba | Author decision: Q11 not resolved, left Unknown"
+Plurality Institute,1,100000,SFF-2025,Unknown,human-coded,high,Q11,"Plurality Institute | Author decision: Q11 not resolved, left Unknown"
+Poseidon Research,1,675000,SFF-2026,AI,human-coded,high,Q11,Poseidon Research; likely AI | Author decision: Q11 answered -> AI
+Project Solve,1,196000,SFF-2023-H1,Unknown,human-coded,high,Q11,"Project Solve; unknown | Author decision: Q11 not resolved, left Unknown"
+Psst.org,1,243000,SFF-2026,Unknown,human-coded,high,Q11,"Psst.org: tech whistleblowers | Author decision: Q11 not resolved, left Unknown"
+Psychosecurity Ethics @ EURAIO,1,38000,SFF-2024,Unknown,human-coded,high,Q11,"Psychosecurity ethics project | Author decision: Q11 not resolved, left Unknown"
+Reciprocal Research,1,668000,SFF-2026,AI,human-coded,high,Q11,Reciprocal Research; unknown | Author decision: Q11 answered -> AI
+Regents of the University of California at Berkeley,1,365000,SFF-2024,Unknown,human-coded,high,Q11,"Prof. Emma Pierson (AI and health) | Author decision: Q11 not resolved, left Unknown"
+Rethink Priorities,3,306000,SFF-2020-H2; SFF-2022-H1; SFF-2024,Unknown,human-coded,high,Q11,"Rethink Priorities general support (multi-cause) | Author decision: Q11 not resolved, left Unknown"
+Scholarship Workshop,1,100000,SFF-2022-H2,Unknown,human-coded,high,Q11,"Scholarship Workshop; unknown | Author decision: Q11 not resolved, left Unknown"
+Seismic Foundation,1,7000,SFF-2026,Unknown,human-coded,high,Q11,"Seismic Foundation | Author decision: Q11 not resolved, left Unknown"
+Seldon Labs,1,53000,SFF-2025,Unknown,human-coded,high,Q11,"Seldon Labs; likely AI security | Author decision: Q11 not resolved, left Unknown"
+Sentience Institute,1,50000,SFF-2022-H1,Unknown,human-coded,high,Q11,"Sentience Institute (moral circle expansion) | Author decision: Q11 not resolved, left Unknown"
+Stichting Legal Safety Lab,1,101000,SFF-2025,General x-risk,human-coded,high,Q11,Legal Safety Lab; likely AI | Author decision: Q11 answered -> General x-risk
+Tara Research,1,319000,SFF-2026,Unknown,human-coded,high,Q11,"Tara Research; unknown | Author decision: Q11 not resolved, left Unknown"
+Technical University of Munich [Civic Machines Lab],1,170000,SFF-2026,Unknown,human-coded,high,Q11,"TUM Civic Machines Lab | Author decision: Q11 not resolved, left Unknown"
+The Divinity School (Div School),1,99000,SFF-2026,Unknown,human-coded,high,Q11,"The Divinity School; unknown | Author decision: Q11 not resolved, left Unknown"
+The Foresight Institute,1,51000,SFF-2024,AI=0.5;Bio=0.5,human-coded,high,Q11,"Foresight Institute: nanotech, AI, longevity, neurotech | Author decision: Q11 answered -> AI=0.5;Bio=0.5"
+The Goodly Institute,1,75000,SFF-2022-H1,Unknown,human-coded,high,Q11,"The Goodly Institute; unknown | Author decision: Q11 not resolved, left Unknown"
+The Inside Story of Leverage Research 1.0,1,46000,SFF-2026,Unknown,human-coded,high,Q11,"Leverage Research | Author decision: Q11 not resolved, left Unknown"
+The Society Library,1,50000,SFF-2022-H2,Unknown,human-coded,high,Q11,"Debate mapping | Author decision: Q11 not resolved, left Unknown"
+Topos,2,400000,Initiative Committee 2024,Not GCR,human-coded,high,Q11,Topos Institute (applied category theory) | Author decision: Q11 answered -> Not GCR
+Topos Institute,10,2506000,SFF-2020-H2; SFF-2021-H2; SFF-2022-H1; SFF-2022-H2; SFF-2023-H1; SFF-2023-H2; SFF-2024; SFF-2025; SFF-2026,Not GCR,human-coded,high,Q11,Topos Institute (applied category theory) | Author decision: Q11 answered -> Not GCR
+Trustless TEE,1,1174000,SFF-2026,Not GCR,human-coded,high,Q11,Trustless TEE; likely AI hardware verification | Author decision: Q11 answered -> Not GCR
+UC Berkeley [HealthcareAI],1,297000,SFF-2026,Unknown,human-coded,high,Q11,"HealthcareAI (UC Berkeley) | Author decision: Q11 not resolved, left Unknown"
 University of Southern California,1,512000,SFF-2024-FlexHEGs,AI,LLM-coded,high,,Funded in SFF-2024-FlexHEGs round (hardware-enabled AI chip governance)
-University of Wisconsin - Madison,1,309000,SFF-2022-H2,Unknown,LLM-coded,low,Q11,University of Wisconsin-Madison; group unknown
-Vanderbilt University,1,38000,SFF-2024,Unknown,LLM-coded,low,Q11,Vanderbilt University; group unknown
-Viento,1,102000,SFF-2021-H1,Unknown,LLM-coded,low,Q11,Viento; unknown
-"Whylome, Inc.",1,345000,SFF-2022-H2,Unknown,LLM-coded,low,Q11,Whylome; unknown
+University of Wisconsin - Madison,1,309000,SFF-2022-H2,Unknown,human-coded,high,Q11,"University of Wisconsin-Madison; group unknown | Author decision: Q11 not resolved, left Unknown"
+Vanderbilt University,1,38000,SFF-2024,Unknown,human-coded,high,Q11,"Vanderbilt University; group unknown | Author decision: Q11 not resolved, left Unknown"
+Viento,1,102000,SFF-2021-H1,Unknown,human-coded,high,Q11,"Viento; unknown | Author decision: Q11 not resolved, left Unknown"
+"Whylome, Inc.",1,345000,SFF-2022-H2,Unknown,human-coded,high,Q11,"Whylome; unknown | Author decision: Q11 not resolved, left Unknown"
 Worcester Polytechnic Institute & University of Massachusetts Amherst,1,233000,SFF-2024-FlexHEGs,AI,LLM-coded,high,,Funded in SFF-2024-FlexHEGs round (hardware-enabled AI chip governance)
-Zig Zag Technology,1,30000,SFF-2025,Unknown,LLM-coded,low,Q11,Zig Zag Technology; unknown
-fp21,1,172000,SFF-2023-H1,Unknown,LLM-coded,low,Q11,fp21 (foreign policy think tank)
-Longview Philanthropy,3,1372000,Initiative Committee 2024; SFF-2022-H2; SFF-2024,Unknown,LLM-coded,low,Q12,Longview Philanthropy general support
-Global Catastrophic Risk Institute,7,495000,SFF-2019-Q4; SFF-2020-H1; SFF-2020-H2; SFF-2021-H1; SFF-2022-H1; SFF-2024,General x-risk,LLM-coded,low,Q1b,GCRI general support
-Global Catastrophic Risks Institute,1,60000,SFF-2019-Q3,General x-risk,LLM-coded,low,Q1b,GCRI general support
-Future of Life Institute,6,640000,SFF-2019-Q3; SFF-2020-H1; SFF-2020-H2,Unknown,LLM-coded,low,Q2,Future of Life Institute general support
-BERI-SERI Collaboration,2,347000,SFF-2021-H1,General x-risk,LLM-coded,low,Q3,BERI collaboration with Stanford Existential Risks Initiative
-Stanford Existential Risks Initiative,2,125000,SFF-2020-H2,General x-risk,LLM-coded,low,Q3,Stanford Existential Risks Initiative
-The Rethink Priorities Existential Security Team (XST),1,49000,SFF-2023-H2,General x-risk,LLM-coded,low,Q3,RP Existential Security Team (x-risk field-building)
-University of Chicago Existential Risk Laboratory,1,380000,SFF-2023-H1,General x-risk,LLM-coded,low,Q3,UChicago Existential Risk Laboratory
-University of Chicago [Existential Risk Laboratory (XLab)],1,329000,SFF-2026,General x-risk,LLM-coded,low,Q3,UChicago Existential Risk Laboratory
-Rethink Priorities (RP) [Worldview Investigation Team],1,166000,SFF-2025,Unknown,LLM-coded,low,Q5,RP worldview investigations (cause prioritisation)
-AI Risk Mitigation Fund,1,530000,SFF-2024,AI,LLM-coded,low,Q6,Regranting fund for AI risk (possible double counting)
-EA Infrastructure Fund,1,699000,SFF-2021-H2,EA & community,LLM-coded,low,Q6,EA Infrastructure Fund (regranting)
-Long-Term Future Fund,3,2784000,SFF-2021-H1; SFF-2021-H2; SFF-2023-H2,AI,LLM-coded,low,Q6,Long-Term Future Fund (regranting; double counting)
-Manifund,1,90000,SFF-2024,Unknown,LLM-coded,low,Q6,Manifund regranting platform
-Manifold Markets,2,1584000,SFF-2022-H1; SFF-2023-H1,Not GCR,LLM-coded,low,Q7,Prediction market platform
-Metaculus,1,750000,SFF-2025,Not GCR,LLM-coded,low,Q7,Forecasting platform
-Quantified Uncertainty Research Institute,4,661000,SFF-2020-H1; SFF-2022-H1,Not GCR,LLM-coded,low,Q7,QURI: estimation tools
-Rootclaim,1,400000,Initiative Committee 2024,Not GCR,LLM-coded,low,Q7,Rootclaim: probabilistic analysis
-Sage Future,2,468000,SFF-2025; SFF-2026,Unknown,LLM-coded,low,Q7,"Sage (AI Digest, forecasting tools)"
-Social Science Prediction Platform,1,346000,SFF-2022-H1,Not GCR,LLM-coded,low,Q7,Social science prediction platform
-The Quantified Uncertainty Research Institute,1,62000,SFF-2024,Not GCR,LLM-coded,low,Q7,QURI: estimation tools
-Center For Applied Rationality,3,1467000,SFF-2019-Q3; SFF-2019-Q4; SFF-2021-H1,EA & community,LLM-coded,low,Q8,CFAR: rationality workshops
-Center for Applied Rationality,3,254000,SFF-2020-H2,EA & community,LLM-coded,low,Q8,CFAR: rationality workshops
-Center for Applied Rationality (CFAR),2,455000,SFF-2022-H2; SFF-2026,EA & community,LLM-coded,low,Q8,CFAR: rationality workshops
-Coordination Project,1,29000,SFF-2023-H2,EA & community,LLM-coded,low,Q8,CFAR-sponsored coordination project
-Elizabeth Van Nostrand c/o Lightcone,1,25000,SFF-2022-H2,EA & community,LLM-coded,low,Q8,Rationalist researcher (Lightcone)
-FABRIC,1,10000,SFF-2025,EA & community,LLM-coded,low,Q8,FABRIC: rationality camps
-LessWrong,4,1485000,SFF-2020-H1; SFF-2021-H1,EA & community,LLM-coded,low,Q8,LessWrong
-LessWrong 2.0,1,260000,SFF-2019-Q3,EA & community,LLM-coded,low,Q8,LessWrong
-Lightcone Infrastructure,9,9793000,Initiative Committee 2024; SFF-2021-H2; SFF-2022-H2; SFF-2023-H1; SFF-2023-H2; SFF-2025; SFF-2026,EA & community,LLM-coded,low,Q8,"Lightcone Infrastructure (LessWrong, Lighthaven, AI Alignment Forum)"
-Lightcone Infrastructure Inc.,1,513500,SFF-2024,EA & community,LLM-coded,low,Q8,"Lightcone Infrastructure (LessWrong, Lighthaven, AI Alignment Forum)"
-Rationality Meetups,1,140000,SFF-2022-H2,EA & community,LLM-coded,low,Q8,Rationality meetups
-Zvi Mowshowitz,1,200000,Initiative Committee 2024,EA & community,LLM-coded,low,Q8,"Zvi Mowshowitz (rationalist blogger, mostly AI)"
+Zig Zag Technology,1,30000,SFF-2025,Unknown,human-coded,high,Q11,"Zig Zag Technology; unknown | Author decision: Q11 not resolved, left Unknown"
+fp21,1,172000,SFF-2023-H1,Unknown,human-coded,high,Q11,"fp21 (foreign policy think tank) | Author decision: Q11 not resolved, left Unknown"
+Longview Philanthropy,3,1372000,Initiative Committee 2024; SFF-2022-H2; SFF-2024,EA & community,human-coded,high,Q12,Longview Philanthropy general support | Author decision: Q12 Longview general support -> EA & community
+Global Catastrophic Risk Institute,7,495000,SFF-2019-Q4; SFF-2020-H1; SFF-2020-H2; SFF-2021-H1; SFF-2022-H1; SFF-2024,General x-risk,human-coded,high,Q1b,GCRI general support | Author decision: Q1b GCRI -> General x-risk
+Global Catastrophic Risks Institute,1,60000,SFF-2019-Q3,General x-risk,human-coded,high,Q1b,GCRI general support | Author decision: Q1b GCRI -> General x-risk
+Future of Life Institute,6,640000,SFF-2019-Q3; SFF-2020-H1; SFF-2020-H2,AI=0.5;General x-risk=0.5,human-coded,high,Q2,Future of Life Institute general support | Author decision: Q2 FLI split 50/50 AI / General x-risk
+BERI-SERI Collaboration,2,347000,SFF-2021-H1,General x-risk,human-coded,high,Q3,BERI collaboration with Stanford Existential Risks Initiative | Author decision: Q3 student x-risk programmes -> General x-risk
+Stanford Existential Risks Initiative,2,125000,SFF-2020-H2,General x-risk,human-coded,high,Q3,Stanford Existential Risks Initiative | Author decision: Q3 student x-risk programmes -> General x-risk
+The Rethink Priorities Existential Security Team (XST),1,49000,SFF-2023-H2,General x-risk,human-coded,high,Q3,RP Existential Security Team (x-risk field-building) | Author decision: Q3 student x-risk programmes -> General x-risk
+University of Chicago Existential Risk Laboratory,1,380000,SFF-2023-H1,General x-risk,human-coded,high,Q3,UChicago Existential Risk Laboratory | Author decision: Q3 student x-risk programmes -> General x-risk
+University of Chicago [Existential Risk Laboratory (XLab)],1,329000,SFF-2026,General x-risk,human-coded,high,Q3,UChicago Existential Risk Laboratory | Author decision: Q3 student x-risk programmes -> General x-risk
+Rethink Priorities (RP) [Worldview Investigation Team],1,166000,SFF-2025,EA & community,human-coded,high,Q5,RP worldview investigations (cause prioritisation) | Author decision: Q5 global priorities research -> EA & community
+AI Risk Mitigation Fund,1,530000,SFF-2024,Regrant,human-coded,high,Q6,"Regranting fund for AI risk (possible double counting) | Author decision: Q6 regrant, excluded from totals"
+EA Infrastructure Fund,1,699000,SFF-2021-H2,Regrant,human-coded,high,Q6,"EA Infrastructure Fund (regranting) | Author decision: Q6 regrant, excluded from totals"
+Long-Term Future Fund,3,2784000,SFF-2021-H1; SFF-2021-H2; SFF-2023-H2,Regrant,human-coded,high,Q6,"Long-Term Future Fund (regranting; double counting) | Author decision: Q6 regrant, excluded from totals"
+Manifund,1,90000,SFF-2024,Regrant,human-coded,high,Q6,"Manifund regranting platform | Author decision: Q6 regrant, excluded from totals"
+Manifold Markets,2,1584000,SFF-2022-H1; SFF-2023-H1,Forecasting,human-coded,high,Q7,Prediction market platform | Author decision: Q7 forecasting category
+Metaculus,1,750000,SFF-2025,Forecasting,human-coded,high,Q7,Forecasting platform | Author decision: Q7 forecasting category
+Quantified Uncertainty Research Institute,4,661000,SFF-2020-H1; SFF-2022-H1,Forecasting,human-coded,high,Q7,QURI: estimation tools | Author decision: Q7 forecasting category
+Rootclaim,1,400000,Initiative Committee 2024,Forecasting,human-coded,high,Q7,Rootclaim: probabilistic analysis | Author decision: Q7 forecasting category
+Sage Future,2,468000,SFF-2025; SFF-2026,AI,human-coded,high,Q7,"Sage (AI Digest, forecasting tools) | Author decision: Q7 Sage -> AI"
+Social Science Prediction Platform,1,346000,SFF-2022-H1,Forecasting,human-coded,high,Q7,Social science prediction platform | Author decision: Q7 forecasting category
+The Quantified Uncertainty Research Institute,1,62000,SFF-2024,Forecasting,human-coded,high,Q7,QURI: estimation tools | Author decision: Q7 forecasting category
+Center For Applied Rationality,3,1467000,SFF-2019-Q3; SFF-2019-Q4; SFF-2021-H1,EA & community,human-coded,high,Q8,CFAR: rationality workshops | Author decision: Q8 rationality community -> EA & community
+Center for Applied Rationality,3,254000,SFF-2020-H2,EA & community,human-coded,high,Q8,CFAR: rationality workshops | Author decision: Q8 rationality community -> EA & community
+Center for Applied Rationality (CFAR),2,455000,SFF-2022-H2; SFF-2026,EA & community,human-coded,high,Q8,CFAR: rationality workshops | Author decision: Q8 rationality community -> EA & community
+Coordination Project,1,29000,SFF-2023-H2,EA & community,human-coded,high,Q8,CFAR-sponsored coordination project | Author decision: Q8 rationality community -> EA & community
+Elizabeth Van Nostrand c/o Lightcone,1,25000,SFF-2022-H2,EA & community,human-coded,high,Q8,Rationalist researcher (Lightcone) | Author decision: Q8 rationality community -> EA & community
+FABRIC,1,10000,SFF-2025,EA & community,human-coded,high,Q8,FABRIC: rationality camps | Author decision: Q8 rationality community -> EA & community
+LessWrong,4,1485000,SFF-2020-H1; SFF-2021-H1,EA & community,human-coded,high,Q8,LessWrong | Author decision: Q8 rationality community -> EA & community
+LessWrong 2.0,1,260000,SFF-2019-Q3,EA & community,human-coded,high,Q8,LessWrong | Author decision: Q8 rationality community -> EA & community
+Lightcone Infrastructure,9,9793000,Initiative Committee 2024; SFF-2021-H2; SFF-2022-H2; SFF-2023-H1; SFF-2023-H2; SFF-2025; SFF-2026,EA & community,human-coded,high,Q8,"Lightcone Infrastructure (LessWrong, Lighthaven, AI Alignment Forum) | Author decision: Q8 rationality community -> EA & community"
+Lightcone Infrastructure Inc.,1,513500,SFF-2024,EA & community,human-coded,high,Q8,"Lightcone Infrastructure (LessWrong, Lighthaven, AI Alignment Forum) | Author decision: Q8 rationality community -> EA & community"
+Rationality Meetups,1,140000,SFF-2022-H2,EA & community,human-coded,high,Q8,Rationality meetups | Author decision: Q8 rationality community -> EA & community
+Zvi Mowshowitz,1,200000,Initiative Committee 2024,EA & community,human-coded,high,Q8,"Zvi Mowshowitz (rationalist blogger, mostly AI) | Author decision: Q8 rationality community -> EA & community"
