@@ -123,3 +123,5 @@ Activities: Research / Policy & advocacy / Field-building & education / Other (o
 - Scope (author): core list of organizations whose mission is GCR broadly or classic GCR (CSER, FHI, GCRI, ALLFED, CLTR, FLI, BERI, Global Challenges Foundation, Global Shield, Existential Risk Observatory, ALTER, Simon Institute, Good Ancestors, Legal Priorities Project) plus teaching / early-career programmes (SERI, CERI/ERA, UChicago XLab, Pivotal, and on the author's request the FernUniversität Hagen graduate programme "Existential Risks to Humanity").
 - Budgets (author): public filings and annual reports only; gaps stay blank, no estimates.
 - ALLFED budget before 2022 (author: "use annual reports"): no annual report with budget figures found; gap stays.
+- Global Shield founding year: 2023, provided by the author (source type "author", no public source found).
+- CERI founding year and the CHERI → Pivotal rename date: unknown to the author; left blank.
