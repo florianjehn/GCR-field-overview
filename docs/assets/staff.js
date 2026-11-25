@@ -15,6 +15,9 @@ const NOTES = {
   xlab: "Director and deputy director count as teaching. Student associates aren't counted.",
   fernuni_erh: "Three funded positions in the new programme, from its website.",
   gpi: "Closed at the end of July 2025. Board, affiliates and DPhil scholars aren't counted.",
+  odyssean: "People who mainly work on AI (the AI safety lead) aren't counted.",
+  adapt: "A one-person research consultancy (Matt Boyd). Counted from 2020, when the About page starts naming global catastrophic risk.",
+  seri: "Only one archived staff page (2026): the faculty director, who teaches the course on preventing human extinction, and an operations manager.",
   rcg: "Now called ORCG. Archived team pages only exist for 2023 and 2026, so 2024 and 2025 assume the 2023 team.",
 };
 
