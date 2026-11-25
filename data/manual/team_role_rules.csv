@@ -1,0 +1,22 @@
+org_id,field,pattern,role,topic,notes
+fhi,section,DPhil Scholars,student,,
+fhi,section,Research Scholars Programme,scholar,,Two-year paid research positions
+fhi,section,Associate|Affiliate|Outside Collaborators|Supervisors|Academic Advisor,affiliate,,
+fhi,section,AI|Governance of AI|Tamas|Digital Minds,staff,AI,
+fhi,section,Bio,staff,bio,
+fhi,section,Macrostrategy|Population Ethics|Amlin,staff,general,
+fhi,section,.*,staff,,"Leadership, research staff, research support, administration and 2015 job titles"
+cser,section,^(Full-time )?Staff$,staff,,
+cser,section,Co-founders|Management Board|Advisory Board|Distinguished Fellows,board,,Co-founders (Rees/Tallinn/Price) are not employees
+cser,section,Affiliates|Visiting Researchers,affiliate,,
+cser,section,Alumni,alumni,,
+gcri,section,^(Leadership Team|Staff)$,staff,,
+gcri,section,Associates|Interns,affiliate,,Listed until 2018 only; their removal in 2019 is a website change
+gcri,section,Advisors,board,,
+gcri,section,Former Affiliates,alumni,,
+beri,section,^(Core )?Staff$,staff,,
+beri,section,Board|Advisors,board,,
+allfed,section,Board of Advisors,board,,
+allfed,title,Volunteer,volunteer,,
+allfed,title,Specialist Advisor|Professor Open Sustainability|Distinguished Chair,affiliate,,
+allfed,section,.*,staff,,"Team, co-founders and 2017-2020 job titles; from 2021 the page lists no job titles, so paid staff, part-timers and volunteers cannot be told apart"
