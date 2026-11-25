@@ -105,3 +105,29 @@ def test_apply_person_focus_overrides_named_people_only():
         "AI or bio",
         "classic",
     ]
+
+
+def test_carry_forward_copies_people_only_into_missing_years():
+    """
+    Tests that people are copied to a missing year and existing years are kept.
+    """
+    from src.staff_counts import carry_forward
+
+    people = pd.DataFrame(
+        {
+            "org_id": ["cser", "cser", "gcri", "gcri"],
+            "year": [2025, 2025, 2025, 2026],
+            "name": ["A", "B", "C", "D"],
+            "source": ["team page"] * 4,
+        }
+    )
+    rules = pd.DataFrame(
+        {"org_id": ["cser", "gcri"], "from_year": [2025, 2025], "to_year": [2026, 2026]}
+    )
+    out = carry_forward(people, rules)
+    added = out[out["source"] == "assumed same as 2025"]
+    assert list(zip(added["org_id"], added["year"], added["name"])) == [
+        ("cser", 2026, "A"),
+        ("cser", 2026, "B"),
+    ]
+    assert len(out) == 6

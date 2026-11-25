@@ -38,6 +38,31 @@ def match_role(person, rules):
     return "unknown", ""
 
 
+def carry_forward(people, rules):
+    """
+    Copies an organization's people from one year to a later year without a
+    readable team page. Copied rows get source "assumed same as <year>", so
+    later removals still apply to them.
+
+    Arguments:
+        people (pandas.DataFrame): people with org_id, year and source
+        rules (pandas.DataFrame): org_id, from_year, to_year
+
+    Returns:
+        pandas.DataFrame: people plus the carried-forward rows.
+    """
+    copies = []
+    for rule in rules.itertuples(index=False):
+        org = people["org_id"] == rule.org_id
+        if (org & (people["year"] == rule.to_year)).any():
+            continue
+        rows = people[org & (people["year"] == rule.from_year)]
+        copies.append(
+            rows.assign(year=rule.to_year, source=f"assumed same as {rule.from_year}")
+        )
+    return pd.concat([people, *copies], ignore_index=True)
+
+
 def apply_removals(people, removals):
     """
     Drops people the author knows had left although the page still lists them.
@@ -146,10 +171,10 @@ def count_by_function(people):
         people (pandas.DataFrame): people with function and focus
 
     Returns:
-        pandas.DataFrame: org_id, year, focus, function, people.
+        pandas.DataFrame: org_id, year, focus, function, source, people.
     """
     counted = people[people["function"] != ""]
-    keys = ["org_id", "year", "focus", "function"]
+    keys = ["org_id", "year", "focus", "function", "source"]
     return counted.groupby(keys).size().rename("people").reset_index()
 
 
@@ -182,6 +207,10 @@ def main():
     additions = pd.read_csv(MANUAL_DIR / "team_additions.csv", keep_default_na=False)
     people = pd.concat(
         [people, additions.drop(columns=["evidence"])], ignore_index=True
+    )
+    people = carry_forward(
+        people.assign(source="team page"),
+        pd.read_csv(MANUAL_DIR / "staff_carry_forward.csv"),
     )
     removals = pd.read_csv(MANUAL_DIR / "team_removals.csv", keep_default_na=False)
     people = apply_removals(people, removals)
