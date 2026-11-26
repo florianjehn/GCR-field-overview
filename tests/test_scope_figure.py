@@ -4,10 +4,13 @@ matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt  # noqa: E402
 import pandas as pd  # noqa: E402
+import pytest  # noqa: E402
 
 from src.scope_figure import (  # noqa: E402
     ASRIC,
     GROUPS,
+    damped_sizes,
+    draw_box,
     format_usd,
     group_totals,
     scope_figure,
@@ -87,3 +90,41 @@ def test_scope_figure_shows_groups_and_amounts():
     assert "GCR outside AI and bio: $3.0M" in texts
     assert "Not counted" in texts
     plt.close(fig)
+
+
+def test_damped_sizes_follow_values_by_square_root():
+    """
+    Tests that parts grow with the square root of their value and fill the total.
+    """
+    assert damped_sizes([400.0, 100.0], 30) == [20.0, 10.0]
+    assert damped_sizes([0.0, 0.0], 10) == [5.0, 5.0]
+    assert damped_sizes([9.0, 1.0], 8, exponent=1) == [7.2, 0.8]
+
+
+def test_draw_box_refuses_text_that_overflows():
+    """
+    Tests that a box too small for its text raises instead of drawing over its
+    neighbours.
+    """
+    fig = plt.figure(figsize=(10, 6), layout=None)
+    ax = fig.add_axes((0, 0, 1, 1))
+    ax.set_xlim(0, 100)
+    ax.set_ylim(0, 100)
+    draw_box(ax, 0, 0, 30, 30, "#000000", "Title", "Short body")
+    with pytest.raises(ValueError, match="Long"):
+        draw_box(ax, 50, 0, 10, 8, "#000000", "Long", "word " * 40)
+    plt.close(fig)
+
+
+def test_scope_figure_fits_text_with_real_proportions():
+    """
+    Tests that the text fits every box at the 2015-2025 funding totals.
+    """
+    totals = {
+        "AI": 1.1e9,
+        "Bio": 330e6,
+        ASRIC: 14e6,
+        "General x-risk": 39e6,
+        "Climate & geoengineering": 16e6,
+    }
+    plt.close(scope_figure(totals))
