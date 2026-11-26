@@ -81,7 +81,7 @@ function draw() {
     yearFrom: state.yearFrom, yearTo: state.yearTo, percent: state.display === "share",
     label: "Funding per year",
   });
-  legend(document.getElementById("legend"), keys, colorOf);
+  legend(document.getElementById("legend"), keysWithData(keys, chartRows), colorOf);
   summary(rows);
   renderTable(document.getElementById("table"), rows, [
     { key: "year", label: "Year", num: true },

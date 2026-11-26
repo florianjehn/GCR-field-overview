@@ -58,7 +58,7 @@ function drawTotals(rows) {
     yearFrom: YEARS.from, yearTo: YEARS.to, format: fmtInt, height: 340,
     label: "People at GCR organizations working on classic or several risks, by function",
   });
-  legend(document.getElementById("legend"), state.functions, colourOf);
+  legend(document.getElementById("legend"), keysWithData(state.functions, chartRows), colourOf);
 }
 
 // Fixed colour per organization for the biggest ones; the rest share one grey.
@@ -72,13 +72,13 @@ function drawOrgTotals(rows) {
   const container = document.getElementById("multiples");
   container.innerHTML = "";
   container.className = "chart";
-  const present = new Set(rows.map((r) => orgKey(r.org_id)));
-  const keys = [...Object.keys(ORG_COLORS).map(orgKey), OTHER_ORGS].filter((k) => present.has(k));
+  const chartRows = rows.map((r) => ({ year: r.year, key: orgKey(r.org_id), value: r.people }));
+  const keys = keysWithData([...Object.keys(ORG_COLORS).map(orgKey), OTHER_ORGS], chartRows);
   const colourOfOrg = (k) => {
     const id = Object.keys(ORG_COLORS).find((i) => orgKey(i) === k);
     return id ? ORG_COLORS[id] : COLORS.context;
   };
-  stackedBars(container, rows.map((r) => ({ year: r.year, key: orgKey(r.org_id), value: r.people })), keys, colourOfOrg, {
+  stackedBars(container, chartRows, keys, colourOfOrg, {
     yearFrom: YEARS.from, yearTo: YEARS.to, format: fmtInt, height: 340,
     label: "People at GCR organizations working on classic or several risks, by organization",
   });
@@ -121,8 +121,8 @@ function drawOrgs(rows) {
       label: `People counted at ${shortName(org)}`,
     });
   });
-  legend(document.getElementById("legend"), ["People counted", "Staff numbers from own reports"],
-    (k) => (k === "People counted" ? COLORS.aubergine : COLORS.berry));
+  const keys = perOrg.some((x) => x.reports.length) ? ["People counted", "Staff numbers from own reports"] : ["People counted"];
+  legend(document.getElementById("legend"), keys, (k) => (k === "People counted" ? COLORS.aubergine : COLORS.berry));
 }
 
 function draw() {

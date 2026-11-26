@@ -73,6 +73,10 @@ function tooltip() {
   };
 }
 
+// Keys that have a non-zero value in rows ([{key, value}]), in their original order,
+// so legends only list what is in the chart.
+const keysWithData = (keys, rows) => keys.filter((k) => rows.some((r) => r.key === k && r.value > 0));
+
 function legend(container, keys, colorOf) {
   container.innerHTML = keys
     .map((k) => `<span><i style="background:${colorOf(k)}"></i>${k}</span>`)
