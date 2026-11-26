@@ -19,6 +19,7 @@ uv run python3 -m src.team_pages           # people on archived team pages (Wayb
 uv run python3 -m src.staff_counts         # roles and staff counts per year
 uv run python3 -m src.publications         # OpenAlex works mentioning "global catastrophic risk"
 uv run python3 -m src.build_site           # export JSON for the site in docs/
+uv run python3 -m src.scope_figure         # figure of what the categories cover -> results/figures/
 uv run pytest
 ```
 
