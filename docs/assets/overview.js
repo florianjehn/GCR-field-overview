@@ -55,9 +55,9 @@ async function init() {
   setNumber("n-outside", fmtMoney(outside), `went to GCR outside AI and bio from the four funders in 2015–2025, ` +
     `${fmtMoney(asric)} of it to abrupt sunlight reduction and infrastructure collapse`);
   const share = (cat) => sumOf(gcr, [cat]) / total;
-  setNumber("n-share", fmtPct(outside / total), `of their ${fmtMoney(total)} GCR funding in that period went to GCR outside AI and bio. ` +
+  setNumber("n-share", fmtPct(outside / total), `of the four funders' ${fmtMoney(total)} GCR funding in 2015–2025 went to GCR outside AI and bio. ` +
     `AI got ${fmtPct(share("AI"))}, bio ${fmtPct(share("Bio"))}`);
-  setNumber("n-asric-share", fmtPct(asric / total), "of their GCR funding went to abrupt sunlight reduction and infrastructure collapse");
+  setNumber("n-asric-share", fmtPct(asric / total), "of that GCR funding went to abrupt sunlight reduction and infrastructure collapse");
   drawComparison(gcr);
   exportButton(document.getElementById("export-compare"), () => [document.getElementById("compare-figure")], "gcr-funding-comparison.png");
   setNumber("n-ai", fmtPct(ai2025), "of GCR funding in 2025 went to AI");
