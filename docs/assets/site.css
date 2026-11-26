@@ -141,6 +141,11 @@ footer.site::before {
 .segmented button { min-width: 0; }
 .segmented button + button { border-left: 1px solid var(--aubergine); }
 .segmented button[aria-pressed="true"] { background: var(--aubergine); color: var(--paper); }
+/* Two buttons per row; the 1px gap on the aubergine background draws the dividers. */
+.segmented.two-rows { display: inline-grid; grid-template-columns: repeat(2, auto); gap: 1px; background: var(--aubergine); }
+.segmented.two-rows button { border-left: 0; background: var(--paper); text-align: left; }
+.segmented.two-rows button[aria-pressed="true"] { background: var(--aubergine); }
+@media (max-width: 40rem) { .segmented.two-rows { grid-template-columns: 1fr; } }
 .export-row { display: flex; justify-content: flex-end; margin: 0.25rem 0; }
 .export {
   font: inherit;
