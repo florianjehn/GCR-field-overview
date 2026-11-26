@@ -177,7 +177,6 @@ input[type="checkbox"] { accent-color: var(--aubergine); }
 .legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; font-size: 0.9rem; margin: 0.5rem 0; }
 .legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
 .legend i { display: inline-block; width: 0.8rem; height: 0.8rem; }
-.legend i.hatched { background: repeating-linear-gradient(45deg, var(--muted) 0 2px, var(--paper) 2px 4px); }
 
 .tooltip {
   position: fixed;

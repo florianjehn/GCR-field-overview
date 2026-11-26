@@ -73,10 +73,10 @@ function tooltip() {
   };
 }
 
-function legend(container, keys, colorOf, hatched = null) {
+function legend(container, keys, colorOf) {
   container.innerHTML = keys
     .map((k) => `<span><i style="background:${colorOf(k)}"></i>${k}</span>`)
-    .join("") + (hatched ? `<span><i class="hatched"></i>${hatched}</span>` : "");
+    .join("");
 }
 
 // Stacked bars per year. rows: [{year, key, value}]; keys in stacking order.
@@ -127,7 +127,6 @@ function stackedBars(container, rows, keys, colorOf, opts = {}) {
         `${fmt(d[1] - d[0])}<br><span class="note">Year total ${fmt(total)}</span>`);
     })
     .on("mouseleave", () => tip.hide());
-  if (opts.part) hatchPart(svg, series, x, y, opts.part, fmt, tip);
 
   // Direct labels at the end of the last year for up to 4 series.
   const last = table[table.length - 1];
@@ -139,25 +138,6 @@ function stackedBars(container, rows, keys, colorOf, opts = {}) {
       .attr("y", (s) => y((s.d[0] + s.d[1]) / 2) + 4).text((s) => s.key);
   }
   return table;
-}
-
-// Hatches the share of each bar segment that belongs to one subgroup (e.g. one
-// organization), at the bottom of the segment. part: {name, rows: [{year, key, value}]}.
-function hatchPart(svg, series, x, y, part, fmt, tip) {
-  const id = "hatch-part";
-  svg.append("defs").append("pattern").attr("id", id).attr("patternUnits", "userSpaceOnUse")
-    .attr("width", 6).attr("height", 6).attr("patternTransform", "rotate(45)")
-    .append("line").attr("x1", 0).attr("y1", 0).attr("x2", 0).attr("y2", 6)
-    .attr("stroke", COLORS.paper).attr("stroke-width", 2);
-  const value = (year, key) => d3.sum(part.rows.filter((r) => r.year === year && r.key === key), (r) => r.value);
-  const cells = series.flatMap((s) => s.map((d) => ({ d, key: s.key, v: value(d.data.year, s.key) })))
-    .filter((c) => c.v > 0);
-  svg.append("g").selectAll("rect").data(cells).join("rect")
-    .attr("fill", `url(#${id})`).attr("x", (c) => x(c.d.data.year)).attr("width", x.bandwidth())
-    .attr("y", (c) => y(c.d[0] + c.v)).attr("height", (c) => Math.max(0, y(c.d[0]) - y(c.d[0] + c.v)))
-    .on("mousemove", (event, c) => tip.show(event, `<div class="t-head">${yearLabel(c.d.data.year)} · ${c.key}</div>` +
-      `${fmt(c.d[1] - c.d[0])}, of which ${part.name} ${fmt(c.v)}`))
-    .on("mouseleave", () => tip.hide());
 }
 
 // Small line chart for small multiples. points: [{year, value}].
@@ -274,18 +254,6 @@ function svgImage(svg) {
   });
 }
 
-function hatchFill(ctx) {
-  const tile = document.createElement("canvas");
-  tile.width = tile.height = 6;
-  const t = tile.getContext("2d");
-  t.fillStyle = COLORS.muted;
-  t.fillRect(0, 0, 6, 6);
-  t.strokeStyle = COLORS.paper;
-  t.lineWidth = 2;
-  t.beginPath(); t.moveTo(-1, 7); t.lineTo(7, -1); t.stroke();
-  return ctx.createPattern(tile, "repeat");
-}
-
 // Splits a text node into its rendered lines: [{text, rect}], measured word by word.
 function textLines(node) {
   const lines = [];
@@ -322,7 +290,7 @@ function textBoxes(root) {
 
 function swatches(root) {
   return [...root.querySelectorAll(".legend i, .compare .fill")].map((el) => ({
-    rect: el.getBoundingClientRect(), color: getComputedStyle(el).backgroundColor, hatched: el.classList.contains("hatched"),
+    rect: el.getBoundingClientRect(), color: getComputedStyle(el).backgroundColor,
   }));
 }
 
@@ -344,7 +312,7 @@ async function exportPng(elements, filename) {
   for (const el of shown) {
     swatches(el).forEach((s) => {
       const p = at(s.rect);
-      ctx.fillStyle = s.hatched ? hatchFill(ctx) : s.color;
+      ctx.fillStyle = s.color;
       ctx.fillRect(p.x, p.y, p.w, p.h);
     });
     ctx.textBaseline = "middle";

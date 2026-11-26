@@ -1,5 +1,5 @@
 // Staff page: people on archived team pages of the GCR organizations that work
-// on classic or several risks, added up by function or shown per organization.
+// on classic or several risks, added up by function or by organization, or shown per organization.
 // No names are shown; they are in the repository.
 
 const FUNCTIONS = ["Research", "Teaching", "Policy", "Operations"];
@@ -53,25 +53,39 @@ function drawTotals(rows) {
   const container = document.getElementById("multiples");
   container.innerHTML = "";
   container.className = "chart";
-  const toBars = (r) => ({ year: r.year, key: r.function, value: r.people });
-  const fhiRows = rows.filter((r) => r.org_id === "fhi").map(toBars);
-  stackedBars(container, rows.map(toBars), state.functions, colourOf, {
+  const chartRows = rows.map((r) => ({ year: r.year, key: r.function, value: r.people }));
+  stackedBars(container, chartRows, state.functions, colourOf, {
     yearFrom: YEARS.from, yearTo: YEARS.to, format: fmtInt, height: 340,
-    label: "People at GCR organizations working on classic or several risks, by function. FHI hatched",
-    part: fhiRows.length ? { name: "FHI", rows: fhiRows } : null,
+    label: "People at GCR organizations working on classic or several risks, by function",
   });
-  legend(document.getElementById("legend"), state.functions, colourOf, fhiRows.length ? "of which FHI" : null);
-  document.getElementById("fhi-share").textContent = fhiShareText(rows, fhiRows);
+  legend(document.getElementById("legend"), state.functions, colourOf);
 }
 
-function fhiShareText(rows, fhiRows) {
-  if (!fhiRows.length) return "";
-  const fhiBy = d3.rollup(fhiRows, (v) => d3.sum(v, (r) => r.value), (r) => r.year);
-  const [peak, nFhi] = [...fhiBy].sort((a, b) => b[1] - a[1])[0];
-  const total = d3.sum(rows.filter((r) => r.year === peak), (r) => r.people);
-  return `The hatched part is FHI. Until it closed in 2024 it was a big part of this small field: ` +
-    `in ${peak} it had ${fmtInt(nFhi)} of the ${fmtInt(total)} people counted here (${fmtPct(nFhi / total)}). ` +
-    "The hatching marks one organization across all functions, not a function of its own.";
+// Fixed colour per organization for the biggest ones; the rest share one grey.
+const ORG_COLORS = {
+  fhi: COLORS.aubergine, cser: COLORS.slate, allfed: COLORS.sage, gpi: COLORS.ochre, global_shield: COLORS.rose,
+};
+const OTHER_ORGS = "Other organizations";
+const orgKey = (id) => (ORG_COLORS[id] ? shortName(orgs.find((o) => o.org_id === id)) : OTHER_ORGS);
+
+function drawOrgTotals(rows) {
+  const container = document.getElementById("multiples");
+  container.innerHTML = "";
+  container.className = "chart";
+  const present = new Set(rows.map((r) => orgKey(r.org_id)));
+  const keys = [...Object.keys(ORG_COLORS).map(orgKey), OTHER_ORGS].filter((k) => present.has(k));
+  const colourOfOrg = (k) => {
+    const id = Object.keys(ORG_COLORS).find((i) => orgKey(i) === k);
+    return id ? ORG_COLORS[id] : COLORS.context;
+  };
+  stackedBars(container, rows.map((r) => ({ year: r.year, key: orgKey(r.org_id), value: r.people })), keys, colourOfOrg, {
+    yearFrom: YEARS.from, yearTo: YEARS.to, format: fmtInt, height: 340,
+    label: "People at GCR organizations working on classic or several risks, by organization",
+  });
+  const small = orgs.filter((o) => !ORG_COLORS[o.org_id] && rows.some((r) => r.org_id === o.org_id)).map(shortName);
+  legend(document.getElementById("legend"), keys, colourOfOrg);
+  document.getElementById("org-note").textContent = small.length
+    ? `${OTHER_ORGS}: ${small.join(", ")}.` : "";
 }
 
 function reportPoints(orgId) {
@@ -113,8 +127,8 @@ function drawOrgs(rows) {
 
 function draw() {
   const rows = selectedRows();
-  document.getElementById("fhi-share").textContent = "";
-  if (state.view === "totals") drawTotals(rows); else drawOrgs(rows);
+  document.getElementById("org-note").textContent = "";
+  ({ totals: drawTotals, orgTotals: drawOrgTotals, orgs: drawOrgs })[state.view](rows);
   document.getElementById("coverage").textContent = coverageText(rows);
 }
 
@@ -122,12 +136,12 @@ async function init() {
   data = await loadJSON("staff.json");
   data.functions = data.functions.map((r) => ({ ...r, function: title(r.function), focus: title(r.focus) }));
   orgs = data.organizations.filter((o) => o.type && title(o.focus) === FOCUS);
-  segmented(document.getElementById("c-view"), [["totals", "Totals by function"], ["orgs", "Show all organizations"]],
+  segmented(document.getElementById("c-view"), [["totals", "Totals by function"], ["orgTotals", "Totals by organization"], ["orgs", "Show all organizations"]],
     state.view, (v) => { state.view = v; draw(); });
   checkboxes(document.getElementById("f-types"), ORG_TYPES, state.types, (v) => { state.types = v; draw(); });
   checkboxes(document.getElementById("f-functions"), FUNCTIONS, state.functions, (v) => { state.functions = v; draw(); });
   exportButton(document.getElementById("export-chart"),
-    () => [document.getElementById("legend"), document.getElementById("multiples")], "gcr-staff.png");
+    () => [document.getElementById("legend"), document.getElementById("multiples"), document.getElementById("org-note")], "gcr-staff.png");
   draw();
 }
 

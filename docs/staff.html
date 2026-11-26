@@ -6,7 +6,7 @@
   <title>Staff · GCR field overview</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=bf425545">
+  <link rel="stylesheet" href="assets/site.css?v=e2ab7c35">
 </head>
 <body>
   <header class="site">
@@ -23,7 +23,7 @@
     <h1>How many people work on this?</h1>
     <p class="lead prose">This is not a count of everyone working on catastrophic risks. It's my selection of what I think are the main GCR organizations working on classic or several risks: a hand-picked list of organizations whose stated mission is GCR or existential risk broadly. It's not exhaustive, and I'd welcome suggestions for others.</p>
     <p class="callout prose">The organizations are FHI, CSER, GCRI, ALLFED, BERI, the Global Priorities Institute, the Odyssean Institute and Adapt Research (research), Global Shield and Riesgos Catastróficos Globales (policy), and XLab, SERI and the FernUni Hagen programme (teaching). I left out organizations that mainly work on AI or bio. That those fields are growing fast is well known, and they would swamp everything else here.</p>
-    <p class="prose">For each organization I counted the people on its team page, using one archived snapshot per year from the Wayback Machine (the one closest to 1 July). The default view adds them up by what people do (research, teaching, policy or operations). Everything here is based on public data.</p>
+    <p class="prose">For each organization I counted the people on its team page, using one archived snapshot per year from the Wayback Machine (the one closest to 1 July). The default view adds them up by what people do (research, teaching, policy or operations). You can also add them up by organization, or show each organization on its own. Everything here is based on public data.</p>
 
     <div class="controls">
       <div class="control"><span class="control-label">View</span><div class="segmented" id="c-view"></div></div>
@@ -33,8 +33,8 @@
 
     <div class="legend" id="legend"></div>
     <div class="multiples" id="multiples"></div>
+    <p class="note prose" id="org-note"></p>
     <div class="export-row" id="export-chart"></div>
-    <p class="prose" id="fhi-share"></p>
     <p class="note prose" id="coverage"></p>
 
     <h2>How I counted</h2>
@@ -47,8 +47,8 @@
   </main>
   <footer class="site">Based only on public data · <a href="https://github.com/florianjehn/GCR-field-overview">data and code</a> · <span id="built"></span></footer>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-  <script src="assets/common.js?v=51bc2512"></script>
-  <script src="assets/staff.js?v=2ff74615"></script>
+  <script src="assets/common.js?v=ee7b5ed1"></script>
+  <script src="assets/staff.js?v=56776a93"></script>
   <script>loadJSON("meta.json").then((m) => { document.getElementById("built").textContent = `data from ${m.built}`; });</script>
 </body>
 </html>
