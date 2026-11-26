@@ -186,3 +186,7 @@ Author reviewed the 1 Dec 2025 team page. Still listed but no longer working the
 - R3 Oxford China Policy Lab (SFF 2022–2026, counted by Juan as GCR policy): author: "seems pretty AI heavy on first glance". Stays AI, now human-coded.
 - Later the same day the author renamed the category again, from "Nuclear, natural & resilience" to "Abrupt sunlight reduction & infrastructure collapse" (author: "loss is not correct"; named after how these catastrophes do harm, as in ALLFED's abrupt sunlight reduction and global catastrophic infrastructure loss). Pandemics stay under Bio even though they can also disrupt infrastructure.
 - Author: the funding page defaults to abrupt sunlight reduction & infrastructure collapse (split by funder); the overview keeps GCR outside AI and bio.
+
+## Forecasting out of GCR (2026-11-26)
+
+- Author: "I don't think it makes sense to put forecasting as a whole under the GCR label." Forecasting (Q7) stays its own category but is now excluded from GCR totals and gets no activity code, like EA & community; it is shown only in the "Everything" view. Counting it as GCR is now the Q7 sensitivity scenario. Effect 2015–2025: GCR total $1.6B -> $1.5B, GCR outside AI and bio 4.4 % -> 4.5 %, AI share 2025 84 % -> 86 %. Activity rules used only for forecasting grants were deleted (Good Judgment, Manifold Markets, Metaculus, QURI, Rootclaim, Social Science Prediction Platform; LTFF grants to Samotsvety and for Metaculus).

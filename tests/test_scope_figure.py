@@ -45,7 +45,6 @@ def test_groups_use_known_categories():
         "General x-risk",
         "Climate",
         "Geoengineering",
-        "Forecasting",
     }
     assert {c for cats in GROUPS.values() for c in cats} <= known
 

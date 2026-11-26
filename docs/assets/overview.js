@@ -1,7 +1,7 @@
 // Overview page: headline numbers computed from the same data as the other pages.
 
 const ASRIC = "Abrupt sunlight reduction & infrastructure collapse";
-const GCR = [ASRIC, "AI", "Bio", "General x-risk", "Geoengineering", "Climate", "Forecasting", "Unknown"];
+const GCR = [ASRIC, "AI", "Bio", "General x-risk", "Geoengineering", "Climate", "Unknown"];
 // "GCR outside AI and bio" and its parts, as on the funding page.
 const OUTSIDE_PARTS = [
   { label: ASRIC, categories: [ASRIC] },

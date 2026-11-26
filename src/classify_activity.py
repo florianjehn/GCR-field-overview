@@ -3,7 +3,7 @@ Assign each GCR-relevant grant an activity type.
 
 Activities: Research, Policy & advocacy, Field-building & education, Other
 (operations, media, regranting), or Unknown. Grants outside GCR (categories
-EA & community, Not GCR, Regrant) get "n/a".
+EA & community, Forecasting, Not GCR, Regrant, Duplicate) get "n/a".
 
 Precedence, highest first:
 1. data/manual/activity_grant_overrides.csv (funder + grant_id)
@@ -21,7 +21,7 @@ from pathlib import Path
 import pandas as pd
 
 MANUAL_DIR = Path("data/manual")
-OUT_OF_SCOPE = ("EA & community", "Not GCR", "Regrant", "Duplicate")
+OUT_OF_SCOPE = ("EA & community", "Forecasting", "Not GCR", "Regrant", "Duplicate")
 DEFER = "Recipient default"
 ACTIVITY_COLUMNS = [
     "activity",
@@ -57,7 +57,7 @@ def is_in_scope(category):
         category (str): e.g. "AI" or "AI=0.5;Bio=0.5"
 
     Returns:
-        bool: False for EA & community, Not GCR and Regrant.
+        bool: False for the categories in OUT_OF_SCOPE.
     """
     return category not in OUT_OF_SCOPE
 

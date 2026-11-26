@@ -18,7 +18,7 @@ from src.classify_grants import explode_categories
 
 PROCESSED_DIR = Path("data/processed")
 RESULTS_DIR = Path("results")
-EXCLUDED = ("Regrant", "Duplicate", "EA & community", "Not GCR")
+EXCLUDED = ("Regrant", "Duplicate", "EA & community", "Not GCR", "Forecasting")
 ASRIC = "Abrupt sunlight reduction & infrastructure collapse"
 # The categories that make up "GCR outside AI and bio".
 NON_AI_NON_BIO = (ASRIC, "General x-risk", "Geoengineering", "Climate")
@@ -165,10 +165,10 @@ def scenarios(grants):
             "AI",
         ),
         (
-            "Q7 forecasting -> Not GCR",
-            "Generic forecasting excluded",
+            "Q7 forecasting counted as GCR",
+            "Generic forecasting counted in GCR totals (default before 2026-11-26)",
             g["category"] == "Forecasting",
-            "Not GCR",
+            "Unknown",
         ),
         (
             "Q8 Lightcone -> AI",

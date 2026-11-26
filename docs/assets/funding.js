@@ -7,9 +7,9 @@ const TOPIC_OF = {
   "Forecasting": "Forecasting", "EA & community": "EA & community",
   "Unknown": "Other", "Not GCR": "Other",
 };
-const GCR_CATEGORIES = [ASRIC, "AI", "Bio", "General x-risk", "Geoengineering", "Climate", "Forecasting", "Unknown"];
+const GCR_CATEGORIES = [ASRIC, "AI", "Bio", "General x-risk", "Geoengineering", "Climate", "Unknown"];
 const TOPICS = [ASRIC, "AI", "Bio", "General x-risk", "Climate & geoengineering", "Forecasting", "EA & community", "Other"];
-const GCR_TOPICS = TOPICS.filter((t) => t !== "EA & community");
+const GCR_TOPICS = TOPICS.filter((t) => t !== "EA & community" && t !== "Forecasting");
 const FUNDERS = ["Coefficient Giving", "SFF", "LTFF", "FLI"];
 const KINDS = ["Research", "Policy & advocacy", "Field-building & education", "Other", "Unknown/not assessed"];
 // "GCR outside AI and bio" is the umbrella; its parts are the first three topics.

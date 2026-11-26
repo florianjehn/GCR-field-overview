@@ -20,12 +20,11 @@ GCR_CATEGORIES = {
     "Bio",
     "Abrupt sunlight reduction & infrastructure collapse",
     "Climate",
-    "Forecasting",
     "General x-risk",
     "Geoengineering",
     "Unknown",
 }
-OTHER_CATEGORIES = {"Duplicate", "EA & community", "Not GCR", "Regrant"}
+OTHER_CATEGORIES = {"Duplicate", "EA & community", "Forecasting", "Not GCR", "Regrant"}
 
 
 def manual(name):

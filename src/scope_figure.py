@@ -1,10 +1,10 @@
 """
 Figure of what the funding categories cover and what is left out.
 
-Shows GCR-framed work split into AI, Bio, Forecasting and "GCR outside AI and
-bio" (abrupt sunlight reduction & infrastructure collapse, general x-risk,
-climate & geoengineering), each with its 2015–2025 total from the four
-funders, and the neighbouring fields that are not counted. Not used on the
+Shows GCR-framed work split into AI, Bio and "GCR outside AI and bio" (abrupt
+sunlight reduction & infrastructure collapse, general x-risk, climate &
+geoengineering), each with its 2015–2025 total from the four funders, and the
+neighbouring fields that are not counted. Not used on the
 website. Output: results/figures/scope_of_terms.png.
 
 Run with:
@@ -26,7 +26,6 @@ ASRIC = "Abrupt sunlight reduction & infrastructure collapse"
 GROUPS = {
     "AI": ["AI"],
     "Bio": ["Bio"],
-    "Forecasting": ["Forecasting"],
     ASRIC: [ASRIC],
     "General x-risk": ["General x-risk"],
     "Climate & geoengineering": ["Climate", "Geoengineering"],
@@ -34,7 +33,6 @@ GROUPS = {
 COLORS = {
     "AI": "#46708A",
     "Bio": "#CC8FA0",
-    "Forecasting": "#8E5A74",
     ASRIC: "#5D2A42",
     "General x-risk": "#627F64",
     "Climate & geoengineering": "#C9A55A",
@@ -48,8 +46,6 @@ EXAMPLES = {
     "AI": "AI safety, alignment and AI governance",
     "Bio": "Biosecurity and pandemic preparedness, incl. pandemics that "
     "disrupt infrastructure",
-    "Forecasting": "Forecasting platforms and research meant to inform "
-    "decisions on these risks",
     ASRIC: "Nuclear winter, large volcanic eruptions, asteroid and comet "
     "impacts, severe space weather. Preventing them and keeping food and "
     "infrastructure running through them",
@@ -64,6 +60,7 @@ NOT_COUNTED = [
     "Nuclear security and arms control outside a GCR framing",
     "Disaster risk reduction",
     "EA community building, longtermism and global priorities research",
+    "Generic forecasting (platforms and research not tied to these risks)",
     "Everything else the funders support (e.g. global health, animal welfare)",
 ]
 
@@ -219,27 +216,27 @@ def scope_figure(totals):
         color=COLORS["muted"],
         va="top",
     )
-    draw_box(ax, 0, 36, 19, 59, COLORS["AI"], titled("AI"), EXAMPLES["AI"])
-    draw_box(ax, 20, 36, 19, 59, COLORS["Bio"], titled("Bio"), EXAMPLES["Bio"])
+    draw_box(ax, 0, 36, 21, 59, COLORS["AI"], titled("AI"), EXAMPLES["AI"])
+    draw_box(ax, 22, 36, 21, 59, COLORS["Bio"], titled("Bio"), EXAMPLES["Bio"])
     outside = sum(
         totals[g] for g in (ASRIC, "General x-risk", "Climate & geoengineering")
     )
     draw_box(
         ax,
-        40,
+        44,
         36,
-        46,
+        56,
         59,
         COLORS["outside"],
         f"GCR outside AI and bio: {format_usd(outside)}",
         dark=False,
     )
-    draw_box(ax, 41, 37, 21, 50, COLORS[ASRIC], titled(ASRIC), EXAMPLES[ASRIC])
+    draw_box(ax, 45, 37, 26.5, 50, COLORS[ASRIC], titled(ASRIC), EXAMPLES[ASRIC])
     draw_box(
         ax,
-        63,
+        72.5,
         62.5,
-        22,
+        26.5,
         24.5,
         COLORS["General x-risk"],
         titled("General x-risk"),
@@ -247,24 +244,14 @@ def scope_figure(totals):
     )
     draw_box(
         ax,
-        63,
+        72.5,
         37,
-        22,
+        26.5,
         24.5,
         COLORS["Climate & geoengineering"],
         titled("Climate & geoengineering"),
         EXAMPLES["Climate & geoengineering"],
         dark=False,
-    )
-    draw_box(
-        ax,
-        87,
-        36,
-        13,
-        59,
-        COLORS["Forecasting"],
-        titled("Forecasting"),
-        EXAMPLES["Forecasting"],
     )
 
     ax.text(
