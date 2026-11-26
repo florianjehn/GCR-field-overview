@@ -1,4 +1,4 @@
-// Funding page: stacked bars by year, split and filtered by funder, topic and kind.
+// Funding page: stacked bars by year for a topic focus, split by funder, topic or kind of work.
 
 const ASRIC = "Abrupt sunlight reduction & infrastructure collapse";
 const TOPIC_OF = {
@@ -23,7 +23,7 @@ const PRESETS = {
 
 const state = {
   split: "funder", display: "amount", funders: [...FUNDERS], topics: [ASRIC],
-  kinds: [...KINDS], yearFrom: 2015, yearTo: PARTIAL_YEAR, wider: false,
+  yearFrom: 2015, yearTo: PARTIAL_YEAR, wider: false,
 };
 let grants = [];
 
@@ -48,7 +48,7 @@ function filtered() {
   return grants.filter((g) =>
     (state.wider || GCR_CATEGORIES.includes(g.category)) &&
     state.funders.includes(g.funder) && state.topics.includes(g.topic) &&
-    state.kinds.includes(g.kind) && g.year >= state.yearFrom && g.year <= state.yearTo);
+    g.year >= state.yearFrom && g.year <= state.yearTo);
 }
 
 function gcrTotals(yearTo) {
@@ -98,12 +98,6 @@ function draw() {
   ], { sortKey: "amount" });
 }
 
-function syncControls() {
-  checkboxes(document.getElementById("f-funders"), FUNDERS, state.funders, (v) => { state.funders = v; draw(); });
-  checkboxes(document.getElementById("f-topics"), TOPICS, state.topics, (v) => { state.topics = v; draw(); });
-  checkboxes(document.getElementById("f-kinds"), KINDS, state.kinds, (v) => { state.kinds = v; draw(); });
-}
-
 async function init() {
   const raw = await loadJSON("funding.json");
   grants = raw.map((g) => ({ ...g, topic: TOPIC_OF[g.category] || "Other", kind: kindOf(g) }))
@@ -113,7 +107,6 @@ async function init() {
     state.wider = PRESETS[k].wider;
     if (k !== "asric" && state.split === "funder") state.split = "topic";
     segmented(document.getElementById("c-split"), [["funder", "Funder"], ["topic", "Topic"], ["activity", "Kind"]], state.split, onSplit);
-    syncControls();
     draw();
   });
   const onSplit = (v) => { state.split = v; draw(); };
@@ -125,7 +118,7 @@ async function init() {
   from.value = state.yearFrom; to.value = state.yearTo;
   from.addEventListener("change", () => { state.yearFrom = +from.value; draw(); });
   to.addEventListener("change", () => { state.yearTo = +to.value; draw(); });
-  syncControls();
+  checkboxes(document.getElementById("f-funders"), FUNDERS, state.funders, (v) => { state.funders = v; draw(); });
   draw();
 }
 
