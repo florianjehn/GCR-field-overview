@@ -13,7 +13,7 @@ from src.classify_grants import (
 )
 
 CODES = {
-    "category": "Nuclear, natural & resilience",
+    "category": "Abrupt sunlight reduction & infrastructure collapse",
     "coding_source": "LLM-coded",
     "confidence": "high",
     "question_id": "",
@@ -61,7 +61,10 @@ def test_classify_coefficient_manual_overrides_label():
     )
     manual = pd.DataFrame([dict(grant_id=1, **CODES)])
     coded = classify_coefficient(grants, manual).set_index("grant_id")
-    assert coded.loc[1, "category"] == "Nuclear, natural & resilience"
+    assert (
+        coded.loc[1, "category"]
+        == "Abrupt sunlight reduction & infrastructure collapse"
+    )
     assert coded.loc[1, "coding_source"] == "LLM-coded"
     assert coded.loc[2, "category"] == "AI"
     assert coded.loc[2, "coding_source"] == "funder-label"
@@ -88,7 +91,7 @@ def test_apply_purpose_overrides_matches_phrase_only():
     result = apply_purpose_overrides(coded, overrides)
     assert list(result["category"]) == [
         "EA & community",
-        "Nuclear, natural & resilience",
+        "Abrupt sunlight reduction & infrastructure collapse",
     ]
 
 

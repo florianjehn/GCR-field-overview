@@ -37,7 +37,7 @@ Downloads are dated (`data/raw/`) so results can be reproduced from the same sna
 
 Every grant gets two labels:
 
-- Hazard category: AI, Bio, Nuclear, natural & resilience (nuclear war, volcanoes, asteroids, space weather, food and infrastructure resilience; called "Classic GCR" until 2026-11-26), General x-risk (cross-cutting), Geoengineering, Climate, Forecasting, plus categories excluded from GCR totals: EA & community, Not GCR, Regrant (money passed to another fund whose grants are counted there), Duplicate (same money already counted under another funder) and Unknown. A grant can be split, e.g. `AI=0.5;Bio=0.5`.
+- Hazard category: AI, Bio, Abrupt sunlight reduction & infrastructure collapse (catastrophes that block out the sun or knock out infrastructure: nuclear war, large volcanic eruptions, asteroids, space weather, plus food and infrastructure resilience; called "Classic GCR" until 2026-11-26), General x-risk (cross-cutting), Geoengineering, Climate, Forecasting, plus categories excluded from GCR totals: EA & community, Not GCR, Regrant (money passed to another fund whose grants are counted there), Duplicate (same money already counted under another funder) and Unknown. A grant can be split, e.g. `AI=0.5;Bio=0.5`.
 - Activity (GCR-relevant grants only): Research, Policy & advocacy, Field-building & education, Other (operations, media, regranting), Unknown. The website calls grants outside the GCR categories or with unknown activity "Unknown/not assessed".
 
 Each label carries a coding source (`funder-label`, `LLM-coded`, `human-coded`), a confidence and a rationale, in `data/processed/grants_classified.csv`. For the hazard category, 2,707 grants follow the funder label, 1,406 are LLM-coded and 387 human-coded. For the activity, 2,047 are LLM-coded and 174 human-coded.
@@ -66,12 +66,12 @@ Each label carries a coding source (`funder-label`, `LLM-coded`, `human-coded`),
 
 Headline metrics over 2015–2025 (nominal USD, Coefficient + SFF + LTFF + FLI, excluding EA & community, Not GCR, Regrant, Duplicate):
 
-| Scenario | Nuclear, natural & resilience total ($M) | Its share of GCR funding | All GCR outside AI and bio per year 2023–25 ($M) | AI share 2025 |
+| Scenario | Abrupt sunlight reduction & infrastructure collapse total ($M) | Its share of GCR funding | All GCR outside AI and bio per year 2023–25 ($M) | AI share 2025 |
 |---|---|---|---|---|
 | Baseline | 14.1 | 0.9 % | 5.6 | 84 % |
-| Multi-hazard orgs (CSER, FHI, GCRI, …) counted as nuclear, natural & resilience | 38.4 | 2.4 % | 5.6 | 84 % |
-| Climate + geoengineering counted as nuclear, natural & resilience | 30.3 | 1.9 % | 5.6 | 84 % |
-| All Unknown money assumed nuclear, natural & resilience | 36.3 | 2.3 % | 9.7 | 84 % |
+| Multi-hazard orgs (CSER, FHI, GCRI, …) counted as abrupt sunlight reduction & infrastructure collapse | 38.4 | 2.4 % | 5.6 | 84 % |
+| Climate + geoengineering counted as abrupt sunlight reduction & infrastructure collapse | 30.3 | 1.9 % | 5.6 | 84 % |
+| All Unknown money assumed abrupt sunlight reduction & infrastructure collapse | 36.3 | 2.3 % | 9.7 | 84 % |
 | All three together (most generous) | 76.8 | 4.8 % | 9.7 | 84 % |
 | Longview general support counted as General x-risk | 14.1 | 0.9 % | 12.6 | 84 % |
 | Student x-risk programmes counted as EA & community | 14.1 | 0.9 % | 3.0 | 84 % |
@@ -81,7 +81,7 @@ Headline metrics over 2015–2025 (nominal USD, Coefficient + SFF + LTFF + FLI, 
 
 The remaining alternatives (FLI split, regrants, Lightcone, media, mixed field-building, 50/50 splits, FLI duplicates) change no metric by more than about half a percentage point (largest: mixed field-building split 50/50, AI share 2025 −0.5 points) and leave the yearly non-AI, non-bio amount unchanged; full table in `results/sensitivity.csv`.
 
-So the choices do matter for how big the small categories are. The nuclear, natural & resilience total moves by up to ~5× ($14M to $77M), and the yearly amount for all GCR outside AI and bio in 2023–25 ranges from $3.0M to $12.6M, depending on whether student programmes and Longview count. They don't change the overall picture, though. Even in the most generous reading nuclear, natural & resilience gets under 5 % of GCR philanthropy, while AI gets over 80 % in 2025.
+So the choices do matter for how big the small categories are. The abrupt sunlight reduction & infrastructure collapse total moves by up to ~5× ($14M to $77M), and the yearly amount for all GCR outside AI and bio in 2023–25 ranges from $3.0M to $12.6M, depending on whether student programmes and Longview count. They don't change the overall picture, though. Even in the most generous reading abrupt sunlight reduction & infrastructure collapse gets under 5 % of GCR philanthropy, while AI gets over 80 % in 2025.
 
 ## Organizations and staff
 
@@ -99,7 +99,7 @@ So the choices do matter for how big the small categories are. The nuclear, natu
 
 ## Interactive site
 
-`docs/` is a static GitHub Pages site (see `docs/README.md`). Defaults focus on GCR outside AI and bio (nuclear, natural & resilience, general x-risk, climate & geoengineering). To publish it: repository Settings → Pages → Deploy from branch `main`, folder `/docs`.
+`docs/` is a static GitHub Pages site (see `docs/README.md`). The funding page defaults to abrupt sunlight reduction & infrastructure collapse, the overview to GCR outside AI and bio (that category plus general x-risk and climate & geoengineering). To publish it: repository Settings → Pages → Deploy from branch `main`, folder `/docs`.
 
 ## Known gaps
 

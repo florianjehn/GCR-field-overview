@@ -1,9 +1,9 @@
-scenario,description,n_grants,nnr_total_musd,nnr_share_pct,non_ai_non_bio_per_year_2023_2025_musd,ai_share_2025_pct
+scenario,description,n_grants,asric_total_musd,asric_share_pct,non_ai_non_bio_per_year_2023_2025_musd,ai_share_2025_pct
 Baseline,As classified,0,14.11,0.89,5.56,83.51
-Q1 multi-hazard -> NNR,"CSER, FHI, BERI, GCRI, Global Shield etc. counted as nuclear, natural & resilience",33,38.37,2.42,5.56,83.51
+Q1 multi-hazard -> ASRIC,"CSER, FHI, BERI, GCRI, Global Shield etc. counted as abrupt sunlight reduction & infrastructure collapse",33,38.37,2.42,5.56,83.51
 Q2 FLI -> 100% AI,FLI general support fully AI,11,14.11,0.89,5.56,83.51
 Q3 student x-risk -> EA & community,Student/early-career x-risk programmes excluded,41,14.11,0.9,3.02,83.56
-Q4 geoengineering+climate -> NNR,"Climate and geoengineering counted as nuclear, natural & resilience",10,30.33,1.91,5.56,83.51
+Q4 geoengineering+climate -> ASRIC,Climate and geoengineering counted as abrupt sunlight reduction & infrastructure collapse,10,30.33,1.91,5.56,83.51
 Q5 global priorities -> General x-risk,GPI etc. counted as GCR research,8,14.11,0.88,7.6,83.49
 Q6 regrants counted (as AI),Regrants to LTFF etc. counted at first funder (double counting),13,14.11,0.87,5.56,83.51
 Q7 forecasting -> Not GCR,Generic forecasting excluded,49,14.11,0.92,5.56,85.81
@@ -13,6 +13,6 @@ Q10 mixed field-building -> 50/50 AI/Bio,"BlueDot, Successif etc. split",15,14.1
 Q12 Longview -> General x-risk,Longview general support counted as GCR,5,14.11,0.88,12.63,83.51
 AI+Bio orgs -> 100% AI,"50/50 splits (Foresight, Pour Demain, Langsikt, ALTER) fully AI",16,14.11,0.89,5.56,83.58
 FLI duplicates kept,FLI 2023 grants counted again (double counting),13,14.11,0.89,5.56,83.51
-Unknown -> NNR (upper bound),"All unclassified money assumed nuclear, natural & resilience",102,36.3,2.29,9.66,83.51
-Combined: Q1 + Q4 + Unknown -> NNR,"Most generous reading for nuclear, natural & resilience",145,76.78,4.84,9.66,83.51
+Unknown -> ASRIC (upper bound),All unclassified money assumed abrupt sunlight reduction & infrastructure collapse,102,36.3,2.29,9.66,83.51
+Combined: Q1 + Q4 + Unknown -> ASRIC,Most generous reading for abrupt sunlight reduction & infrastructure collapse,145,76.78,4.84,9.66,83.51
 SFF matching pledges left out,Conditional SFF matching pledges not counted,68,14.11,0.89,5.56,83.32

@@ -1,10 +1,11 @@
 """
 Assign every grant to a GCR category and combine all funders in one table.
 
-Categories: AI, Bio, Nuclear, natural & resilience, General x-risk, Climate,
-Geoengineering, Forecasting, EA & community, Not GCR, Regrant (money passed to
-another fund, excluded from totals), Duplicate (same money already counted
-under another funder, excluded from totals) and Unknown. See data/manual/decisions.md.
+Categories: AI, Bio, Abrupt sunlight reduction & infrastructure collapse,
+General x-risk, Climate, Geoengineering, Forecasting, EA & community, Not GCR,
+Regrant (money passed to another fund, excluded from totals), Duplicate (same
+money already counted under another funder, excluded from totals) and Unknown.
+See data/manual/decisions.md.
 
 A category can be split across several categories, written as
 "AI=0.5;Bio=0.5". The long table grants_by_category.csv has one row per

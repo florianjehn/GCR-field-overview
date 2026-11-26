@@ -1,28 +1,28 @@
 // Funding page: stacked bars by year, split and filtered by funder, topic and kind.
 
-const NNR = "Nuclear, natural & resilience";
+const ASRIC = "Abrupt sunlight reduction & infrastructure collapse";
 const TOPIC_OF = {
-  [NNR]: NNR, "AI": "AI", "Bio": "Bio", "General x-risk": "General x-risk",
+  [ASRIC]: ASRIC, "AI": "AI", "Bio": "Bio", "General x-risk": "General x-risk",
   "Geoengineering": "Climate & geoengineering", "Climate": "Climate & geoengineering",
   "Forecasting": "Forecasting", "EA & community": "EA & community",
   "Unknown": "Other", "Not GCR": "Other",
 };
-const GCR_CATEGORIES = [NNR, "AI", "Bio", "General x-risk", "Geoengineering", "Climate", "Forecasting", "Unknown"];
-const TOPICS = [NNR, "AI", "Bio", "General x-risk", "Climate & geoengineering", "Forecasting", "EA & community", "Other"];
+const GCR_CATEGORIES = [ASRIC, "AI", "Bio", "General x-risk", "Geoengineering", "Climate", "Forecasting", "Unknown"];
+const TOPICS = [ASRIC, "AI", "Bio", "General x-risk", "Climate & geoengineering", "Forecasting", "EA & community", "Other"];
 const GCR_TOPICS = TOPICS.filter((t) => t !== "EA & community");
 const FUNDERS = ["Coefficient Giving", "SFF", "LTFF", "FLI"];
 const KINDS = ["Research", "Policy & advocacy", "Field-building & education", "Other", "Unknown/not assessed"];
 // "GCR outside AI and bio" is the umbrella; its parts are the first three topics.
-const OUTSIDE_AI_BIO = [NNR, "General x-risk", "Climate & geoengineering"];
+const OUTSIDE_AI_BIO = [ASRIC, "General x-risk", "Climate & geoengineering"];
 const PRESETS = {
+  asric: { label: ASRIC, topics: [ASRIC], wider: false },
   outside: { label: "GCR outside AI and bio", topics: OUTSIDE_AI_BIO, wider: false },
-  nnr: { label: NNR, topics: [NNR], wider: false },
   gcr: { label: "All GCR topics (incl. AI + bio)", topics: GCR_TOPICS, wider: false },
   all: { label: "Everything incl. EA & not GCR", topics: TOPICS, wider: true },
 };
 
 const state = {
-  split: "topic", display: "amount", funders: [...FUNDERS], topics: [...OUTSIDE_AI_BIO],
+  split: "funder", display: "amount", funders: [...FUNDERS], topics: [ASRIC],
   kinds: [...KINDS], yearFrom: 2015, yearTo: PARTIAL_YEAR, wider: false,
 };
 let grants = [];
@@ -108,10 +108,10 @@ async function init() {
   const raw = await loadJSON("funding.json");
   grants = raw.map((g) => ({ ...g, topic: TOPIC_OF[g.category] || "Other", kind: kindOf(g) }))
     .filter((g) => g.category !== "Regrant" && g.category !== "Duplicate");
-  segmented(document.getElementById("c-preset"), Object.entries(PRESETS).map(([k, p]) => [k, p.label]), "outside", (k) => {
+  segmented(document.getElementById("c-preset"), Object.entries(PRESETS).map(([k, p]) => [k, p.label]), "asric", (k) => {
     state.topics = [...PRESETS[k].topics];
     state.wider = PRESETS[k].wider;
-    if (k !== "nnr" && state.split === "funder") state.split = "topic";
+    if (k !== "asric" && state.split === "funder") state.split = "topic";
     segmented(document.getElementById("c-split"), [["funder", "Funder"], ["topic", "Topic"], ["activity", "Kind"]], state.split, onSplit);
     syncControls();
     draw();

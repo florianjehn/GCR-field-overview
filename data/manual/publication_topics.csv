@@ -1,8 +1,8 @@
 topic,pattern,group
 AI,"\bAI\b|artificial intelligence|machine learning|superintelligen|\bAGI\b|language model|\bLLMs?\b|deep learning|neural network|autonomous weapon|alignment problem",AI
 bio,"pandemic|pathogen|biosecurity|biological weapon|bioweapon|biorisk|biotechnolog|synthetic biology|gain.of.function|virus|viral|infectious disease|epidemic|COVID|SARS",bio
-nuclear,"nuclear (war|winter|weapon|conflict|exchange|famine|deterren|escalat|arsenal)|nuclear\b",nnr
-volcanic,"volcan|supervolcan|eruption",nnr
-space,"asteroid|comet|near.earth object|impact winter|space weather|solar storm|geomagnetic|coronal mass ejection|gamma.ray burst|supernova",nnr
-food,"food (system|security|supply|shortage|production)|famine|crop|agricultur|resilient food|abrupt sunlight reduction",nnr
+nuclear,"nuclear (war|winter|weapon|conflict|exchange|famine|deterren|escalat|arsenal)|nuclear\b",asric
+volcanic,"volcan|supervolcan|eruption",asric
+space,"asteroid|comet|near.earth object|impact winter|space weather|solar storm|geomagnetic|coronal mass ejection|gamma.ray burst|supernova",asric
+food,"food (system|security|supply|shortage|production)|famine|crop|agricultur|resilient food|abrupt sunlight reduction",asric
 climate,"climate change|global warming|climate catastroph|tipping point|geoengineering|solar radiation (management|modification)",climate

@@ -12,10 +12,10 @@ const COLORS = {
 const PARTIAL_YEAR = 2026;
 const yearLabel = (y) => (+y === PARTIAL_YEAR ? `${y}*` : `${y}`);
 
-// Fixed colour per entity (never by rank). Nuclear, natural & resilience is the focus colour.
+// Fixed colour per entity (never by rank). Abrupt sunlight reduction & infrastructure collapse is the focus colour.
 const ENTITY_COLORS = {
   topic: {
-    "Nuclear, natural & resilience": COLORS.aubergine, "AI": COLORS.slate, "Bio": COLORS.rose,
+    "Abrupt sunlight reduction & infrastructure collapse": COLORS.aubergine, "AI": COLORS.slate, "Bio": COLORS.rose,
     "General x-risk": COLORS.sage, "Climate & geoengineering": COLORS.ochre,
     "Forecasting": COLORS.berry, "EA & community": COLORS.deep, "Other": COLORS.context,
   },

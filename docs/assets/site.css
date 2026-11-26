@@ -126,7 +126,7 @@ footer.site::before {
 .control-label { color: var(--muted); }
 .options { display: flex; flex-wrap: wrap; gap: 0.25rem 0.9rem; font-size: 0.95rem; }
 .options label { display: inline-flex; gap: 0.3rem; align-items: center; cursor: pointer; }
-.segmented { display: inline-flex; border: 1px solid var(--aubergine); }
+.segmented { display: inline-flex; flex-wrap: wrap; max-width: 100%; border: 1px solid var(--aubergine); }
 .segmented button {
   font: inherit;
   font-size: 0.78rem;
@@ -138,6 +138,7 @@ footer.site::before {
   padding: 0.35rem 0.75rem;
   cursor: pointer;
 }
+.segmented button { min-width: 0; }
 .segmented button + button { border-left: 1px solid var(--aubergine); }
 .segmented button[aria-pressed="true"] { background: var(--aubergine); color: var(--paper); }
 .export-row { display: flex; justify-content: flex-end; margin: 0.25rem 0; }
