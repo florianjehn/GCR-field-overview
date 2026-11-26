@@ -1,6 +1,14 @@
 // Overview page: headline numbers computed from the same data as the other pages.
 
-const GCR = ["Classic GCR", "AI", "Bio", "General x-risk", "Geoengineering", "Climate", "Forecasting", "Unknown"];
+const NNR = "Nuclear, natural & resilience";
+const GCR = [NNR, "AI", "Bio", "General x-risk", "Geoengineering", "Climate", "Forecasting", "Unknown"];
+// "GCR outside AI and bio" and its parts, as on the funding page.
+const OUTSIDE_PARTS = [
+  { label: NNR, categories: [NNR] },
+  { label: "General x-risk", categories: ["General x-risk"] },
+  { label: "Climate & geoengineering", categories: ["Climate", "Geoengineering"] },
+];
+const OUTSIDE_AI_BIO = OUTSIDE_PARTS.flatMap((p) => p.categories);
 
 function setNumber(id, value, text) {
   const el = document.getElementById(id);
@@ -8,40 +16,51 @@ function setNumber(id, value, text) {
   el.querySelector("p").textContent = text;
 }
 
-// Plain bars on one scale, so the size difference between AI, bio and classic GCR shows.
+const sumOf = (grants, categories) => d3.sum(grants.filter((g) => categories.includes(g.category)), (g) => g.amount);
+
+// Plain bars on one scale, so the size difference between AI, bio and the rest shows.
 function drawComparison(gcr) {
-  const amount = (cat) => d3.sum(gcr.filter((g) => g.category === cat), (g) => g.amount);
-  const rows = ["AI", "Bio", "Classic GCR"].map((cat) => ({ cat, value: amount(cat) }));
+  const parts = OUTSIDE_PARTS.map((p) => ({ label: p.label, value: sumOf(gcr, p.categories) }));
+  const rows = [
+    { label: "AI", parts: [{ label: "AI", value: sumOf(gcr, ["AI"]) }] },
+    { label: "Bio", parts: [{ label: "Bio", value: sumOf(gcr, ["Bio"]) }] },
+    { label: "Outside AI and bio", parts },
+  ].map((r) => ({ ...r, value: d3.sum(r.parts, (p) => p.value) }));
   const max = d3.max(rows, (r) => r.value);
   document.getElementById("compare").innerHTML = rows.map((r) =>
-    `<div class="row"><span>${r.cat}</span><div class="bar">` +
-    `<div class="fill" style="width:${(85 * r.value) / max}%;background:${ENTITY_COLORS.topic[r.cat]}"></div>` +
+    `<div class="row"><span>${r.label}</span><div class="bar">` +
+    r.parts.map((p) => `<div class="fill" title="${p.label}: ${fmtMoney(p.value)}" ` +
+      `style="width:${(85 * p.value) / max}%;background:${ENTITY_COLORS.topic[p.label]}"></div>`).join("") +
     `<span class="value">${fmtMoney(r.value)}</span></div></div>`).join("");
-  const [ai, bio, classic] = rows.map((r) => r.value);
+  legend(document.getElementById("compare-legend"), parts.map((p) => p.label), (k) => ENTITY_COLORS.topic[k]);
+  const [ai, bio, outside] = rows.map((r) => r.value);
+  const nnr = parts[0].value;
   document.getElementById("compare-intro").textContent = `The percentages hide how big the gap is in dollars. ` +
-    `In 2015–2025 the four funders gave ${fmtMoney(ai)} to AI and ${fmtMoney(bio)} to bio, against ${fmtMoney(classic)} ` +
-    `for classic GCR. AI got about ${Math.round(ai / classic)} times as much as classic GCR, bio about ${Math.round(bio / classic)} times.`;
+    `In 2015–2025 the four funders gave ${fmtMoney(ai)} to AI and ${fmtMoney(bio)} to bio, against ${fmtMoney(outside)} ` +
+    `for all GCR work outside AI and bio together. AI got about ${Math.round(ai / outside)} times as much.`;
   const years = d3.max(gcr, (g) => g.year) - d3.min(gcr, (g) => g.year) + 1;
   document.getElementById("compare-outro").textContent = `So it seems there's just very little money to be had for GCR research ` +
-    `outside of AI and bio. All classic hazards together got about ${fmtMoney(classic / years)} a year on average.`;
+    `outside of AI and bio. That's about ${fmtMoney(outside / years)} a year for everything else, and about ` +
+    `${fmtMoney(nnr / years)} a year for nuclear war, natural hazards and resilience.`;
 }
 
 async function init() {
   const [funding, pubs, staff] = await Promise.all([loadJSON("funding.json"), loadJSON("publications.json"), loadJSON("staff.json")]);
   const gcr = funding.filter((g) => GCR.includes(g.category) && g.year >= 2015 && g.year <= 2025);
   const total = d3.sum(gcr, (g) => g.amount);
-  const classic = d3.sum(gcr.filter((g) => g.category === "Classic GCR"), (g) => g.amount);
+  const outside = sumOf(gcr, OUTSIDE_AI_BIO);
   const y2025 = gcr.filter((g) => g.year === 2025);
-  const ai2025 = d3.sum(y2025.filter((g) => g.category === "AI"), (g) => g.amount) / d3.sum(y2025, (g) => g.amount);
-  setNumber("n-classic", fmtMoney(classic), `went to classic GCR (nuclear, volcanic, space weather, resilient food, ...) from the four funders in 2015–2025`);
-  const share = (cat) => d3.sum(gcr.filter((g) => g.category === cat), (g) => g.amount) / total;
-  setNumber("n-share", fmtPct(classic / total), `of their ${fmtMoney(total)} GCR funding in that period. AI got ${fmtPct(share("AI"))}, bio ${fmtPct(share("Bio"))}`);
+  const ai2025 = sumOf(y2025, ["AI"]) / d3.sum(y2025, (g) => g.amount);
+  setNumber("n-outside", fmtMoney(outside), `went to GCR outside AI and bio from the four funders in 2015–2025. ` +
+    `Only ${fmtMoney(sumOf(gcr, [NNR]))} of it went to nuclear war, natural hazards and resilience`);
+  const share = (cat) => sumOf(gcr, [cat]) / total;
+  setNumber("n-share", fmtPct(outside / total), `of their ${fmtMoney(total)} GCR funding in that period. AI got ${fmtPct(share("AI"))}, bio ${fmtPct(share("Bio"))}`);
   drawComparison(gcr);
   exportButton(document.getElementById("export-compare"), () => [document.getElementById("compare-figure")], "gcr-funding-comparison.png");
   setNumber("n-ai", fmtPct(ai2025), "of GCR funding in 2025 went to AI");
-  const researchers = staff.functions.filter((r) => r.year === PARTIAL_YEAR && r.focus === "classic or multi-hazard" && r.function === "research");
+  const researchers = staff.functions.filter((r) => r.year === PARTIAL_YEAR && r.focus === "beyond AI and bio" && r.function === "research");
   const nResearchers = d3.sum(researchers, (r) => r.people);
-  setNumber("n-people", `~${Math.round(nResearchers / 5) * 5}`, `people do research at the main GCR organizations working on classic or several risks (my selection) in ${PARTIAL_YEAR}. A rough count, see the caveats below`);
+  setNumber("n-people", `~${Math.round(nResearchers / 5) * 5}`, `people do research at the main GCR organizations working beyond AI and bio (my selection) in ${PARTIAL_YEAR}. A rough count, see the caveats below`);
   const works = pubs.by_year.find((r) => r.scope === "title_abstract" && r.year === 2025);
   setNumber("n-pubs", works ? fmtInt(works.works) : "–", `works in 2025 with "global catastrophic risk" in title or abstract (and ~${fmtInt((pubs.by_year.find((r) => r.scope === "fulltext" && r.year === 2025) || {}).works || 0)} mentioning it anywhere)`);
 }

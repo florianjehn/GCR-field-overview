@@ -170,3 +170,11 @@ Author reviewed the 1 Dec 2025 team page. Still listed but no longer working the
 - R1 Good Ancestors Policy (Coefficient 2024 "Global Catastrophic Risks Advocacy", SFF 2024 and 2026): author: "Good Ancestor mostly does AI, classify them as CLTR". General x-risk -> AI. Its staff-page focus was already "AI or bio".
 - R2 Effective Institutions Project (SFF 2024-2026 general support): author: "mostly does donor advisement now, reclassify". General x-risk -> EA & community, the same rule as Longview general support (Q12). Coefficient's 2024 "AI Governance Work" grant stays AI (stated purpose).
 - Source URL of Coefficient grant 36537 (ALLFED Australia, "Food System Resilience Initiatives", 2026): the URL in Coefficient's own index does not load (reported by the author). Overridden in data/manual/source_url_overrides.csv to the grant database; the correct page could not be checked because the site blocks scripts.
+
+## Naming and scope (2026-11-26)
+
+- Author: "classic GCR" confuses readers (it suggests these were the original GCRs, while AI and bio were central from the start). Renamed everywhere (data, code, site, README) to "Nuclear, natural & resilience": nuclear war, volcanoes, asteroids, space weather, and keeping food systems and infrastructure running in a catastrophe. The rest of this log keeps the old name where it was used at the time.
+- New umbrella "GCR outside AI and bio" = Nuclear, natural & resilience + General x-risk + Climate + Geoengineering. It only counts GCR-framed work; mainstream climate, nuclear security and disaster risk reduction funding are out of scope by design. The funding page and overview default to the umbrella.
+- What the renamed category holds in practice (2015–2025, $14.1M, 27 grants, 96 % research): nuclear winter impact research $7.1M, food and infrastructure resilience $6.0M, space weather $0.5M, nuclear prevention only Longview's $0.5M regrant, volcanoes and asteroids nothing.
+- Staff focus "classic or multi-hazard" renamed "beyond AI and bio".
+- Global Priorities Institute removed from the staff page (author: "they mostly did longtermism, which is related, but not actually what I want to argue for here"); org_types focus set to "global priorities", data kept. FHI stays (author: "it was much more central than GPI to many GCR ideas").

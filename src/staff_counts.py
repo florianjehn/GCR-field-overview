@@ -5,7 +5,7 @@ Roles come from data/manual/team_role_rules.csv: ordered regex rules per
 organization on either the section label or the job title (first match
 wins). Roles: staff, scholar (paid fixed-term research fellows), student,
 volunteer, affiliate, board, alumni, unknown. A rule can also set a topic
-(AI, bio, classic, general) when the section or title states it.
+(AI, bio, general) when the section or title states it.
 
 Run with:
     uv run python3 -m src.staff_counts

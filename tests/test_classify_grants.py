@@ -12,7 +12,7 @@ from src.classify_grants import (
 )
 
 CODES = {
-    "category": "Classic GCR",
+    "category": "Nuclear, natural & resilience",
     "coding_source": "LLM-coded",
     "confidence": "high",
     "question_id": "",
@@ -60,7 +60,7 @@ def test_classify_coefficient_manual_overrides_label():
     )
     manual = pd.DataFrame([dict(grant_id=1, **CODES)])
     coded = classify_coefficient(grants, manual).set_index("grant_id")
-    assert coded.loc[1, "category"] == "Classic GCR"
+    assert coded.loc[1, "category"] == "Nuclear, natural & resilience"
     assert coded.loc[1, "coding_source"] == "LLM-coded"
     assert coded.loc[2, "category"] == "AI"
     assert coded.loc[2, "coding_source"] == "funder-label"
@@ -85,7 +85,10 @@ def test_apply_purpose_overrides_matches_phrase_only():
         [dict(organization="Lightcone", purpose_contains="flexheg", **CODES)]
     )
     result = apply_purpose_overrides(coded, overrides)
-    assert list(result["category"]) == ["EA & community", "Classic GCR"]
+    assert list(result["category"]) == [
+        "EA & community",
+        "Nuclear, natural & resilience",
+    ]
 
 
 def test_classify_sff_raises_for_uncoded_organization():

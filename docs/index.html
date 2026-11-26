@@ -6,7 +6,7 @@
   <title>GCR field overview</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=e2ab7c35">
+  <link rel="stylesheet" href="assets/site.css?v=e1368a52">
 </head>
 <body>
   <header class="site">
@@ -21,10 +21,11 @@
   <main>
     <p class="label kicker">Global catastrophic risk research</p>
     <h1>How is the field doing?</h1>
-    <p class="lead prose">I wanted to know how the field working on global catastrophic risk changed over the last ten years. Who pays for it, how many people work on it and how much gets written about it. My impression was that most of the money moved to AI and that the classic topics (nuclear war, volcanoes, space weather, keeping people fed in a catastrophe) are left with very little. This site collects the numbers to check that. Everything is based on public data and links back to its source, so you can check it yourself.</p>
+    <p class="lead prose">I wanted to know how the field working on global catastrophic risk changed over the last ten years. Who pays for it, how many people work on it and how much gets written about it. My impression was that most of the money moved to AI and bio, and that everything else is left with very little. This site collects the numbers to check that. Everything is based on public data and links back to its source, so you can check it yourself.</p>
+    <p class="prose">By "GCR outside AI and bio" I mean three things. Nuclear, natural &amp; resilience covers nuclear war, volcanoes, asteroids, space weather and keeping food systems and infrastructure running in a catastrophe. General x-risk is work on catastrophic or existential risk as a whole, like FHI or Global Shield. Climate &amp; geoengineering is the third. I only count work framed as global catastrophic risk. Mainstream climate science, nuclear security and disaster risk reduction get far more money, but they are a different world and not what I am looking at here.</p>
 
     <div class="numbers">
-      <div class="number" id="n-classic"><div class="octagon">…</div><p></p></div>
+      <div class="number" id="n-outside"><div class="octagon">…</div><p></p></div>
       <div class="number key" id="n-share"><div class="octagon">…</div><p></p></div>
       <div class="number" id="n-ai"><div class="octagon">…</div><p></p></div>
       <div class="number" id="n-people"><div class="octagon">…</div><p></p></div>
@@ -35,11 +36,12 @@
     <p class="prose" id="compare-intro"></p>
     <div id="compare-figure">
       <p class="chart-title">Funding from the four funders, 2015–2025</p>
-      <div class="compare" id="compare" role="img" aria-label="Funding for AI, bio and classic GCR, 2015–2025"></div>
+      <div class="compare" id="compare" role="img" aria-label="Funding for AI, bio and GCR outside AI and bio, 2015–2025"></div>
+      <div class="legend" id="compare-legend"></div>
     </div>
     <div class="export-row" id="export-compare"></div>
     <p class="prose" id="compare-outro"></p>
-    <p class="prose">I still think AI and bio have been a core part of how this field developed. But by now they are so much bigger than everything else that they have kind of graduated from the field and are more their own thing. That's why most of this site looks at classic GCR on its own instead of next to AI and bio, where it would barely be visible.</p>
+    <p class="prose">I still think AI and bio have been a core part of how this field developed. But by now they are so much bigger than everything else that they have kind of graduated from the field and are more their own thing. That's why most of this site looks at GCR outside AI and bio on its own instead of next to AI and bio, where it would barely be visible.</p>
 
     <h2>Explore</h2>
     <div class="cards">
@@ -49,7 +51,7 @@
       </div>
       <div class="card">
         <h3><a href="staff.html">Staff</a></h3>
-        <p>People at the GCR organizations I picked that work on classic or several risks, year by year from archived team pages. Split by research, teaching, policy and operations.</p>
+        <p>People at the GCR organizations I picked that work beyond AI and bio, year by year from archived team pages. Split by research, teaching, policy and operations.</p>
       </div>
       <div class="card">
         <h3><a href="publications.html">Publications</a></h3>
@@ -63,8 +65,8 @@
   </main>
   <footer class="site">Based only on public data · <a href="https://github.com/florianjehn/GCR-field-overview">data and code</a> · <span id="built"></span></footer>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-  <script src="assets/common.js?v=775a0bee"></script>
-  <script src="assets/overview.js?v=dd01e801"></script>
+  <script src="assets/common.js?v=bb199f82"></script>
+  <script src="assets/overview.js?v=ea4bc444"></script>
   <script>loadJSON("meta.json").then((m) => { document.getElementById("built").textContent = `data from ${m.built}`; });</script>
 </body>
 </html>

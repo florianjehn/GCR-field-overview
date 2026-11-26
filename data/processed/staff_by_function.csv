@@ -1,100 +1,100 @@
 org_id,year,focus,function,source,people
-adapt,2020,classic or multi-hazard,research,team page,1
-adapt,2021,classic or multi-hazard,research,team page,1
-adapt,2022,classic or multi-hazard,research,team page,1
-adapt,2023,classic or multi-hazard,research,team page,1
-adapt,2024,classic or multi-hazard,research,team page,1
-adapt,2025,classic or multi-hazard,research,team page,1
-adapt,2026,classic or multi-hazard,research,team page,1
-allfed,2017,classic or multi-hazard,operations,team page,1
-allfed,2017,classic or multi-hazard,research,team page,6
-allfed,2018,classic or multi-hazard,operations,team page,1
-allfed,2018,classic or multi-hazard,research,team page,8
-allfed,2019,classic or multi-hazard,operations,team page,1
-allfed,2019,classic or multi-hazard,research,team page,9
-allfed,2020,classic or multi-hazard,operations,team page,1
-allfed,2020,classic or multi-hazard,research,team page,10
-allfed,2021,classic or multi-hazard,operations,team page,2
-allfed,2021,classic or multi-hazard,research,team page,15
-allfed,2022,classic or multi-hazard,operations,team page,3
-allfed,2022,classic or multi-hazard,research,team page,18
-allfed,2023,classic or multi-hazard,operations,team page,4
-allfed,2023,classic or multi-hazard,research,team page,22
-allfed,2024,classic or multi-hazard,operations,team page,5
-allfed,2024,classic or multi-hazard,policy,team page,1
-allfed,2024,classic or multi-hazard,research,team page,21
-allfed,2025,classic or multi-hazard,operations,team page,7
-allfed,2025,classic or multi-hazard,policy,team page,1
-allfed,2025,classic or multi-hazard,research,team page,16
-allfed,2026,classic or multi-hazard,operations,team page,10
-allfed,2026,classic or multi-hazard,policy,team page,1
-allfed,2026,classic or multi-hazard,research,team page,9
+adapt,2020,beyond AI and bio,research,team page,1
+adapt,2021,beyond AI and bio,research,team page,1
+adapt,2022,beyond AI and bio,research,team page,1
+adapt,2023,beyond AI and bio,research,team page,1
+adapt,2024,beyond AI and bio,research,team page,1
+adapt,2025,beyond AI and bio,research,team page,1
+adapt,2026,beyond AI and bio,research,team page,1
+allfed,2017,beyond AI and bio,operations,team page,1
+allfed,2017,beyond AI and bio,research,team page,6
+allfed,2018,beyond AI and bio,operations,team page,1
+allfed,2018,beyond AI and bio,research,team page,8
+allfed,2019,beyond AI and bio,operations,team page,1
+allfed,2019,beyond AI and bio,research,team page,9
+allfed,2020,beyond AI and bio,operations,team page,1
+allfed,2020,beyond AI and bio,research,team page,10
+allfed,2021,beyond AI and bio,operations,team page,2
+allfed,2021,beyond AI and bio,research,team page,15
+allfed,2022,beyond AI and bio,operations,team page,3
+allfed,2022,beyond AI and bio,research,team page,18
+allfed,2023,beyond AI and bio,operations,team page,4
+allfed,2023,beyond AI and bio,research,team page,22
+allfed,2024,beyond AI and bio,operations,team page,5
+allfed,2024,beyond AI and bio,policy,team page,1
+allfed,2024,beyond AI and bio,research,team page,21
+allfed,2025,beyond AI and bio,operations,team page,7
+allfed,2025,beyond AI and bio,policy,team page,1
+allfed,2025,beyond AI and bio,research,team page,16
+allfed,2026,beyond AI and bio,operations,team page,10
+allfed,2026,beyond AI and bio,policy,team page,1
+allfed,2026,beyond AI and bio,research,team page,9
 alter,2024,AI or bio,operations,team page,1
 alter,2024,AI or bio,research,team page,1
-beri,2017,classic or multi-hazard,operations,team page,1
-beri,2017,classic or multi-hazard,research,team page,3
-beri,2018,classic or multi-hazard,operations,team page,2
-beri,2018,classic or multi-hazard,research,team page,5
-beri,2019,classic or multi-hazard,operations,team page,4
-beri,2019,classic or multi-hazard,research,team page,3
-beri,2020,classic or multi-hazard,operations,team page,2
-beri,2020,classic or multi-hazard,research,team page,4
-beri,2021,classic or multi-hazard,research,team page,2
-beri,2022,classic or multi-hazard,research,team page,2
-beri,2023,classic or multi-hazard,research,team page,3
-beri,2024,classic or multi-hazard,research,team page,3
-beri,2025,classic or multi-hazard,research,team page,2
-beri,2026,classic or multi-hazard,research,assumed same as 2025,2
+beri,2017,beyond AI and bio,operations,team page,1
+beri,2017,beyond AI and bio,research,team page,3
+beri,2018,beyond AI and bio,operations,team page,2
+beri,2018,beyond AI and bio,research,team page,5
+beri,2019,beyond AI and bio,operations,team page,4
+beri,2019,beyond AI and bio,research,team page,3
+beri,2020,beyond AI and bio,operations,team page,2
+beri,2020,beyond AI and bio,research,team page,4
+beri,2021,beyond AI and bio,research,team page,2
+beri,2022,beyond AI and bio,research,team page,2
+beri,2023,beyond AI and bio,research,team page,3
+beri,2024,beyond AI and bio,research,team page,3
+beri,2025,beyond AI and bio,research,team page,2
+beri,2026,beyond AI and bio,research,assumed same as 2025,2
 ceri_era,2024,AI or bio,operations,team page,2
 ceri_era,2024,AI or bio,teaching,team page,7
 cser,2017,AI or bio,research,team page,2
-cser,2017,classic or multi-hazard,operations,team page,3
-cser,2017,classic or multi-hazard,research,team page,8
+cser,2017,beyond AI and bio,operations,team page,3
+cser,2017,beyond AI and bio,research,team page,8
 cser,2018,AI or bio,research,team page,2
-cser,2018,classic or multi-hazard,operations,team page,3
-cser,2018,classic or multi-hazard,research,team page,8
+cser,2018,beyond AI and bio,operations,team page,3
+cser,2018,beyond AI and bio,research,team page,8
 cser,2019,AI or bio,research,team page,2
-cser,2019,classic or multi-hazard,operations,team page,3
-cser,2019,classic or multi-hazard,research,team page,11
+cser,2019,beyond AI and bio,operations,team page,3
+cser,2019,beyond AI and bio,research,team page,11
 cser,2020,AI or bio,research,team page,2
-cser,2020,classic or multi-hazard,operations,team page,4
-cser,2020,classic or multi-hazard,research,team page,13
+cser,2020,beyond AI and bio,operations,team page,4
+cser,2020,beyond AI and bio,research,team page,13
 cser,2021,AI or bio,research,team page,4
-cser,2021,classic or multi-hazard,operations,team page,6
-cser,2021,classic or multi-hazard,research,team page,17
+cser,2021,beyond AI and bio,operations,team page,6
+cser,2021,beyond AI and bio,research,team page,17
 cser,2022,AI or bio,research,team page,4
-cser,2022,classic or multi-hazard,operations,team page,8
-cser,2022,classic or multi-hazard,research,team page,15
+cser,2022,beyond AI and bio,operations,team page,8
+cser,2022,beyond AI and bio,research,team page,15
 cser,2023,AI or bio,research,team page,4
-cser,2023,classic or multi-hazard,operations,team page,8
-cser,2023,classic or multi-hazard,research,team page,11
+cser,2023,beyond AI and bio,operations,team page,8
+cser,2023,beyond AI and bio,research,team page,11
 cser,2024,AI or bio,research,team page,3
-cser,2024,classic or multi-hazard,operations,team page,5
-cser,2024,classic or multi-hazard,research,team page,10
+cser,2024,beyond AI and bio,operations,team page,5
+cser,2024,beyond AI and bio,research,team page,10
 cser,2025,AI or bio,research,team page,4
-cser,2025,classic or multi-hazard,operations,team page,5
-cser,2025,classic or multi-hazard,research,team page,7
-cser,2025,classic or multi-hazard,teaching,team page,3
+cser,2025,beyond AI and bio,operations,team page,5
+cser,2025,beyond AI and bio,research,team page,7
+cser,2025,beyond AI and bio,teaching,team page,3
 cser,2026,AI or bio,research,assumed same as 2025,4
-cser,2026,classic or multi-hazard,operations,assumed same as 2025,5
-cser,2026,classic or multi-hazard,research,assumed same as 2025,4
-cser,2026,classic or multi-hazard,teaching,assumed same as 2025,3
+cser,2026,beyond AI and bio,operations,assumed same as 2025,5
+cser,2026,beyond AI and bio,research,assumed same as 2025,4
+cser,2026,beyond AI and bio,teaching,assumed same as 2025,3
 ero,2021,AI or bio,policy,team page,4
 ero,2022,AI or bio,policy,team page,10
 ero,2023,AI or bio,policy,team page,7
 ero,2024,AI or bio,policy,team page,10
 ero,2025,AI or bio,policy,team page,11
 ero,2026,AI or bio,policy,team page,9
-fhi,2015,classic or multi-hazard,research,team page,16
-fhi,2016,classic or multi-hazard,research,team page,17
-fhi,2017,classic or multi-hazard,research,team page,21
-fhi,2018,classic or multi-hazard,research,team page,21
-fhi,2019,classic or multi-hazard,research,team page,27
-fhi,2020,classic or multi-hazard,research,team page,43
-fhi,2021,classic or multi-hazard,research,team page,47
-fhi,2022,classic or multi-hazard,research,team page,29
-fhi,2023,classic or multi-hazard,research,team page,11
-fhi,2024,classic or multi-hazard,research,team page,8
+fhi,2015,beyond AI and bio,research,team page,16
+fhi,2016,beyond AI and bio,research,team page,17
+fhi,2017,beyond AI and bio,research,team page,21
+fhi,2018,beyond AI and bio,research,team page,21
+fhi,2019,beyond AI and bio,research,team page,27
+fhi,2020,beyond AI and bio,research,team page,43
+fhi,2021,beyond AI and bio,research,team page,47
+fhi,2022,beyond AI and bio,research,team page,29
+fhi,2023,beyond AI and bio,research,team page,11
+fhi,2024,beyond AI and bio,research,team page,8
 fli,2016,AI or bio,policy,team page,4
 fli,2017,AI or bio,policy,team page,5
 fli,2018,AI or bio,policy,team page,6
@@ -111,70 +111,70 @@ fli,2025,AI or bio,operations,team page,4
 fli,2025,AI or bio,policy,team page,22
 fli,2026,AI or bio,operations,team page,7
 fli,2026,AI or bio,policy,team page,30
-gcri,2015,classic or multi-hazard,research,team page,3
-gcri,2016,classic or multi-hazard,research,team page,3
-gcri,2017,classic or multi-hazard,research,team page,4
-gcri,2018,classic or multi-hazard,research,team page,4
-gcri,2019,classic or multi-hazard,research,team page,3
-gcri,2020,classic or multi-hazard,research,team page,6
-gcri,2021,classic or multi-hazard,research,team page,5
-gcri,2022,classic or multi-hazard,research,team page,4
-gcri,2023,classic or multi-hazard,research,team page,2
-gcri,2024,classic or multi-hazard,research,team page,2
-gcri,2025,classic or multi-hazard,research,team page,1
-gcri,2026,classic or multi-hazard,research,assumed same as 2025,1
-global_shield,2024,classic or multi-hazard,policy,team page,3
-global_shield,2025,classic or multi-hazard,policy,team page,5
-global_shield,2026,classic or multi-hazard,policy,team page,10
+gcri,2015,beyond AI and bio,research,team page,3
+gcri,2016,beyond AI and bio,research,team page,3
+gcri,2017,beyond AI and bio,research,team page,4
+gcri,2018,beyond AI and bio,research,team page,4
+gcri,2019,beyond AI and bio,research,team page,3
+gcri,2020,beyond AI and bio,research,team page,6
+gcri,2021,beyond AI and bio,research,team page,5
+gcri,2022,beyond AI and bio,research,team page,4
+gcri,2023,beyond AI and bio,research,team page,2
+gcri,2024,beyond AI and bio,research,team page,2
+gcri,2025,beyond AI and bio,research,team page,1
+gcri,2026,beyond AI and bio,research,assumed same as 2025,1
+global_shield,2024,beyond AI and bio,policy,team page,3
+global_shield,2025,beyond AI and bio,policy,team page,5
+global_shield,2026,beyond AI and bio,policy,team page,10
 good_ancestors,2026,AI or bio,policy,team page,4
-gpi,2019,classic or multi-hazard,operations,team page,2
-gpi,2019,classic or multi-hazard,research,team page,8
-gpi,2020,classic or multi-hazard,operations,team page,3
-gpi,2020,classic or multi-hazard,research,team page,9
-gpi,2021,classic or multi-hazard,operations,team page,3
-gpi,2021,classic or multi-hazard,research,team page,13
-gpi,2022,classic or multi-hazard,operations,team page,3
-gpi,2022,classic or multi-hazard,research,team page,15
-gpi,2023,classic or multi-hazard,operations,team page,4
-gpi,2023,classic or multi-hazard,research,team page,18
-gpi,2024,classic or multi-hazard,operations,team page,4
-gpi,2024,classic or multi-hazard,research,team page,22
-gpi,2025,classic or multi-hazard,operations,team page,1
-gpi,2025,classic or multi-hazard,research,team page,15
+gpi,2019,global priorities,operations,team page,2
+gpi,2019,global priorities,research,team page,8
+gpi,2020,global priorities,operations,team page,3
+gpi,2020,global priorities,research,team page,9
+gpi,2021,global priorities,operations,team page,3
+gpi,2021,global priorities,research,team page,13
+gpi,2022,global priorities,operations,team page,3
+gpi,2022,global priorities,research,team page,15
+gpi,2023,global priorities,operations,team page,4
+gpi,2023,global priorities,research,team page,18
+gpi,2024,global priorities,operations,team page,4
+gpi,2024,global priorities,research,team page,22
+gpi,2025,global priorities,operations,team page,1
+gpi,2025,global priorities,research,team page,15
 lpp,2024,AI or bio,operations,team page,1
 lpp,2024,AI or bio,research,team page,8
 lpp,2025,AI or bio,operations,team page,2
 lpp,2025,AI or bio,research,team page,19
 lpp,2026,AI or bio,operations,team page,7
 lpp,2026,AI or bio,research,team page,26
-odyssean,2023,classic or multi-hazard,operations,team page,1
-odyssean,2023,classic or multi-hazard,research,team page,3
-odyssean,2024,classic or multi-hazard,operations,team page,1
-odyssean,2024,classic or multi-hazard,research,team page,5
+odyssean,2023,beyond AI and bio,operations,team page,1
+odyssean,2023,beyond AI and bio,research,team page,3
+odyssean,2024,beyond AI and bio,operations,team page,1
+odyssean,2024,beyond AI and bio,research,team page,5
 odyssean,2025,AI or bio,research,team page,1
-odyssean,2025,classic or multi-hazard,operations,team page,1
-odyssean,2025,classic or multi-hazard,research,team page,4
+odyssean,2025,beyond AI and bio,operations,team page,1
+odyssean,2025,beyond AI and bio,research,team page,4
 odyssean,2026,AI or bio,research,team page,1
-odyssean,2026,classic or multi-hazard,research,team page,6
-rcg,2023,classic or multi-hazard,operations,team page,2
-rcg,2023,classic or multi-hazard,policy,team page,5
-rcg,2024,classic or multi-hazard,operations,assumed same as 2023,2
-rcg,2024,classic or multi-hazard,policy,assumed same as 2023,5
-rcg,2025,classic or multi-hazard,operations,assumed same as 2023,2
-rcg,2025,classic or multi-hazard,policy,assumed same as 2023,5
-rcg,2026,classic or multi-hazard,operations,team page,2
-rcg,2026,classic or multi-hazard,policy,team page,6
-seri,2026,classic or multi-hazard,operations,team page,1
-seri,2026,classic or multi-hazard,teaching,team page,1
+odyssean,2026,beyond AI and bio,research,team page,6
+rcg,2023,beyond AI and bio,operations,team page,2
+rcg,2023,beyond AI and bio,policy,team page,5
+rcg,2024,beyond AI and bio,operations,assumed same as 2023,2
+rcg,2024,beyond AI and bio,policy,assumed same as 2023,5
+rcg,2025,beyond AI and bio,operations,assumed same as 2023,2
+rcg,2025,beyond AI and bio,policy,assumed same as 2023,5
+rcg,2026,beyond AI and bio,operations,team page,2
+rcg,2026,beyond AI and bio,policy,team page,6
+seri,2026,beyond AI and bio,operations,team page,1
+seri,2026,beyond AI and bio,teaching,team page,1
 simon_institute,2021,AI or bio,policy,team page,2
 simon_institute,2022,AI or bio,policy,team page,2
 simon_institute,2023,AI or bio,policy,team page,5
 simon_institute,2024,AI or bio,policy,team page,6
 simon_institute,2025,AI or bio,policy,team page,8
 simon_institute,2026,AI or bio,policy,team page,9
-xlab,2024,classic or multi-hazard,operations,team page,1
-xlab,2024,classic or multi-hazard,teaching,team page,2
-xlab,2025,classic or multi-hazard,research,team page,1
-xlab,2025,classic or multi-hazard,teaching,team page,2
-xlab,2026,classic or multi-hazard,research,team page,2
-xlab,2026,classic or multi-hazard,teaching,team page,2
+xlab,2024,beyond AI and bio,operations,team page,1
+xlab,2024,beyond AI and bio,teaching,team page,2
+xlab,2025,beyond AI and bio,research,team page,1
+xlab,2025,beyond AI and bio,teaching,team page,2
+xlab,2026,beyond AI and bio,research,team page,2
+xlab,2026,beyond AI and bio,teaching,team page,2

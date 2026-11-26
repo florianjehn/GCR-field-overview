@@ -1,25 +1,28 @@
 // Funding page: stacked bars by year, split and filtered by funder, topic and kind.
 
+const NNR = "Nuclear, natural & resilience";
 const TOPIC_OF = {
-  "Classic GCR": "Classic GCR", "AI": "AI", "Bio": "Bio", "General x-risk": "General x-risk",
+  [NNR]: NNR, "AI": "AI", "Bio": "Bio", "General x-risk": "General x-risk",
   "Geoengineering": "Climate & geoengineering", "Climate": "Climate & geoengineering",
   "Forecasting": "Forecasting", "EA & community": "EA & community",
   "Unknown": "Other", "Not GCR": "Other",
 };
-const GCR_CATEGORIES = ["Classic GCR", "AI", "Bio", "General x-risk", "Geoengineering", "Climate", "Forecasting", "Unknown"];
-const TOPICS = ["Classic GCR", "AI", "Bio", "General x-risk", "Climate & geoengineering", "Forecasting", "EA & community", "Other"];
+const GCR_CATEGORIES = [NNR, "AI", "Bio", "General x-risk", "Geoengineering", "Climate", "Forecasting", "Unknown"];
+const TOPICS = [NNR, "AI", "Bio", "General x-risk", "Climate & geoengineering", "Forecasting", "EA & community", "Other"];
 const GCR_TOPICS = TOPICS.filter((t) => t !== "EA & community");
 const FUNDERS = ["Coefficient Giving", "SFF", "LTFF", "FLI"];
 const KINDS = ["Research", "Policy & advocacy", "Field-building & education", "Other", "Unknown/not assessed"];
+// "GCR outside AI and bio" is the umbrella; its parts are the first three topics.
+const OUTSIDE_AI_BIO = [NNR, "General x-risk", "Climate & geoengineering"];
 const PRESETS = {
-  classic: { label: "Classic GCR", topics: ["Classic GCR"], wider: false },
-  classicGeneral: { label: "Classic + general x-risk", topics: ["Classic GCR", "General x-risk"], wider: false },
+  outside: { label: "GCR outside AI and bio", topics: OUTSIDE_AI_BIO, wider: false },
+  nnr: { label: NNR, topics: [NNR], wider: false },
   gcr: { label: "All GCR topics (incl. AI + bio)", topics: GCR_TOPICS, wider: false },
   all: { label: "Everything incl. EA & not GCR", topics: TOPICS, wider: true },
 };
 
 const state = {
-  split: "funder", display: "amount", funders: [...FUNDERS], topics: ["Classic GCR"],
+  split: "topic", display: "amount", funders: [...FUNDERS], topics: [...OUTSIDE_AI_BIO],
   kinds: [...KINDS], yearFrom: 2015, yearTo: PARTIAL_YEAR, wider: false,
 };
 let grants = [];
@@ -52,7 +55,7 @@ function gcrTotals(yearTo) {
   const inYears = grants.filter((g) => g.year >= state.yearFrom && g.year <= yearTo && GCR_CATEGORIES.includes(g.category));
   return {
     all: d3.sum(inYears, (g) => g.amount),
-    classic: d3.sum(inYears.filter((g) => g.topic === "Classic GCR"), (g) => g.amount),
+    outside: d3.sum(inYears.filter((g) => OUTSIDE_AI_BIO.includes(g.topic)), (g) => g.amount),
   };
 }
 
@@ -61,13 +64,13 @@ function summary(rows) {
   const t = gcrTotals(state.yearTo);
   const years = `${state.yearFrom}–${state.yearTo}`;
   let text = `What you selected adds up to <span class="figure">${fmtMoney(total)}</span> in ${years}. ` +
-    `For comparison, classic GCR got ${fmtMoney(t.classic)} of the ${fmtMoney(t.all)} that went ` +
-    `to GCR topics in these years (${fmtPct(t.classic / t.all)}).`;
+    `For comparison, all GCR topics together got ${fmtMoney(t.all)} in these years, ` +
+    `and GCR outside AI and bio ${fmtMoney(t.outside)} of that (${fmtPct(t.outside / t.all)}).`;
   if (state.yearTo >= PARTIAL_YEAR && state.yearFrom < PARTIAL_YEAR) {
     const full = gcrTotals(PARTIAL_YEAR - 1);
     const partial = d3.sum(rows.filter((g) => g.year === PARTIAL_YEAR), (g) => g.amount);
     text += ` 2026 isn't over yet. Up to ${PARTIAL_YEAR - 1} only, your selection is ${fmtMoney(total - partial)}, ` +
-      `and classic GCR got ${fmtMoney(full.classic)} of ${fmtMoney(full.all)} (${fmtPct(full.classic / full.all)})` +
+      `and GCR outside AI and bio got ${fmtMoney(full.outside)} of ${fmtMoney(full.all)} for all GCR topics (${fmtPct(full.outside / full.all)})` +
       (state.yearFrom === 2015 ? ", the numbers on the overview page." : ".");
   }
   document.getElementById("summary").innerHTML = text;
@@ -105,10 +108,10 @@ async function init() {
   const raw = await loadJSON("funding.json");
   grants = raw.map((g) => ({ ...g, topic: TOPIC_OF[g.category] || "Other", kind: kindOf(g) }))
     .filter((g) => g.category !== "Regrant" && g.category !== "Duplicate");
-  segmented(document.getElementById("c-preset"), Object.entries(PRESETS).map(([k, p]) => [k, p.label]), "classic", (k) => {
+  segmented(document.getElementById("c-preset"), Object.entries(PRESETS).map(([k, p]) => [k, p.label]), "outside", (k) => {
     state.topics = [...PRESETS[k].topics];
     state.wider = PRESETS[k].wider;
-    if (k !== "classic" && state.split === "funder") state.split = "topic";
+    if (k !== "nnr" && state.split === "funder") state.split = "topic";
     segmented(document.getElementById("c-split"), [["funder", "Funder"], ["topic", "Topic"], ["activity", "Kind"]], state.split, onSplit);
     syncControls();
     draw();

@@ -6,7 +6,7 @@
   <title>Publications · GCR field overview</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=e2ab7c35">
+  <link rel="stylesheet" href="assets/site.css?v=e1368a52">
 </head>
 <body>
   <header class="site">
@@ -21,7 +21,7 @@
   <main>
     <p class="label kicker">Publications</p>
     <h1>Is anyone still writing about this?</h1>
-    <p class="lead prose">These are works in OpenAlex that use the exact phrase "global catastrophic risk". I count them two ways: with the phrase in the title or abstract (works that are actually about it), and with it anywhere in the text (which also catches passing mentions). The default shows works that mention a classic hazard, so nuclear war, volcanoes, asteroids, space weather or food.</p>
+    <p class="lead prose">These are works in OpenAlex that use the exact phrase "global catastrophic risk". I count them two ways: with the phrase in the title or abstract (works that are actually about it), and with it anywhere in the text (which also catches passing mentions). The default shows works that mention nuclear war, volcanoes, asteroids, space weather or food, the topics I group as nuclear, natural &amp; resilience.</p>
     <p class="prose">This only finds the term, not the topic. Papers that talk about "existential risk", "catastrophic risk" or "societal collapse" instead aren't counted, and neither are the many papers on nuclear winter or pandemics that never use the phrase. So read this as how often people use the label, not as the size of the research field. Everything here is based on public data.</p>
 
     <div class="controls">
@@ -35,7 +35,7 @@
     <h2>What do they talk about?</h2>
     <p class="prose">This is the share of works whose title or abstract mentions each topic. I use a 3-year rolling window because the yearly numbers are small and jump around a lot. A work can mention several topics, so the shares add up to more than 100 %.</p>
     <div class="legend" id="shares-legend">
-      <span><i style="background:#5D2A42"></i>Classic hazards</span>
+      <span><i style="background:#5D2A42"></i>Nuclear, natural &amp; resilience</span>
       <span><i style="background:#46708A"></i>AI</span>
       <span><i style="background:#CC8FA0"></i>Bio</span>
       <span><i style="background:#C9A55A"></i>Climate</span>
@@ -50,8 +50,8 @@
   </main>
   <footer class="site">Based only on public data · <a href="https://github.com/florianjehn/GCR-field-overview">data and code</a> · <span id="built"></span></footer>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-  <script src="assets/common.js?v=775a0bee"></script>
-  <script src="assets/publications.js?v=68eb1548"></script>
+  <script src="assets/common.js?v=bb199f82"></script>
+  <script src="assets/publications.js?v=143c79ec"></script>
   <script>loadJSON("meta.json").then((m) => { document.getElementById("built").textContent = `data from ${m.built}`; });</script>
 </body>
 </html>

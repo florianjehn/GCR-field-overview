@@ -2,12 +2,12 @@
 
 const SCOPES = { title_abstract: "In title or abstract", fulltext: "Anywhere incl. full text" };
 const GROUPS = {
-  classic: { label: "Classic hazards", tags: ["nuclear", "volcanic", "space", "food"], color: COLORS.aubergine },
+  nnr: { label: "Nuclear, natural & resilience", tags: ["nuclear", "volcanic", "space", "food"], color: COLORS.aubergine },
   AI: { label: "AI", tags: ["AI"], color: COLORS.slate },
   bio: { label: "Bio", tags: ["bio"], color: COLORS.rose },
   climate: { label: "Climate", tags: ["climate"], color: COLORS.ochre },
 };
-const state = { topic: "classic", metric: "works", yearFrom: 2008, yearTo: 2026 };
+const state = { topic: "nnr", metric: "works", yearFrom: 2008, yearTo: 2026 };
 let data;
 
 function mentions(work, group) {
@@ -83,7 +83,7 @@ async function init() {
   exportButton(document.getElementById("export-shares"),
     () => [document.getElementById("shares-legend"), document.getElementById("shares")], "gcr-publication-topics.png");
   segmented(document.getElementById("c-topic"),
-    [["classic", "Classic hazards"], ["all", "All works"], ["AI", "AI"], ["bio", "Bio"], ["climate", "Climate"]],
+    [["nnr", "Nuclear, natural & resilience"], ["all", "All works"], ["AI", "AI"], ["bio", "Bio"], ["climate", "Climate"]],
     state.topic, (v) => { state.topic = v; draw(); });
   segmented(document.getElementById("c-metric"), [["works", "Works"], ["authors", "Unique authors"]], state.metric,
     (v) => { state.metric = v; drawCounts(); });

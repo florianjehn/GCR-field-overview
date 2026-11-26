@@ -1,10 +1,10 @@
 // Staff page: people on archived team pages of the GCR organizations that work
-// on classic or several risks, added up by function or by organization, or shown per organization.
+// beyond AI and bio, added up by function or by organization, or shown per organization.
 // No names are shown; they are in the repository.
 
 const FUNCTIONS = ["Research", "Teaching", "Policy", "Operations"];
 const ORG_TYPES = ["Research orgs", "Teaching orgs", "Policy orgs"];
-const FOCUS = "Classic or multi-hazard";
+const FOCUS = "Beyond AI and bio";
 const YEARS = { from: 2015, to: PARTIAL_YEAR };
 const NOTES = {
   allfed: "The page shows names only (titles are on the profiles) and doesn't list volunteers. I took out people it still listed after they had left.",
@@ -14,7 +14,6 @@ const NOTES = {
   cser: "Assistant professors for the MPhil and the postgraduate coordinator count as teaching. Researchers who mainly work on AI or bio aren't counted.",
   xlab: "Director and deputy director count as teaching. Student associates aren't counted.",
   fernuni_erh: "Three funded positions in the new programme, from its website.",
-  gpi: "Closed at the end of July 2025. Board, affiliates and DPhil scholars aren't counted.",
   odyssean: "People who mainly work on AI (the AI safety lead) aren't counted.",
   adapt: "A one-person research consultancy (Matt Boyd). Counted from 2020, when the About page starts naming global catastrophic risk.",
   seri: "Only one archived staff page (2026): the faculty director, who teaches the course on preventing human extinction, and an operations manager.",
@@ -56,14 +55,14 @@ function drawTotals(rows) {
   const chartRows = rows.map((r) => ({ year: r.year, key: r.function, value: r.people }));
   stackedBars(container, chartRows, state.functions, colourOf, {
     yearFrom: YEARS.from, yearTo: YEARS.to, format: fmtInt, height: 340,
-    label: "People at GCR organizations working on classic or several risks, by function",
+    label: "People at GCR organizations working beyond AI and bio, by function",
   });
   legend(document.getElementById("legend"), keysWithData(state.functions, chartRows), colourOf);
 }
 
 // Fixed colour per organization for the biggest ones; the rest share one grey.
 const ORG_COLORS = {
-  fhi: COLORS.aubergine, cser: COLORS.slate, allfed: COLORS.sage, gpi: COLORS.ochre, global_shield: COLORS.rose,
+  fhi: COLORS.aubergine, cser: COLORS.slate, allfed: COLORS.sage, global_shield: COLORS.rose,
 };
 const OTHER_ORGS = "Other organizations";
 const orgKey = (id) => (ORG_COLORS[id] ? shortName(orgs.find((o) => o.org_id === id)) : OTHER_ORGS);
@@ -80,7 +79,7 @@ function drawOrgTotals(rows) {
   };
   stackedBars(container, chartRows, keys, colourOfOrg, {
     yearFrom: YEARS.from, yearTo: YEARS.to, format: fmtInt, height: 340,
-    label: "People at GCR organizations working on classic or several risks, by organization",
+    label: "People at GCR organizations working beyond AI and bio, by organization",
   });
   const small = orgs.filter((o) => !ORG_COLORS[o.org_id] && rows.some((r) => r.org_id === o.org_id)).map(shortName);
   legend(document.getElementById("legend"), keys, colourOfOrg);

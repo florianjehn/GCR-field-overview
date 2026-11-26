@@ -107,10 +107,10 @@ footer.site::before {
 .number p { margin: 0; font-size: 0.95rem; }
 
 .compare { margin: 1rem 0 1.5rem; max-width: 46rem; }
-.compare .row { display: grid; grid-template-columns: 7.5rem 1fr; gap: 0.75rem; align-items: center; margin: 0.4rem 0; }
-.compare .bar { display: flex; align-items: center; gap: 0.5rem; }
+.compare .row { display: grid; grid-template-columns: 9.5rem 1fr; gap: 0.75rem; align-items: center; margin: 0.4rem 0; }
+.compare .bar { display: flex; align-items: center; }
 .compare .fill { height: 1.6rem; min-width: 2px; }
-.compare .value { font-variant-numeric: tabular-nums; white-space: nowrap; font-size: 0.95rem; }
+.compare .value { margin-left: 0.5rem; font-variant-numeric: tabular-nums; white-space: nowrap; font-size: 0.95rem; }
 
 .controls {
   display: flex;

@@ -6,7 +6,7 @@
   <title>Funding · GCR field overview</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=e2ab7c35">
+  <link rel="stylesheet" href="assets/site.css?v=e1368a52">
 </head>
 <body>
   <header class="site">
@@ -21,7 +21,7 @@
   <main>
     <p class="label kicker">Funding</p>
     <h1>Who pays for global catastrophic risk work?</h1>
-    <p class="lead prose">I collected every grant that four philanthropic funders publish: Coefficient Giving (formerly Open Philanthropy), the Survival and Flourishing Fund, the Long-Term Future Fund and the Future of Life Institute. By default you only see classic GCR. That's work on nuclear war, volcanic eruptions, asteroids, space weather, keeping food systems running in a catastrophe and similar hazards. General x-risk is work on catastrophic or existential risk as a whole instead of a single hazard. The biggest part is FHI's core funding (almost half), followed by Global Shield's all-hazards policy work and student programmes like SERI and ERA. Use the buttons to compare classic GCR with the rest.</p>
+    <p class="lead prose">I collected every grant that four philanthropic funders publish: Coefficient Giving (formerly Open Philanthropy), the Survival and Flourishing Fund, the Long-Term Future Fund and the Future of Life Institute. By default you see GCR outside AI and bio. That's three topics: nuclear, natural &amp; resilience (nuclear war, volcanic eruptions, asteroids, space weather and keeping food systems and infrastructure running in a catastrophe), general x-risk (work on catastrophic or existential risk as a whole instead of a single hazard) and climate &amp; geoengineering. The biggest part of general x-risk is FHI's core funding (almost half), followed by Global Shield's all-hazards policy work and student programmes like SERI and ERA. Use the buttons to look at one part or to compare with AI and bio.</p>
 
     <div class="controls">
       <div class="control"><span class="control-label">Focus</span><div class="segmented" id="c-preset"></div></div>
@@ -40,8 +40,9 @@
     <div class="chart" id="chart"></div>
     <div class="export-row" id="export-chart"></div>
     <h3>What the topics mean</h3>
+    <p class="prose">GCR outside AI and bio is the first three topics below together: nuclear, natural &amp; resilience, general x-risk, and climate &amp; geoengineering. It only counts work framed as global catastrophic risk. Mainstream climate funding, nuclear security work and disaster risk reduction are much larger, but they are not what I am looking at here.</p>
     <dl class="defs prose">
-      <dt>Classic GCR</dt><dd>Nuclear war, volcanoes, asteroids and comets, space weather, resilient food and infrastructure, and other non-AI, non-bio catastrophes.</dd>
+      <dt>Nuclear, natural &amp; resilience</dt><dd>Nuclear war, volcanoes, asteroids and comets, space weather, and keeping food systems and infrastructure running in a catastrophe. In practice, almost all of the money in 2015–2025 went to research on what a nuclear war would do to climate and crops (nuclear winter) and on resilient food. These four funders gave next to nothing for preventing nuclear war (one $0.5M regrant) and nothing for volcanoes.</dd>
       <dt>AI</dt><dd>AI safety, alignment and AI governance.</dd>
       <dt>Bio</dt><dd>Biosecurity and pandemic preparedness.</dd>
       <dt>General x-risk</dt><dd>Catastrophic or existential risk as a whole, without a single hazard. For example multi-hazard institutes (FHI, GCRI), all-hazards policy (Global Shield) and student or fellowship programmes on x-risk (SERI, ERA, CERI).</dd>
@@ -58,8 +59,8 @@
   </main>
   <footer class="site">Based only on public data · <a href="https://github.com/florianjehn/GCR-field-overview">data and code</a> · <span id="built"></span></footer>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-  <script src="assets/common.js?v=775a0bee"></script>
-  <script src="assets/funding.js?v=0b4792c6"></script>
+  <script src="assets/common.js?v=bb199f82"></script>
+  <script src="assets/funding.js?v=4e56df5c"></script>
   <script>loadJSON("meta.json").then((m) => { document.getElementById("built").textContent = `data from ${m.built}`; });</script>
 </body>
 </html>

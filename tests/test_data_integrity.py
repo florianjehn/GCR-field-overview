@@ -18,7 +18,7 @@ RAW = Path("data/raw")
 GCR_CATEGORIES = {
     "AI",
     "Bio",
-    "Classic GCR",
+    "Nuclear, natural & resilience",
     "Climate",
     "Forecasting",
     "General x-risk",

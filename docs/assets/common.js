@@ -12,10 +12,10 @@ const COLORS = {
 const PARTIAL_YEAR = 2026;
 const yearLabel = (y) => (+y === PARTIAL_YEAR ? `${y}*` : `${y}`);
 
-// Fixed colour per entity (never by rank). Classic GCR is the focus colour.
+// Fixed colour per entity (never by rank). Nuclear, natural & resilience is the focus colour.
 const ENTITY_COLORS = {
   topic: {
-    "Classic GCR": COLORS.aubergine, "AI": COLORS.slate, "Bio": COLORS.rose,
+    "Nuclear, natural & resilience": COLORS.aubergine, "AI": COLORS.slate, "Bio": COLORS.rose,
     "General x-risk": COLORS.sage, "Climate & geoengineering": COLORS.ochre,
     "Forecasting": COLORS.berry, "EA & community": COLORS.deep, "Other": COLORS.context,
   },

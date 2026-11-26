@@ -28,7 +28,9 @@ RULES = pd.DataFrame(
         },
     ]
 )
-TYPES = pd.DataFrame([{"org_id": "cser", "type": "research", "focus": "classic"}])
+TYPES = pd.DataFrame(
+    [{"org_id": "cser", "type": "research", "focus": "beyond AI and bio"}]
+)
 
 
 def test_match_function_order():
@@ -72,7 +74,7 @@ def test_assign_functions_only_for_staff():
     )
     out = assign_functions(people, RULES, TYPES)
     assert list(out["function"]) == ["research", ""]
-    assert list(out["focus"]) == ["classic", "classic"]
+    assert list(out["focus"]) == ["beyond AI and bio", "beyond AI and bio"]
 
 
 def test_apply_removals_drops_years_from_cutoff():
@@ -103,13 +105,13 @@ def test_apply_person_focus_overrides_named_people_only():
         {
             "org_id": ["cser", "cser"],
             "name": ["A", "B"],
-            "focus": ["classic", "classic"],
+            "focus": ["beyond AI and bio", "beyond AI and bio"],
         }
     )
     overrides = pd.DataFrame([{"org_id": "cser", "name": "A", "focus": "AI or bio"}])
     assert list(apply_person_focus(people, overrides)["focus"]) == [
         "AI or bio",
-        "classic",
+        "beyond AI and bio",
     ]
 
 
@@ -196,7 +198,7 @@ def test_count_by_function_skips_people_without_function():
         {
             "org_id": ["cser"] * 3,
             "year": [2025] * 3,
-            "focus": ["classic"] * 3,
+            "focus": ["beyond AI and bio"] * 3,
             "function": ["research", "research", ""],
             "source": ["team page"] * 3,
         }
@@ -206,7 +208,7 @@ def test_count_by_function_skips_people_without_function():
         {
             "org_id": "cser",
             "year": 2025,
-            "focus": "classic",
+            "focus": "beyond AI and bio",
             "function": "research",
             "source": "team page",
             "people": 2,

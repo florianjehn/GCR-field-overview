@@ -19,7 +19,9 @@ from src.classify_grants import explode_categories
 PROCESSED_DIR = Path("data/processed")
 RESULTS_DIR = Path("results")
 EXCLUDED = ("Regrant", "Duplicate", "EA & community", "Not GCR")
-NON_AI_NON_BIO = ("Classic GCR", "General x-risk", "Geoengineering", "Climate")
+NNR = "Nuclear, natural & resilience"
+# The categories that make up "GCR outside AI and bio".
+NON_AI_NON_BIO = (NNR, "General x-risk", "Geoengineering", "Climate")
 FIRST_YEAR, LAST_YEAR = 2015, 2025
 
 
@@ -51,14 +53,14 @@ def metrics(grants):
     long = gcr_rows(grants)
     by_category = long.groupby("category")["amount_usd_share"].sum()
     total = by_category.sum()
-    classic = by_category.get("Classic GCR", 0.0)
+    nnr = by_category.get(NNR, 0.0)
     recent = long[long["award_year"].between(2023, 2025)]
     non_ai_bio = recent[recent["category"].isin(NON_AI_NON_BIO)]
     latest = long[long["award_year"] == LAST_YEAR]
     ai_latest = latest.loc[latest["category"] == "AI", "amount_usd_share"].sum()
     return {
-        "classic_gcr_total_musd": classic / 1e6,
-        "classic_gcr_share_pct": 100 * classic / total,
+        "nnr_total_musd": nnr / 1e6,
+        "nnr_share_pct": 100 * nnr / total,
         "non_ai_non_bio_per_year_2023_2025_musd": non_ai_bio["amount_usd_share"].sum()
         / 3
         / 1e6,
@@ -129,11 +131,12 @@ def scenarios(grants):
     split = g["category"].str.contains("AI=0.5;Bio=0.5", regex=False)
     return [
         (
-            "Q1 multi-hazard -> Classic GCR",
-            "CSER, FHI, BERI, GCRI, Global Shield etc. counted as classic GCR",
+            "Q1 multi-hazard -> NNR",
+            "CSER, FHI, BERI, GCRI, Global Shield etc. counted as "
+            "nuclear, natural & resilience",
             (question(g, "Q1") | question(g, "Q1b"))
             & (g["category"] == "General x-risk"),
-            "Classic GCR",
+            NNR,
         ),
         ("Q2 FLI -> 100% AI", "FLI general support fully AI", question(g, "Q2"), "AI"),
         (
@@ -143,10 +146,10 @@ def scenarios(grants):
             "EA & community",
         ),
         (
-            "Q4 geoengineering+climate -> Classic GCR",
-            "Climate and geoengineering counted as classic GCR",
+            "Q4 geoengineering+climate -> NNR",
+            "Climate and geoengineering counted as nuclear, natural & resilience",
             g["category"].isin(["Geoengineering", "Climate"]),
-            "Classic GCR",
+            NNR,
         ),
         (
             "Q5 global priorities -> General x-risk",
@@ -203,18 +206,18 @@ def scenarios(grants):
             "AI",
         ),
         (
-            "Unknown -> Classic GCR (upper bound)",
-            "All unclassified money assumed classic GCR",
+            "Unknown -> NNR (upper bound)",
+            "All unclassified money assumed nuclear, natural & resilience",
             g["category"] == "Unknown",
-            "Classic GCR",
+            NNR,
         ),
     ]
 
 
-def combined_classic_case(grants):
+def combined_nnr_case(grants):
     """
-    Applies all alternatives that favour classic GCR at once: multi-hazard
-    organizations, climate/geoengineering and all Unknown money as classic GCR.
+    Applies all alternatives that favour nuclear, natural & resilience (NNR) at
+    once: multi-hazard organizations, climate/geoengineering and all Unknown money.
 
     Arguments:
         grants (pandas.DataFrame): classified grants
@@ -223,15 +226,15 @@ def combined_classic_case(grants):
         pandas.DataFrame: the modified copy.
     """
     names = (
-        "Q1 multi-hazard -> Classic GCR",
-        "Q4 geoengineering+climate -> Classic GCR",
-        "Unknown -> Classic GCR (upper bound)",
+        "Q1 multi-hazard -> NNR",
+        "Q4 geoengineering+climate -> NNR",
+        "Unknown -> NNR (upper bound)",
     )
     mask = pd.Series(False, index=grants.index)
     for name, _, scenario_mask, _ in scenarios(grants):
         if name in names:
             mask |= scenario_mask
-    return recode(grants, mask, "Classic GCR")
+    return recode(grants, mask, NNR)
 
 
 def run(grants):
@@ -258,11 +261,11 @@ def run(grants):
                 **values,
             }
         )
-    combined = combined_classic_case(grants)
+    combined = combined_nnr_case(grants)
     rows.append(
         {
-            "scenario": "Combined: Q1 + Q4 + Unknown -> Classic GCR",
-            "description": "Most generous reading for classic GCR",
+            "scenario": "Combined: Q1 + Q4 + Unknown -> NNR",
+            "description": "Most generous reading for nuclear, natural & resilience",
             "n_grants": int((combined["category"] != grants["category"]).sum()),
             **metrics(combined),
         }
