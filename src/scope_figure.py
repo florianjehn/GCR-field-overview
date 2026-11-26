@@ -231,17 +231,19 @@ def scope_figure(totals):
         f"GCR outside AI and bio: {format_usd(outside)}",
         dark=False,
     )
-    draw_box(ax, 45, 37, 26.5, 50, COLORS[ASRIC], titled(ASRIC), EXAMPLES[ASRIC])
+    # Box sizes follow the money: General x-risk ($39M) gets the tall box, the
+    # two smaller parts share the other column.
     draw_box(
         ax,
-        72.5,
-        62.5,
+        45,
+        37,
         26.5,
-        24.5,
+        50,
         COLORS["General x-risk"],
         titled("General x-risk"),
         EXAMPLES["General x-risk"],
     )
+    draw_box(ax, 72.5, 62.5, 26.5, 24.5, COLORS[ASRIC], titled(ASRIC), EXAMPLES[ASRIC])
     draw_box(
         ax,
         72.5,
