@@ -178,3 +178,9 @@ Author reviewed the 1 Dec 2025 team page. Still listed but no longer working the
 - What the renamed category holds in practice (2015–2025, $14.1M, 27 grants, 96 % research): nuclear winter impact research $7.1M, food and infrastructure resilience $6.0M, space weather $0.5M, nuclear prevention only Longview's $0.5M regrant, volcanoes and asteroids nothing.
 - Staff focus "classic or multi-hazard" renamed "beyond AI and bio".
 - Global Priorities Institute removed from the staff page (author: "they mostly did longtermism, which is related, but not actually what I want to argue for here"); org_types focus set to "global priorities", data kept. FHI stays (author: "it was much more central than GPI to many GCR ideas").
+
+## SFF matching pledges (2026-11-26)
+
+- Prompted by Juan García Martínez's comments (SFF numbers lower than his own counts). Author: "Include the matching pledges". SFF matching pledges (‡) are now counted in amount_usd and still shown in matching_pledge_usd; leaving them out is a sensitivity scenario. Effect: SFF 2025 $24.9M -> $34.3M (Juan's count: $34.2M), 2026 $54.1M -> $63.1M; almost all pledges go to AI, so GCR outside AI and bio changes by $0 in 2015–2025 and +$0.18M in 2026.
+- Other differences to Juan's counts, not changed: (a) the narrow default view he saw (ALLFED only) is replaced by "GCR outside AI and bio"; (b) he counts CLTR, Simon Institute, Oxford China Policy Lab, Langsikt and Good Ancestors as GCR policy, here they are AI or AI/bio by author decision (Q1, R1); counting them half or fully as General x-risk would raise GCR outside AI and bio 2015–2025 from $69.5M to $77.5M or $85.4M (4.4 % -> 4.9 % or 5.4 %); (c) ALLFED SFF 2023-H2 $164k and an extra $10k in 2025 are not on SFF's public recommendations page; to be added only with a public source.
+- R3 Oxford China Policy Lab (SFF 2022–2026, counted by Juan as GCR policy): author: "seems pretty AI heavy on first glance". Stays AI, now human-coded.

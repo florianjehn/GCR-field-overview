@@ -1,6 +1,6 @@
 import pandas as pd
 
-from src.sensitivity import metrics, question, recode
+from src.sensitivity import metrics, question, recode, without_matching_pledges
 
 GRANTS = pd.DataFrame(
     {
@@ -36,3 +36,13 @@ def test_recode_changes_only_masked_rows():
     assert list(changed["category"])[2] == "Nuclear, natural & resilience"
     assert list(GRANTS["category"])[2] == "General x-risk"
     assert metrics(changed)["nnr_total_musd"] == 20 / 1e6
+
+
+def test_without_matching_pledges_subtracts_pledge():
+    """
+    Tests that the pledge part is taken out of the amount.
+    """
+    grants = pd.DataFrame(
+        {"amount_usd": [150.0, 10.0], "matching_pledge_usd": [50, None]}
+    )
+    assert without_matching_pledges(grants)["amount_usd"].tolist() == [100.0, 10.0]

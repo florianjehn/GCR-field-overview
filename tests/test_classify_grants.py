@@ -2,6 +2,7 @@ import pandas as pd
 import pytest
 
 from src.classify_grants import (
+    add_matching_pledges,
     apply_purpose_overrides,
     apply_url_overrides,
     classify_coefficient,
@@ -157,3 +158,13 @@ def test_url_override_replaces_only_matching_grant():
     overrides = pd.DataFrame({"funder": ["A"], "grant_id": [1], "source_url": ["new"]})
     fixed = apply_url_overrides(grants, overrides)
     assert fixed["source_url"].tolist() == ["new", "old2", "oldB"]
+
+
+def test_matching_pledges_are_counted_in_amount():
+    """
+    Tests that the pledge is added to the amount and still shown separately.
+    """
+    grants = pd.DataFrame({"amount_usd": [100.0, 0.0], "matching_pledge_usd": [50, 0]})
+    result = add_matching_pledges(grants)
+    assert result["amount_usd"].tolist() == [150.0, 0.0]
+    assert result["matching_pledge_usd"].tolist() == [50, 0]

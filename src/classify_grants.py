@@ -120,6 +120,22 @@ def apply_purpose_overrides(coded, overrides):
     return coded
 
 
+def add_matching_pledges(grants):
+    """
+    Counts SFF matching pledges in the grant amount. The pledge part stays
+    visible in matching_pledge_usd (author decision 2026-11-26).
+
+    Arguments:
+        grants (pandas.DataFrame): SFF grants with amount_usd (firm part) and
+            matching_pledge_usd
+
+    Returns:
+        pandas.DataFrame: grants whose amount_usd includes the pledge.
+    """
+    pledge = grants["matching_pledge_usd"].fillna(0)
+    return grants.assign(amount_usd=grants["amount_usd"] + pledge)
+
+
 def classify_sff(grants, manual_codes, overrides):
     """
     Classifies SFF recommendations by organization, then purpose overrides.
@@ -142,7 +158,7 @@ def classify_sff(grants, manual_codes, overrides):
     coded["recipient"] = coded["organization"]
     coded["description"] = coded["round"] + ": " + coded["purpose"]
     coded["funder_focus_area"] = ""
-    return coded
+    return add_matching_pledges(coded)
 
 
 def classify_by_grant_id(grants, manual_codes, description):

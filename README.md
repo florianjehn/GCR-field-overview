@@ -29,7 +29,7 @@ Downloads are dated (`data/raw/`) so results can be reproduced from the same sna
 | Funder | Source | Grants | Years | Notes |
 |---|---|---|---|---|
 | Coefficient Giving (formerly Open Philanthropy) | Public Algolia search index behind [coefficientgiving.org/funds](https://coefficientgiving.org/funds/) (the site has no CSV export and blocks scripts; the index is what every browser loads) | 3,067 | 2012–2026 | Complete per the index's own counts. Each grant links to its page. |
-| Survival and Flourishing Fund (SFF) | [survivalandflourishing.fund/recommendations](https://survivalandflourishing.fund/recommendations) | 586 | 2019–2026 | Recommendations, not confirmed payouts. Matching pledges (‡, conditional) kept separately and excluded from totals. Sum ≈ SFF's own "~$216MM". |
+| Survival and Flourishing Fund (SFF) | [survivalandflourishing.fund/recommendations](https://survivalandflourishing.fund/recommendations) | 586 | 2019–2026 | Recommendations, not confirmed payouts. Matching pledges (‡, paid only if the recipient raises matching funds) are counted in the amounts since 2026-11-26 and also shown separately in `matching_pledge_usd`. Sum $214M ≈ SFF's own "~$216MM". |
 | Long-Term Future Fund (LTFF) | JSON embedded in [funds.effectivealtruism.org/grants](https://funds.effectivealtruism.org/grants) | 700 | 2017–2026 | Published grants only; totals are a lower bound (e.g. 2023: $5.2M here vs. higher reported payouts). |
 | Future of Life Institute (FLI) | [futureoflife.org/grant-program/…](https://futureoflife.org/our-work/grantmaking-work/) programme pages | 147 | 2015–2025 | Yearly pages "highlight some" grants, so a lower bound. Some award years are inferred (`data/manual/fli_programs.csv`). |
 
@@ -68,19 +68,20 @@ Headline metrics over 2015–2025 (nominal USD, Coefficient + SFF + LTFF + FLI, 
 
 | Scenario | Nuclear, natural & resilience total ($M) | Its share of GCR funding | All GCR outside AI and bio per year 2023–25 ($M) | AI share 2025 |
 |---|---|---|---|---|
-| Baseline | 14.1 | 0.9 % | 5.6 | 83 % |
-| Multi-hazard orgs (CSER, FHI, GCRI, …) counted as nuclear, natural & resilience | 38.4 | 2.4 % | 5.6 | 83 % |
-| Climate + geoengineering counted as nuclear, natural & resilience | 30.3 | 1.9 % | 5.6 | 83 % |
-| All Unknown money assumed nuclear, natural & resilience | 36.0 | 2.3 % | 9.6 | 83 % |
-| All three together (most generous) | 76.5 | 4.9 % | 9.6 | 83 % |
-| Longview general support counted as General x-risk | 14.1 | 0.9 % | 12.6 | 83 % |
-| Student x-risk programmes counted as EA & community | 14.1 | 0.9 % | 3.0 | 83 % |
+| Baseline | 14.1 | 0.9 % | 5.6 | 84 % |
+| Multi-hazard orgs (CSER, FHI, GCRI, …) counted as nuclear, natural & resilience | 38.4 | 2.4 % | 5.6 | 84 % |
+| Climate + geoengineering counted as nuclear, natural & resilience | 30.3 | 1.9 % | 5.6 | 84 % |
+| All Unknown money assumed nuclear, natural & resilience | 36.3 | 2.3 % | 9.7 | 84 % |
+| All three together (most generous) | 76.8 | 4.8 % | 9.7 | 84 % |
+| Longview general support counted as General x-risk | 14.1 | 0.9 % | 12.6 | 84 % |
+| Student x-risk programmes counted as EA & community | 14.1 | 0.9 % | 3.0 | 84 % |
 | Global priorities research counted as General x-risk | 14.1 | 0.9 % | 7.6 | 83 % |
 | Generic forecasting counted as Not GCR | 14.1 | 0.9 % | 5.6 | 86 % |
+| SFF matching pledges left out (the default before 2026-11-26) | 14.1 | 0.9 % | 5.6 | 83 % |
 
 The remaining alternatives (FLI split, regrants, Lightcone, media, mixed field-building, 50/50 splits, FLI duplicates) change no metric by more than about half a percentage point (largest: mixed field-building split 50/50, AI share 2025 −0.5 points) and leave the yearly non-AI, non-bio amount unchanged; full table in `results/sensitivity.csv`.
 
-So the choices do matter for how big the small categories are. The nuclear, natural & resilience total moves by up to ~5× ($14M to $76M), and the yearly amount for all GCR outside AI and bio in 2023–25 ranges from $3.0M to $12.6M, depending on whether student programmes and Longview count. They don't change the overall picture, though. Even in the most generous reading nuclear, natural & resilience gets under 5 % of GCR philanthropy, while AI gets over 80 % in 2025.
+So the choices do matter for how big the small categories are. The nuclear, natural & resilience total moves by up to ~5× ($14M to $77M), and the yearly amount for all GCR outside AI and bio in 2023–25 ranges from $3.0M to $12.6M, depending on whether student programmes and Longview count. They don't change the overall picture, though. Even in the most generous reading nuclear, natural & resilience gets under 5 % of GCR philanthropy, while AI gets over 80 % in 2025.
 
 ## Organizations and staff
 

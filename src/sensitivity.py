@@ -237,6 +237,21 @@ def combined_nnr_case(grants):
     return recode(grants, mask, NNR)
 
 
+def without_matching_pledges(grants):
+    """
+    Removes SFF matching pledges from the amounts (the earlier default, since
+    pledges are only paid if the recipient raises matching funds).
+
+    Arguments:
+        grants (pandas.DataFrame): classified grants with matching_pledge_usd
+
+    Returns:
+        pandas.DataFrame: the modified copy.
+    """
+    pledge = grants["matching_pledge_usd"].fillna(0)
+    return grants.assign(amount_usd=grants["amount_usd"] - pledge)
+
+
 def run(grants):
     """
     Computes metrics for the baseline and every scenario.
@@ -268,6 +283,14 @@ def run(grants):
             "description": "Most generous reading for nuclear, natural & resilience",
             "n_grants": int((combined["category"] != grants["category"]).sum()),
             **metrics(combined),
+        }
+    )
+    rows.append(
+        {
+            "scenario": "SFF matching pledges left out",
+            "description": "Conditional SFF matching pledges not counted",
+            "n_grants": int((grants["matching_pledge_usd"].fillna(0) > 0).sum()),
+            **metrics(without_matching_pledges(grants)),
         }
     )
     return pd.DataFrame(rows).round(2)
