@@ -79,6 +79,9 @@ function draw() { drawCounts(); drawShares(); drawTable(); }
 
 async function init() {
   data = await loadJSON("publications.json");
+  exportButton(document.getElementById("export-counts"), () => [document.getElementById("counts")], "gcr-publications.png");
+  exportButton(document.getElementById("export-shares"),
+    () => [document.getElementById("shares-legend"), document.getElementById("shares")], "gcr-publication-topics.png");
   segmented(document.getElementById("c-topic"),
     [["classic", "Classic hazards"], ["all", "All works"], ["AI", "AI"], ["bio", "Bio"], ["climate", "Climate"]],
     state.topic, (v) => { state.topic = v; draw(); });

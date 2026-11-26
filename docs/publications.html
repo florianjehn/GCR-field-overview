@@ -6,7 +6,7 @@
   <title>Publications · GCR field overview</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=706af918">
+  <link rel="stylesheet" href="assets/site.css?v=bf425545">
 </head>
 <body>
   <header class="site">
@@ -30,16 +30,18 @@
     </div>
     <p class="note" id="metric-note"></p>
     <div class="multiples" id="counts"></div>
+    <div class="export-row" id="export-counts"></div>
 
     <h2>What do they talk about?</h2>
     <p class="prose">This is the share of works whose title or abstract mentions each topic. I use a 3-year rolling window because the yearly numbers are small and jump around a lot. A work can mention several topics, so the shares add up to more than 100 %.</p>
-    <div class="legend">
+    <div class="legend" id="shares-legend">
       <span><i style="background:#5D2A42"></i>Classic hazards</span>
       <span><i style="background:#46708A"></i>AI</span>
       <span><i style="background:#CC8FA0"></i>Bio</span>
       <span><i style="background:#C9A55A"></i>Climate</span>
     </div>
     <div class="multiples" id="shares"></div>
+    <div class="export-row" id="export-shares"></div>
     <p class="note prose">The topics are simple keyword matches (listed in <a href="https://github.com/florianjehn/GCR-field-overview/blob/main/data/manual/publication_topics.csv">publication_topics.csv</a>), so they say what a work mentions, not what it is mainly about. OpenAlex only has full texts for part of the literature, and that part grows over time, which makes the full-text series grow faster than the field. I downloaded the data on the date in the footer.</p>
 
     <h2>The works</h2>
@@ -48,8 +50,8 @@
   </main>
   <footer class="site">Based only on public data · <a href="https://github.com/florianjehn/GCR-field-overview">data and code</a> · <span id="built"></span></footer>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-  <script src="assets/common.js?v=809c4cac"></script>
-  <script src="assets/publications.js?v=a0847e99"></script>
+  <script src="assets/common.js?v=51bc2512"></script>
+  <script src="assets/publications.js?v=68eb1548"></script>
   <script>loadJSON("meta.json").then((m) => { document.getElementById("built").textContent = `data from ${m.built}`; });</script>
 </body>
 </html>

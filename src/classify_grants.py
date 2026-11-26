@@ -227,6 +227,30 @@ def explode_categories(grants):
     return long
 
 
+def apply_url_overrides(grants, overrides):
+    """
+    Replaces source URLs that do not load with a working page.
+
+    Arguments:
+        grants (pandas.DataFrame): classified grants of all funders
+        overrides (pandas.DataFrame): rows with funder, grant_id and source_url
+
+    Returns:
+        pandas.DataFrame: grants with the overridden URLs.
+    """
+    fixed = grants.copy()
+    keys = fixed["funder"] + "|" + fixed["grant_id"].astype(str)
+    new_urls = dict(
+        zip(
+            overrides["funder"] + "|" + overrides["grant_id"].astype(str),
+            overrides["source_url"],
+        )
+    )
+    hit = keys.isin(new_urls)
+    fixed.loc[hit, "source_url"] = keys[hit].map(new_urls)
+    return fixed
+
+
 def load_csv(path):
     """
     Reads a CSV with empty strings instead of NaN in text columns.
@@ -258,6 +282,9 @@ def main():
     )
     frames = [coefficient, sff] + load_ltff_and_fli()
     combined = pd.concat([frame[OUTPUT_COLUMNS] for frame in frames], ignore_index=True)
+    combined = apply_url_overrides(
+        combined, load_csv(MANUAL_DIR / "source_url_overrides.csv")
+    )
     combined = classify_activity(combined, *load_activity_inputs())
     combined.to_csv(PROCESSED_DIR / "grants_classified.csv", index=False)
     long = explode_categories(combined)

@@ -68,19 +68,19 @@ Headline metrics over 2015–2025 (nominal USD, Coefficient + SFF + LTFF + FLI, 
 
 | Scenario | Classic GCR total ($M) | Classic GCR share of GCR funding | Non-AI, non-bio GCR per year 2023–25 ($M) | AI share 2025 |
 |---|---|---|---|---|
-| Baseline | 14.1 | 0.9 % | 5.9 | 83 % |
-| Multi-hazard orgs (CSER, FHI, GCRI, …) counted as classic GCR | 39.1 | 2.5 % | 5.9 | 83 % |
-| Climate + geoengineering counted as classic GCR | 30.3 | 1.9 % | 5.9 | 83 % |
-| All Unknown money assumed classic GCR | 36.0 | 2.3 % | 9.9 | 83 % |
-| All three together (most generous) | 77.3 | 4.9 % | 9.9 | 83 % |
-| Longview general support counted as General x-risk | 14.1 | 0.9 % | 13.0 | 83 % |
-| Student x-risk programmes counted as EA & community | 14.1 | 0.9 % | 3.4 | 83 % |
-| Global priorities research counted as General x-risk | 14.1 | 0.9 % | 7.9 | 83 % |
-| Generic forecasting counted as Not GCR | 14.1 | 0.9 % | 5.9 | 86 % |
+| Baseline | 14.1 | 0.9 % | 5.6 | 83 % |
+| Multi-hazard orgs (CSER, FHI, GCRI, …) counted as classic GCR | 38.4 | 2.4 % | 5.6 | 83 % |
+| Climate + geoengineering counted as classic GCR | 30.3 | 1.9 % | 5.6 | 83 % |
+| All Unknown money assumed classic GCR | 36.0 | 2.3 % | 9.6 | 83 % |
+| All three together (most generous) | 76.5 | 4.9 % | 9.6 | 83 % |
+| Longview general support counted as General x-risk | 14.1 | 0.9 % | 12.6 | 83 % |
+| Student x-risk programmes counted as EA & community | 14.1 | 0.9 % | 3.0 | 83 % |
+| Global priorities research counted as General x-risk | 14.1 | 0.9 % | 7.6 | 83 % |
+| Generic forecasting counted as Not GCR | 14.1 | 0.9 % | 5.6 | 86 % |
 
 The remaining alternatives (FLI split, regrants, Lightcone, media, mixed field-building, 50/50 splits, FLI duplicates) change no metric by more than about half a percentage point (largest: mixed field-building split 50/50, AI share 2025 −0.5 points) and leave the yearly non-AI, non-bio amount unchanged; full table in `results/sensitivity.csv`.
 
-So the choices do matter for how big the small categories are. The classic-GCR total moves by up to ~5× ($14M to $77M), and the yearly non-AI, non-bio amount for 2023–25 ranges from $3.4M to $13.0M, depending on whether student programmes and Longview count. They don't change the overall picture, though. Even in the most generous reading classic GCR gets under 5 % of GCR philanthropy, while AI gets over 80 % in 2025.
+So the choices do matter for how big the small categories are. The classic-GCR total moves by up to ~5× ($14M to $76M), and the yearly non-AI, non-bio amount for 2023–25 ranges from $3.0M to $12.6M, depending on whether student programmes and Longview count. They don't change the overall picture, though. Even in the most generous reading classic GCR gets under 5 % of GCR philanthropy, while AI gets over 80 % in 2025.
 
 ## Organizations and staff
 

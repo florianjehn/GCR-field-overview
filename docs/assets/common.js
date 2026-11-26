@@ -73,10 +73,10 @@ function tooltip() {
   };
 }
 
-function legend(container, keys, colorOf) {
+function legend(container, keys, colorOf, hatched = null) {
   container.innerHTML = keys
     .map((k) => `<span><i style="background:${colorOf(k)}"></i>${k}</span>`)
-    .join("");
+    .join("") + (hatched ? `<span><i class="hatched"></i>${hatched}</span>` : "");
 }
 
 // Stacked bars per year. rows: [{year, key, value}]; keys in stacking order.
@@ -127,6 +127,7 @@ function stackedBars(container, rows, keys, colorOf, opts = {}) {
         `${fmt(d[1] - d[0])}<br><span class="note">Year total ${fmt(total)}</span>`);
     })
     .on("mouseleave", () => tip.hide());
+  if (opts.part) hatchPart(svg, series, x, y, opts.part, fmt, tip);
 
   // Direct labels at the end of the last year for up to 4 series.
   const last = table[table.length - 1];
@@ -138,6 +139,25 @@ function stackedBars(container, rows, keys, colorOf, opts = {}) {
       .attr("y", (s) => y((s.d[0] + s.d[1]) / 2) + 4).text((s) => s.key);
   }
   return table;
+}
+
+// Hatches the share of each bar segment that belongs to one subgroup (e.g. one
+// organization), at the bottom of the segment. part: {name, rows: [{year, key, value}]}.
+function hatchPart(svg, series, x, y, part, fmt, tip) {
+  const id = "hatch-part";
+  svg.append("defs").append("pattern").attr("id", id).attr("patternUnits", "userSpaceOnUse")
+    .attr("width", 6).attr("height", 6).attr("patternTransform", "rotate(45)")
+    .append("line").attr("x1", 0).attr("y1", 0).attr("x2", 0).attr("y2", 6)
+    .attr("stroke", COLORS.paper).attr("stroke-width", 2);
+  const value = (year, key) => d3.sum(part.rows.filter((r) => r.year === year && r.key === key), (r) => r.value);
+  const cells = series.flatMap((s) => s.map((d) => ({ d, key: s.key, v: value(d.data.year, s.key) })))
+    .filter((c) => c.v > 0);
+  svg.append("g").selectAll("rect").data(cells).join("rect")
+    .attr("fill", `url(#${id})`).attr("x", (c) => x(c.d.data.year)).attr("width", x.bandwidth())
+    .attr("y", (c) => y(c.d[0] + c.v)).attr("height", (c) => Math.max(0, y(c.d[0]) - y(c.d[0] + c.v)))
+    .on("mousemove", (event, c) => tip.show(event, `<div class="t-head">${yearLabel(c.d.data.year)} · ${c.key}</div>` +
+      `${fmt(c.d[1] - c.d[0])}, of which ${part.name} ${fmt(c.v)}`))
+    .on("mouseleave", () => tip.hide());
 }
 
 // Small line chart for small multiples. points: [{year, value}].
@@ -223,4 +243,142 @@ function segmented(container, values, current, onChange) {
     container.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", x === b));
     onChange(b.dataset.v);
   }));
+}
+
+// PNG export of what is on screen. The chart parts (legend, titles, SVG charts,
+// HTML bars) are redrawn on a canvas at the positions they have on the page,
+// with a source line below.
+const EXPORT_SCALE = 2;
+const SVG_STYLE_PROPS = ["fill", "stroke", "stroke-width", "font-family", "font-size", "opacity", "text-anchor"];
+
+function inlineSvg(svg) {
+  const copy = svg.cloneNode(true);
+  const from = [svg, ...svg.querySelectorAll("*")], to = [copy, ...copy.querySelectorAll("*")];
+  from.forEach((el, i) => {
+    const cs = getComputedStyle(el);
+    SVG_STYLE_PROPS.forEach((p) => to[i].style.setProperty(p, cs.getPropertyValue(p)));
+  });
+  const box = svg.getBoundingClientRect();
+  copy.setAttribute("width", box.width);
+  copy.setAttribute("height", box.height);
+  copy.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+  return new XMLSerializer().serializeToString(copy);
+}
+
+function svgImage(svg) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = reject;
+    img.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(inlineSvg(svg))}`;
+  });
+}
+
+function hatchFill(ctx) {
+  const tile = document.createElement("canvas");
+  tile.width = tile.height = 6;
+  const t = tile.getContext("2d");
+  t.fillStyle = COLORS.muted;
+  t.fillRect(0, 0, 6, 6);
+  t.strokeStyle = COLORS.paper;
+  t.lineWidth = 2;
+  t.beginPath(); t.moveTo(-1, 7); t.lineTo(7, -1); t.stroke();
+  return ctx.createPattern(tile, "repeat");
+}
+
+// Splits a text node into its rendered lines: [{text, rect}], measured word by word.
+function textLines(node) {
+  const lines = [];
+  const range = document.createRange();
+  for (const match of node.textContent.matchAll(/\S+/g)) {
+    range.setStart(node, match.index);
+    range.setEnd(node, match.index + match[0].length);
+    const rect = range.getClientRects()[0];
+    if (!rect) continue;
+    const line = lines[lines.length - 1];
+    if (line && Math.abs(line.top - rect.top) < 2) {
+      line.words.push(match[0]);
+      line.right = rect.right;
+    } else {
+      lines.push({ words: [match[0]], left: rect.left, top: rect.top, right: rect.right, height: rect.height });
+    }
+  }
+  return lines.map((l) => ({ text: l.words.join(" "), rect: { left: l.left, top: l.top, width: l.right - l.left, height: l.height } }));
+}
+
+// Text lines outside SVGs, with their position and style.
+function textBoxes(root) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const boxes = [];
+  for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+    const el = node.parentElement;
+    if (!node.textContent.trim() || el.closest("svg")) continue;
+    const cs = getComputedStyle(el);
+    const style = { font: `${cs.fontSize} ${cs.fontFamily}`, color: cs.color, transform: cs.textTransform, spacing: cs.letterSpacing };
+    textLines(node).forEach((line) => boxes.push({ ...style, ...line }));
+  }
+  return boxes;
+}
+
+function swatches(root) {
+  return [...root.querySelectorAll(".legend i, .compare .fill")].map((el) => ({
+    rect: el.getBoundingClientRect(), color: getComputedStyle(el).backgroundColor, hatched: el.classList.contains("hatched"),
+  }));
+}
+
+async function exportPng(elements, filename) {
+  const shown = elements.filter((el) => el && el.getBoundingClientRect().height > 0);
+  const rects = shown.map((el) => el.getBoundingClientRect());
+  const pad = 20, footer = 30;
+  const left = d3.min(rects, (r) => r.left), top = d3.min(rects, (r) => r.top);
+  const width = d3.max(rects, (r) => r.right) - left + 2 * pad;
+  const height = d3.max(rects, (r) => r.bottom) - top + 2 * pad + footer;
+  const canvas = document.createElement("canvas");
+  canvas.width = width * EXPORT_SCALE;
+  canvas.height = height * EXPORT_SCALE;
+  const ctx = canvas.getContext("2d");
+  ctx.scale(EXPORT_SCALE, EXPORT_SCALE);
+  ctx.fillStyle = COLORS.paper;
+  ctx.fillRect(0, 0, width, height);
+  const at = (r) => ({ x: r.left - left + pad, y: r.top - top + pad, w: r.width, h: r.height });
+  for (const el of shown) {
+    swatches(el).forEach((s) => {
+      const p = at(s.rect);
+      ctx.fillStyle = s.hatched ? hatchFill(ctx) : s.color;
+      ctx.fillRect(p.x, p.y, p.w, p.h);
+    });
+    ctx.textBaseline = "middle";
+    textBoxes(el).forEach((b) => {
+      const p = at(b.rect);
+      ctx.font = b.font;
+      ctx.fillStyle = b.color;
+      ctx.letterSpacing = b.spacing === "normal" ? "0px" : b.spacing;
+      ctx.fillText(b.transform === "uppercase" ? b.text.toUpperCase() : b.text, p.x, p.y + p.h / 2);
+    });
+    ctx.letterSpacing = "0px";
+    const svgs = el.tagName === "svg" ? [el] : [...el.querySelectorAll("svg")];
+    for (const svg of svgs) {
+      const p = at(svg.getBoundingClientRect());
+      ctx.drawImage(await svgImage(svg), p.x, p.y, p.w, p.h);
+    }
+  }
+  const built = document.getElementById("built");
+  ctx.font = `12px ${getComputedStyle(document.body).fontFamily}`;
+  ctx.fillStyle = COLORS.muted;
+  ctx.fillText(`GCR field overview · ${location.href.split(/[?#]/)[0]}${built && built.textContent ? " · " + built.textContent : ""}`,
+    pad, height - pad);
+  const link = document.createElement("a");
+  link.download = filename;
+  link.href = canvas.toDataURL("image/png");
+  link.click();
+}
+
+// Adds a "Download PNG" button that exports the elements returned by getElements().
+function exportButton(host, getElements, filename) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "export";
+  button.textContent = "Download PNG";
+  button.addEventListener("click", () => exportPng(getElements(), filename));
+  host.appendChild(button);
 }

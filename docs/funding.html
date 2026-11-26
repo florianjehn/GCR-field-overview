@@ -6,7 +6,7 @@
   <title>Funding · GCR field overview</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=706af918">
+  <link rel="stylesheet" href="assets/site.css?v=bf425545">
 </head>
 <body>
   <header class="site">
@@ -21,7 +21,7 @@
   <main>
     <p class="label kicker">Funding</p>
     <h1>Who pays for global catastrophic risk work?</h1>
-    <p class="lead prose">I collected every grant that four philanthropic funders publish: Coefficient Giving (formerly Open Philanthropy), the Survival and Flourishing Fund, the Long-Term Future Fund and the Future of Life Institute. By default you only see classic GCR. That's work on nuclear war, volcanic eruptions, asteroids, space weather, keeping food systems running in a catastrophe and similar hazards. General x-risk is work on catastrophic or existential risk as a whole instead of a single hazard. The biggest part is FHI's core funding (about 40 %), followed by Global Shield's all-hazards policy work and student programmes like SERI and ERA. Use the buttons to compare classic GCR with the rest.</p>
+    <p class="lead prose">I collected every grant that four philanthropic funders publish: Coefficient Giving (formerly Open Philanthropy), the Survival and Flourishing Fund, the Long-Term Future Fund and the Future of Life Institute. By default you only see classic GCR. That's work on nuclear war, volcanic eruptions, asteroids, space weather, keeping food systems running in a catastrophe and similar hazards. General x-risk is work on catastrophic or existential risk as a whole instead of a single hazard. The biggest part is FHI's core funding (almost half), followed by Global Shield's all-hazards policy work and student programmes like SERI and ERA. Use the buttons to compare classic GCR with the rest.</p>
 
     <div class="controls">
       <div class="control"><span class="control-label">Focus</span><div class="segmented" id="c-preset"></div></div>
@@ -38,6 +38,7 @@
     <p id="summary" class="prose"></p>
     <div class="legend" id="legend"></div>
     <div class="chart" id="chart"></div>
+    <div class="export-row" id="export-chart"></div>
     <h3>What the topics mean</h3>
     <dl class="defs prose">
       <dt>Classic GCR</dt><dd>Nuclear war, volcanoes, asteroids and comets, space weather, resilient food and infrastructure, and other non-AI, non-bio catastrophes.</dd>
@@ -57,8 +58,8 @@
   </main>
   <footer class="site">Based only on public data · <a href="https://github.com/florianjehn/GCR-field-overview">data and code</a> · <span id="built"></span></footer>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-  <script src="assets/common.js?v=809c4cac"></script>
-  <script src="assets/funding.js?v=a85d931c"></script>
+  <script src="assets/common.js?v=51bc2512"></script>
+  <script src="assets/funding.js?v=1f183465"></script>
   <script>loadJSON("meta.json").then((m) => { document.getElementById("built").textContent = `data from ${m.built}`; });</script>
 </body>
 </html>

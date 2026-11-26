@@ -6,7 +6,7 @@
   <title>GCR field overview</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=706af918">
+  <link rel="stylesheet" href="assets/site.css?v=bf425545">
 </head>
 <body>
   <header class="site">
@@ -31,6 +31,16 @@
       <div class="number" id="n-pubs"><div class="octagon">…</div><p></p></div>
     </div>
 
+    <h2>Where the money went</h2>
+    <p class="prose" id="compare-intro"></p>
+    <div id="compare-figure">
+      <p class="chart-title">Funding from the four funders, 2015–2025</p>
+      <div class="compare" id="compare" role="img" aria-label="Funding for AI, bio and classic GCR, 2015–2025"></div>
+    </div>
+    <div class="export-row" id="export-compare"></div>
+    <p class="prose" id="compare-outro"></p>
+    <p class="prose">I still think AI and bio have been a core part of how this field developed. But by now they are so much bigger than everything else that they have kind of graduated from the field and are more their own thing. That's why most of this site looks at classic GCR on its own instead of next to AI and bio, where it would barely be visible.</p>
+
     <h2>Explore</h2>
     <div class="cards">
       <div class="card">
@@ -53,8 +63,8 @@
   </main>
   <footer class="site">Based only on public data · <a href="https://github.com/florianjehn/GCR-field-overview">data and code</a> · <span id="built"></span></footer>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-  <script src="assets/common.js?v=809c4cac"></script>
-  <script src="assets/overview.js?v=ed58d65c"></script>
+  <script src="assets/common.js?v=51bc2512"></script>
+  <script src="assets/overview.js?v=dd01e801"></script>
   <script>loadJSON("meta.json").then((m) => { document.getElementById("built").textContent = `data from ${m.built}`; });</script>
 </body>
 </html>

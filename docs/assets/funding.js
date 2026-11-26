@@ -115,6 +115,8 @@ async function init() {
   });
   const onSplit = (v) => { state.split = v; draw(); };
   segmented(document.getElementById("c-split"), [["funder", "Funder"], ["topic", "Topic"], ["activity", "Kind"]], state.split, onSplit);
+  exportButton(document.getElementById("export-chart"),
+    () => [document.getElementById("legend"), document.getElementById("chart")], "gcr-funding.png");
   segmented(document.getElementById("c-display"), [["amount", "USD"], ["share", "Share"]], state.display, (v) => { state.display = v; draw(); });
   const from = document.getElementById("f-from"), to = document.getElementById("f-to");
   from.value = state.yearFrom; to.value = state.yearTo;

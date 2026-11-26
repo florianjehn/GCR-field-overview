@@ -8,6 +8,24 @@ function setNumber(id, value, text) {
   el.querySelector("p").textContent = text;
 }
 
+// Plain bars on one scale, so the size difference between AI, bio and classic GCR shows.
+function drawComparison(gcr) {
+  const amount = (cat) => d3.sum(gcr.filter((g) => g.category === cat), (g) => g.amount);
+  const rows = ["AI", "Bio", "Classic GCR"].map((cat) => ({ cat, value: amount(cat) }));
+  const max = d3.max(rows, (r) => r.value);
+  document.getElementById("compare").innerHTML = rows.map((r) =>
+    `<div class="row"><span>${r.cat}</span><div class="bar">` +
+    `<div class="fill" style="width:${(85 * r.value) / max}%;background:${ENTITY_COLORS.topic[r.cat]}"></div>` +
+    `<span class="value">${fmtMoney(r.value)}</span></div></div>`).join("");
+  const [ai, bio, classic] = rows.map((r) => r.value);
+  document.getElementById("compare-intro").textContent = `The percentages hide how big the gap is in dollars. ` +
+    `In 2015–2025 the four funders gave ${fmtMoney(ai)} to AI and ${fmtMoney(bio)} to bio, against ${fmtMoney(classic)} ` +
+    `for classic GCR. AI got about ${Math.round(ai / classic)} times as much as classic GCR, bio about ${Math.round(bio / classic)} times.`;
+  const years = d3.max(gcr, (g) => g.year) - d3.min(gcr, (g) => g.year) + 1;
+  document.getElementById("compare-outro").textContent = `So it seems there's just very little money to be had for GCR research ` +
+    `outside of AI and bio. All classic hazards together got about ${fmtMoney(classic / years)} a year on average.`;
+}
+
 async function init() {
   const [funding, pubs, staff] = await Promise.all([loadJSON("funding.json"), loadJSON("publications.json"), loadJSON("staff.json")]);
   const gcr = funding.filter((g) => GCR.includes(g.category) && g.year >= 2015 && g.year <= 2025);
@@ -18,6 +36,8 @@ async function init() {
   setNumber("n-classic", fmtMoney(classic), `went to classic GCR (nuclear, volcanic, space weather, resilient food, ...) from the four funders in 2015–2025`);
   const share = (cat) => d3.sum(gcr.filter((g) => g.category === cat), (g) => g.amount) / total;
   setNumber("n-share", fmtPct(classic / total), `of their ${fmtMoney(total)} GCR funding in that period. AI got ${fmtPct(share("AI"))}, bio ${fmtPct(share("Bio"))}`);
+  drawComparison(gcr);
+  exportButton(document.getElementById("export-compare"), () => [document.getElementById("compare-figure")], "gcr-funding-comparison.png");
   setNumber("n-ai", fmtPct(ai2025), "of GCR funding in 2025 went to AI");
   const researchers = staff.functions.filter((r) => r.year === PARTIAL_YEAR && r.focus === "classic or multi-hazard" && r.function === "research");
   const nResearchers = d3.sum(researchers, (r) => r.people);

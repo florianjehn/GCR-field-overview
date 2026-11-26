@@ -250,7 +250,7 @@ Existential Risk Observatory,1,44000,SFF-2022-H1,AI,human-coded,high,Q1,Existent
 "Future of Humanity Institute, Research Scholars Programme",1,218000,SFF-2020-H2,General x-risk,human-coded,high,Q1,FHI Research Scholars Programme | Author decision: Q1 multi-hazard -> General x-risk
 Future of Humanity Institute: Research Scholars Programme,1,30000,SFF-2020-H2,General x-risk,human-coded,high,Q1,FHI Research Scholars Programme | Author decision: Q1 multi-hazard -> General x-risk
 Global Shield,1,424000,SFF-2024,General x-risk,human-coded,high,Q1,Global Shield: all-hazard GCR policy advocacy | Author decision: Q1 multi-hazard -> General x-risk
-Good Ancestors Policy,2,703000,SFF-2024; SFF-2026,General x-risk,human-coded,high,Q1,"Good Ancestors Policy: Australian GCR policy (AI, bio) | Author decision: Q1 multi-hazard -> General x-risk"
+Good Ancestors Policy,2,703000,SFF-2024; SFF-2026,AI,human-coded,high,R1,"Good Ancestors Policy: Australian GCR policy (AI, bio) | Author revision R1 (2026-11-26): mostly does AI -> AI, like CLTR"
 Haydn Belfield,1,16000,Initiative Committee 2024,AI,human-coded,high,Q1,Scholarship on governance of catastrophic technologies incl. AI | Author decision: Q1 -> AI
 Langsikt - Centre for Long-Term Policy,1,199000,SFF-2024,AI=0.5;Bio=0.5,human-coded,high,Q1,"Langsikt: Norwegian long-term policy (pandemics, AI) | Author decision: Q1 AI+Bio org split 50/50"
 Legal Priorities Project,3,483000,SFF-2021-H1; SFF-2022-H2; SFF-2023-H2,AI,human-coded,high,Q1,Legal Priorities Project | Author decision: Q1 -> AI
@@ -283,8 +283,8 @@ Convergence Analysis,2,45000,SFF-2020-H1; SFF-2026,Unknown,human-coded,high,Q11,
 Convergent Research,1,389000,SFF-2022-H1,Unknown,human-coded,high,Q11,"Convergent Research: focused research organizations (science) | Author decision: Q11 not resolved, left Unknown"
 Earendil [Security Layers Project],1,778000,SFF-2024-FlexHEGs,AI,LLM-coded,high,,Funded in SFF-2024-FlexHEGs round (hardware-enabled AI chip governance)
 Earendil [Standards Infrastructure Project],1,564000,SFF-2024-FlexHEGs,AI,LLM-coded,high,,Funded in SFF-2024-FlexHEGs round (hardware-enabled AI chip governance)
-Effective Institutions Project,1,210000,SFF-2024,General x-risk,human-coded,high,Q11,Effective Institutions Project: institutional decision-making (increasingly AI) | Author decision: Q11 answered -> General x-risk
-Effective Institutions Project (EIP),2,1876000,SFF-2025; SFF-2026,General x-risk,human-coded,high,Q11,Effective Institutions Project: institutional decision-making (increasingly AI) | Author decision: Q11 answered -> General x-risk
+Effective Institutions Project,1,210000,SFF-2024,EA & community,human-coded,high,R2,Effective Institutions Project: mostly donor advisory now | Author revision R2 (2026-11-26): donor advisement -> EA & community (like Longview Q12)
+Effective Institutions Project (EIP),2,1876000,SFF-2025; SFF-2026,EA & community,human-coded,high,R2,Effective Institutions Project: mostly donor advisory now | Author revision R2 (2026-11-26): donor advisement -> EA & community (like Longview Q12)
 Epistea,1,189000,SFF-2023-H2,Unknown,human-coded,high,Q11,"Epistea general support (Czech EA/rationality/AI hub) | Author decision: Q11 not resolved, left Unknown"
 Epistemic Garden,1,100000,SFF-2025,Unknown,human-coded,high,Q11,"Unknown | Author decision: Q11 not resolved, left Unknown"
 European Center for Not-For-Profit Law (ECNL),1,142000,SFF-2026,Unknown,human-coded,high,Q11,"NGO law centre; likely AI regulation work | Author decision: Q11 not resolved, left Unknown"

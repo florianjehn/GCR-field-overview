@@ -3,6 +3,7 @@ import pytest
 
 from src.classify_grants import (
     apply_purpose_overrides,
+    apply_url_overrides,
     classify_coefficient,
     classify_sff,
     explode_categories,
@@ -137,3 +138,19 @@ def test_explode_categories_conserves_amount():
     assert len(long) == 3
     assert long["amount_usd_share"].sum() == 150.0
     assert long.loc[long["category"] == "Bio", "amount_usd_share"].item() == 25.0
+
+
+def test_url_override_replaces_only_matching_grant():
+    """
+    Tests that a URL override hits the same funder and grant id only.
+    """
+    grants = pd.DataFrame(
+        {
+            "funder": ["A", "A", "B"],
+            "grant_id": [1, 2, "1"],
+            "source_url": ["old1", "old2", "oldB"],
+        }
+    )
+    overrides = pd.DataFrame({"funder": ["A"], "grant_id": [1], "source_url": ["new"]})
+    fixed = apply_url_overrides(grants, overrides)
+    assert fixed["source_url"].tolist() == ["new", "old2", "oldB"]

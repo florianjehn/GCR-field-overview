@@ -52,13 +52,26 @@ function coverageText(rows) {
 function drawTotals(rows) {
   const container = document.getElementById("multiples");
   container.innerHTML = "";
-  container.className = "";
-  const chartRows = rows.map((r) => ({ year: r.year, key: r.function, value: r.people }));
-  stackedBars(container, chartRows, state.functions, colourOf, {
+  container.className = "chart";
+  const toBars = (r) => ({ year: r.year, key: r.function, value: r.people });
+  const fhiRows = rows.filter((r) => r.org_id === "fhi").map(toBars);
+  stackedBars(container, rows.map(toBars), state.functions, colourOf, {
     yearFrom: YEARS.from, yearTo: YEARS.to, format: fmtInt, height: 340,
-    label: "People at GCR organizations working on classic or several risks, by function",
+    label: "People at GCR organizations working on classic or several risks, by function. FHI hatched",
+    part: fhiRows.length ? { name: "FHI", rows: fhiRows } : null,
   });
-  legend(document.getElementById("legend"), state.functions, colourOf);
+  legend(document.getElementById("legend"), state.functions, colourOf, fhiRows.length ? "of which FHI" : null);
+  document.getElementById("fhi-share").textContent = fhiShareText(rows, fhiRows);
+}
+
+function fhiShareText(rows, fhiRows) {
+  if (!fhiRows.length) return "";
+  const fhiBy = d3.rollup(fhiRows, (v) => d3.sum(v, (r) => r.value), (r) => r.year);
+  const [peak, nFhi] = [...fhiBy].sort((a, b) => b[1] - a[1])[0];
+  const total = d3.sum(rows.filter((r) => r.year === peak), (r) => r.people);
+  return `The hatched part is FHI. Until it closed in 2024 it was a big part of this small field: ` +
+    `in ${peak} it had ${fmtInt(nFhi)} of the ${fmtInt(total)} people counted here (${fmtPct(nFhi / total)}). ` +
+    "The hatching marks one organization across all functions, not a function of its own.";
 }
 
 function reportPoints(orgId) {
@@ -100,6 +113,7 @@ function drawOrgs(rows) {
 
 function draw() {
   const rows = selectedRows();
+  document.getElementById("fhi-share").textContent = "";
   if (state.view === "totals") drawTotals(rows); else drawOrgs(rows);
   document.getElementById("coverage").textContent = coverageText(rows);
 }
@@ -112,6 +126,8 @@ async function init() {
     state.view, (v) => { state.view = v; draw(); });
   checkboxes(document.getElementById("f-types"), ORG_TYPES, state.types, (v) => { state.types = v; draw(); });
   checkboxes(document.getElementById("f-functions"), FUNCTIONS, state.functions, (v) => { state.functions = v; draw(); });
+  exportButton(document.getElementById("export-chart"),
+    () => [document.getElementById("legend"), document.getElementById("multiples")], "gcr-staff.png");
   draw();
 }
 

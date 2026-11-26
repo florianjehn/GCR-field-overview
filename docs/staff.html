@@ -6,7 +6,7 @@
   <title>Staff · GCR field overview</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css?v=706af918">
+  <link rel="stylesheet" href="assets/site.css?v=bf425545">
 </head>
 <body>
   <header class="site">
@@ -33,20 +33,22 @@
 
     <div class="legend" id="legend"></div>
     <div class="multiples" id="multiples"></div>
+    <div class="export-row" id="export-chart"></div>
+    <p class="prose" id="fhi-share"></p>
     <p class="note prose" id="coverage"></p>
 
     <h2>How I counted</h2>
     <div class="prose">
       <p>A team page is not a payroll. Pages list part-timers and sometimes volunteers, and they change layout over time, so a jump can be a redesign rather than a hire. They are also often out of date. People who left stay listed for a while, and new hires show up late, so a count can be too high or too low. I count staff and paid research fellows, and leave out boards, advisors, affiliates, students and alumni. Who counts as what comes from the page's own section names and job titles.</p>
-      <p>What people do is coded per person. Most people get the type of their organization (research, policy or teaching). Admin and operations titles count as operations. Teaching posts at research organizations count as teaching, like the assistant professors for CSER's MPhil in Global Risk and Resilience. For the FernUni programme there's no team page, so I use the number of funded positions from its website.</p>
+      <p>What people do is coded per person. Most people get the type of their organization (research, policy or teaching). Admin and operations titles count as operations. Teaching posts at research organizations count as teaching, like the assistant professors for CSER's MPhil in Global Risk and Resilience.</p>
       <p>That more people show up in teaching and policy in recent years is partly real. The field got more established, with things like CSER's MPhil and XLab. But part of it is likely that there's simply more information closer to the present. Older pages often listed fewer people and fewer titles, and some programmes only have archived pages for recent years.</p>
       <p>The totals only include organizations whose pages I could read in that year, so early years undercount. The list under the chart shows which organizations count in which years. If I knew that someone listed had already left, I took them out by hand.</p>
     </div>
   </main>
   <footer class="site">Based only on public data · <a href="https://github.com/florianjehn/GCR-field-overview">data and code</a> · <span id="built"></span></footer>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-  <script src="assets/common.js?v=809c4cac"></script>
-  <script src="assets/staff.js?v=48718ec0"></script>
+  <script src="assets/common.js?v=51bc2512"></script>
+  <script src="assets/staff.js?v=2ff74615"></script>
   <script>loadJSON("meta.json").then((m) => { document.getElementById("built").textContent = `data from ${m.built}`; });</script>
 </body>
 </html>
