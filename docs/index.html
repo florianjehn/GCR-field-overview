@@ -21,8 +21,14 @@
   <main>
     <p class="label kicker">Global catastrophic risk research</p>
     <h1>How is the field doing?</h1>
-    <p class="lead prose">I wanted to know how the field working on global catastrophic risk changed over the last ten years. Who pays for it, how many people work on it and how much gets written about it. My impression was that most of the money moved to AI and bio, and that everything else is left with very little. This site collects the numbers to check that. Everything is based on public data and links back to its source, so you can check it yourself.</p>
-    <p class="prose">By "GCR outside AI and bio" I mean three things. Abrupt sunlight reduction &amp; infrastructure collapse covers catastrophes that would block out the sun or knock out infrastructure over large areas, like nuclear war, large volcanic eruptions, asteroid impacts and severe space weather, and keeping food systems and infrastructure running through them. General x-risk is work on catastrophic or existential risk as a whole, like FHI or Global Shield. Climate &amp; geoengineering is the third. I only count work framed as global catastrophic risk. Mainstream climate science, nuclear security and disaster risk reduction get far more money, but they are a different world and not what I am looking at here.</p>
+    <p class="lead prose">I wanted to know how the field working on global catastrophic risk changed over the last ten years when it comes to funding and the people working on it. My impression was that most of the money moved to AI and bio, and that everything else is left with scraps. This site collects the numbers from the main funders and organizations and lets you explore them interactively. Everything is based on public data.</p>
+    <p class="prose">By "GCR outside AI and bio" I mean three things:</p>
+    <ul class="prose">
+      <li>Abrupt sunlight reduction &amp; infrastructure collapse: catastrophes that would block out the sun or knock out infrastructure over large areas, like nuclear war, large volcanic eruptions, asteroid impacts and severe space weather, and keeping food systems and infrastructure running through them.</li>
+      <li>General x-risk: work on catastrophic or existential risk as a whole, like FHI or Global Shield.</li>
+      <li>Climate &amp; geoengineering.</li>
+    </ul>
+    <p class="prose">I only count work framed as global catastrophic risk. Mainstream climate science, nuclear security and disaster risk reduction get far more money, but they look at these problems from a different point of view.</p>
 
     <div class="numbers">
       <div class="number key" id="n-share"><div class="octagon">…</div><p></p></div>
@@ -42,7 +48,7 @@
     </div>
     <div class="export-row" id="export-compare"></div>
     <p class="prose" id="compare-outro"></p>
-    <p class="prose">I still think AI and bio have been a core part of how this field developed. But by now they are so much bigger than everything else that they have kind of graduated from the field and are more their own thing. That's why most of this site looks at GCR outside AI and bio on its own instead of next to AI and bio, where it would barely be visible.</p>
+    <p class="prose">AI and bio have been a core part of how this field developed. But they are so much bigger than everything else that they have kind of graduated from the field and are more their own thing.</p>
 
     <h2>Explore</h2>
     <div class="cards">
@@ -61,8 +67,8 @@
     </div>
 
     <h2>How this was made</h2>
-    <p class="prose">I sorted the grants by topic and kind of work using the funders' own labels, simple rules and coding by hand (some of it with an LLM). Whenever a case was unclear, I decided it myself. Each grant records who coded it and why. The full method, the log of my decisions and a sensitivity analysis (how much the numbers move if you decide differently) are in the <a href="https://github.com/florianjehn/GCR-field-overview">repository</a>.</p>
-    <p class="note prose">The main caveats. I only cover four philanthropic funders and no government money. LTFF and FLI publish only part of their grants, and SFF figures are recommendations. Team pages are not payrolls. The count of researchers is rough. It only covers people at the bigger, well-known organizations. People at smaller groups, in university departments or working independently aren't in it, so the real number is likely higher. On the other hand, everyone on a team page counts as one person, even if they work part-time. Team pages are also often out of date. They keep people who have left and miss new hires for a while, so the count can be off in both directions. People at these organizations who mainly work on AI or bio are left out. Publications only count the exact term "global catastrophic risk". All amounts are nominal USD.</p>
+    <p class="prose">I sorted the grants by topic and kind of work using the funders' own labels. Where those were not available, I let Claude classify the grant. Whenever a case was unclear to Claude, I decided it myself. The details are in the <a href="https://github.com/florianjehn/GCR-field-overview">repository</a>.</p>
+    <p class="note prose">The main caveats. I only cover four philanthropic funders. LTFF and FLI publish only part of their grants, and SFF figures are recommendations. The count of researchers is rough and likely inaccurate. It only covers people at the bigger, well-known organizations. Team pages are also often out of date. They keep people who have left and miss new hires for a while, so the count can be off in both directions. People at these organizations who mainly work on AI or bio are left out. Publications only count the exact term "global catastrophic risk". All amounts are nominal USD.</p>
   </main>
   <footer class="site">Based only on public data · <a href="https://github.com/florianjehn/GCR-field-overview">data and code</a> · <span id="built"></span></footer>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
