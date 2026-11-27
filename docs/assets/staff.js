@@ -7,17 +7,17 @@ const ORG_TYPES = ["Research orgs", "Teaching orgs", "Policy orgs"];
 const FOCUS = "Beyond AI and bio";
 const YEARS = { from: 2015, to: PARTIAL_YEAR };
 const NOTES = {
-  allfed: "The page shows names only (titles are on the profiles) and doesn't list volunteers. I took out people it still listed after they had left.",
-  gcri: "Associates were listed until 2018. Dropping them in 2019 was a website change, not a cut.",
-  fhi: "Closed on 16 April 2024, the 2024 count is from that day. Extra points are staff numbers from FHI's own reports.",
-  beri: "The line is the core team. Extra points are staff BERI employs inside university groups, mostly on AI, as stated on its team page.",
-  cser: "Assistant professors for the MPhil and the postgraduate coordinator count as teaching. Researchers who mainly work on AI or bio aren't counted.",
+  allfed: "The page lists names only. Titles are on the profiles.",
+  gcri: "Listed associates until 2018. The drop in 2019 is a website change, not a cut.",
+  fhi: "Closed on 16 April 2024. The 2024 count is from that day.",
+  beri: "The line is the core team. The extra points include staff BERI employs in university groups, mostly on AI.",
+  cser: "MPhil assistant professors and the postgraduate coordinator count as teaching.",
   xlab: "Director and deputy director count as teaching. Student associates aren't counted.",
   fernuni_erh: "Three funded positions in the new programme, from its website.",
-  odyssean: "People who mainly work on AI (the AI safety lead) aren't counted.",
-  adapt: "A one-person research consultancy (Matt Boyd). Counted from 2020, when the About page starts naming global catastrophic risk.",
-  seri: "Only one archived staff page (2026): the faculty director, who teaches the course on preventing human extinction, and an operations manager.",
-  rcg: "Now called ORCG. Archived team pages only exist for 2023 and 2026, so 2024 and 2025 assume the 2023 team.",
+  odyssean: "The AI safety lead isn't counted.",
+  adapt: "One-person research consultancy (Matt Boyd). Counted from 2020, when its About page first names global catastrophic risk.",
+  seri: "One archived staff page (2026): the faculty director, who teaches the course on preventing human extinction, and an operations manager.",
+  rcg: "Now called ORCG. Team pages only exist for 2023 and 2026, so 2024 and 2025 repeat 2023.",
 };
 
 const state = { view: "totals", types: [...ORG_TYPES], functions: [...FUNCTIONS] };
@@ -43,9 +43,9 @@ function coverageText(rows) {
   const assumed = [...new Set(rows.filter((r) => r.source.startsWith("assumed")).map((r) => r.org_id))]
     .map((id) => shortName(orgs.find((o) => o.org_id === id)));
   const end = assumed.length
-    ? ` For ${assumed.join(", ")} some years have no readable team page, so I assume the team stayed the same as in the last readable year.`
+    ? ` For ${assumed.join(", ")}, years without a readable team page repeat the last readable year.`
     : "";
-  return `Organizations counted and the years with data: ${list.join(", ")}.${end}`;
+  return `Years with data: ${list.join(", ")}.${end}`;
 }
 
 function drawTotals(rows) {
@@ -96,7 +96,7 @@ function reportPoints(orgId) {
 function orgPoints(rows, orgId) {
   return d3.rollups(rows.filter((r) => r.org_id === orgId),
     (v) => ({ value: d3.sum(v, (r) => r.people), assumed: v.some((r) => r.source.startsWith("assumed")) }), (r) => r.year)
-    .map(([year, p]) => ({ year, value: p.value, note: p.assumed ? "No readable page, assumed same as the last readable year" : "" }));
+    .map(([year, p]) => ({ year, value: p.value, note: p.assumed ? "No readable page, same as the last readable year" : "" }));
 }
 
 function drawOrgs(rows) {

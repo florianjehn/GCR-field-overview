@@ -63,15 +63,14 @@ function summary(rows) {
   const total = d3.sum(rows, (g) => g.amount);
   const t = gcrTotals(state.yearTo);
   const years = `${state.yearFrom}–${state.yearTo}`;
-  let text = `What you selected adds up to <span class="figure">${fmtMoney(total)}</span> in ${years}. ` +
-    `For comparison, all GCR topics together got ${fmtMoney(t.all)} in these years, ` +
-    `and GCR outside AI and bio ${fmtMoney(t.outside)} of that (${fmtPct(t.outside / t.all)}).`;
+  let text = `Your selection adds up to <span class="figure">${fmtMoney(total)}</span> in ${years}. ` +
+    `All GCR topics got ${fmtMoney(t.all)}, GCR outside AI and bio ${fmtMoney(t.outside)} of it (${fmtPct(t.outside / t.all)}).`;
   if (state.yearTo >= PARTIAL_YEAR && state.yearFrom < PARTIAL_YEAR) {
     const full = gcrTotals(PARTIAL_YEAR - 1);
     const partial = d3.sum(rows.filter((g) => g.year === PARTIAL_YEAR), (g) => g.amount);
-    text += ` 2026 isn't over yet. Up to ${PARTIAL_YEAR - 1} only, your selection is ${fmtMoney(total - partial)}, ` +
-      `and GCR outside AI and bio got ${fmtMoney(full.outside)} of ${fmtMoney(full.all)} for all GCR topics (${fmtPct(full.outside / full.all)})` +
-      (state.yearFrom === 2015 ? ", the numbers on the overview page." : ".");
+    text += ` Up to ${PARTIAL_YEAR - 1} only: your selection ${fmtMoney(total - partial)}, ` +
+      `GCR outside AI and bio ${fmtMoney(full.outside)} of ${fmtMoney(full.all)} (${fmtPct(full.outside / full.all)})` +
+      (state.yearFrom === 2015 ? ", as on the overview." : ".");
   }
   document.getElementById("summary").innerHTML = text;
 }
