@@ -93,7 +93,7 @@ function draw() {
     { key: "description", label: "Grant" },
     { key: "category", label: "Topic" },
     { key: "kind", label: "Kind" },
-    { key: "amount", label: "Amount", num: true, format: (v, r) => fmtMoney(v) + (r.split ? "*" : "") },
+    { key: "amount", label: "Amount", num: true, format: (v) => fmtMoney(v) },
     { key: "coding_source", label: "Topic coded by" },
   ], { sortKey: "amount" });
 }
