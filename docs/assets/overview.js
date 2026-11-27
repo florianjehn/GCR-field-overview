@@ -45,7 +45,7 @@ function drawComparison(gcr) {
 }
 
 async function init() {
-  const [funding, pubs, staff] = await Promise.all([loadJSON("funding.json"), loadJSON("publications.json"), loadJSON("staff.json")]);
+  const [funding, staff] = await Promise.all([loadJSON("funding.json"), loadJSON("staff.json")]);
   const gcr = funding.filter((g) => GCR.includes(g.category) && g.year >= 2015 && g.year <= 2025);
   const total = d3.sum(gcr, (g) => g.amount);
   const outside = sumOf(gcr, OUTSIDE_AI_BIO);
@@ -64,8 +64,6 @@ async function init() {
   const researchers = staff.functions.filter((r) => r.year === PARTIAL_YEAR && r.focus === "beyond AI and bio" && r.function === "research");
   const nResearchers = d3.sum(researchers, (r) => r.people);
   setNumber("n-people", `~${Math.round(nResearchers / 5) * 5}`, `people do research at the main GCR organizations working beyond AI and bio (my selection) in ${PARTIAL_YEAR}. A rough count, see the caveats below`);
-  const works = pubs.by_year.find((r) => r.scope === "title_abstract" && r.year === 2025);
-  setNumber("n-pubs", works ? fmtInt(works.works) : "–", `works in 2025 with "global catastrophic risk" in title or abstract (and ~${fmtInt((pubs.by_year.find((r) => r.scope === "fulltext" && r.year === 2025) || {}).works || 0)} mentioning it anywhere)`);
 }
 
 init();

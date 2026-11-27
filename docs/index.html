@@ -15,7 +15,6 @@
       <a href="index.html" aria-current="page">Overview</a>
       <a href="funding.html">Funding</a>
       <a href="staff.html">Staff</a>
-      <a href="publications.html">Publications</a>
     </nav>
   </header>
   <main>
@@ -36,7 +35,6 @@
       <div class="number" id="n-outside"><div class="octagon">…</div><p></p></div>
       <div class="number" id="n-ai"><div class="octagon">…</div><p></p></div>
       <div class="number" id="n-people"><div class="octagon">…</div><p></p></div>
-      <div class="number" id="n-pubs"><div class="octagon">…</div><p></p></div>
     </div>
 
     <h2>Where the money went</h2>
@@ -60,20 +58,16 @@
         <h3><a href="staff.html">Staff</a></h3>
         <p>People at the GCR organizations I picked that work beyond AI and bio, year by year from archived team pages. Split by research, teaching, policy and operations.</p>
       </div>
-      <div class="card">
-        <h3><a href="publications.html">Publications</a></h3>
-        <p>Works in OpenAlex that use the exact phrase "global catastrophic risk", and which hazards they mention.</p>
-      </div>
     </div>
 
     <h2>How this was made</h2>
     <p class="prose">I sorted the grants by topic and kind of work using the funders' own labels. Where those were not available, I let Claude classify the grant. Whenever a case was unclear to Claude, I decided it myself. The details are in the <a href="https://github.com/florianjehn/GCR-field-overview">repository</a>.</p>
-    <p class="note prose">The main caveats. I only cover four philanthropic funders. LTFF and FLI publish only part of their grants, and SFF figures are recommendations. The count of researchers is rough and likely inaccurate. It only covers people at the bigger, well-known organizations. Team pages are also often out of date. They keep people who have left and miss new hires for a while, so the count can be off in both directions. People at these organizations who mainly work on AI or bio are left out. Publications only count the exact term "global catastrophic risk". All amounts are nominal USD.</p>
+    <p class="note prose">The main caveats. I only cover four philanthropic funders. LTFF and FLI publish only part of their grants, and SFF figures are recommendations. The count of researchers is rough and likely inaccurate. It only covers people at the bigger, well-known organizations. Team pages are also often out of date. They keep people who have left and miss new hires for a while, so the count can be off in both directions. People at these organizations who mainly work on AI or bio are left out. All amounts are nominal USD.</p>
   </main>
   <footer class="site">Based only on public data · <a href="https://github.com/florianjehn/GCR-field-overview">data and code</a> · <span id="built"></span></footer>
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script src="assets/common.js?v=f8e2b36a"></script>
-  <script src="assets/overview.js?v=c30d1361"></script>
+  <script src="assets/overview.js?v=50dc9d78"></script>
   <script>loadJSON("meta.json").then((m) => { document.getElementById("built").textContent = `data from ${m.built}`; });</script>
 </body>
 </html>
