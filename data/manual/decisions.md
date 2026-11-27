@@ -190,3 +190,7 @@ Author reviewed the 1 Dec 2025 team page. Still listed but no longer working the
 ## Forecasting out of GCR (2026-11-26)
 
 - Author: "I don't think it makes sense to put forecasting as a whole under the GCR label." Forecasting (Q7) stays its own category but is now excluded from GCR totals and gets no activity code, like EA & community; it is shown only in the "Everything" view. Counting it as GCR is now the Q7 sensitivity scenario. Effect 2015–2025: GCR total $1.6B -> $1.5B, GCR outside AI and bio 4.4 % -> 4.5 %, AI share 2025 84 % -> 86 %. Activity rules used only for forecasting grants were deleted (Good Judgment, Manifold Markets, Metaculus, QURI, Rootclaim, Social Science Prediction Platform; LTFF grants to Samotsvety and for Metaculus).
+
+## Topic definitions are definitions only (2026-11-27)
+
+- Author: the "What the topics mean" list on the funding page works like a legend, so it says only what each topic covers and never where the money went. Abrupt sunlight reduction & infrastructure collapse uses the same wording as the overview.
