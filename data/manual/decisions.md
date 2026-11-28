@@ -194,3 +194,7 @@ Author reviewed the 1 Dec 2025 team page. Still listed but no longer working the
 ## Topic definitions are definitions only (2026-11-27)
 
 - Author: the "What the topics mean" list on the funding page works like a legend, so it says only what each topic covers and never where the money went. Abrupt sunlight reduction & infrastructure collapse uses the same wording as the overview.
+
+## 2026-11-28 – Odyssean Institute off the staff page
+
+- Removed on author request from the staff data and page (team page config, role rules, person focus, org type, organization row and its rows in `team_people_raw.csv`). Its grants stay in the funding data.

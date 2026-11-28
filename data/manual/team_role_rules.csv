@@ -56,8 +56,5 @@ rcg,title,^Cofundador$,affiliate,,Co-founder listed without a role (Jaime Sevill
 rcg,title,^Director,staff,,
 rcg,title,Junta Directiva,board,,
 rcg,title,.*,staff,,
-odyssean,section,Advisors,affiliate,,
-odyssean,section,Trustees,board,,
-odyssean,section,.*,staff,,
 adapt,section,.*,staff,,
 seri,section,.*,staff,,

@@ -14,7 +14,6 @@ const NOTES = {
   cser: "MPhil assistant professors and the postgraduate coordinator count as teaching.",
   xlab: "Director and deputy director count as teaching. Student associates aren't counted.",
   fernuni_erh: "Three funded positions in the new programme, from its website.",
-  odyssean: "The AI safety lead isn't counted.",
   adapt: "One-person research consultancy (Matt Boyd). Counted from 2020, when its About page first names global catastrophic risk.",
   seri: "One archived staff page (2026): the faculty director, who teaches the course on preventing human extinction, and an operations manager.",
   rcg: "Now called ORCG. Team pages only exist for 2023 and 2026, so 2024 and 2025 repeat 2023.",
